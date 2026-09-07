@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Разговор с Дмитрием</title>
+<style>
+:root{--bg:#fbfaf8;--ink:#1a1a1a;--muted:#6b6864;--rule:#dedad4;--accent:#8a5a2b;--max:820px}
+@media (prefers-color-scheme:dark){:root{--bg:#141312;--ink:#e8e4de;--muted:#918b83;--rule:#2f2c29;--accent:#c99a63}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 Georgia,"Times New Roman",serif;padding:0 24px 100px}
+.wrap{max-width:var(--max);margin:0 auto}
+header{padding:70px 0 0}
+h1{font-size:30px;line-height:1.22;font-weight:400;margin:0 0 14px}
+.sub{color:var(--muted);font-size:15px;line-height:1.55;margin:0 0 8px}
+hr{border:0;border-top:1px solid var(--rule);margin:38px 0}
+h2{font-size:12.5px;font-weight:400;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);margin:48px 0 6px;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+h3{font-size:23px;font-weight:400;line-height:1.32;margin:0 0 18px}
+h4{font-size:17px;font-weight:700;margin:24px 0 9px}
+p{margin:0 0 15px}
+ul,ol{margin:0 0 15px;padding-left:22px}
+li{margin:0 0 7px}
+a{color:var(--accent)}
+nav.toc{margin:34px 0 0}
+nav.toc ol{list-style:none;margin:0;padding:0;counter-reset:s}
+nav.toc>ol>li{counter-increment:s;border-top:1px solid var(--rule);padding:10px 0}
+nav.toc>ol>li:last-child{border-bottom:1px solid var(--rule)}
+nav.toc a{color:var(--ink);text-decoration:none;display:flex;gap:14px;align-items:baseline}
+nav.toc a:hover{color:var(--accent)}
+nav.toc a::before{content:counter(s);color:var(--muted);font-size:13px;min-width:18px;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+nav.toc .t{flex:1}
+nav.toc .n{color:var(--muted);font-size:13px;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+.note{border-left:2px solid var(--accent);padding:2px 0 2px 18px;margin:0 0 20px}
+.note p:last-child{margin-bottom:0}
+.tablewrap{overflow-x:auto;margin:0 0 20px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:14.5px;line-height:1.48}
+th{text-align:left;font-weight:400;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--ink);padding:0 13px 7px 0;vertical-align:bottom;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+td{border-bottom:1px solid var(--rule);padding:10px 13px 10px 0;vertical-align:top}
+td:last-child,th:last-child{padding-right:0}
+.num{white-space:nowrap;font-variant-numeric:tabular-nums}
+.uni{font-weight:700}
+footer{margin-top:58px;padding-top:20px;border-top:1px solid var(--rule);color:var(--muted);font-size:14px;line-height:1.6}
+@media (max-width:820px){body{font-size:16px;padding:0 16px 74px}header{padding-top:42px}h1{font-size:24px}h3{font-size:19px}table{min-width:560px;font-size:14px}}
+</style><style>
+.gloss{margin:0 0 22px}
+.gloss dt{font-weight:700;margin:16px 0 3px;font-size:16px}
+.gloss dd{margin:0 0 0 0;color:var(--muted);font-size:15.5px;line-height:1.5}
+.lead{font-size:17px;margin:0 0 16px}
+.after{border-left:2px solid var(--accent);padding:2px 0 2px 18px;margin:16px 0 26px;font-size:15.5px}
+.after b{color:var(--ink)}
+.big{font-size:20px;font-weight:700}
+table.simple{min-width:0}
+table.simple td{padding:12px 16px 12px 0}
+.step{color:var(--muted);font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;
+ font-family:-apple-system,BlinkMacSystemFont,sans-serif;margin:0 0 6px}
+</style><style id="sem">
+.lbl{display:block;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,sans-serif;
+  font-size:11px;letter-spacing:.09em;text-transform:uppercase;font-weight:600;
+  color:var(--muted);margin:0 0 8px;line-height:1.35}
+.note .lbl + p{margin-top:0}
+.note.hot{border-left-color:#9c3328}
+.note.hot .lbl{color:#9c3328}
+.note.good{border-left-color:#3f6b4a}
+.note.good .lbl{color:#3f6b4a}
+td.pri{color:var(--accent)}
+th{white-space:nowrap}
+@media (max-width:700px){
+  .lbl{margin-bottom:6px}
+  th{white-space:normal}
+  .tablewrap td.pri::before,.scroll td.pri::before{color:var(--muted)}
+}
+</style><style id="acc">
+details{border-top:1px solid var(--rule);padding:0}
+details:last-of-type{border-bottom:1px solid var(--rule)}
+summary{cursor:pointer;padding:14px 0;font-size:17px;line-height:1.4;list-style:none;display:flex;gap:12px;align-items:flex-start}
+summary::-webkit-details-marker{display:none}
+summary .k{font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:11px;letter-spacing:.06em;color:var(--muted);min-width:26px;padding-top:4px}
+summary::after{content:"+";margin-left:auto;color:var(--accent);font-family:-apple-system,sans-serif;font-size:20px;line-height:1;padding-top:2px}
+details[open] summary::after{content:"–"}
+details .b{padding:0 0 16px 38px;font-size:15.5px;line-height:1.55}
+details .b p{margin:0 0 8px}
+details .b .l{font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);display:block;margin:10px 0 2px}
+details .b .flag{color:#9c3328}
+.pri summary{font-weight:700}
+@media (max-width:700px){details .b{padding-left:0}}
+</style><style id="mob">
+@media (max-width:700px){
+  .tablewrap,.scroll{overflow-x:visible !important}
+  .tablewrap table,.scroll table{min-width:0 !important;display:block;font-size:15px}
+  .tablewrap thead,.scroll thead{display:none}
+  .tablewrap tbody,.tablewrap tr,.tablewrap td,
+  .scroll tbody,.scroll tr,.scroll td{display:block;width:100%}
+  .tablewrap tr,.scroll tr{border-bottom:1px solid var(--ink,var(--fg));padding:15px 0 13px}
+  .tablewrap tr:last-child,.scroll tr:last-child{border-bottom:0}
+  .tablewrap td,.scroll td{border:0 !important;padding:5px 0 !important;line-height:1.5}
+  .tablewrap td:empty,.scroll td:empty{display:none}
+  .tablewrap td::before,.scroll td::before{
+    content:attr(data-l);display:block;font-size:11px;letter-spacing:.07em;text-transform:uppercase;
+    color:var(--muted,var(--mut));margin-bottom:2px;
+    font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+  .tablewrap td:first-child::before,.scroll td:first-child::before{display:none}
+  .tablewrap td:first-child,.scroll td:first-child{
+    font-weight:700;font-size:17px;line-height:1.32;margin-bottom:7px}
+  .num{white-space:normal !important}
+  nav.toc a{flex-wrap:wrap}
+  nav.toc .n{margin-left:32px;width:100%;text-align:left;margin-top:2px}
+  nav .d{margin-left:34px;width:100%;text-align:left;margin-top:2px}
+  .nu{font-size:15px}
+  dl.gloss dd{font-size:16px}
+}
+</style>
+<style id="mob2">
+@media (max-width:700px){
+  summary{font-size:16px;padding:13px 0;gap:9px}
+  summary .k{min-width:22px;font-size:10px}
+  summary::after{font-size:22px}
+  details .b{font-size:15px}
+  h1{font-size:26px}
+  .wrap{padding-left:16px;padding-right:16px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><h1>Второй разговор с Дмитрием</h1><p class="sub">Global Dialog, +7 (495) 984-33-73. Нажми на вопрос — откроется, зачем он и что считать хорошим ответом. Жирные — приоритет, если времени мало.</p></header>
+<hr><h2>Что он сказал в первый раз — и что мы проверили</h2><div class="tablewrap"><table class="wide"><thead><tr><th>Дмитрий</th><th>Проверено по документам</th></tr></thead><tbody>
+<tr><td>«Не первый бакалавриат — будет тяжело»</td><td>Исключение только для тех, кто <b>имеет диплом</b>. У тебя его нет. Реальный механизм — «год первого зачисления»: сбрасывается отчислением из UNIC</td></tr>
+<tr><td>«Университет спросит, почему сменил направление»</td><td>Болонья: отбор <b>только по SAT</b>, собеседования нет — в call 0 упоминаний. Турин — SAT + документы</td></tr>
+<tr><td>«Консульство будет задавать вопросы»</td><td>Правовой тест «coerenza» — не для университетских курсов. Но мотивационное письмо для визы <b>обязательно</b></td></tr>
+<tr><td>«Дорогой частный вуз — вопросы к доходам»</td><td>Правило смотрит на доход 2026, не на траты. Риск — только несходимость выписок при проверке GdF (20%)</td></tr>
+<tr><td>«Нужен SAT ~1450»</td><td>Публичных проходных нет; 1450 — 96-й перцентиль. Принято как цель</td></tr>
+<tr><td>«Есть часовой экзамен по английскому от университета»</td><td>Для Болоньи SAT засчитывается как B2, отдельного теста нет. Что он имел в виду — <b>спросить</b></td></tr>
+<tr><td>На сайте: TOLC для Business &amp; Management</td><td>Неверно — нужен SAT. Первая проверка на компетентность</td></tr>
+</tbody></table></div>
+<p>Разговор оборвался — деньги на телефоне. Начать с этого: «мы остановились на SAT 1450, у меня осталось несколько вопросов».</p>
+<hr><h2>1. Закончить первый разговор</h2>
+<details class="pri"><summary><span class="k">1.1</span><span>«Откуда 1450 — это статистика ваших поступивших или ваша оценка?»</span></summary><div class="b"><span class="l">Зачем</span><p>Вся подготовка строится под эту цифру. Разница между «1350 хватало» и «1450 нужно» — около 60 часов.</p><span class="l">Хороший ответ</span><p>«За последние два года наши студенты проходили в Болонью с X, в Турин с Y». Цифры, годы, количество.</p><span class="l">Наводящие</span><p>«Сколько ваших студентов подавались в CLaBE и Business &amp; Management? С каким баллом не прошли?»</p><span class="l">Красный флаг</span><p class="flag">«Чем выше, тем лучше» без цифр — значит оценки нет.</p></div></details>
+<details><summary><span class="k">1.2</span><span>«Что за часовой экзамен по английскому от университета вы упоминали?»</span></summary><div class="b"><span class="l">Зачем</span><p>Для Болоньи SAT засчитывается как B2, отдельного теста нет. Если он говорил о TOLC — к твоей программе он не относится.</p><span class="l">Хороший ответ</span><p>Назовёт конкретно: для какого вуза, какой тест, когда сдаётся.</p><span class="l">Наводящие</span><p>«Это для CLaBE или для Турина? Он вместо SAT или в дополнение?»</p><span class="l">Красный флаг</span><p class="flag">Настаивает на TOLC для Business &amp; Management — та же ошибка, что на сайте.</p></div></details>
+<details><summary><span class="k">1.3</span><span>«Вы сказали “не первый бакалавриат” — какое именно правило вы имели в виду?»</span></summary><div class="b"><span class="l">Зачем</span><p>Мы нашли, что исключение касается только обладателей диплома. Хочу услышать, он про это же или про что-то, чего мы не видели.</p><span class="l">Хороший ответ</span><p>Назовёт статью бандо или практику: «у нас был студент с незаконченным…».</p><span class="l">Наводящие</span><p>«У меня диплома нет. Я планирую отчислиться из UNIC до подачи и не признавать кредиты — это решает вопрос по вашему опыту?»</p><span class="l">Красный флаг</span><p class="flag">Не может назвать правило, но повторяет «будет сложно».</p></div></details>
+<details><summary><span class="k">1.4</span><span>«Были ли у вас студенты, которые до Италии учились в другом вузе и не закончили? Что с ними было по стипендии?»</span></summary><div class="b"><span class="l">Зачем</span><p>Единственный способ узнать практику, а не текст. У нас механизм есть, кейса нет.</p><span class="l">Хороший ответ</span><p>Конкретный случай: где учился, отчислился ли, дали ли DSU.</p><span class="l">Наводящие</span><p>«Что они подавали как документ об отчислении?»</p></div></details>
+
+<hr><h2>2. Мой случай — какие варианты он видит</h2>
+<details class="pri"><summary><span class="k">2.1</span><span>«В моей ситуации — российский аттестат, год Никосии, мама ИП — какие варианты вы видите вообще? Не только Турин и Болонья»</span></summary><div class="b"><span class="l">Зачем</span><p>Проверить, предложит ли он что-то, чего у нас нет: другие вузы, гранты, программы. И заодно — как он вообще мыслит твой случай.</p><span class="l">Хороший ответ</span><p>Конкретные программы с причиной «почему тебе».</p><span class="l">Наводящие</span><p>«Есть ли вузы, где для не-ЕС конкурс мягче при той же плате?»</p><span class="l">Красный флаг</span><p class="flag">Предлагает только то, что дороже, или только магистратуру.</p></div></details>
+<details><summary><span class="k">2.2</span><span>«Год в Никосии за 12-летку — Болонья мне уже подтвердила письменно. Турин подтверждает так же по вашей практике?»</span></summary><div class="b"><span class="l">Зачем</span><p>Болонья подтвердила 4 сентября. Турин — тем же текстом на сайте, но живого подтверждения нет.</p><span class="l">Хороший ответ</span><p>«Да, у нас были такие в Турине» или «Турин требует X дополнительно».</p><span class="l">Наводящие</span><p>«Что Турин просил как документ за первый курс — сертификат или полный транскрипт?»</p></div></details>
+<details><summary><span class="k">2.3</span><span>«Для Турина нужен Apply@UniTo в феврале–апреле отдельно от июньского конкурса — или что-то одно?»</span></summary><div class="b"><span class="l">Зачем</span><p>Пропуск февральского окна закрывает год. Единственный вопрос по Турину, на который нет ответа.</p><span class="l">Хороший ответ</span><p>Однозначное да/нет с датами.</p></div></details>
+<details class="pri"><summary><span class="k">2.4</span><span>«Мама — ИП на УСН “Доходы”: в декларации только оборот. Что EDISU и ER.GO принимали у ваших ИП-родителей — оборот или прибыль по справке бухгалтера?»</span></summary><div class="b"><span class="l">Зачем</span><p>От этого зависит, есть ли стипендия вообще. Регламент молчит, у них может быть практика.</p><span class="l">Хороший ответ</span><p>«Принимали X, документ был такой-то». Или честное «не знаю, не было».</p><span class="l">Наводящие</span><p>«Какой курс рубля применяли, если Банк Италии его не публикует?»</p><span class="l">Красный флаг</span><p class="flag">Обещает «сделаем справку о доходе 2 млн» — это подлог, уходим.</p></div></details>
+<details><summary><span class="k">2.5</span><span>«Есть ли грант Unibo “International Talents – SAT” у вас в практике? Совмещали ли с ER.GO?»</span></summary><div class="b"><span class="l">Зачем</span><p>€4 500 + освобождение от платы, окно ISEE 16–35 тыс — ровно там, где DSU уже нет. Проверить, знают ли они о нём.</p><span class="l">Хороший ответ</span><p>Знает, называет условия, были студенты.</p><span class="l">Красный флаг</span><p class="flag">Не слышал — значит их картина стипендий неполная.</p></div></details>
+
+<hr><h2>3. Турин против Болоньи — по их практике</h2>
+<details><summary><span class="k">3.1</span><span>«Куда из двух вы бы подавали меня — и почему?»</span></summary><div class="b"><span class="l">Зачем</span><p>Их сравнение против нашего: у нас Болонья выигрывает по деньгам почти во всём диапазоне. Хочу услышать, где они видят иначе.</p><span class="l">Хороший ответ</span><p>Аргументы про конкурс, стипендию, визу — не «Турин красивее».</p><span class="l">Наводящие</span><p>«Где у ваших студентов чаще получалось со стипендией — Турин или Болонья?»</p><span class="l">Красный флаг</span><p class="flag">True</p></div></details>
+<details><summary><span class="k">3.2</span><span>«Сколько мест реально разыгрывается для не-ЕС и с каким баллом проходили в каждом?»</span></summary><div class="b"><span class="l">Зачем</span><p>Болонья: 32 места, только первый набор. Турин — неизвестно.</p><span class="l">Хороший ответ</span><p>Цифры по годам.</p></div></details>
+<details><summary><span class="k">3.3</span><span>«Сколько шла виза у ваших студентов в 2025 и 2026 — от подачи до паспорта?»</span></summary><div class="b"><span class="l">Зачем</span><p>Самое узкое место плана: результат в июле, учёба в сентябре, обработка до 90 дней.</p><span class="l">Хороший ответ</span><p>Реальные недели, а не «до 90 дней».</p><span class="l">Наводящие</span><p>«Какой сейчас срок записи в VFS Москва? Бывало, что не успевали к сентябрю — что делали?»</p><span class="l">Красный флаг</span><p class="flag">True</p></div></details>
+<details><summary><span class="k">3.4</span><span>«Что чаще всего заворачивают в консульстве у ваших студентов?»</span></summary><div class="b"><span class="l">Зачем</span><p>Список типовых причин отказа — единственный способ подготовить письмо под них.</p><span class="l">Хороший ответ</span><p>Конкретика: финансовые документы, письмо, несостыковки дат.</p></div></details>
+<details><summary><span class="k">3.5</span><span>«Как у ваших студентов было с жильём в первые месяцы — общежитие давали или снимали?»</span></summary><div class="b"><span class="l">Зачем</span><p>Первая выплата в ноябре, до неё два-три месяца за свой счёт. Практика по жилью — это про размер подушки.</p><span class="l">Хороший ответ</span><p>Сроки, суммы, как оформляли договор для декларации fuori sede.</p></div></details>
+
+<hr><h2>4. Документы и практика</h2>
+<details><summary><span class="k">4.1</span><span>«Апостиль и переводы — где ваши студенты делали и сколько это заняло по факту?»</span></summary><div class="b"><span class="l">Зачем</span><p>У нас цепочка: отметка ИФНС → нотариус → Минюст → перевод. Хочу сверить с их практикой.</p><span class="l">Хороший ответ</span><p>Сроки, город, кто переводил на итальянский.</p></div></details>
+<details><summary><span class="k">4.2</span><span>«Какой документ об отчислении из иностранного вуза принимал ER.GO как rinuncia?»</span></summary><div class="b"><span class="l">Зачем</span><p>От этого зависит год первого зачисления, то есть вся стипендия в Болонье.</p><span class="l">Хороший ответ</span><p>Название документа и дата, на которую он должен быть.</p></div></details>
+<details><summary><span class="k">4.3</span><span>«Как оформлялся состав семьи у студентов с разведёнными родителями?»</span></summary><div class="b"><span class="l">Зачем</span><p>У тебя семья — ты и мама. В бандо развод копией без легализации. Проверить практику.</p></div></details>
+
+<hr><h2>5. Их услуги — следующий шаг, цена, что получаю</h2>
+<details><summary><span class="k">5.1</span><span>«Какой следующий шаг, если мы работаем вместе?»</span></summary><div class="b"><span class="l">Зачем</span><p>Понять их процесс: договор, оплата, сроки.</p><span class="l">Хороший ответ</span><p>Пошагово: что делают они, что делаю я, когда.</p><span class="l">Наводящие</span><p>True</p></div></details>
+<details class="pri"><summary><span class="k">5.2</span><span>«Сколько стоит и что входит — подача в вуз, виза, стипендия, жильё, перевод документов?»</span></summary><div class="b"><span class="l">Зачем</span><p>Цена без состава — не цена. Стипендия у них обычно не входит.</p><span class="l">Хороший ответ</span><p>Сумма и список. Отдельно: входит ли подача на DSU и легализация документов мамы.</p><span class="l">Наводящие</span><p>«Что из этого вы делаете сами, а что я делаю сам с вашими инструкциями?»</p><span class="l">Красный флаг</span><p class="flag">«Зависит», «обсудим после договора».</p></div></details>
+<details class="pri"><summary><span class="k">5.3</span><span>«Что я получу от вас такого, чего не могу сделать сам?»</span></summary><div class="b"><span class="l">Зачем</span><p>Честный ответ здесь — лучший индикатор. Подача в вуз и на стипендию делается самим студентом по определению.</p><span class="l">Хороший ответ</span><p>Что-то конкретное: прямой контакт с приёмной комиссией, проверка документов, VFS.</p><span class="l">Красный флаг</span><p class="flag">«Без нас не поступите» — ER.GO прямо пишет обратное про посредников.</p></div></details>
+<details><summary><span class="k">5.4</span><span>«Есть ли у вас прямой контакт с приёмными комиссиями Турина и Болоньи? Можете получить письменный ответ на конкретный вопрос?»</span></summary><div class="b"><span class="l">Зачем</span><p>У нас семь открытых вопросов. Если могут — это реальная ценность.</p><span class="l">Хороший ответ</span><p>Да, и пример.</p></div></details>
+<details><summary><span class="k">5.5</span><span>«Сколько студентов вы довели до Турина и Болоньи за два года — и можете ли дать контакт одного?»</span></summary><div class="b"><span class="l">Зачем</span><p>Отзывы на сайте — одно, живой человек — другое.</p><span class="l">Хороший ответ</span><p>Число и готовность дать контакт.</p></div></details>
+<details><summary><span class="k">5.6</span><span>«Что в договоре, если отказ по визе или не прошёл по SAT — возврат?»</span></summary><div class="b"><span class="l">Зачем</span><p>Условия при неудаче показывают, кто несёт риск.</p><span class="l">Хороший ответ</span><p>Чёткие условия возврата или честное «не возвращаем».</p></div></details>
+<details><summary><span class="k">5.7</span><span>«Готовы ли работать частично — только виза и легализация, без подачи?»</span></summary><div class="b"><span class="l">Зачем</span><p>Подачу в вуз и на стипендию ты сделаешь сам. Виза через VFS и бумаги мамы — там их опыт реально нужен.</p><span class="l">Хороший ответ</span><p>Да, с ценой.</p></div></details>
+
+<hr><h2>Чего не спрашивать</h2><div class="after">Суммы стипендии, пороги ISEE, даты подачи, как платить университету, сроки рейтингов — всё посчитано по бандо. Если начнёт рассказывать — «это у меня есть, давайте про…».</div>
+<h2>Что записать</h2><div class="note good"><span class="lbl">Дословно</span><p>Откуда 1450 · что за экзамен по английскому · практика с ИП-родителями · сроки визы 2025–26 · цена и состав услуги.</p></div>
+<footer><p>Контекст: <a href="https://alex-turin-full.netlify.app#call">полный план первого звонка</a> · <a href="https://alex-italy-second-degree.netlify.app">второй бакалавриат: что правда</a> · <a href="https://alex-italy-questions.netlify.app">вопросы на консультацию</a></p></footer>
+</div>
+</body>
+</html>
