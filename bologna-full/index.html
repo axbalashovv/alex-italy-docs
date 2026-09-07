@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Болонья: полная сводка</title>
+<style>
+:root{--bg:#fbfaf8;--ink:#1a1a1a;--muted:#6b6864;--rule:#dedad4;--accent:#8a5a2b;--max:820px}
+@media (prefers-color-scheme:dark){:root{--bg:#141312;--ink:#e8e4de;--muted:#918b83;--rule:#2f2c29;--accent:#c99a63}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 Georgia,"Times New Roman",serif;padding:0 24px 100px}
+.wrap{max-width:var(--max);margin:0 auto}
+header{padding:70px 0 0}
+h1{font-size:30px;line-height:1.22;font-weight:400;margin:0 0 14px}
+.sub{color:var(--muted);font-size:15px;line-height:1.55;margin:0 0 8px}
+hr{border:0;border-top:1px solid var(--rule);margin:38px 0}
+h2{font-size:12.5px;font-weight:400;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);margin:48px 0 6px;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+h3{font-size:23px;font-weight:400;line-height:1.32;margin:0 0 18px}
+h4{font-size:17px;font-weight:700;margin:24px 0 9px}
+p{margin:0 0 15px}
+ul,ol{margin:0 0 15px;padding-left:22px}
+li{margin:0 0 7px}
+a{color:var(--accent)}
+nav.toc{margin:34px 0 0}
+nav.toc ol{list-style:none;margin:0;padding:0;counter-reset:s}
+nav.toc>ol>li{counter-increment:s;border-top:1px solid var(--rule);padding:10px 0}
+nav.toc>ol>li:last-child{border-bottom:1px solid var(--rule)}
+nav.toc a{color:var(--ink);text-decoration:none;display:flex;gap:14px;align-items:baseline}
+nav.toc a:hover{color:var(--accent)}
+nav.toc a::before{content:counter(s);color:var(--muted);font-size:13px;min-width:18px;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+nav.toc .t{flex:1}
+nav.toc .n{color:var(--muted);font-size:13px;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+.note{border-left:2px solid var(--accent);padding:2px 0 2px 18px;margin:0 0 20px}
+.note p:last-child{margin-bottom:0}
+.tablewrap{overflow-x:auto;margin:0 0 20px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:14.5px;line-height:1.48}
+th{text-align:left;font-weight:400;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--ink);padding:0 13px 7px 0;vertical-align:bottom;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+td{border-bottom:1px solid var(--rule);padding:10px 13px 10px 0;vertical-align:top}
+td:last-child,th:last-child{padding-right:0}
+.num{white-space:nowrap;font-variant-numeric:tabular-nums}
+.uni{font-weight:700}
+footer{margin-top:58px;padding-top:20px;border-top:1px solid var(--rule);color:var(--muted);font-size:14px;line-height:1.6}
+@media (max-width:820px){body{font-size:16px;padding:0 16px 74px}header{padding-top:42px}h1{font-size:24px}h3{font-size:19px}table{min-width:560px;font-size:14px}}
+</style><style>
+.gloss{margin:0 0 22px}
+.gloss dt{font-weight:700;margin:16px 0 3px;font-size:16px}
+.gloss dd{margin:0 0 0 0;color:var(--muted);font-size:15.5px;line-height:1.5}
+.lead{font-size:17px;margin:0 0 16px}
+.after{border-left:2px solid var(--accent);padding:2px 0 2px 18px;margin:16px 0 26px;font-size:15.5px}
+.after b{color:var(--ink)}
+.big{font-size:20px;font-weight:700}
+table.simple{min-width:0}
+table.simple td{padding:12px 16px 12px 0}
+.step{color:var(--muted);font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;
+ font-family:-apple-system,BlinkMacSystemFont,sans-serif;margin:0 0 6px}
+</style>
+<style id="sem">
+.lbl{display:block;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,sans-serif;
+  font-size:11px;letter-spacing:.09em;text-transform:uppercase;font-weight:600;
+  color:var(--muted);margin:0 0 8px;line-height:1.35}
+.note .lbl + p{margin-top:0}
+.note.hot{border-left-color:#9c3328}
+.note.hot .lbl{color:#9c3328}
+.note.good{border-left-color:#3f6b4a}
+.note.good .lbl{color:#3f6b4a}
+td.pri{color:var(--accent)}
+th{white-space:nowrap}
+@media (max-width:700px){
+  .lbl{margin-bottom:6px}
+  th{white-space:normal}
+  .tablewrap td.pri::before,.scroll td.pri::before{color:var(--muted)}
+}
+</style>
+<style id="mob">
+@media (max-width:700px){
+  .tablewrap,.scroll{overflow-x:visible !important}
+  .tablewrap table,.scroll table{min-width:0 !important;display:block;font-size:15px}
+  .tablewrap thead,.scroll thead{display:none}
+  .tablewrap tbody,.tablewrap tr,.tablewrap td,
+  .scroll tbody,.scroll tr,.scroll td{display:block;width:100%}
+  .tablewrap tr,.scroll tr{border-bottom:1px solid var(--ink,var(--fg));padding:15px 0 13px}
+  .tablewrap tr:last-child,.scroll tr:last-child{border-bottom:0}
+  .tablewrap td,.scroll td{border:0 !important;padding:5px 0 !important;line-height:1.5}
+  .tablewrap td:empty,.scroll td:empty{display:none}
+  .tablewrap td::before,.scroll td::before{
+    content:attr(data-l);display:block;font-size:11px;letter-spacing:.07em;text-transform:uppercase;
+    color:var(--muted,var(--mut));margin-bottom:2px;
+    font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+  .tablewrap td:first-child::before,.scroll td:first-child::before{display:none}
+  .tablewrap td:first-child,.scroll td:first-child{
+    font-weight:700;font-size:17px;line-height:1.32;margin-bottom:7px}
+  .num{white-space:normal !important}
+  nav.toc a{flex-wrap:wrap}
+  nav.toc .n{margin-left:32px;width:100%;text-align:left;margin-top:2px}
+  nav .d{margin-left:34px;width:100%;text-align:left;margin-top:2px}
+  .nu{font-size:15px}
+  dl.gloss dd{font-size:16px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Болонья: полная сводка</h1>
+  <p class="sub">2 сентября 2026. Business &amp; Economics (CLaBE), англоязычный бакалавриат. Процесс, деньги, стипендия, документы, кейсы. Все цифры взяты из официального бандо ER.GO 2026/27 и правил UNIBO.</p>
+  <nav class="toc">
+    <ol>
+      <li><a href="#verdict"><span class="t">Главное: Болонья дешевле Турина</span><span class="n">−€2 000/год</span></a></li>
+      <li><a href="#confirmed"><span class="t">Подтверждено Болоньей</span><span class="n">12-летка закрыта</span></a></li>
+      <li><a href="#proc"><span class="t">Процесс: три параллельных трека</span><span class="n">окна и порталы</span></a></li>
+      <li><a href="#money"><span class="t">Плата за учёбу</span><span class="n">€1 157</span></a></li>
+      <li><a href="#schol"><span class="t">Стипендия ER.GO и жильё</span><span class="n">до €7 171</span></a></li>
+      <li><a href="#pay"><span class="t">Как физически платить</span><span class="n">без перевода из РФ</span></a></li>
+      <li><a href="#docs"><span class="t">Документы: что и куда</span><span class="n">по этапам</span></a></li>
+      <li><a href="#cases"><span class="t">Кейсы и русскоязычные источники</span><span class="n">что нашлось</span></a></li>
+      <li><a href="#call"><span class="t">Звонок в Global Dialog</span><span class="n">вопросы по Болонье</span></a></li>
+      <li><a href="#open"><span class="t">Что не выяснено</span><span class="n">и где спрошено</span></a></li>
+    </ol>
+  </nav>
+</header>
+
+<hr>
+
+<h2 id="verdict">Главное</h2>
+<h3>По деньгам Болонья выигрывает у Турина, и заметно</h3>
+
+<p class="lead">Разница не в стипендии, а в плате. В Турине надбавка Business &amp; Management €2 200 не снимается ничем — её платят и стипендиаты. Платить из своего кармана не надо, она уходит из стипендии, но и на жизнь остаётся меньше. В Болонье такой надбавки нет вообще, а базовая плата для граждан стран вне ОЭСР фиксированная и низкая.</p>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Со стипендией, жильё снимаешь сам</th><th class="num">Турин</th><th class="num">Болонья</th></tr></thead>
+<tbody>
+<tr><td>Стипендия</td><td class="num">€8 096,78</td><td class="num">€7 171,11</td></tr>
+<tr><td>Минус плата университету</td><td class="num">−€2 200</td><td class="num">−€157,04</td></tr>
+<tr><td><b>Остаётся на жизнь</b></td><td class="num big">€5 896,78</td><td class="num big">€7 014,07</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Что сравниваем</th><th>Турин</th><th>Болонья</th><th>Кто лучше</th></tr></thead>
+<tbody>
+<tr><td><b>Плата без стипендии</b></td><td>€3 156</td><td><b>€1 157 – 1 357</b></td><td class="pri">Болонья, −€1 900</td></tr>
+<tr><td><b>Плата со стипендией</b></td><td>€2 200</td><td><b>€157,04</b></td><td class="pri">Болонья, −€2 043</td></tr>
+<tr><td>Максимум стипендии fuori sede</td><td><b>€8 096,78</b></td><td>€7 171,11</td><td>Турин, +€926</td></tr>
+<tr><td>Порог ISEE</td><td><b>€26 306</b></td><td>€25 000</td><td>Турин, мягче</td></tr>
+<tr><td>Порог ISPE</td><td><b>€57 188</b></td><td>€50 000</td><td>Турин, мягче</td></tr>
+<tr><td>Взнос за заявку</td><td>€60</td><td><b>€20</b></td><td>Болонья</td></tr>
+<tr><td><b>Отдельный рейтинг для не-ЕС</b></td><td>нет, общий конкурс</td><td><b>да, 32 места</b></td><td class="pri">Болонья</td></tr>
+<tr><td>Документы о доходах</td><td>почтой, прибытие до 4 сен</td><td><b>загрузка в портал до 24 авг</b></td><td class="pri">Болонья</td></tr>
+<tr><td>Квота общежития для не-ЕС</td><td><b>15%</b></td><td>по общему рейтингу</td><td>Турин</td></tr>
+<tr><td>Окно подачи для не-ЕС</td><td>19 фев — 15 апр</td><td>10 фев — 4 мая</td><td>Болонья, шире</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note good">
+<span class="lbl">Итог по деньгам</span>
+<p>Со стипендией: Турин обходится в <b>€2 200</b> в год, Болонья в <b>€157</b>. Стипендия в Турине больше на €926 — но плата больше на €2 043. <b>Чистый перевес Болоньи: около €1 100 в год даже в лучшем для Турина сценарии.</b></p>
+<p>Без стипендии перевес Болоньи <b>около €2 000 в год</b>.</p>
+</div>
+
+<div class="note hot">
+<span class="lbl">Но есть встречный риск</span>
+<p>Пороги в Болонье <b>строже</b>: ISEE €25 000 против €26 306, ISPE €50 000 против €57 188. Если доход мамы окажется у верхней границы, в Турине стипендия будет, а в Болонье нет. Тогда картина такая: Турин €3 156 против Болоньи €1 157 — Болонья всё равно дешевле.</p>
+<p>То есть <b>Болонья выигрывает при любом исходе по стипендии.</b> Разница только в размере выигрыша.</p>
+</div>
+
+<hr>
+
+<h2 id="confirmed">Подтверждено Болоньей</h2>
+<h3>Год Никосии закрывает 12-летку — письменно, от университета</h3>
+
+<div class="note good">
+<span class="lbl">Ответ Segreteria Studenti Internazionali, 4 сентября 2026</span>
+<p>«<b>Yes, the full year with all 60 ECTS achieved is perfect to complete the 12 years of schooling request.</b> In addition to the original secondary school diploma, you must submit an academic certificate stating that you have passed all the required exams for the first year of university studies, in the case of local school systems of eleven years.»</p>
+<p>— Antonia-Iulia Dejeu, Segreteria Studenti Internazionali Bologna, ASES</p>
+</div>
+
+<p class="lead">Это ответ на главный вопрос всего плана. До него всё держалось на выводе из регламентов. Теперь есть письменное подтверждение от приёмной службы университета.</p>
+
+<h4>Условие выполняется — проверено по твоим оценкам</h4>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Что требует Болонья</th><th>Твой факт</th><th>Сходится?</th></tr></thead>
+<tbody>
+<tr><td><b>Полный год</b></td><td>Fall 2023 + Spring 2024 в University of Nicosia</td><td class="pri">Да</td></tr>
+<tr><td><b>Все 60 ECTS набраны</b></td><td>Всего заработано 120 ECTS; на курсы 2 и 3 приходится 18 + 18 + 24 = 60. Значит на первый год — <b>ровно 60</b></td><td class="pri">Да</td></tr>
+<tr><td><b>Все экзамены первого курса сданы</b></td><td>10 предметов, все с проходными оценками. <b>Ни одного WA, ни одного Incomplete, ни одного F</b></td><td class="pri">Да</td></tr>
+<tr><td>Оригинал школьного аттестата</td><td>Российский аттестат за 11 классов</td><td class="pri">Есть</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note good">
+<span class="lbl">И вторая новость, не менее важная</span>
+<p>Мы спрашивали: «Which document do you need for that year: a certificate for the first year only, or my full transcript?» Ответ: <b>academic certificate за первый курс</b>. Не полный транскрипт.</p>
+<p>Это значит, что <b>Fall 2024, Spring 2025 и Fall 2025 в приёмную папку не попадают</b> — со всеми WA, Incomplete и оценками D. Университет смотрит только на первый год, а первый год у тебя чистый: 60 из 60, все предметы сданы.</p>
+<p>Провальные семестры на поступление <b>не влияют</b>. Это подтверждено, а не предположение.</p>
+</div>
+
+<div class="note hot">
+<span class="lbl">Одна фраза в письме — шаблон, не решение по твоему случаю</span>
+<p>В конце письма стоит: «tuition fees are based on merit requirements and on the <b>ISEE certification</b>».</p>
+<p>Это <b>стандартный абзац</b> из общего шаблона, который уходит всем иностранцам. Он описывает обычную итальянскую систему и <b>не отменяет</b> flat tax для граждан стран вне ОЭСР, где официальная страница UNIBO говорит дословно: «You only have to make a declaration on your family's economic situation, <b>without certificates</b>».</p>
+<p>Не путать. ISEE нужен для <b>стипендии</b> ER.GO. Для льготной платы достаточно самодекларации. Но раз в письме это прозвучало — <b>стоит переспросить отдельно</b>, чтобы было в переписке.</p>
+</div>
+
+<div class="note">
+<span class="lbl">Новый канал, которого у нас не было</span>
+<p>Она пишет: если Call for Applications на 2026/27 ещё не открыт или нужны детали — <b>смотреть прошлогодние Call и писать Programme Coordinator</b>, адреса в разделе «Contacts» на странице программы.</p>
+<p>Это подтверждает нашу догадку: <b>люди программы отвечают лучше общих отделов</b>. В Турине так ответил Luigi, здесь на них прямо указывает сама приёмная служба.</p>
+</div>
+
+<hr>
+
+<h2 id="proc">Процесс</h2>
+<h3>Три трека, три портала, три набора сроков</h3>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Трек</th><th>Где</th><th>Кому пишем</th><th>Ключевые сроки</th></tr></thead>
+<tbody>
+<tr>
+<td><b>1. Университет</b></td>
+<td>Studenti Online<br><span class="num">studenti.unibo.it</span></td>
+<td>internationaldesk@unibo.it<br>didatticasociale.clabe@unibo.it</td>
+<td>первый набор <b>10 фев — 4 мая, 13:00</b><br>единственный для не-ЕС</td>
+</tr>
+<tr>
+<td><b>2. Виза</b></td>
+<td>Universitaly → VFS Москва</td>
+<td>internationaldesk@unibo.it</td>
+<td>Universitaly <b>до 15 июля</b><br>обработка <b>до 90 дней</b></td>
+</tr>
+<tr>
+<td><b>3. Стипендия</b></td>
+<td>портал ER.GO<br><span class="num">er-go.it → FAI DOMANDA ONLINE</span></td>
+<td>Dossier Utente, тикет</td>
+<td>подача <b>23 июня — 24 авг, 16:00</b><br>документы <b>загружаются</b></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h4>Набор в CLaBE: три круга, но не-ЕС допущен только в первый</h4>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Круг</th><th>Окно</th><th>Мест</th><th>Кто может</th></tr></thead>
+<tbody>
+<tr><td><b>Первый</b></td><td><b>10 фев — 4 мая, 13:00</b></td><td>85 ЕС + <b>32 не-ЕС из-за рубежа</b></td><td class="pri"><b>Твой единственный круг</b></td></tr>
+<tr><td>Второй</td><td>5 мая — 3 июля, 13:00</td><td>60</td><td>только ЕС</td></tr>
+<tr><td>Чрезвычайный</td><td>3 — 11 сентября, 13:00</td><td>остаток</td><td>только ЕС</td></tr>
+<tr><td>Особые программы</td><td>—</td><td>13</td><td>беженцы, иранские студентки</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note hot">
+<span class="lbl">Из этого следует жёсткий дедлайн по SAT</span>
+<p>Всего мест 190, из них <b>32 отведены под не-ЕС из-за рубежа</b> — и разыгрываются они только в первом круге. Второго шанса нет ни при каких обстоятельствах.</p>
+<p>SAT нужно <b>сдать и получить результат до подачи</b>, то есть до начала мая 2027. Реальные цели — сессия <b>декабрь 2026</b> или <b>март 2027</b>. Март оставляет один запасной заход, декабрь оставляет два. Планировать надо на декабрь.</p>
+<p>Минимальный проходной балл нигде не объявлен — отбор рейтинговый из 1600. Это значит, что «достаточного» балла не существует, важно место относительно других 32 претендентов.</p>
+</div>
+
+<div class="after">
+<b>Взнос €20 через PagoPA покрывает все три круга сразу.</b> Против €60 в Турине. Отбор — SAT General Test плюс оценка досье: CV и мотивационное письмо, написанные самим кандидатом. SAT засчитывается и как подтверждение английского B2, отдельный IELTS не нужен, потому что экзамен идёт на английском.
+</div>
+
+<hr>
+
+<h2 id="money">Плата</h2>
+<h3>Фиксированная ставка для граждан стран вне ОЭСР</h3>
+
+<p>Россия не входит в ОЭСР, поэтому попадает под flat tax — фиксированную льготную ставку.</p>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Статья</th><th class="num">Без стипендии</th><th class="num">Со статусом idoneo</th><th>Когда</th></tr></thead>
+<tbody>
+<tr><td>Первый взнос: региональный налог €140 + гербовый сбор €17,04</td><td class="num">€157,04</td><td class="num">€157,04</td><td>при зачислении</td></tr>
+<tr><td>Flat tax, бакалавриат, страна вне ОЭСР</td><td class="num">€1 000 – 1 200</td><td class="num"><b>€0</b></td><td>второй и третий взносы</td></tr>
+<tr><td><b>Итого в год</b></td><td class="num big">€1 157 – 1 357</td><td class="num big">€157,04</td><td></td></tr>
+<tr><td>Обычная плата без flat tax и без стипендии</td><td class="num">до €3 218</td><td class="num">—</td><td>если пропустить заявку</td></tr>
+</tbody>
+</table>
+</div>
+
+<h4>Когда и сколько платишь университету</h4>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Взнос</th><th class="num">Без стипендии</th><th class="num">Со статусом idoneo</th><th>Срок</th></tr></thead>
+<tbody>
+<tr><td><b>1-й</b> — региональный налог €140 + гербовый сбор €16 + страховка €1,04</td><td class="num">€157,04</td><td class="num">€157,04, потом возврат €140</td><td><b>24 сентября</b> или дата программы</td></tr>
+<tr><td><b>2-й</b> — часть flat tax</td><td class="num">€500 – 600</td><td class="num">€0</td><td><b>18 декабря</b></td></tr>
+<tr><td><b>3-й</b> — остаток flat tax</td><td class="num">€500 – 600</td><td class="num">€0</td><td><b>15 марта</b></td></tr>
+<tr><td><b>Итого</b></td><td class="num big">€1 157 – 1 357</td><td class="num big">€157,04</td><td></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="after">
+Суммы второго и третьего взносов появляются в личном кабинете только <b>после 23 ноября</b> — до этого точной цифры не будет. Просрочка до 30 дней — <b>штраф €30</b>, свыше 30 дней — <b>€150</b>. Начисляется автоматически.
+</div>
+
+<div class="note hot">
+<span class="lbl">Сравнение нагрузки с Турином</span>
+<p><b>Турин:</b> к 30 ноября €1 400, к 31 марта €1 400, к 31 мая €200. Со стипендией — €1 100 и €1 100.</p>
+<p><b>Болонья:</b> к 24 сентября €157, к 18 декабря €500–600, к 15 марта €500–600. Со стипендией — только €157 в сентябре и всё.</p>
+<p>Разница не только в сумме, но и в форме. В Турине даже стипендиат платит <b>€1 100 к 30 ноября</b> — то есть до того, как придёт вторая часть стипендии. В Болонье стипендиат после сентября <b>не платит университету ничего</b>.</p>
+</div>
+
+<div class="note good">
+<span class="lbl">Ключевое отличие от Турина</span>
+<p>Официальная формулировка UNIBO: «You only have to make a <b>declaration</b> on your family's economic situation, <b>without certificates</b>».</p>
+<p>Для flat tax <b>не нужны ни ISEE, ни справки, ни апостили</b>. Достаточно заявить, что доходы и имущество семьи находятся только за пределами Италии. Это отдельная процедура, не связанная со стипендией.</p>
+<p>Стипендия и flat tax <b>совместимы</b>: получив стипендию, платишь только первый взнос €157,04.</p>
+</div>
+
+<div class="note hot">
+<span class="lbl">Срок, который легко пропустить</span>
+<p>Заявка на flat tax подаётся <b>через тот же портал ER.GO</b>, окно <b>6 мая — 30 октября, 18:00</b>. С 30 октября 18:01 до 16 ноября — со <b>штрафом €100</b>. После — ставка обычная, до €3 218.</p>
+<p>Иностранные документы о доходах для UNIBO-льготы можно догрузить до <b>20 ноября 2026</b> — это позднее, чем срок для стипендии.</p>
+</div>
+
+<hr>
+
+<h2 id="schol">Стипендия ER.GO</h2>
+<h3>Условия, суммы, выплаты</h3>
+
+<h4>Два порога, оба обязательны</h4>
+
+<div class="tablewrap">
+<table class="simple">
+<thead><tr><th>Порог</th><th class="num">Предел</th><th>Комментарий</th></tr></thead>
+<tbody>
+<tr><td>ISEE семьи</td><td class="num">до €25 000</td><td>Строже Турина на €1 306</td></tr>
+<tr><td>ISPE — только имущество</td><td class="num">до €50 000</td><td>Строже Турина на €7 188</td></tr>
+</tbody>
+</table>
+</div>
+
+<h4>Суммы — категория fuori sede</h4>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Полоса ISEE</th><th class="num">Fuori sede</th><th class="num">Pendolare</th><th class="num">In sede</th></tr></thead>
+<tbody>
+<tr><td>до €16 666,67</td><td class="num big">€7 171,11</td><td class="num">€4 190,71</td><td class="num">€2 890,16</td></tr>
+<tr><td>€16 666,68 — 18 333,34</td><td class="num">€4 661,22</td><td class="num">€2 723,96</td><td class="num">€1 878,61</td></tr>
+<tr><td>€18 333,35 — 20 818,46</td><td class="num">€3 872,40</td><td class="num">€2 262,98</td><td class="num">€1 560,69</td></tr>
+<tr><td>€20 818,47 — 25 000,00</td><td class="num">€3 585,56</td><td class="num">€2 095,36</td><td class="num">€1 445,08</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="after">
+Плюс к сумме — <b>возврат регионального налога €140</b>, он полагается всем idonei, а не только получателям выплат. Суммы уже включают долю, которую можно конвертировать в питание в столовых.
+</div>
+
+<div class="note good">
+<span class="lbl">Преимущество, которого нет в Турине</span>
+<p>Дословно из бандо, раздел 2.3.1: «Per gli studenti internazionali <b>matricole</b> provenienti da Paesi non appartenenti all'Unione Europea e con <b>nucleo familiare non residente in Italia</b> sono formulate <b>apposite graduatorie</b>».</p>
+<p>Для первокурсников не из ЕС, чья семья живёт за границей, строится <b>отдельный рейтинг</b>. Ты конкурируешь не с итальянцами, у которых ISEE близок к нулю по документам, а с такими же иностранцами. В Турине конкурс общий.</p>
+</div>
+
+<h4>Когда приходят деньги — первый курс</h4>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Когда</th><th class="num">Доля</th><th>Условие</th></tr></thead>
+<tbody>
+<tr><td>до <b>10 ноября</b></td><td class="num">20%</td><td>зачислен по данным университета на <b>17 октября</b></td></tr>
+<tr><td>до <b>31 декабря</b></td><td class="num">30%</td><td>зачислен на <b>17 ноября</b></td></tr>
+<tr><td>с марта</td><td class="num">10%</td><td>кредиты Таблицы 1 набраны и <b>занесены в протокол</b> к 28 февраля</td></tr>
+<tr><td>с июня, помесячно</td><td class="num">40%</td><td>кредиты Таблицы 2 к 10 августа</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note hot">
+<span class="lbl">Сколько своих денег нужно до первой выплаты</span>
+<p>Как и в Турине: приезд в сентябре, первые деньги в ноябре. <b>Два-три месяца за свой счёт.</b></p>
+<p>Но в Болонье к этому добавляется своя особенность: если войти через логин университета, а не через SPID, <b>выплата приостанавливается до завершения процедуры идентификации</b>. Дословно: «saranno sottoposti a controlli e l'eventuale idoneità/assegnazione dei benefici <b>sarà sospesa</b> in attesa che si concludano le procedure di identificazione».</p>
+<p>Сроков этой процедуры бандо не называет. Это <b>реальный риск задержки</b> именно для нерезидентов, и заложить его надо.</p>
+<div class="tablewrap">
+<table class="simple">
+<thead><tr><th>Сценарий</th><th class="num">Своих денег нужно</th></tr></thead>
+<tbody>
+<tr><td>Деньги пришли вовремя, ноябрь</td><td class="num">€2 500 – 3 500</td></tr>
+<tr><td>Идентификация затянулась</td><td class="num">€6 000 – 8 000</td></tr>
+</tbody>
+</table>
+</div>
+<p><b>Подушка €7 000–9 000 на первый семестр</b> — та же цифра, что и по Турину.</p>
+</div>
+
+<h4>Жильё: как это устроено</h4>
+
+<p class="lead">В Болонье механика другая, чем в Турине. Там ты принимаешь место онлайн в фиксированное окно. Здесь тебя <b>вызывают письмом</b> в Dossier Utente с датой, временем и адресом, куда прийти.</p>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Что</th><th>Когда</th><th>Что делаешь</th></tr></thead>
+<tbody>
+<tr><td>Заявка на жильё, первокурсники</td><td>23 июня — <b>24 авг, 16:00</b></td><td>та же форма, что и на стипендию</td></tr>
+<tr><td>Предварительный рейтинг</td><td><b>10 сентября</b></td><td>смотришь сам, писем не будет</td></tr>
+<tr><td>Апелляции</td><td>15 сентября</td><td>если исключили по исправимой ошибке</td></tr>
+<tr><td><b>Итоговый рейтинг</b></td><td class="pri"><b>24 сентября</b></td><td>вызовы идут по порядку рейтинга</td></tr>
+<tr><td>Граница «вызвали или нет»</td><td class="pri"><b>30 сентября</b></td><td>ключевая дата, см. ниже</td></tr>
+<tr><td>Декларация о съёмном жилье</td><td>до <b>3 ноября, 16:00</b></td><td>если места не дали</td></tr>
+<tr><td>Договор аренды в ER.GO</td><td>до <b>14 января 2027</b></td><td>подтверждение декларации</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note good">
+<span class="lbl">Прямой ответ: что если место придёт позже, а квартира уже снята</span>
+<p>В Болонье это <b>прописано отдельной нормой</b>, и она в твою пользу. Ст. 7, п. 4 раздела о жилье:</p>
+<p>«Gli studenti in graduatoria che, per indisponibilità di posti, <b>non siano stati convocati</b> per l'assegnazione dell'alloggio con lettera inviata entro il 30 settembre, potranno presentare l'autocertificazione di domicilio… Qualora questi studenti siano <b>successivamente convocati</b>, potranno <b>comunque beneficiare della borsa di studio "fuori sede"</b> a condizione che, complessivamente, nell'anno accademico abbiano un domicilio a titolo oneroso per almeno <b>10 mesi</b>, considerando la durata di assegnazione dell'alloggio ER.GO <b>ed il contratto di locazione esterno per il periodo antecedente</b>».</p>
+<p>Перевод по смыслу: если к 30 сентября тебя не вызвали из-за нехватки мест, ты спокойно снимаешь квартиру и подаёшь декларацию. Если общежитие дадут потом, <b>месяцы съёмной квартиры и месяцы общежития складываются</b>. Наберётся 10 — сумма fuori sede сохраняется полностью.</p>
+<p>То есть <b>двойной потери здесь нет по правилу, а не по везению.</b></p>
+</div>
+
+<div class="note hot">
+<span class="lbl">Но есть ловушка, и она жёстче туринской</span>
+<p>Если тебя <b>вызвали письмом, отправленным до 1 октября</b>, а ты не пришёл в назначенный день и <b>не отказался заранее через Dossier Utente</b> — или пришёл, но комнату не занял — стипендию пересчитывают с fuori sede на <b>in sede</b>.</p>
+<p>Это <b>€2 890,16 вместо €7 171,11</b>. Потеря <b>€4 281</b>. В Турине в аналогичной ситуации падают до pendolare, здесь — сразу до in sede, то есть ниже.</p>
+<p>Отказ надо оформлять <b>через раздел в Dossier Utente до даты встречи</b>, а не молчанием.</p>
+</div>
+
+<div class="note">
+<span class="lbl">Если не вызвали до 30 сентября</span>
+<p>Тебе придёт запрос в Dossier Utente — подтвердить, что ты всё ещё хочешь место. В ноябре может прийти <b>второй такой запрос</b> тем, кто подтвердил в начале октября.</p>
+<p><b>Не ответил в срок — считается отказом</b>, и больше вызывать не будут. Дословно: «La mancata risposta… costituirà rinuncia al servizio abitativo».</p>
+<p>Ещё: вызов <b>приостанавливается</b>, если твоя idoneità под проверкой. Для нерезидента, зашедшего по логину университета, это тот же риск идентификации, что и со стипендией.</p>
+</div>
+
+<h4>Сколько стоит общежитие</h4>
+
+<p>Важное отличие от Турина: в Болонье стипендиат за общежитие <b>платит</b>. Плата вычитается из первого и второго траншей стипендии.</p>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Тип</th><th class="num">Обычный месяц</th><th class="num">Декабрь и январь</th><th class="num">Сентябрь</th></tr></thead>
+<tbody>
+<tr><td>Одноместная комната</td><td class="num">€352</td><td class="num">€282</td><td class="num">€176</td></tr>
+<tr><td>Место в двухместной</td><td class="num">€272</td><td class="num">€218</td><td class="num">€136</td></tr>
+<tr><td>Комната на открытом рынке</td><td class="num">€350 – 450</td><td class="num">—</td><td class="num">—</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note hot">
+<span class="lbl">Отсюда неприятный вывод</span>
+<p>Общежитие ER.GO по цене <b>почти не отличается от съёмной комнаты</b>. Тарифы включают коммуналку, но €272–352 в месяц — это рыночный уровень Болоньи.</p>
+<p>Считаем чистыми при полной стипендии и месте в двухместной: €7 171,11 − примерно €2 720 за 10 месяцев = <b>около €4 450 на руки</b>.</p>
+<p>В Турине место стоит €245,45 в месяц, и чистыми выходит <b>€5 396,78</b>. Разница <b>около €950 в пользу Турина</b> — ровно та же величина, что и разница в размере самой стипендии.</p>
+<p>Так что <b>по жилью Турин лучше</b>, и это единственная статья, где он выигрывает. Но перевес Болоньи по плате за учёбу больше этой суммы вдвое.</p>
+</div>
+
+<h4>Сроки рейтингов</h4>
+
+<hr>
+
+<h2 id="pay">Как физически платить</h2>
+<h3>И не нужен ли для этого перевод из России</h3>
+
+<p class="lead">Короткий ответ: <b>перевод из России не нужен.</b> Оба университета принимают платежи через <b>PagoPA</b> — единую государственную платёжную систему Италии. Это не банковский перевод в университет, а счёт, который можно оплатить десятком разных способов, в том числе <b>наличными в табачной лавке</b>.</p>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Способ</th><th>Что нужно</th><th>Ограничения</th></tr></thead>
+<tbody>
+<tr><td><b>Картой онлайн</b></td><td>Любая карта Visa, Mastercard, American Express, Diners с включёнными онлайн-платежами</td><td class="pri"><b>Карта может быть не твоя.</b> Российские карты не работают за рубежом</td></tr>
+<tr><td><b>Наличными в табачной лавке</b></td><td>Распечатать «Avviso per PagoPA» и принести в точку с Sisal Pay или Lottomatica</td><td class="pri">Лимит наличных <b>€999,99</b> за операцию, комиссия €1,50–2</td></tr>
+<tr><td><b>В отделении банка</b></td><td>Тот же распечатанный avviso, любой банк в системе PagoPA</td><td>Лимит выше, чем в лавке</td></tr>
+<tr><td>Через интернет-банк</td><td>Итальянский или европейский счёт</td><td>Появится после открытия счёта в Италии</td></tr>
+<tr><td>Банкомат</td><td>Карта, поддерживающая PagoPA</td><td>—</td></tr>
+<tr><td><b>Перевод из-за рубежа</b></td><td>Турин: разрешён <b>только</b> со счёта за пределами Италии. Прямой перевод с итальянского счёта запрещён</td><td>Комиссии, и это отдельная история с российскими банками</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note good">
+<span class="lbl">Ключевые два факта</span>
+<p><b>Карта не обязана принадлежать тебе.</b> UNIBO: «La carta deve essere abilitata ai pagamenti online ed appartenente ai circuiti Visa, Mastercard, American Express, Diners <b>anche non di proprietà dello studente</b>». То есть заплатить может кто угодно чужой картой — родственник, знакомый, кто-то в Европе.</p>
+<p><b>Наличные принимаются.</b> Из инструкции UNIBO: «Pagamento <b>DI PERSONA</b> (Stampa Avviso per PagoPA)… dovrai presentare allo sportello di uno degli esercenti autorizzati (<b>comprese le tabaccherie</b> in cui è attivo il servizio Sisal Pay o Lottomatica) o di uno degli istituti di credito che aderiscono al sistema PagoPA».</p>
+<p>Это значит, что <b>ни итальянский счёт, ни рабочая карта для оплаты учёбы не обязательны.</b> Распечатал счёт, пришёл с наличными, заплатил.</p>
+</div>
+
+<div class="note hot">
+<span class="lbl">Но лимит наличных ломает туринский платёж</span>
+<p>В табачной лавке потолок <b>€999,99</b> за одну операцию — это правило против отмывания, не университетское. Туринская вторая рата €1 400 в него <b>не влезает</b>.</p>
+<p>Варианты: платить <b>в отделении банка</b>, где лимит выше · разбить надбавку на части через рассрочку у программы · платить картой.</p>
+<p>В Болонье этой проблемы нет: взносы €157, €500–600 и €500–600 — <b>все три ниже лимита</b> и оплачиваются наличными без ухищрений.</p>
+</div>
+
+<div class="note">
+<span class="lbl">Что остаётся нерешённым — и это не про университет</span>
+<p>Университет деньги примет. Отдельная задача — <b>как деньги мамы попадут к тебе в Италию</b>. Российские карты за границей не работают, переводы из российских банков ограничены санкциями, и итальянские банки их дополнительно фильтруют.</p>
+<p>Это не вопрос к университету и не то, что решается через них. Это надо решать отдельно и заранее, до подачи документов, а не в ноябре. Но важно понимать: <b>это проблема логистики денег, а не проблема оплаты учёбы</b>. Как только деньги в Европе в любом виде — наличными, на чужой карте, на европейском счёте — университет оплачивается без препятствий.</p>
+</div>
+
+<hr>
+
+<h2 id="docs">Документы</h2>
+<h3>Что, куда и в каком виде</h3>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Этап</th><th>Куда</th><th>Что</th><th>Вид</th></tr></thead>
+<tbody>
+<tr><td>Подача на программу<br><span class="num">10 фев — 4 мая</span></td><td><b>Studenti Online</b>, €20 через PagoPA</td><td>аттестат · справка Никосии о первом годе · CV · мотивационное письмо · паспорт</td><td>загрузка</td></tr>
+<tr><td>Результат SAT</td><td>напрямую College Board → вуз</td><td>только балл</td><td>электронно</td></tr>
+<tr><td>Предзапись для визы<br><span class="num">до 15 июля</span></td><td><b>Universitaly</b></td><td>аттестат · подтверждение зачисления · CIMEA или апостиль</td><td>сканы, валидирует вуз</td></tr>
+<tr><td><b>Виза</b><br><span class="num">июль</span></td><td><b>VFS Москва</b>, лично с биометрией</td><td>полный пакет</td><td><b>бумага, два комплекта</b></td></tr>
+<tr><td><b>Стипендия</b><br><span class="num">до 24 авг, 16:00</span></td><td><b>Dossier Utente</b> → Corrispondenza e protocollo → Invia documentazione → Documentazione redditi esteri</td><td>справки о доходах и имуществе семьи за <b>2025 год</b></td><td class="pri"><b>загрузка сканов</b></td></tr>
+<tr><td>Flat tax<br><span class="num">6 мая — 30 окт</span></td><td>портал <b>ER.GO</b></td><td>только самодекларация</td><td>онлайн, без справок</td></tr>
+<tr><td>Зачисление</td><td>секретариат в Болонье</td><td>оригиналы всего</td><td>лично, карьера активируется до <b>26 фев 2027</b></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note hot">
+<span class="lbl">Поправка: отчётный год для подачи на 2027/28 — 2026, не 2025</span>
+<p>Бандо на 2026/27 требует доходы за <b>2025</b> и имущество на <b>31.12.2025</b> — то есть год, предшествующий подаче. Ты подаёшься на <b>2027/28</b>, значит бандо, которое выйдет в июне 2027, потребует <b>доходы за 2026 и имущество на 31.12.2026</b>.</p>
+<p>Практически: декларация УСН <b>за 2026 год</b> (сдаётся до 25 апреля 2027), выписки со счетов на <b>31 декабря 2026</b>, ЕГРН — свежая на момент подачи. Декларация за 2025 годится только как репетиция и для оценки полосы. И главное — <b>оборот мамы в 2026 году и есть та цифра, которая определит стипендию</b>.</p>
+</div>
+
+<h4>Требования к документам о доходах для не-ЕС</h4>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Требование</th><th>Формулировка бандо</th></tr></thead>
+<tbody>
+<tr><td><b>Только официальные органы</b></td><td>Документы выдаются компетентными органами территории, где получен доход и находится имущество. «Non vengono accettate <b>in nessun caso</b> autocertificazioni o autodichiarazioni»</td></tr>
+<tr><td><b>Легализация</b></td><td>Легализация итальянским консульством <b>либо апостиль</b></td></tr>
+<tr><td><b>Перевод</b></td><td>На <b>итальянский</b>, консульством или официальным переводчиком. Английский не годится</td></tr>
+<tr><td><b>Год</b></td><td>Доходы и имущество за <b>2025 год</b>, имущество на <b>31 декабря 2025</b></td></tr>
+<tr><td><b>Валюта</b></td><td>В местной валюте, пересчёт по среднему курсу Банка Италии за 2025 год</td></tr>
+<tr><td><b>Недвижимость</b></td><td>С указанием общей площади <b>в кв. метрах</b></td></tr>
+<tr><td><b>Декларация мамы — как сделать её легализуемой</b></td><td>Электронную декларацию нельзя апостилировать как распечатку. Путь: распечатка + квитанция о приёме + извещение о вводе → <b>ИФНС ставит отметку о приёме на бумажной копии</b> (п. 219 регламента, приказ Минфина № 99н) → нотариальная копия → апостиль Минюста → перевод на итальянский. Запасной путь: нотариус по ст. 103.9 с файлами ЭП из СБИС</td></tr>
+<tr><td><b>Бумажные оригиналы</b></td><td>ER.GO вправе <b>запросить оригиналы в течение года</b>. Непредоставление — включая форс-мажор — <b>отзыв всех льгот</b></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note hot">
+<span class="lbl">Разница с Турином, которую надо усвоить</span>
+<p><b>Турин:</b> оригиналы отправляются почтой, считается дата <b>прибытия</b> в офис до 4 сентября. Английский, французский, испанский допустимы.</p>
+<p><b>Болонья:</b> сканы <b>загружаются в портал</b> до 24 августа 16:00 — почта не нужна, но перевод обязательно <b>на итальянский</b>, и бумажные оригиналы надо <b>хранить весь год</b> на случай проверки.</p>
+<p>Срок в Болонье на <b>11 дней раньше</b>. Апостили и переводы надо заказывать под болонскую дату, а не под туринскую.</p>
+</div>
+
+<div class="note good">
+<span class="lbl">Про платных посредников — прямая цитата</span>
+<p>«Attenzione! <b>Non è richiesto in alcun caso l'intervento di agenzie/intermediari</b> per raccogliere e inviare la documentazione completa e corretta. Si invita pertanto a <b>diffidare di offerte/inviti a fornire aiuto in cambio di denaro</b>, per evitare possibili raggiri».</p>
+<p>ER.GO прямым текстом предупреждает: посредники не требуются ни в каком случае, и предложениям помощи за деньги следует не доверять. Это официальный ответ на вопрос про платные агентства.</p>
+</div>
+
+<div class="note">
+<span class="lbl">Про SPID — вопрос закрыт</span>
+<p>Заявка ER.GO по общему правилу подаётся через SPID, CIE или CNS. Но: «Gli studenti che <b>non risiedono in Italia</b> accedono alla domanda on line <b>con le credenziali rilasciate dall'Ateneo</b>».</p>
+<p>Не резидент Италии заходит по <b>логину университета</b>. SPID не нужен. Логин появляется после регистрации на Studenti Online.</p>
+<p>Ещё: «Per presentare domanda <b>non occorre la preventiva iscrizione</b> all'Università» — подавать на стипендию можно, ещё не будучи зачисленным. Но зачислиться надо в срок, иначе льготы аннулируются.</p>
+</div>
+
+<div class="note hot">
+<span class="lbl">Ловушка с признанием кредитов</span>
+<p>Бандо: «L'anno di prima immatricolazione <b>retrocede</b> in base all'anno di corso a cui sono ammessi».</p>
+<p>Если Болонья зачтёт кредиты Никосии и примет сразу на второй курс, год первого зачисления <b>отматывается назад</b>. Тогда к тебе применяются требования по кредитам как ко второкурснику, а не первокурснику — а ты при этом только приехал.</p>
+<p>Вывод: <b>поступать чисто на первый курс выгоднее</b>, чем добиваться зачёта кредитов. Год Никосии нужен только для закрытия двенадцатилетки, не для сокращения программы.</p>
+</div>
+
+<div class="note hot">
+<span class="lbl">Обязательное действие, которого не было: формальный отказ от учёбы в UNIC</span>
+<p>Срок стипендии считается от <b>года первого зачисления — «anche all'estero»</b>. Если не оформить отказ от учёбы в Никосии, ER.GO посчитает первым годом 2023, и права на льготы к 2027/28 не останется. Оговорка в самом бандо: «<b>fatta salva un'eventuale rinuncia agli studi</b>» — после отказа и приёма на первый курс отсчёт идёт с нового зачисления.</p>
+<p>Второе: <b>не подавать на признание кредитов</b> — оно отматывает год назад. Третье: предыдущую карьеру в заявке <b>указать честно</b>. Полный разбор: <a href="https://alex-italy-second-degree.netlify.app">Второй бакалавриат: что правда</a>.</p>
+</div>
+
+<hr>
+
+<h2 id="cases">Кейсы и русскоязычные источники</h2>
+
+<h4>Кейс — россиянка, Болонья, стипендия покрыла всё</h4>
+
+<div class="note">
+<p><b>Кто:</b> Дарико Тутова, россиянка. Двойная магистратура по искусству, музеологии и кураторству, Университет Болоньи, выпуск 2025.</p>
+<p><b>Что получила:</b> университет <b>полностью покрыл обучение</b>, стипендия <b>€7 300 в год</b> на жизнь, плюс разовая выплата <b>€2 000</b> за отличную успеваемость после выпуска.</p>
+<p><b>Документы из России:</b> аттестат с апостилем, языковые сертификаты IELTS и Ev@Lang, Dichiarazione di Valore.</p>
+<p><b>Сроки:</b> восемь месяцев от идеи до начала учёбы.</p>
+</div>
+
+<div class="after">
+Это магистратура, а не бакалавриат — но <b>механизм и порядок сумм совпадают</b>. €7 300 против нашего расчётного максимума fuori sede €7 171,11: сходится с точностью до полосы ISEE и года. И главное — это подтверждает, что <b>россиянка реально получила полное покрытие в Болонье</b>, а не только по бумагам.
+</div>
+
+<h4>Сверка русскоязычных источников</h4>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Утверждение</th><th>Наша сверка по официальным документам</th></tr></thead>
+<tbody>
+<tr><td>Обучение €1 000–1 400 плюс €157,04 обязательных сборов</td><td class="pri"><b>Точно сходится</b> с официальной страницей UNIBO</td></tr>
+<tr><td>Максимум в бакалавриате до €3 218 в год</td><td><b>Сходится.</b> Это ставка без flat tax — то есть цена пропущенной заявки</td></tr>
+<tr><td>Проживание от €250 в месяц</td><td>Правдоподобно как нижняя граница. Закладывать надо €350–450</td></tr>
+<tr><td>DSU покрывает €5 000–8 000 в год</td><td><b>Сходится.</b> Максимум fuori sede в Болонье €7 171,11</td></tr>
+<tr><td>«Претендовать может практически любой абитуриент из семьи со средним доходом СНГ»</td><td><b>Правдоподобно</b>, но в Болонье пороги строже Турина. Верхняя полоса — доход примерно до €26 000 на семью из двух человек</td></tr>
+<tr><td>Подача на стипендию «в июне–июле, заканчивается в августе–сентябре»</td><td><b>Уточняем:</b> в Болонье жёстко <b>24 августа, 16:00</b>. Сентября нет</td></tr>
+<tr><td>ER.GO помогает с подбором жилья</td><td><b>Неточно.</b> ER.GO распределяет места в общежитиях по рейтингу, это не служба подбора жилья</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note hot">
+<p><b>Честно про полноту.</b> Кейсов «россиянин, бакалавриат CLaBE, Болонья» найти не удалось. Reddit наш поиск не индексирует, VK и Telegram тоже. Найденный кейс — магистратура.</p>
+<p>Русскоязычные агрегаторы (Global Dialog, Studiare in Italia, Star Academy) дают верные порядки цифр, но <b>устаревают на год</b> и путают детали процедур. Опираться надо на бандо, а их использовать как перекрёстную проверку.</p>
+</div>
+
+<hr>
+
+<h2 id="open">Что не выяснено</h2>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Вопрос</th><th>Кому</th><th>Цена ошибки</th></tr></thead>
+<tbody>
+<tr><td>Подтвердить, что flat tax не требует ISEE — в письме прозвучал шаблон про ISEE</td><td>internationaldesk@unibo.it</td><td>Разница €1 000 в год</td></tr>
+<tr><td><b>Подтвердить: не-ЕС только первый круг</b></td><td>internationaldesk@unibo.it</td><td>Пропуск 4 мая закрывает год</td></tr>
+<tr><td>Достаточно ли транскрипта Никосии или нужен CIMEA</td><td>internationaldesk@unibo.it</td><td>CIMEA идёт 60 рабочих дней</td></tr>
+<tr><td>Какой балл SAT реально проходил на 32 места в прошлые годы</td><td>didatticasociale.clabe@unibo.it</td><td>Стратегия подготовки</td></tr>
+<tr><td><b>Сколько длится идентификация при входе по логину вуза</b></td><td>тикет ER.GO</td><td>Задержка выплаты на месяцы</td></tr>
+<tr><td class="pri"><b>Мама — ИП на УСН «Доходы» 6%: в декларации только оборот (строка 113), расходов нет. Принимается ли декларация УСН с отметкой ФНС вместо «справки о доходах физлица»? Считаете ли вы оборот доходом gross, или примете прибыль (оборот − расходы), подтверждённую бухгалтером, КУДиР и выписками по расчётному счёту?</b></td><td>тикет EDISU · тикет ER.GO</td><td>Полоса ISEE, то есть до €4 300 в год</td></tr>
+<tr><td class="pri"><b>Какой курс рубля применят EDISU и ER.GO, если Банк Италии не публикует RUB с марта 2022</b> — бандо отсылает к конвертеру Банка Италии на 31.12.2025 и к «последнему опубликованному» курсу</td><td>тикет EDISU · тикет ER.GO</td><td>Полоса ISEE напрямую</td></tr>
+<tr><td>Как оформляется развод при подаче в ER.GO</td><td>тикет ER.GO</td><td>Неверный состав семьи → неверный ISEE</td></tr>
+<tr><td>Точная сумма flat tax именно для CLaBE в диапазоне €1 000–1 200</td><td>internationaldesk@unibo.it</td><td>±€200 в бюджете</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note">
+<p>Готовые письма по каждому вопросу, по два вопроса на письмо, с цепочками запасных адресов: <a href="https://alex-italy-emails.netlify.app">Письма в университеты</a></p>
+</div>
+
+<hr>
+
+<h2 id="call">Звонок в Global Dialog</h2>
+<h3>Темы и вопросы по приоритету</h3>
+
+<div class="note good">
+<span class="lbl">Отдельный документ с вопросами на консультацию</span>
+<p>Разбор стипендии по полосам дохода, поправка к формуле «€27k → €8k», вопросы по SAT, визе и ценам, красные флаги: <a href="https://alex-italy-questions.netlify.app">Вопросы на консультацию</a></p>
+</div>
+
+
+
+<p class="lead">Global Dialog заявляет себя официальным представителем <b>и Турина, и Болоньи</b> в России. Один звонок закрывает оба университета. Москва <b>+7 (495) 984-33-73</b>, есть также Краснодар, Казань, Алматы, Бишкек, Лондон.</p>
+
+<div class="note hot">
+<span class="lbl">С чем идёшь на разговор</span>
+<p>Это <b>агентство</b>, а не приёмная комиссия. Бесплатная консультация — это продажа платного пакета. Значит две вещи.</p>
+<p>Первая: <b>не трать время на то, что у тебя уже есть из регламентов.</b> Суммы стипендии, пороги ISEE, сроки подачи, способы оплаты — всё посчитано и проверено по первоисточникам. Спрашивать это заново значит сжечь консультацию впустую.</p>
+<p>Вторая: <b>спрашивай только то, что знают они и не знаешь ты</b> — живую практику. Сколько их студентов реально прошло, что реально приняли, сколько реально шла виза. Это единственное, чего нет в бандо.</p>
+</div>
+
+<div class="note">
+<span class="lbl">Что положить перед собой</span>
+<p>Свой случай в трёх строках, чтобы не объяснять по ходу: <b>гражданин России, российский аттестат за 11 классов, сейчас третий курс Graphic Design в University of Nicosia на Кипре, поступаю на англоязычный бакалавриат по экономике на сентябрь 2027, подаваться буду из России.</b></p>
+<p>И запиши разговор или веди заметки. Всё, что они скажут, надо будет сверить с регламентами — расхождения уже находились.</p>
+</div>
+
+<div class="note">
+<span class="lbl">Полный план звонка — в туринском документе</span>
+<p>Global Dialog представляет оба университета, телефон один и тот же. Чтобы не дублировать, весь сценарий разговора с приоритетами, красными флагами и точными формулировками собран в одном месте: <a href="https://alex-turin-full.netlify.app#call">Турин: полная сводка → Звонок в Global Dialog</a>.</p>
+<p>Ниже — только то, что касается Болоньи.</p>
+</div>
+
+<h4>Болонские вопросы, по приоритету</h4>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Вопрос</th><th>Как спросить</th><th>Зачем</th></tr></thead>
+<tbody>
+<tr>
+<td class="pri"><b>1. Только первый набор</b></td>
+<td>«В CLaBE три набора. Правда ли, что гражданин не-ЕС, живущий за пределами Италии, может подаваться <b>только в первый</b>, 10 февраля — 4 мая? И что мест для таких 32?»</td>
+<td>От этого зависит крайняя дата сдачи SAT. Второй попытки нет</td>
+</tr>
+<tr>
+<td class="pri"><b>2. Их цифра против правил UNIBO</b></td>
+<td>«У вас на сайте по Болонье на 2026/27 указано <b>от 280 675 ₽ в год</b>. По правилам UNIBO для стран вне ОЭСР действует фиксированная ставка €1 000–1 200 плюс €157. Откуда разница — ваша цифра <b>без</b> flat tax?»</td>
+<td>Проверка их компетентности. Расхождение примерно двукратное</td>
+</tr>
+<tr>
+<td><b>3. Год Никосии за 12-летку</b></td>
+<td>«Российский аттестат за 11 классов плюс законченный курс кипрского вуза — закрывает требование о двенадцати годах? Были такие случаи?»</td>
+<td>Общий вопрос для обоих вузов, но ответ может отличаться</td>
+</tr>
+<tr>
+<td><b>4. Проходной балл SAT</b></td>
+<td>«Какой балл SAT реально проходил на эти 32 места в прошлые годы?»</td>
+<td>Минимума нет, отбор рейтинговый — цифра нужна для цели подготовки</td>
+</tr>
+<tr>
+<td><b>5. Вход в ER.GO без SPID</b></td>
+<td>«Подавать на стипендию буду по логину университета, без SPID. Сколько по вашей практике занимает проверка личности и задерживает ли она выплату?»</td>
+<td>Бандо говорит, что выплата приостанавливается, но срока не называет</td>
+</tr>
+<tr>
+<td><b>6. Документы о доходах через портал</b></td>
+<td>«Документы о доходах загружаются в Dossier Utente до 24 августа, перевод обязательно на итальянский. Кто у вас делает такие переводы и сколько это занимает?»</td>
+<td>Срок на 11 дней раньше туринского, и перевод нужен другой</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="note hot">
+<span class="lbl">Красный флаг именно по Болонье</span>
+<p>Если скажут, что <b>жильё в Болонье стоит от 1 212 516 ₽ в год</b> — это цифра с их же сайта, и она означает €1 000 в месяц. Реальная комната <b>€350–450</b>, место в общежитии ER.GO <b>€272–352</b>. Завышено втрое.</p>
+<p>Если назовут эту сумму как норму, значит они считают полный пакет с их услугами, а не стоимость жизни. Уточни, что именно входит.</p>
+</div>
+
+<footer>
+<p>Источники: Bando di concorso benefici DSU ER.GO a.a. 2026/2027 — Sezione I Norme Generali (разделы 2.3, 2.3.1, 2.3.2, ст. 7, 13, 14), Sezione II Borse di Studio (ст. 2, 5, 6, 12, 13), Scadenze; unibo.it — Tassa fissa agevolata per cittadini di Paesi non-UE non appartenenti all'OCSE, Sistema di calcolo delle tasse a.a. 2026/27; corsi.unibo.it/1cycle/CLaBE/how-to-enrol; t-j.ru; globaldialog.ru; studiareinitalia.ru.</p>
+<p>Все цифры за 2026/27. Бандо на 2027/28 выйдет в июне 2027 — пороги и суммы индексируются ежегодно.</p>
+<p>Часть плана: <a href="https://alex-italy-hub.netlify.app">указатель документов</a> · <a href="https://alex-turin-full.netlify.app">Турин: полная сводка</a> · <a href="https://alex-bologna-simple.netlify.app">Болонья коротко</a> · <a href="https://alex-italy-turin-bologna.netlify.app">сравнение городов</a></p>
+</footer>
+
+</div>
+<script>(function(){function l(){document.querySelectorAll('table').forEach(function(t){
+var h=[].map.call(t.querySelectorAll('thead th'),function(x){return (x.textContent||'').replace(/\s+/g,' ').trim()});
+if(!h.length)return;[].forEach.call(t.querySelectorAll('tbody tr'),function(r){[].forEach.call(r.cells,function(c,i){
+if(h[i]&&!c.hasAttribute('data-l'))c.setAttribute('data-l',h[i])})})})}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',l);else l();})();</script>
+</body>
+</html>

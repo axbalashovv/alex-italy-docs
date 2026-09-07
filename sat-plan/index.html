@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SAT: план подготовки</title>
+<style>
+:root{--bg:#fbfaf8;--ink:#1a1a1a;--muted:#6b6864;--rule:#dedad4;--accent:#8a5a2b;--max:820px}
+@media (prefers-color-scheme:dark){:root{--bg:#141312;--ink:#e8e4de;--muted:#918b83;--rule:#2f2c29;--accent:#c99a63}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 Georgia,"Times New Roman",serif;padding:0 24px 100px}
+.wrap{max-width:var(--max);margin:0 auto}
+header{padding:70px 0 0}
+h1{font-size:30px;line-height:1.22;font-weight:400;margin:0 0 14px}
+.sub{color:var(--muted);font-size:15px;line-height:1.55;margin:0 0 8px}
+hr{border:0;border-top:1px solid var(--rule);margin:38px 0}
+h2{font-size:12.5px;font-weight:400;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);margin:48px 0 6px;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+h3{font-size:23px;font-weight:400;line-height:1.32;margin:0 0 18px}
+h4{font-size:17px;font-weight:700;margin:24px 0 9px}
+p{margin:0 0 15px}
+ul,ol{margin:0 0 15px;padding-left:22px}
+li{margin:0 0 7px}
+a{color:var(--accent)}
+nav.toc{margin:34px 0 0}
+nav.toc ol{list-style:none;margin:0;padding:0;counter-reset:s}
+nav.toc>ol>li{counter-increment:s;border-top:1px solid var(--rule);padding:10px 0}
+nav.toc>ol>li:last-child{border-bottom:1px solid var(--rule)}
+nav.toc a{color:var(--ink);text-decoration:none;display:flex;gap:14px;align-items:baseline}
+nav.toc a:hover{color:var(--accent)}
+nav.toc a::before{content:counter(s);color:var(--muted);font-size:13px;min-width:18px;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+nav.toc .t{flex:1}
+nav.toc .n{color:var(--muted);font-size:13px;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+.note{border-left:2px solid var(--accent);padding:2px 0 2px 18px;margin:0 0 20px}
+.note p:last-child{margin-bottom:0}
+.tablewrap{overflow-x:auto;margin:0 0 20px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:14.5px;line-height:1.48}
+th{text-align:left;font-weight:400;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--ink);padding:0 13px 7px 0;vertical-align:bottom;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+td{border-bottom:1px solid var(--rule);padding:10px 13px 10px 0;vertical-align:top}
+td:last-child,th:last-child{padding-right:0}
+.num{white-space:nowrap;font-variant-numeric:tabular-nums}
+.uni{font-weight:700}
+footer{margin-top:58px;padding-top:20px;border-top:1px solid var(--rule);color:var(--muted);font-size:14px;line-height:1.6}
+@media (max-width:820px){body{font-size:16px;padding:0 16px 74px}header{padding-top:42px}h1{font-size:24px}h3{font-size:19px}table{min-width:560px;font-size:14px}}
+</style><style>
+.gloss{margin:0 0 22px}
+.gloss dt{font-weight:700;margin:16px 0 3px;font-size:16px}
+.gloss dd{margin:0 0 0 0;color:var(--muted);font-size:15.5px;line-height:1.5}
+.lead{font-size:17px;margin:0 0 16px}
+.after{border-left:2px solid var(--accent);padding:2px 0 2px 18px;margin:16px 0 26px;font-size:15.5px}
+.after b{color:var(--ink)}
+.big{font-size:20px;font-weight:700}
+table.simple{min-width:0}
+table.simple td{padding:12px 16px 12px 0}
+.step{color:var(--muted);font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;
+ font-family:-apple-system,BlinkMacSystemFont,sans-serif;margin:0 0 6px}
+</style>
+<style>
+.wk{border-left:2px solid var(--accent);padding:2px 0 2px 18px;margin:0 0 24px}
+.wk h4{margin:0 0 4px}
+ol.seq{list-style:none;counter-reset:q;padding:0;margin:0 0 20px}
+ol.seq>li{counter-increment:q;border-top:1px solid var(--rule);padding:12px 0 12px 40px;position:relative}
+ol.seq>li:last-child{border-bottom:1px solid var(--rule)}
+ol.seq>li::before{content:counter(q);position:absolute;left:0;top:12px;color:var(--muted);
+  font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:13px}
+.pri{color:var(--accent);font-weight:700}
+</style>
+
+
+<style id="sem">
+.lbl{display:block;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,sans-serif;
+  font-size:11px;letter-spacing:.09em;text-transform:uppercase;font-weight:600;
+  color:var(--muted);margin:0 0 8px;line-height:1.35}
+.note .lbl + p{margin-top:0}
+.note.hot{border-left-color:#9c3328}
+.note.hot .lbl{color:#9c3328}
+.note.good{border-left-color:#3f6b4a}
+.note.good .lbl{color:#3f6b4a}
+td.pri{color:var(--accent)}
+th{white-space:nowrap}
+@media (max-width:700px){
+  .lbl{margin-bottom:6px}
+  th{white-space:normal}
+  .tablewrap td.pri::before,.scroll td.pri::before{color:var(--muted)}
+}
+</style>
+<style id="mob">
+@media (max-width:700px){
+  .tablewrap,.scroll{overflow-x:visible !important}
+  .tablewrap table,.scroll table{min-width:0 !important;display:block;font-size:15px}
+  .tablewrap thead,.scroll thead{display:none}
+  .tablewrap tbody,.tablewrap tr,.tablewrap td,
+  .scroll tbody,.scroll tr,.scroll td{display:block;width:100%}
+  .tablewrap tr,.scroll tr{border-bottom:1px solid var(--ink,var(--fg));padding:15px 0 13px}
+  .tablewrap tr:last-child,.scroll tr:last-child{border-bottom:0}
+  .tablewrap td,.scroll td{border:0 !important;padding:5px 0 !important;line-height:1.5}
+  .tablewrap td:empty,.scroll td:empty{display:none}
+  .tablewrap td::before,.scroll td::before{
+    content:attr(data-l);display:block;font-size:11px;letter-spacing:.07em;text-transform:uppercase;
+    color:var(--muted,var(--mut));margin-bottom:2px;
+    font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+  .tablewrap td:first-child::before,.scroll td:first-child::before{display:none}
+  .tablewrap td:first-child,.scroll td:first-child{
+    font-weight:700;font-size:17px;line-height:1.32;margin-bottom:7px}
+  .num{white-space:normal !important}
+  nav.toc a{flex-wrap:wrap}
+  nav.toc .n{margin-left:32px;width:100%;text-align:left;margin-top:2px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>SAT: план подготовки</h1>
+  <p class="sub">28 августа 2026. Под конкретный профиль: английский свободный, математику надо восстанавливать с нуля. Первая сдача — ноябрь 2026, последняя — март 2027.</p>
+  <nav class="toc">
+    <ol>
+      <li><a href="#a"><span class="t">Что это за экзамен</span><span class="n">точное название</span></a></li>
+      <li><a href="#b"><span class="t">Какой балл нужен именно тебе</span><span class="n">важнее всего</span></a></li>
+      <li><a href="#c"><span class="t">Математика: что учить и в каком порядке</span><span class="n">четыре раздела</span></a></li>
+      <li><a href="#voc"><span class="t">Вся математика с переводом</span><span class="n">термины</span></a></li>
+      <li><a href="#d"><span class="t">Английский: четыре раздела</span><span class="n">формат, не язык</span></a></li>
+      <li><a href="#e"><span class="t">Где учиться</span><span class="n">видео и курсы</span></a></li>
+      <li><a href="#f"><span class="t">Приложения на телефон</span><span class="n">решать в очереди</span></a></li>
+      <li><a href="#cards"><span class="t">Карточки: готовая колода</span><span class="n">107 штук</span></a></li>
+      <li><a href="#g"><span class="t">Где мерить балл</span><span class="n">пробники</span></a></li>
+      <li><a href="#h"><span class="t">График по неделям</span><span class="n">сентябрь — март</span></a></li>
+      <li><a href="#i"><span class="t">Лайфхаки и нюансы</span><span class="n">что даёт баллы</span></a></li>
+    </ol>
+  </nav>
+</header>
+
+<hr>
+
+<h2 id="a">Экзамен</h2>
+<h3>Точное название и как устроен</h3>
+
+<p class="lead">Полное название — <b>Digital SAT</b>, часть SAT Suite of Assessments от College Board. Бумажной версии больше нет. Сдаётся на своём ноутбуке в приложении <b>Bluebook</b>.</p>
+
+<div class="tablewrap">
+<table class="simple">
+<thead><tr><th>Параметр</th><th>Значение</th></tr></thead>
+<tbody>
+<tr><td>Секций</td><td>2: Reading and Writing, Math</td></tr>
+<tr><td>Модулей</td><td>4 — по два в каждой секции</td></tr>
+<tr><td>Вопросов</td><td>98</td></tr>
+<tr><td>Время</td><td><b>2 часа 14 минут</b></td></tr>
+<tr><td>Reading and Writing</td><td>54 вопроса, 64 минуты (2 × 32)</td></tr>
+<tr><td>Math</td><td>44 вопроса, 70 минут (2 × 35)</td></tr>
+<tr><td>Шкала</td><td>400–1600, по 200–800 за секцию</td></tr>
+<tr><td>Эссе</td><td>отменено навсегда с 2024 года</td></tr>
+<tr><td>Стоимость</td><td><b>$111</b> для международных ($68 + $43 надбавка)</td></tr>
+</tbody>
+</table>
+</div>
+
+<h4>Адаптивность — главная особенность</h4>
+
+<p>Первый модуль каждой секции одинаковый у всех: смесь лёгких, средних и сложных вопросов. <b>По результату первого модуля тебе выдают второй</b> — либо простой, либо сложный.</p>
+
+<div class="after">
+<b>Из этого следует важное.</b> Одинаковое число правильных ответов даёт <b>разный балл</b> в зависимости от того, какой второй модуль тебе достался. Попасть на сложный модуль и решить его наполовину лучше, чем попасть на простой и решить целиком.<br><br>
+Практически: <b>первый модуль важнее второго</b>. Он определяет твой потолок. Силы надо распределять так, чтобы не сдуться на нём.
+</div>
+
+<hr>
+
+<h2 id="b">Цель</h2>
+<h3>Какой балл нужен именно тебе</h3>
+
+<p class="lead">Это самое важное в плане, и здесь хорошая новость. Мы обсуждали 1400 — но твоим вузам столько не нужно.</p>
+
+<div class="tablewrap">
+<table class="simple">
+<thead><tr><th>Университет</th><th class="num">Нужно</th><th>Как устроено</th></tr></thead>
+<tbody>
+<tr><td><b>Триест</b></td><td class="num big">800</td><td>Порог, дальше не смотрят. Это <b>средний балл по миру</b></td></tr>
+<tr><td><b>Ка' Фоскари, Венеция</b></td><td class="num big">880</td><td>Порог. Освобождает от вступительного теста целиком</td></tr>
+<tr><td><b>Болонья</b></td><td class="num">минимума нет</td><td>Чистый рейтинг на 32 места. Чем выше, тем лучше</td></tr>
+<tr><td><b>Турин</b></td><td class="num">минимума нет</td><td>Рейтинг на 40 мест. Математика ниже 400 не отсеивает</td></tr>
+<tr><td>Bocconi</td><td class="num">1040</td><td>И не ниже 520 по каждой секции отдельно</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="after">
+<b>Реалистичная цель — 1100–1250.</b> Это гарантирует Триест и Ка' Фоскари с запасом и даёт приличную позицию в рейтингах Болоньи и Турина.<br><br>
+При свободном английском <b>650–700 за Reading and Writing достижимы почти без подготовки</b> — там проверяется не язык, а умение работать с форматом. Значит по математике достаточно <b>450–550</b>, а это уровень школьной программы без высшей математики.<br><br>
+<b>1400 не нужны никому из твоего списка.</b> Гнаться за ними — тратить месяцы на разницу, которая ничего не решает.
+</div>
+
+<hr>
+
+<h2 id="c">Математика</h2>
+<h3>Что учить и в каком порядке</h3>
+
+<p class="lead">44 вопроса, четыре раздела. Порядок изучения не совпадает с порядком в списке — учить надо по весу, а не по алфавиту.</p>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Раздел</th><th class="num">Доля</th><th class="num">Вопросов</th><th>Приоритет</th></tr></thead>
+<tbody>
+<tr><td><b>Algebra</b></td><td class="num">35%</td><td class="num">13–15</td><td class="pri">Первый. База для всего остального</td></tr>
+<tr><td><b>Advanced Math</b></td><td class="num">35%</td><td class="num">13–15</td><td class="pri">Второй. Вместе с алгеброй это 70% секции</td></tr>
+<tr><td><b>Problem-Solving and Data Analysis</b></td><td class="num">15%</td><td class="num">5–7</td><td>Третий. Проценты и пропорции — быстрые баллы</td></tr>
+<tr><td><b>Geometry and Trigonometry</b></td><td class="num">15%</td><td class="num">5–7</td><td>Последний. Формулы даются в справке на экзамене</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="after">
+<b>Алгебра и Advanced Math дают 70% секции.</b> Если восстановить только их и решать уверенно, получается около 550 даже при нуле в геометрии. Твоей цели этого хватает с запасом.
+</div>
+
+<h4>Раздел 1 — Algebra, что конкретно</h4>
+<ul>
+<li>Линейные уравнения с одной переменной</li>
+<li>Линейные уравнения с двумя переменными</li>
+<li>Линейные функции: что такое наклон и точка пересечения</li>
+<li>Системы двух линейных уравнений</li>
+<li>Линейные неравенства с одной и двумя переменными</li>
+</ul>
+
+<p>Перед этим придётся восстановить арифметику: дроби, отрицательные числа, порядок действий, раскрытие скобок. Без этого линейные уравнения не пойдут.</p>
+
+<h4>Раздел 2 — Advanced Math</h4>
+<ul>
+<li>Эквивалентные выражения: разложение на множители, упрощение</li>
+<li>Квадратные уравнения и нелинейные системы</li>
+<li>Нелинейные функции: параболы, экспоненты, графики</li>
+</ul>
+
+<h4>Раздел 3 — Problem-Solving and Data Analysis</h4>
+<ul>
+<li>Отношения, доли, пропорции, единицы измерения</li>
+<li><b>Проценты</b> — самая частая тема раздела</li>
+<li>Одномерные данные: среднее, медиана, мода, размах</li>
+<li>Двумерные данные: диаграммы рассеяния, линии тренда</li>
+<li>Вероятность, в том числе условная</li>
+<li>Выборки, погрешность, оценка статистических утверждений</li>
+</ul>
+
+<h4>Раздел 4 — Geometry and Trigonometry</h4>
+<ul>
+<li>Площади и объёмы</li>
+<li>Прямые, углы, треугольники</li>
+<li>Прямоугольные треугольники и тригонометрия: синус, косинус, тангенс</li>
+<li>Окружности</li>
+</ul>
+
+<hr>
+
+<h2 id="voc">Словарь</h2>
+<h3>Вся математика с английскими формулировками</h3>
+
+<p class="lead">Учи темы по-русски, но <b>термин запоминай сразу на английском</b>. На экзамене никакого русского не будет, а половина потерь у русскоязычных — не незнание темы, а непонимание вопроса.</p>
+
+<h4>Раздел 1 — Algebra · Алгебра</h4>
+
+<div class="tablewrap">
+<table class="simple">
+<thead><tr><th>Тема по-русски</th><th>Как называется на экзамене</th></tr></thead>
+<tbody>
+<tr><td>Линейные уравнения с одной переменной</td><td>Linear equations in one variable</td></tr>
+<tr><td>Линейные уравнения с двумя переменными</td><td>Linear equations in two variables</td></tr>
+<tr><td>Линейные функции</td><td>Linear functions</td></tr>
+<tr><td>Системы двух линейных уравнений</td><td>Systems of two linear equations in two variables</td></tr>
+<tr><td>Линейные неравенства</td><td>Linear inequalities in one or two variables</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tablewrap">
+<table class="simple">
+<thead><tr><th>Термин</th><th>По-русски</th></tr></thead>
+<tbody>
+<tr><td><b>slope</b></td><td>угловой коэффициент, наклон прямой</td></tr>
+<tr><td><b>y-intercept</b></td><td>точка пересечения с осью Y, свободный член</td></tr>
+<tr><td><b>x-intercept</b></td><td>точка пересечения с осью X, корень</td></tr>
+<tr><td><b>variable</b></td><td>переменная</td></tr>
+<tr><td><b>coefficient</b></td><td>коэффициент</td></tr>
+<tr><td><b>constant</b></td><td>постоянная, свободный член</td></tr>
+<tr><td><b>expression</b></td><td>выражение (без знака равно)</td></tr>
+<tr><td><b>equation</b></td><td>уравнение (со знаком равно)</td></tr>
+<tr><td><b>inequality</b></td><td>неравенство</td></tr>
+<tr><td><b>solution</b></td><td>решение, корень</td></tr>
+<tr><td><b>substitution</b></td><td>метод подстановки</td></tr>
+<tr><td><b>elimination</b></td><td>метод сложения и вычитания</td></tr>
+<tr><td><b>parallel / perpendicular</b></td><td>параллельные / перпендикулярные</td></tr>
+<tr><td><b>no solution</b></td><td>решений нет</td></tr>
+<tr><td><b>infinitely many solutions</b></td><td>бесконечно много решений</td></tr>
+</tbody>
+</table>
+</div>
+
+<h4>Раздел 2 — Advanced Math · Продвинутая математика</h4>
+
+<div class="tablewrap">
+<table class="simple">
+<thead><tr><th>Тема по-русски</th><th>Как называется на экзамене</th></tr></thead>
+<tbody>
+<tr><td>Эквивалентные выражения</td><td>Equivalent expressions</td></tr>
+<tr><td>Нелинейные уравнения и системы</td><td>Nonlinear equations in one variable and systems of equations in two variables</td></tr>
+<tr><td>Нелинейные функции</td><td>Nonlinear functions</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tablewrap">
+<table class="simple">
+<thead><tr><th>Термин</th><th>По-русски</th></tr></thead>
+<tbody>
+<tr><td><b>quadratic</b></td><td>квадратный, квадратное уравнение</td></tr>
+<tr><td><b>to factor / factoring</b></td><td>разложить на множители / разложение</td></tr>
+<tr><td><b>factor</b> (существительное)</td><td>множитель</td></tr>
+<tr><td><b>to expand</b></td><td>раскрыть скобки</td></tr>
+<tr><td><b>to simplify</b></td><td>упростить</td></tr>
+<tr><td><b>roots / zeros</b></td><td>корни / нули функции</td></tr>
+<tr><td><b>vertex</b></td><td>вершина параболы</td></tr>
+<tr><td><b>parabola</b></td><td>парабола</td></tr>
+<tr><td><b>discriminant</b></td><td>дискриминант</td></tr>
+<tr><td><b>exponent</b></td><td>показатель степени</td></tr>
+<tr><td><b>exponential growth / decay</b></td><td>показательный рост / убывание</td></tr>
+<tr><td><b>polynomial</b></td><td>многочлен</td></tr>
+<tr><td><b>square root</b></td><td>квадратный корень</td></tr>
+<tr><td><b>absolute value</b></td><td>модуль числа</td></tr>
+<tr><td><b>domain / range</b></td><td>область определения / область значений</td></tr>
+<tr><td><b>f(x)</b></td><td>«эф от икс», значение функции</td></tr>
+<tr><td><b>to satisfy the equation</b></td><td>удовлетворять уравнению, быть его корнем</td></tr>
+</tbody>
+</table>
+</div>
+
+<h4>Раздел 3 — Problem-Solving and Data Analysis · Задачи и данные</h4>
+
+<div class="tablewrap">
+<table class="simple">
+<thead><tr><th>Тема по-русски</th><th>Как называется на экзамене</th></tr></thead>
+<tbody>
+<tr><td>Отношения, темпы, пропорции, единицы</td><td>Ratios, rates, proportional relationships, and units</td></tr>
+<tr><td>Проценты</td><td>Percentages</td></tr>
+<tr><td>Одномерные данные: среднее и разброс</td><td>One-variable data: distributions and measures of center and spread</td></tr>
+<tr><td>Двумерные данные и диаграммы рассеяния</td><td>Two-variable data: models and scatterplots</td></tr>
+<tr><td>Вероятность и условная вероятность</td><td>Probability and conditional probability</td></tr>
+<tr><td>Выводы по выборке и погрешность</td><td>Inference from sample statistics and margin of error</td></tr>
+<tr><td>Оценка статистических утверждений</td><td>Evaluating statistical claims</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tablewrap">
+<table class="simple">
+<thead><tr><th>Термин</th><th>По-русски</th></tr></thead>
+<tbody>
+<tr><td><b>ratio</b></td><td>отношение</td></tr>
+<tr><td><b>rate</b></td><td>темп, скорость, норма</td></tr>
+<tr><td><b>proportion</b></td><td>пропорция</td></tr>
+<tr><td><b>percent increase / decrease</b></td><td>увеличение / уменьшение в процентах</td></tr>
+<tr><td><b>mean</b></td><td>среднее арифметическое</td></tr>
+<tr><td><b>median</b></td><td>медиана</td></tr>
+<tr><td><b>mode</b></td><td>мода</td></tr>
+<tr><td><b>range</b> (в статистике)</td><td>размах</td></tr>
+<tr><td><b>standard deviation</b></td><td>стандартное отклонение</td></tr>
+<tr><td><b>distribution</b></td><td>распределение</td></tr>
+<tr><td><b>outlier</b></td><td>выброс, резко отклоняющееся значение</td></tr>
+<tr><td><b>scatterplot</b></td><td>диаграмма рассеяния</td></tr>
+<tr><td><b>line of best fit</b></td><td>линия наилучшего приближения, тренд</td></tr>
+<tr><td><b>probability</b></td><td>вероятность</td></tr>
+<tr><td><b>sample</b></td><td>выборка</td></tr>
+<tr><td><b>margin of error</b></td><td>погрешность</td></tr>
+<tr><td><b>frequency</b></td><td>частота</td></tr>
+<tr><td><b>random selection</b></td><td>случайный отбор</td></tr>
+</tbody>
+</table>
+</div>
+
+<h4>Раздел 4 — Geometry and Trigonometry · Геометрия</h4>
+
+<div class="tablewrap">
+<table class="simple">
+<thead><tr><th>Тема по-русски</th><th>Как называется на экзамене</th></tr></thead>
+<tbody>
+<tr><td>Площади и объёмы</td><td>Area and volume</td></tr>
+<tr><td>Прямые, углы и треугольники</td><td>Lines, angles, and triangles</td></tr>
+<tr><td>Прямоугольные треугольники и тригонометрия</td><td>Right triangles and trigonometry</td></tr>
+<tr><td>Окружности</td><td>Circles</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tablewrap">
+<table class="simple">
+<thead><tr><th>Термин</th><th>По-русски</th></tr></thead>
+<tbody>
+<tr><td><b>area / perimeter</b></td><td>площадь / периметр</td></tr>
+<tr><td><b>volume / surface area</b></td><td>объём / площадь поверхности</td></tr>
+<tr><td><b>angle</b></td><td>угол</td></tr>
+<tr><td><b>vertical angles</b></td><td>вертикальные углы</td></tr>
+<tr><td><b>supplementary angles</b></td><td>смежные, в сумме 180°</td></tr>
+<tr><td><b>complementary angles</b></td><td>дополнительные, в сумме 90°</td></tr>
+<tr><td><b>congruent</b></td><td>равные, конгруэнтные</td></tr>
+<tr><td><b>similar</b></td><td>подобные</td></tr>
+<tr><td><b>right triangle</b></td><td>прямоугольный треугольник</td></tr>
+<tr><td><b>hypotenuse / leg</b></td><td>гипотенуза / катет</td></tr>
+<tr><td><b>Pythagorean theorem</b></td><td>теорема Пифагора</td></tr>
+<tr><td><b>sine, cosine, tangent</b></td><td>синус, косинус, тангенс</td></tr>
+<tr><td><b>circle</b></td><td>окружность, круг</td></tr>
+<tr><td><b>radius / diameter</b></td><td>радиус / диаметр</td></tr>
+<tr><td><b>circumference</b></td><td>длина окружности</td></tr>
+<tr><td><b>chord / arc / sector</b></td><td>хорда / дуга / сектор</td></tr>
+<tr><td><b>central angle</b></td><td>центральный угол</td></tr>
+<tr><td><b>tangent line</b></td><td>касательная</td></tr>
+</tbody>
+</table>
+</div>
+
+<h4>Формулировки самих вопросов</h4>
+
+<p>Вот это стоит выучить наизусть. Темы можно знать, но потерять баллы, не поняв, о чём спрашивают.</p>
+
+<div class="tablewrap">
+<table class="simple">
+<thead><tr><th>Формулировка</th><th>Что от тебя хотят</th></tr></thead>
+<tbody>
+<tr><td><b>Which of the following is equivalent to…</b></td><td>Что из перечисленного равно этому выражению</td></tr>
+<tr><td><b>What is the value of x?</b></td><td>Чему равен x</td></tr>
+<tr><td><b>In terms of x</b></td><td>Выразить через x, ответ должен содержать x</td></tr>
+<tr><td><b>Which of the following best describes…</b></td><td>Что точнее всего описывает</td></tr>
+<tr><td><b>How many solutions does the system have?</b></td><td>Сколько решений у системы</td></tr>
+<tr><td><b>What is the sum / product of…</b></td><td>Чему равна сумма / произведение</td></tr>
+<tr><td><b>Round to the nearest hundredth</b></td><td>Округлить до сотых</td></tr>
+<tr><td><b>Approximately</b></td><td>Приблизительно, ответ округлённый</td></tr>
+<tr><td><b>At most / at least</b></td><td>Не более / не менее</td></tr>
+<tr><td><b>Consecutive integers</b></td><td>Последовательные целые числа</td></tr>
+<tr><td><b>Respectively</b></td><td>Соответственно, в том же порядке</td></tr>
+<tr><td><b>Twice / three times as many</b></td><td>Вдвое / втрое больше</td></tr>
+<tr><td><b>Increased by 20 percent</b></td><td>Увеличено на 20 процентов</td></tr>
+<tr><td><b>Is directly proportional to</b></td><td>Прямо пропорционально</td></tr>
+<tr><td><b>Is inversely proportional to</b></td><td>Обратно пропорционально</td></tr>
+<tr><td><b>Per</b></td><td>На единицу: за час, за штуку, на человека</td></tr>
+<tr><td><b>The graph of the function</b></td><td>График функции</td></tr>
+<tr><td><b>Represents</b></td><td>Задаёт, описывает, соответствует</td></tr>
+<tr><td><b>Given that…</b></td><td>Известно, что</td></tr>
+<tr><td><b>Assuming…</b></td><td>При условии, что</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="after">
+<b>Как этим пользоваться.</b> Не заучивать списком. Держи страницу открытой, пока решаешь задачи на Khan Academy, и сверяйся при каждом непонятном слове. Через две-три недели практики они осядут сами.<br><br>
+<b>Слова-ловушки:</b> <b>range</b> в алгебре это область значений, а в статистике — размах. <b>Factor</b> — и множитель, и глагол «разложить». <b>Tangent</b> — и тангенс, и касательная. Смотреть по контексту раздела.
+</div>
+
+<div class="note">
+<p><b>Формулы для геометрии выдаются на экзамене</b> — есть справочный лист прямо в интерфейсе. Заучивать площади и объёмы не надо, надо понимать, что куда подставлять.</p>
+</div>
+
+<hr>
+
+<h2 id="d">Английский</h2>
+<h3>Четыре раздела — но проверяют не язык</h3>
+
+<p class="lead">Здесь у тебя преимущество, но его надо конвертировать. Секция проверяет не владение языком, а умение работать с конкретными типами заданий. Носители языка регулярно получают средние баллы просто потому, что не знают формат.</p>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Раздел</th><th class="num">Доля</th><th>Что спрашивают</th><th>Тебе</th></tr></thead>
+<tbody>
+<tr><td><b>Craft and Structure</b></td><td class="num">28%</td><td>Значение слов в контексте, назначение текста, связь двух текстов</td><td>Легко</td></tr>
+<tr><td><b>Information and Ideas</b></td><td class="num">26%</td><td>Главная мысль, вывод из текста, подтверждение цитатой, работа с графиком</td><td>Легко, кроме заданий с графиками</td></tr>
+<tr><td><b>Standard English Conventions</b></td><td class="num">26%</td><td>Грамматика и пунктуация: согласование, запятые, двоеточия, тире</td><td class="pri">Здесь и надо готовиться</td></tr>
+<tr><td><b>Expression of Ideas</b></td><td class="num">20%</td><td>Переходы между предложениями, объединение заметок в одно предложение под заданную цель</td><td class="pri">Формат непривычный</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="after">
+<b>Вся подготовка по английскому сводится к двум разделам:</b> пунктуация и «Expression of Ideas».<br><br>
+Пунктуация — это конечный набор правил: когда запятая, когда точка с запятой, когда двоеточие, когда тире. Учится за несколько вечеров и даёт около четверти секции.<br><br>
+«Expression of Ideas» — задания вида «даны заметки, выбери предложение, которое выполняет такую-то цель». Это чистый формат, нигде кроме SAT не встречается. Разбирается практикой, не теорией.
+</div>
+
+<p>Каждый текст в секции — <b>25–150 слов</b>, к нему один вопрос. Длинных отрывков нет. Читать надо быстро и по одному разу.</p>
+
+<hr>
+
+<h2 id="e">Где учиться</h2>
+<h3>Видео и курсы</h3>
+
+<h4>Основа — официальные, бесплатные</h4>
+
+<div class="tablewrap">
+<table class="simple">
+<thead><tr><th>Ресурс</th><th>Что даёт</th></tr></thead>
+<tbody>
+<tr><td><b>Khan Academy</b><br><small>khanacademy.org/sat</small></td><td>Официальный партнёр College Board. Полный курс по всем темам, видео с разбором, восемь пробных тестов. <b>Бесплатно.</b> Для восстановления математики с нуля — основной инструмент</td></tr>
+<tr><td><b>Bluebook</b><br><small>приложение College Board</small></td><td>То самое приложение, в котором сдаёшь. Шесть полных пробников на настоящих вопросах прошлых лет, интерфейс идентичен экзаменационному</td></tr>
+<tr><td><b>Question Bank</b><br><small>satsuite.collegeboard.org</small></td><td>Официальный банк заданий с фильтрами по разделам и сложности. Можно тренировать конкретную тему</td></tr>
+</tbody>
+</table>
+</div>
+
+<h4>Видео на английском</h4>
+
+<ul>
+<li><b>Khan Academy</b> — систематический курс, от арифметики вверх. Скучно, но полно</li>
+<li><b>SupertutorTV</b> — разборы стратегий и типов заданий</li>
+<li><b>Scalar Learning</b>, <b>The Test Tutor</b> — пошаговые разборы задач Digital SAT</li>
+<li>Официальный канал <b>College Board</b> — короткие ролики про формат и Bluebook</li>
+</ul>
+
+<h4>На русском</h4>
+
+<p>Полноценных бесплатных курсов на русском мало, но есть:</p>
+
+<ul>
+<li><b>SAT Academy RU</b> — сайт и Telegram-канал с разборами и лайфхаками</li>
+<li><b>Pro Math Online</b> — курс с объяснениями на русском и переводом математической терминологии. Это отдельная ценность: половина трудности в SAT-математике для русскоязычного — незнакомые английские формулировки</li>
+<li><b>SMARTESTPREP</b> — курс по Digital SAT с материалами по официальным гайдам College Board</li>
+</ul>
+
+<div class="after">
+<b>Рекомендация по языку обучения.</b> Теорию математики бери на русском — восстанавливать забытое проще на родном. А <b>решай задачи только на английском</b>, с самого начала. Иначе на экзамене выяснится, что ты знаешь тему, но не понимаешь формулировку вопроса.
+</div>
+
+<hr>
+
+<h2 id="f">Приложения</h2>
+<h3>Чтобы решать в телефоне вместо ленты</h3>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Приложение</th><th>Для чего</th><th>Цена</th></tr></thead>
+<tbody>
+<tr><td><b>Bluebook</b></td><td>Официальное. Полные пробники, настоящий интерфейс экзамена. <b>Обязательно</b></td><td>бесплатно</td></tr>
+<tr><td><b>Khan Academy</b></td><td>Весь курс и видео с телефона. Основной инструмент для теории</td><td>бесплатно</td></tr>
+<tr><td><b>Daily Practice</b><br><small>The Princeton Review</small></td><td><b>Ближе всего к тому, что ты просил.</b> Пятиминутные упражнения по одному грамматическому правилу за раз, с объяснением сразу. Идеально для очереди и метро</td><td>бесплатно</td></tr>
+<tr><td><b>UWorld SAT</b></td><td>Лучший платный банк заданий с подробными разборами каждого варианта ответа</td><td>платно</td></tr>
+<tr><td><b>Magoosh SAT</b></td><td>Видеоуроки плюс задачи, бюджетный вариант</td><td>платно</td></tr>
+<tr><td>Linus Study, Preptly</td><td>Короткие уроки, задачи, ежедневные цели, трекинг</td><td>условно бесплатно</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note">
+<p><b>Минимальный набор:</b> Bluebook для пробников, Khan Academy для теории, Daily Practice для телефона. Три бесплатных приложения покрывают всё. Платное имеет смысл, только если после двух месяцев упрёшься в потолок.</p>
+</div>
+
+<hr>
+
+<h2 id="cards">Карточки</h2>
+<h3>Чтобы термины осели без усилий</h3>
+
+<p class="lead">Это то, что ты имел в виду про Duolingo: короткие подходы по несколько минут, приложение само решает, что тебе показать сегодня. Работает на терминах и правилах, не на задачах.</p>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Приложение</th><th>Что даёт</th><th>Цена</th></tr></thead>
+<tbody>
+<tr>
+<td><b>Anki</b></td>
+<td>Настоящее интервальное повторение: алгоритм показывает слово ровно тогда, когда ты вот-вот его забудешь. Десять-пятнадцать минут в день, запоминание жёсткое. Есть готовые чужие колоды по SAT</td>
+<td>бесплатно на Android и в браузере, разово платно на iPhone</td>
+</tr>
+<tr>
+<td><b>Quizlet</b></td>
+<td>Самый простой вход, красивый интерфейс, много готовых наборов. <b>Но интервального повторения нет</b>, а режим Learn за деньги. Как первый шаг годится, как основной инструмент — нет</td>
+<td>условно бесплатно</td>
+</tr>
+<tr>
+<td><b>Magoosh SAT Flashcards</b></td>
+<td>Готовые колоды по математике и лексике SAT, с примерами и делением по сложности</td>
+<td>бесплатно</td>
+</tr>
+<tr>
+<td><b>MintDeck</b></td>
+<td>Современный алгоритм плюс генерация карточек с примерами. Единственное бесплатное приложение на iPhone, где есть и то и другое</td>
+<td>бесплатно</td>
+</tr>
+<tr>
+<td><b>UWorld Flashcards</b></td>
+<td>Самая продвинутая система с адаптивным повторением, но идёт в комплекте с платной подпиской</td>
+<td>платно</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="note good">
+<span class="lbl">Колода уже готова</span>
+<p>Из словаря выше собрано <b>107 карточек</b> — все математические темы, термины и формулировки вопросов. Файл лежит рядом: <code>sat/SAT-колода.tsv</code></p>
+<p><b>В Quizlet:</b> создать набор → Import → вставить содержимое файла → разделитель между термином и определением поставить <b>Tab</b>, между карточками — <b>новая строка</b>.</p>
+<p><b>В Anki:</b> File → Import → выбрать файл → тип разделителя Tab. Всё.</p>
+<p>Лицевая сторона английская, оборотная русская — так и надо: на экзамене ты видишь английское слово и должен понять его, а не наоборот.</p>
+</div>
+
+<h4>Платные варианты и сколько стоят</h4>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Что</th><th class="num">Цена</th><th>Что за эти деньги</th><th>Тебе надо?</th></tr></thead>
+<tbody>
+<tr>
+<td><b>Anki на iPhone</b></td>
+<td class="num"><b>$25</b><br><small>разово, навсегда</small></td>
+<td>Лучший алгоритм повторения. На Android и в браузере бесплатно, платная только версия для iPhone</td>
+<td class="pri">Да, если у тебя айфон. Единственная покупка, которая окупается сразу</td>
+</tr>
+<tr>
+<td><b>Magoosh SAT</b></td>
+<td class="num"><b>$129</b><br><small>за год</small></td>
+<td>Видеоуроки по всем темам плюс банк задач. Самый дешёвый полноценный курс</td>
+<td>Только если через два месяца упрёшься в потолок по математике</td>
+</tr>
+<tr>
+<td><b>UWorld SAT</b></td>
+<td class="num">$99 месяц<br>$179 три<br><b>$300 полгода</b></td>
+<td>Лучший банк задач с разбором каждого варианта ответа, не только правильного</td>
+<td>Нет. Это инструмент для тех, кто выжимает 1400+</td>
+</tr>
+<tr>
+<td><b>Quizlet Plus</b></td>
+<td class="num">$36 год</td>
+<td>Открывает режим Learn и офлайн</td>
+<td>Нет. Anki делает то же лучше и дешевле</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="after">
+<b>Что покупать в твоём случае.</b> Бесплатного набора — Khan Academy, Bluebook, Anki — хватает на весь путь до 1250. Это не компромисс, это правда: Khan Academy сделан вместе с College Board, Bluebook и есть сам экзамен.<br><br>
+<b>Единственная покупка, которую стоит сделать сразу</b> — Anki за $25, если у тебя айфон. Один платёж навсегда, колода уже готова, и это ровно тот формат «решать в телефоне между делом», который ты хотел.<br><br>
+<b>Magoosh за $129</b> держи в уме как запасной ход. Если к началу ноября математика застрянет ниже 450, видеокурс дешевле репетитора и решит вопрос. Раньше покупать смысла нет — сначала надо выяснить, где именно застреваешь.<br><br>
+<b>UWorld не бери.</b> $300 за полгода имеет смысл при цели 1400+, а тебе нужно 1100–1250 и порог Триеста в 800.
+</div>
+
+<div class="after">
+<b>Как этим пользоваться.</b> Пять-десять минут в день, вместо ленты. Не подряд, а короткими подходами — алгоритм сам подберёт, что показать.<br><br>
+<b>Чего от карточек не ждать.</b> Они дают термины и правила, но не умение решать. Задачи всё равно надо решать руками в Khan Academy и Bluebook. Карточки убирают только один барьер — непонимание формулировок. Для тебя это как раз главный барьер, поэтому эффект будет заметный.
+</div>
+
+<hr>
+
+<h2 id="g">Пробники</h2>
+<h3>Где мерить реальный балл</h3>
+
+<p class="lead">Настоящий балл показывают только официальные пробники. Сторонние приложения свои задачи придумывают, и их «баллы» ни к чему не привязаны.</p>
+
+<ol class="seq">
+<li><b>Bluebook, шесть полных пробников.</b> Настоящие вопросы прошлых экзаменов, адаптивность работает как на настоящем. Балл выдаётся сразу. Это единственный источник, которому можно верить</li>
+<li><b>Khan Academy, восемь пробников.</b> Сделаны в партнёрстве с College Board</li>
+<li><b>Question Bank</b> для отработки отдельных тем, без подсчёта общего балла</li>
+</ol>
+
+<div class="after">
+<b>Сколько пробников тратить.</b> Их всего шесть в Bluebook — ресурс конечный. Первый пиши сейчас как диагностику, дальше по одному раз в три-четыре недели. Прожечь все шесть за месяц бессмысленно: без разбора ошибок они ничего не дают.<br><br>
+<b>Важнее самого балла — разбор.</b> После каждого пробника выписывать каждую ошибку и определять причину: не знал темы, знал но ошибся, не понял формулировку, не хватило времени. Четыре причины лечатся по-разному.
+</div>
+
+<hr>
+
+<h2 id="h">График</h2>
+<h3>Сентябрь 2026 — март 2027</h3>
+
+<div class="note good">
+<span class="lbl">Сначала одно решение про деньги</span>
+<p>Регистрация на <b>3 октября</b> закрывается в середине сентября. Сдавать её смысла нет — за пять недель базу не восстановить, а стоит попытка $111.</p>
+<p>Вместо этого <b>напиши бесплатный пробник в Bluebook</b> на этой неделе. Тот же диагностический эффект, ноль затрат. Реальные попытки — 7 ноября и 5 декабря, март в резерве.</p>
+</div>
+
+<div class="wk">
+<h4>Неделя 1 — сейчас</h4>
+<p>Поставить Bluebook и Khan Academy. Написать первый полный пробник без подготовки — просто чтобы увидеть стартовую точку. Не расстраиваться от результата, он ничего не значит.</p>
+</div>
+
+<div class="wk">
+<h4>Недели 2–7 — сентябрь и начало октября</h4>
+<p><b>Только математика, только база.</b> Арифметика дробей и процентов, отрицательные числа, раскрытие скобок, потом линейные уравнения и системы. Каждый день по часу. Пробники не писать — рано.</p>
+<p>Параллельно 10 минут в день в Daily Practice на пунктуацию.</p>
+</div>
+
+<div class="wk">
+<h4>Недели 8–10 — октябрь</h4>
+<p>Advanced Math: разложение на множители, квадратные уравнения, функции и графики. В конце периода — второй пробник.</p>
+<p>По английскому разобрать формат «Expression of Ideas» — это единственное, что там непривычно.</p>
+</div>
+
+<div class="wk">
+<h4>7 ноября — первая реальная сдача</h4>
+<p>Регистрация закрывается примерно в середине октября. Ожидание — 1000–1100. Это нормально для первой попытки и уже перекрывает порог Триеста.</p>
+</div>
+
+<div class="wk">
+<h4>Недели 11–14 — ноябрь</h4>
+<p>Разбор ошибок первой сдачи. Проценты, пропорции и статистика. Геометрия по остаточному принципу. Третий пробник.</p>
+</div>
+
+<div class="wk">
+<h4>5 декабря — вторая сдача</h4>
+<p>Цель 1150–1250. Скорее всего это и будет твой итоговый результат.</p>
+</div>
+
+<div class="wk">
+<h4>Январь — февраль</h4>
+<p>Если декабрьский балл устраивает — SAT закрыт, переключаешься на документы и подачу. Если нет — добиваешь слабые разделы по разбору ошибок.</p>
+</div>
+
+<div class="wk">
+<h4>6 марта — резерв</h4>
+<p>Последняя возможность. Балл должен <b>дойти</b> до Болоньи к 4 мая, отправка от College Board идёт не мгновенно, так что мартовская дата — это впритык, но проходит.</p>
+</div>
+
+<div class="after">
+<b>Считается лучший результат</b>, а не последний. Плохая попытка ничего не портит. Поэтому сдавать имеет смысл дважды даже при хорошем первом результате.
+</div>
+
+<hr>
+
+<h2 id="i">Лайфхаки</h2>
+<h3>Что реально даёт баллы</h3>
+
+<h4>Desmos — главный рычаг для слабой математики</h4>
+
+<p>В Bluebook встроен графический калькулятор <b>Desmos</b>, доступный на <b>всей</b> математической секции. Это не обычный калькулятор — он строит графики.</p>
+
+<div class="after">
+Множество задач решается <b>без алгебры вообще</b>: вбиваешь уравнение, смотришь на график, читаешь ответ. Системы уравнений — точка пересечения. Квадратные — точки пересечения с осью. Функции — прямо на глаз.<br><br>
+<b>Освоить Desmos для тебя ценнее, чем выучить половину алгебры.</b> На это стоит потратить отдельный вечер в самом начале.
+</div>
+
+<h4>Первый модуль важнее второго</h4>
+
+<p>Он определяет, какой второй ты получишь, а значит и потолок балла. Не выкладываться на первом ради экономии сил — прямая потеря.</p>
+
+<h4>Пропуск не штрафуется</h4>
+
+<p>За неправильный ответ баллы не снимают. <b>Пустых ответов быть не должно ни одного.</b> Не знаешь — ставь любой и иди дальше.</p>
+
+<h4>Время</h4>
+
+<p>В Reading and Writing на вопрос примерно <b>71 секунда</b>, в Math — <b>95 секунд</b>. Тексты короткие, 25–150 слов. Если завис больше чем на две минуты — отмечай флажком и иди дальше, вернёшься.</p>
+
+<h4>Решай на английском с первого дня</h4>
+
+<p>Даже если теорию берёшь на русском. Основная потеря баллов у русскоязычных на математике — не незнание темы, а непонимание формулировки задачи.</p>
+
+<h4>Разбор ошибок важнее объёма</h4>
+
+<p>Двадцать разобранных задач полезнее двухсот прорешанных. По каждой ошибке отвечать на вопрос «почему» — не знал, ошибся, не понял, не успел.</p>
+
+<h4>Регистрация закрывается за две с половиной недели</h4>
+
+<p>И места в центрах на Кипре ограничены. Дату и центр бронируют вместе, заранее.</p>
+
+<hr>
+
+<h2>Итог</h2>
+
+<div class="tablewrap">
+<table class="simple">
+<thead><tr><th></th><th></th></tr></thead>
+<tbody>
+<tr><td>Экзамен</td><td>Digital SAT, 2 ч 14 мин, 98 вопросов, шкала 400–1600</td></tr>
+<tr><td>Цель</td><td><b>1100–1250.</b> Английский 650–700, математика 450–550</td></tr>
+<tr><td>Главное по математике</td><td>Алгебра и Advanced Math — это 70% секции. Геометрия последняя</td></tr>
+<tr><td>Главное по английскому</td><td>Пунктуация и «Expression of Ideas». Остальное берётся языком</td></tr>
+<tr><td>Инструменты</td><td>Bluebook, Khan Academy, Daily Practice — всё бесплатно</td></tr>
+<tr><td>Главный рычаг</td><td><b>Desmos.</b> Освоить в первую неделю</td></tr>
+<tr><td>Даты</td><td>7 ноября и 5 декабря 2026, 6 марта 2027 в резерве</td></tr>
+<tr><td>Карточки</td><td>Готовая колода на 107 терминов — <code>sat/SAT-колода.tsv</code>, импорт в Anki или Quizlet</td></tr>
+<tr><td>Первое действие</td><td>Написать бесплатный пробник в Bluebook на этой неделе</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note">
+<p>Часть плана по Италии: <a href="https://alex-italy-hub.netlify.app">указатель документов</a> · <a href="https://alex-italy-turin-bologna.netlify.app">что делать по шагам</a></p>
+</div>
+
+<footer>
+<p>Структура экзамена и содержание разделов — по официальным материалам College Board на 2026 год. Формат, шкала и адаптивность в 2026 не менялись; эссе отменено окончательно с 2024 года.</p>
+<p>Пороги университетов: Триест 800, Ка' Фоскари 880, Bocconi 1040 с минимумом 520 по секции. Болонья и Турин минимума не устанавливают.</p>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  function label(){
+    document.querySelectorAll('table').forEach(function(t){
+      var hs=[].map.call(t.querySelectorAll('thead th'),function(h){
+        return (h.textContent||'').replace(/\s+/g,' ').trim();});
+      if(!hs.length) return;
+      [].forEach.call(t.querySelectorAll('tbody tr'),function(r){
+        [].forEach.call(r.cells,function(c,i){
+          if(hs[i] && !c.hasAttribute('data-l')) c.setAttribute('data-l',hs[i]);
+        });
+      });
+    });
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',label);
+  else label();
+})();
+</script>
+</body>
+</html>

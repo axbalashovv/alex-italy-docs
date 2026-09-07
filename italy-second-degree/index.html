@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Второй бакалавриат: что правда</title>
+<style>
+:root{--bg:#fbfaf8;--ink:#1a1a1a;--muted:#6b6864;--rule:#dedad4;--accent:#8a5a2b;--max:820px}
+@media (prefers-color-scheme:dark){:root{--bg:#141312;--ink:#e8e4de;--muted:#918b83;--rule:#2f2c29;--accent:#c99a63}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 Georgia,"Times New Roman",serif;padding:0 24px 100px}
+.wrap{max-width:var(--max);margin:0 auto}
+header{padding:70px 0 0}
+h1{font-size:30px;line-height:1.22;font-weight:400;margin:0 0 14px}
+.sub{color:var(--muted);font-size:15px;line-height:1.55;margin:0 0 8px}
+hr{border:0;border-top:1px solid var(--rule);margin:38px 0}
+h2{font-size:12.5px;font-weight:400;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);margin:48px 0 6px;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+h3{font-size:23px;font-weight:400;line-height:1.32;margin:0 0 18px}
+h4{font-size:17px;font-weight:700;margin:24px 0 9px}
+p{margin:0 0 15px}
+ul,ol{margin:0 0 15px;padding-left:22px}
+li{margin:0 0 7px}
+a{color:var(--accent)}
+nav.toc{margin:34px 0 0}
+nav.toc ol{list-style:none;margin:0;padding:0;counter-reset:s}
+nav.toc>ol>li{counter-increment:s;border-top:1px solid var(--rule);padding:10px 0}
+nav.toc>ol>li:last-child{border-bottom:1px solid var(--rule)}
+nav.toc a{color:var(--ink);text-decoration:none;display:flex;gap:14px;align-items:baseline}
+nav.toc a:hover{color:var(--accent)}
+nav.toc a::before{content:counter(s);color:var(--muted);font-size:13px;min-width:18px;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+nav.toc .t{flex:1}
+nav.toc .n{color:var(--muted);font-size:13px;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+.note{border-left:2px solid var(--accent);padding:2px 0 2px 18px;margin:0 0 20px}
+.note p:last-child{margin-bottom:0}
+.tablewrap{overflow-x:auto;margin:0 0 20px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:14.5px;line-height:1.48}
+th{text-align:left;font-weight:400;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--ink);padding:0 13px 7px 0;vertical-align:bottom;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+td{border-bottom:1px solid var(--rule);padding:10px 13px 10px 0;vertical-align:top}
+td:last-child,th:last-child{padding-right:0}
+.num{white-space:nowrap;font-variant-numeric:tabular-nums}
+.uni{font-weight:700}
+footer{margin-top:58px;padding-top:20px;border-top:1px solid var(--rule);color:var(--muted);font-size:14px;line-height:1.6}
+@media (max-width:820px){body{font-size:16px;padding:0 16px 74px}header{padding-top:42px}h1{font-size:24px}h3{font-size:19px}table{min-width:560px;font-size:14px}}
+</style><style>
+.gloss{margin:0 0 22px}
+.gloss dt{font-weight:700;margin:16px 0 3px;font-size:16px}
+.gloss dd{margin:0 0 0 0;color:var(--muted);font-size:15.5px;line-height:1.5}
+.lead{font-size:17px;margin:0 0 16px}
+.after{border-left:2px solid var(--accent);padding:2px 0 2px 18px;margin:16px 0 26px;font-size:15.5px}
+.after b{color:var(--ink)}
+.big{font-size:20px;font-weight:700}
+table.simple{min-width:0}
+table.simple td{padding:12px 16px 12px 0}
+.step{color:var(--muted);font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;
+ font-family:-apple-system,BlinkMacSystemFont,sans-serif;margin:0 0 6px}
+</style>
+<style id="sem">
+.lbl{display:block;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,sans-serif;
+  font-size:11px;letter-spacing:.09em;text-transform:uppercase;font-weight:600;
+  color:var(--muted);margin:0 0 8px;line-height:1.35}
+.note .lbl + p{margin-top:0}
+.note.hot{border-left-color:#9c3328}
+.note.hot .lbl{color:#9c3328}
+.note.good{border-left-color:#3f6b4a}
+.note.good .lbl{color:#3f6b4a}
+td.pri{color:var(--accent)}
+th{white-space:nowrap}
+@media (max-width:700px){
+  .lbl{margin-bottom:6px}
+  th{white-space:normal}
+  .tablewrap td.pri::before,.scroll td.pri::before{color:var(--muted)}
+}
+</style>
+<style id="mob">
+@media (max-width:700px){
+  .tablewrap,.scroll{overflow-x:visible !important}
+  .tablewrap table,.scroll table{min-width:0 !important;display:block;font-size:15px}
+  .tablewrap thead,.scroll thead{display:none}
+  .tablewrap tbody,.tablewrap tr,.tablewrap td,
+  .scroll tbody,.scroll tr,.scroll td{display:block;width:100%}
+  .tablewrap tr,.scroll tr{border-bottom:1px solid var(--ink,var(--fg));padding:15px 0 13px}
+  .tablewrap tr:last-child,.scroll tr:last-child{border-bottom:0}
+  .tablewrap td,.scroll td{border:0 !important;padding:5px 0 !important;line-height:1.5}
+  .tablewrap td:empty,.scroll td:empty{display:none}
+  .tablewrap td::before,.scroll td::before{
+    content:attr(data-l);display:block;font-size:11px;letter-spacing:.07em;text-transform:uppercase;
+    color:var(--muted,var(--mut));margin-bottom:2px;
+    font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+  .tablewrap td:first-child::before,.scroll td:first-child::before{display:none}
+  .tablewrap td:first-child,.scroll td:first-child{
+    font-weight:700;font-size:17px;line-height:1.32;margin-bottom:7px}
+  .num{white-space:normal !important}
+  nav.toc a{flex-wrap:wrap}
+  nav.toc .n{margin-left:32px;width:100%;text-align:left;margin-top:2px}
+  nav .d{margin-left:34px;width:100%;text-align:left;margin-top:2px}
+  .nu{font-size:15px}
+  dl.gloss dd{font-size:16px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Второй бакалавриат: что правда</h1>
+  <p class="sub">4 сентября 2026. Разбор того, что сказал Дмитрий из Global Dialog, — утверждение за утверждением, против первоисточников: бандо EDISU и ER.GO, регламенты UniTo и UNIBO, декрет о визах 850/2011.</p>
+  <nav class="toc">
+    <ol>
+      <li><a href="#verdict"><span class="t">Вердикт</span><span class="n">риск есть, но не тот</span></a></li>
+      <li><a href="#claims"><span class="t">Семь утверждений против документов</span><span class="n">по одному</span></a></li>
+      <li><a href="#mech"><span class="t">Настоящий механизм: год первого зачисления</span><span class="n">и выход из него</span></a></li>
+      <li><a href="#do"><span class="t">Три действия</span><span class="n">что делать</span></a></li>
+      <li><a href="#open"><span class="t">Что осталось неясным</span><span class="n">и кому писать</span></a></li>
+    </ol>
+  </nav>
+</header>
+
+<hr>
+
+<h2 id="verdict">Вердикт</h2>
+<h3>Дмитрий прав, что риск есть. Неправ в том, где он</h3>
+
+<p class="lead">Он назвал правильные темы — предыдущая учёба, стипендия, консульство — но не назвал ни одного механизма. Когда механизмы найдены в документах, картина другая: <b>«второй бакалавриат» как основание для отказа не существует</b>, потому что диплома у тебя нет. Зато существует правило <b>«год первого зачисления»</b>, которое действительно может обнулить стипендию в Болонье — и у которого есть <b>прямо прописанный выход</b>.</p>
+
+<div class="note good">
+<span class="lbl">Коротко</span>
+<p>Ни одно из его утверждений не подтвердилось в той форме, в какой прозвучало. Два из них указывают на реальные вещи, но с другим механизмом и с решением. Остальные либо не применяются к тебе, либо не проверяемы.</p>
+<p>Общий итог: <b>план не ломается</b>. Он получает три обязательных действия, которых раньше в нём не было.</p>
+</div>
+
+<hr>
+
+<h2 id="claims">Семь утверждений против документов</h2>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Дмитрий сказал</th><th>Что в документах</th><th>Итог</th></tr></thead>
+<tbody>
+
+<tr>
+<td><b>1. «Это не первый бакалавриат»</b></td>
+<td>Исключение из стипендии есть только для тех, кто <b>уже имеет диплом</b>. EDISU, п. 3: «while <b>already holding</b> a degree». ER.GO, ст. 2.2: «gli studenti <b>in possesso di laurea</b> che si iscrivono ad un altro corso di laurea». У тебя диплома нет: CPA 1,84 при пороге 2,0, бакалавриат не закрыт. Незаконченная карьера — это не диплом.</td>
+<td class="pri"><b>Не применяется</b></td>
+</tr>
+
+<tr>
+<td><b>2. «Стипендию не дадут, потому что уже учился»</b></td>
+<td>Вот здесь риск настоящий. ER.GO, ст. 1.1: срок льгот считается «dall'anno di prima immatricolazione… <b>anche all'estero</b>» — но с оговоркой «<b>fatta salva un'eventuale rinuncia agli studi</b>». Ст. 1.2: после отказа от учёбы и приёма на первый курс срок «è calcolato <b>a partire dall'anno di nuova immatricolazione</b>». EDISU: отказ допускается «<b>regardless of when</b>», а курс для рейтинга считают по признанным кредитам — <b>0–24 кредита = первый курс</b>.</td>
+<td class="pri"><b>Риск есть, выход прописан</b></td>
+</tr>
+
+<tr>
+<td><b>3. «Университет спросит, почему сменил направление»</b></td>
+<td>Приём на бакалавриат идёт по школьному аттестату и SAT. Предыдущая незаконченная карьера основанием для отказа не является. Признание кредитов — <b>только по заявлению студента</b>: UNIBO — «puoi richiedere… dopo l'immatricolazione, tramite Studenti Online»; UniTo — «puoi richiedere il riconoscimento», €76 плюс €340 за незаконченную зарубежную карьеру. Не подал — не признают.</td>
+<td class="pri"><b>Не барьер</b></td>
+</tr>
+
+<tr>
+<td><b>4. «Консульство будет задавать вопросы»</b></td>
+<td>Декрет 850/2011, раздел «Visto per studio». Пункт <b>I</b>: университетские курсы — без условия о связности. Пункт <b>II.A</b>: «corsi superiori di studio <b>diversi da quelli</b>… ma <b>coerenti</b> con la precedente formazione» — это для <b>неуниверситетских</b> высших курсов. Твой случай — пункт I. Мотивационное письмо всё равно готовить: у консула есть усмотрение.</td>
+<td class="pri"><b>Правовой базы нет, вопрос возможен</b></td>
+</tr>
+
+<tr>
+<td><b>5. «Дорогой частный вуз — вопросы к доходам»</b></td>
+<td>Правила стипендии смотрят на доход и имущество за 2025 год, а не на прошлые траты. Но ER.GO, ст. 2: списки идонеев уходят в Guardia di Finanza, «<b>almeno il 20%</b> degli aventi diritto» проверяются по существу. Если задекларированный доход мамы явно меньше того, что она демонстрируемо тратила на твою учёбу и жизнь на Кипре, — это несоответствие, которое проверка может увидеть.</td>
+<td class="pri"><b>Не правило, но реальный риск</b></td>
+</tr>
+
+<tr>
+<td><b>6. «Нужен SAT около 1450»</b></td>
+<td>Проходные баллы не публикуются ни в Болонье, ни в Турине. Цифра непроверяема. Как ориентир подготовки — принять.</td>
+<td>Неизвестно</td>
+</tr>
+
+<tr>
+<td><b>7. «Длительность учёбы не скрыть»</b></td>
+<td>И не надо. Болонья письменно просит <b>только сертификат за первый курс</b>. Но в заявке на стипендию предыдущую карьеру и факт отказа надо <b>указать честно</b>: EDISU и ER.GO прямо требуют декларировать её, а ложные сведения — это «dichiarazioni mendaci», отзыв льгот и санкции.</td>
+<td class="pri"><b>Не скрывать, декларировать</b></td>
+</tr>
+
+</tbody>
+</table>
+</div>
+
+<hr>
+
+<h2 id="mech">Настоящий механизм</h2>
+<h3>Год первого зачисления — и как его сбросить</h3>
+
+<p class="lead">Стипендия даётся на <b>три года плюс семестр</b>, считая от года первого зачисления. Если этим годом окажется 2023, к 2027/28 ты будешь «на пятом году» — и права на льготы не останется. Вопрос только в том, какой год считается первым.</p>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Ситуация</th><th>Болонья, ER.GO</th><th>Турин, EDISU</th></tr></thead>
+<tbody>
+<tr><td>Ты числишься в UNIC, отказа не оформлял, поступил на первый курс</td><td>Первое зачисление = <b>2023</b>, «anche all'estero». Срок исчерпан</td><td>Считают по признанным кредитам. 0 признано — первый курс. Но лучше не рисковать</td></tr>
+<tr><td class="pri"><b>Оформил отказ от учёбы в UNIC, поступил на первый курс, кредиты не признавал</b></td><td class="pri"><b>Первое зачисление = 2027.</b> Полные 3,5 года</td><td class="pri"><b>Первый курс.</b> Полные 3,5 года</td></tr>
+<tr><td>Попросил признать кредиты, приняли на второй курс</td><td>Год первого зачисления <b>отматывается назад</b>, требования по кредитам как ко второкурснику</td><td>25–79 кредитов = второй курс, тот же эффект</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note hot">
+<span class="lbl">Дословно из бандо ER.GO</span>
+<p>Ст. 1.1: «La durata di assegnazione dei benefici si computa partendo dall'anno di prima immatricolazione o iscrizione anche se avvenuta presso altro Ateneo… <b>anche all'estero, fatta salva un'eventuale rinuncia agli studi</b>».</p>
+<p>Ст. 1.2: «in caso di nuova immatricolazione a seguito di rinuncia o decadenza: se lo studente è ammesso al primo anno, è calcolato <b>a partire dall'anno di nuova immatricolazione</b>».</p>
+<p>То есть отказ от учёбы — не совет, а <b>условие из текста</b>. Без него ER.GO считает от 2023 года.</p>
+</div>
+
+<div class="note good">
+<span class="lbl">Дословно из бандо EDISU</span>
+<p>«Students may apply after withdrawing from studies <b>regardless of when the withdrawal was made</b>». Штраф за предыдущую карьеру есть только если ты <b>уже получал итальянскую стипендию</b> — ты не получал.</p>
+<p>Ст. 9(2): при признании кредитов «0 to 24 credits: <b>first year</b>». Не признавал — первый курс.</p>
+<p>Ещё одна деталь в твою пользу: ER.GO не засчитывает в срок перерывы «per gravi e prolungate infermità, debitamente certificate». Spring 2026 с переломом ноги и отчислением с возвратом денег — ровно такой документированный перерыв.</p>
+</div>
+
+<hr>
+
+<h2 id="do">Три действия</h2>
+<h3>Которых в плане не было</h3>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Действие</th><th>Когда</th><th>Зачем</th></tr></thead>
+<tbody>
+<tr><td class="pri"><b>1. Оформить формальный отказ от учёбы в UNIC</b> и получить об этом документ</td><td>До подачи на стипендию, то есть <b>до лета 2027</b>. Не раньше, чем закончишь нужное: кипрская виза привязана к статусу студента</td><td>Единственное, что сбрасывает год первого зачисления в ER.GO</td></tr>
+<tr><td class="pri"><b>2. Не подавать на признание кредитов</b> ни в Турине, ни в Болонье</td><td>Никогда, пока учишься на стипендии</td><td>Признание отматывает год назад в обоих вузах. Graphic Design в Business всё равно почти ничего не даст</td></tr>
+<tr><td class="pri"><b>3. Указать предыдущую карьеру и отказ честно</b> в заявке на стипендию</td><td>При подаче</td><td>Умолчание — «dichiarazioni mendaci», отзыв льгот. Раскрытие — ничего не стоит, потому что механизм сброса прописан</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note">
+<span class="lbl">Про доход мамы — честно</span>
+<p>Утверждение №5 — единственное, где Дмитрий указал на риск, которого нет в правилах, но который есть в жизни. Проверка Guardia di Finanza не смотрит на UNIC. Она смотрит, <b>сходятся ли задекларированный доход и имущество с реальностью</b>. Если доход 2025 года объективно позволял платить за частный вуз и жизнь на Кипре — проблемы нет, это просто должно быть видно в документах: доход, счета, помощь родственников, если была.</p>
+<p>Это не про «объяснить смену направления». Это про то, чтобы <b>цифры в декларации были настоящими</b>. Тогда любая проверка проходит.</p>
+</div>
+
+<div class="note hot">
+<span class="lbl">Про Дмитрия</span>
+<p>Он продаёт пакет — это его работа, и это не делает его лжецом. Но <b>ни на одно утверждение он не дал ссылки</b>, а два из семи указали на реальные темы с неверным механизмом. Всё, что он скажет дальше, проверяется так же: по тексту бандо, а не по ощущению «будет сложно».</p>
+<p>Разговор не окончен. Когда продолжишь — три вопроса из раздела ниже, и ничего про «сложно».</p>
+</div>
+
+<hr>
+
+<h2 id="open">Что осталось неясным</h2>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Вопрос</th><th>Кому</th><th>Цена ошибки</th></tr></thead>
+<tbody>
+<tr><td class="pri"><b>Какой документ UNIC об отчислении по заявлению принимает ER.GO как «rinuncia agli studi», и на какую дату он должен быть</b></td><td>тикет ER.GO · Dmitry при продолжении</td><td>Вся стипендия в Болонье</td></tr>
+<tr><td><b>Считает ли EDISU зарубежное первое зачисление, если кредиты не признаны</b> — в тексте прямо не сказано</td><td>тикет EDISU</td><td>Стипендия в Турине</td></tr>
+<tr><td>Достаточно ли справки UNIC за первый курс, если в ней виден год выпуска первого курса 2024</td><td>segstudintbo@unibo.it — уже ответили частично</td><td>Малая</td></tr>
+<tr><td>Что именно смотрит консульство в Москве в мотивационном письме студента, сменившего направление</td><td>Dmitry при продолжении · VFS</td><td>Виза</td></tr>
+<tr><td>Откуда цифра 1450 — их статистика или оценка</td><td>Dmitry при продолжении</td><td>Цель подготовки</td></tr>
+</tbody>
+</table>
+</div>
+
+<footer>
+<p>Источники: EDISU Piemonte, Notice of competition 2026/27 — ст. 2, ст. 3 п. 3 и 7, ст. 9(1.1), 9(2) · ER.GO, Bando DSU 2026/27, Sezione I — ст. 1.1, 1.2, 2.2, ст. 2 (controlli) · Decreto interministeriale 11 maggio 2011 n. 850, «Visto per studio», п. I и II.A · unibo.it/riconoscimento-crediti · unito.it/riconoscimento-0 · память: unic-grades-status.</p>
+<p>Часть плана: <a href="https://alex-italy-hub.netlify.app">указатель</a> · <a href="https://alex-turin-full.netlify.app">Турин</a> · <a href="https://alex-bologna-full.netlify.app">Болонья</a> · <a href="https://alex-italy-questions.netlify.app">вопросы на консультацию</a></p>
+</footer>
+
+</div>
+<script>(function(){function l(){document.querySelectorAll('table').forEach(function(t){
+var h=[].map.call(t.querySelectorAll('thead th'),function(x){return (x.textContent||'').replace(/\s+/g,' ').trim()});
+if(!h.length)return;[].forEach.call(t.querySelectorAll('tbody tr'),function(r){[].forEach.call(r.cells,function(c,i){
+if(h[i]&&!c.hasAttribute('data-l'))c.setAttribute('data-l',h[i])})})})}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',l);else l();})();</script>
+</body>
+</html>

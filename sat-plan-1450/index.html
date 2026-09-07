@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SAT: план до 1450</title>
+<style>
+:root{--bg:#fbfaf8;--ink:#1a1a1a;--muted:#6b6864;--rule:#dedad4;--accent:#8a5a2b;--max:820px}
+@media (prefers-color-scheme:dark){:root{--bg:#141312;--ink:#e8e4de;--muted:#918b83;--rule:#2f2c29;--accent:#c99a63}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 Georgia,"Times New Roman",serif;padding:0 24px 100px}
+.wrap{max-width:var(--max);margin:0 auto}
+header{padding:70px 0 0}
+h1{font-size:30px;line-height:1.22;font-weight:400;margin:0 0 14px}
+.sub{color:var(--muted);font-size:15px;line-height:1.55;margin:0 0 8px}
+hr{border:0;border-top:1px solid var(--rule);margin:38px 0}
+h2{font-size:12.5px;font-weight:400;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);margin:48px 0 6px;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+h3{font-size:23px;font-weight:400;line-height:1.32;margin:0 0 18px}
+h4{font-size:17px;font-weight:700;margin:24px 0 9px}
+p{margin:0 0 15px}
+ul,ol{margin:0 0 15px;padding-left:22px}
+li{margin:0 0 7px}
+a{color:var(--accent)}
+nav.toc{margin:34px 0 0}
+nav.toc ol{list-style:none;margin:0;padding:0;counter-reset:s}
+nav.toc>ol>li{counter-increment:s;border-top:1px solid var(--rule);padding:10px 0}
+nav.toc>ol>li:last-child{border-bottom:1px solid var(--rule)}
+nav.toc a{color:var(--ink);text-decoration:none;display:flex;gap:14px;align-items:baseline}
+nav.toc a:hover{color:var(--accent)}
+nav.toc a::before{content:counter(s);color:var(--muted);font-size:13px;min-width:18px;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+nav.toc .t{flex:1}
+nav.toc .n{color:var(--muted);font-size:13px;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+.note{border-left:2px solid var(--accent);padding:2px 0 2px 18px;margin:0 0 20px}
+.note p:last-child{margin-bottom:0}
+.tablewrap{overflow-x:auto;margin:0 0 20px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:14.5px;line-height:1.48}
+th{text-align:left;font-weight:400;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--ink);padding:0 13px 7px 0;vertical-align:bottom;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+td{border-bottom:1px solid var(--rule);padding:10px 13px 10px 0;vertical-align:top}
+td:last-child,th:last-child{padding-right:0}
+.num{white-space:nowrap;font-variant-numeric:tabular-nums}
+.uni{font-weight:700}
+footer{margin-top:58px;padding-top:20px;border-top:1px solid var(--rule);color:var(--muted);font-size:14px;line-height:1.6}
+@media (max-width:820px){body{font-size:16px;padding:0 16px 74px}header{padding-top:42px}h1{font-size:24px}h3{font-size:19px}table{min-width:560px;font-size:14px}}
+</style><style>
+.gloss{margin:0 0 22px}
+.gloss dt{font-weight:700;margin:16px 0 3px;font-size:16px}
+.gloss dd{margin:0 0 0 0;color:var(--muted);font-size:15.5px;line-height:1.5}
+.lead{font-size:17px;margin:0 0 16px}
+.after{border-left:2px solid var(--accent);padding:2px 0 2px 18px;margin:16px 0 26px;font-size:15.5px}
+.after b{color:var(--ink)}
+.big{font-size:20px;font-weight:700}
+table.simple{min-width:0}
+table.simple td{padding:12px 16px 12px 0}
+.step{color:var(--muted);font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;
+ font-family:-apple-system,BlinkMacSystemFont,sans-serif;margin:0 0 6px}
+</style>
+<style id="sem">
+.lbl{display:block;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,sans-serif;
+  font-size:11px;letter-spacing:.09em;text-transform:uppercase;font-weight:600;
+  color:var(--muted);margin:0 0 8px;line-height:1.35}
+.note .lbl + p{margin-top:0}
+.note.hot{border-left-color:#9c3328}
+.note.hot .lbl{color:#9c3328}
+.note.good{border-left-color:#3f6b4a}
+.note.good .lbl{color:#3f6b4a}
+td.pri{color:var(--accent)}
+th{white-space:nowrap}
+@media (max-width:700px){
+  .lbl{margin-bottom:6px}
+  th{white-space:normal}
+  .tablewrap td.pri::before,.scroll td.pri::before{color:var(--muted)}
+}
+</style>
+<style id="mob">
+@media (max-width:700px){
+  .tablewrap,.scroll{overflow-x:visible !important}
+  .tablewrap table,.scroll table{min-width:0 !important;display:block;font-size:15px}
+  .tablewrap thead,.scroll thead{display:none}
+  .tablewrap tbody,.tablewrap tr,.tablewrap td,
+  .scroll tbody,.scroll tr,.scroll td{display:block;width:100%}
+  .tablewrap tr,.scroll tr{border-bottom:1px solid var(--ink,var(--fg));padding:15px 0 13px}
+  .tablewrap tr:last-child,.scroll tr:last-child{border-bottom:0}
+  .tablewrap td,.scroll td{border:0 !important;padding:5px 0 !important;line-height:1.5}
+  .tablewrap td:empty,.scroll td:empty{display:none}
+  .tablewrap td::before,.scroll td::before{
+    content:attr(data-l);display:block;font-size:11px;letter-spacing:.07em;text-transform:uppercase;
+    color:var(--muted,var(--mut));margin-bottom:2px;
+    font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+  .tablewrap td:first-child::before,.scroll td:first-child::before{display:none}
+  .tablewrap td:first-child,.scroll td:first-child{
+    font-weight:700;font-size:17px;line-height:1.32;margin-bottom:7px}
+  .num{white-space:normal !important}
+  nav.toc a{flex-wrap:wrap}
+  nav.toc .n{margin-left:32px;width:100%;text-align:left;margin-top:2px}
+  nav .d{margin-left:34px;width:100%;text-align:left;margin-top:2px}
+  .nu{font-size:15px}
+  dl.gloss dd{font-size:16px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>SAT: план до 1450</h1>
+  <p class="sub">5 сентября 2026. По результату диагностики (Math 4/24, R&amp;W 9/12) и бюджету: суббота 4–8 ч, воскресенье 4–7 ч. Цель — <b>1450</b> к марту 2027, декабрь 2026 — пробная сдача. Всё в часах, по неделям и по темам, с русскими и английскими источниками, от €0 до €50 в месяц.</p>
+  <nav class="toc">
+    <ol>
+      <li><a href="#diag"><span class="t">Что показала диагностика</span><span class="n">и что это значит</span></a></li>
+      <li><a href="#hours"><span class="t">Часы: сколько и когда</span><span class="n">модель</span></a></li>
+      <li><a href="#where"><span class="t">Где сдавать</span><span class="n">критично</span></a></li>
+      <li><a href="#method"><span class="t">Метод: русский → термины → английская практика</span><span class="n">цикл темы</span></a></li>
+      <li><a href="#week"><span class="t">Неделя-шаблон</span><span class="n">выходные + микро-слоты</span></a></li>
+      <li><a href="#calendar"><span class="t">Календарь по темам</span><span class="n">26 недель</span></a></li>
+      <li><a href="#rw"><span class="t">Reading &amp; Writing</span><span class="n">параллельно</span></a></li>
+      <li><a href="#tools"><span class="t">Инструменты по уровням</span><span class="n">€0 → €50</span></a></li>
+      <li><a href="#habits"><span class="t">Вместо Instagram</span><span class="n">микро-режим</span></a></li>
+      <li><a href="#milestones"><span class="t">Контрольные точки</span><span class="n">и первая суббота</span></a></li>
+    </ol>
+  </nav>
+</header>
+
+<hr>
+
+<h2 id="diag">1. Что показала диагностика</h2>
+<h3>Не «ниже 450», а «заржавело» — с оговоркой</h3>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Блок</th><th>Результат</th><th>Что это значит</th></tr></thead>
+<tbody>
+<tr><td><b>Терминология</b></td><td>5/10, «не помню» 2</td><td>Половина терминов незнакома. Лечится колодой за 2 недели — параллельно с темами, не вместо</td></tr>
+<tr><td><b>Math</b></td><td>4/24 · «не помню» <b>17</b> · перевод открыт всего 4 раза</td><td class="pri">Барьер <b>не языковой</b> — содержательный. Но ты сам сказал: узнаёшь метод, не помнишь шаги. Это два разных состояния, и у них разная цена</td></tr>
+<tr><td>Algebra</td><td>2/8</td><td>линейные функции, системы, неравенства — заржавело</td></tr>
+<tr><td>Advanced Math</td><td><b>0/8</b></td><td>квадратные, степени, функции — самый большой блок SAT (35%) и самый пустой</td></tr>
+<tr><td>Данные</td><td>1/4</td><td>проценты помнишь, статистику и вероятность нет</td></tr>
+<tr><td>Геометрия</td><td>1/4</td><td>площадь помнишь; Пифагор, круг, тригонометрия — нет. Часть формул SAT <b>даёт на справочном листе</b></td></tr>
+<tr><td><b>R&amp;W</b></td><td><b>9/12</b>, ошибки: слово в контексте, its/it's</td><td class="pri">Хорошая база, ~600. До 725 — точечная работа: пунктуация, словарь, скорость</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note hot">
+<span class="lbl">Честно про «узнаю, но не помню»</span>
+<p>Есть два вида «не помню». <b>Первый</b> — дискриминант: ты знаешь, что он есть и зачем; напомнить формулу и прорешать 20 задач — 2–3 часа, и тема закрыта. <b>Второй</b> — экспоненциальный рост, преобразования функций, тригонометрия: ты их либо не проходил в таком виде, либо не узнал вообще. Это 6–10 часов на тему.</p>
+<p>Твоя собственная оценка: из 17 «не помню» примерно <b>70% — реально с нуля</b>, 30% — вспомнить. Поэтому план ниже рассчитан <b>по тяжёлому сценарию как по базовому</b>: ~230 ч на Math. Сортировка в первые две субботы всё равно нужна — не чтобы урезать часы, а чтобы правильно расставить темы: «вспомнить» идут первыми и дают быстрые очки, «выучить» получают полный цикл.</p>
+</div>
+
+<hr>
+
+<h2 id="hours">2. Часы</h2>
+<h3>Модель с двумя сценариями</h3>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Секция</th><th class="num">Сейчас ≈</th><th class="num">Цель</th><th class="num">Если больше «вспомнить»</th><th class="num">Если больше «выучить»</th></tr></thead>
+<tbody>
+<tr><td><b>Math</b></td><td class="num">400–450</td><td class="num">725</td><td class="num"><b>~150 ч</b></td><td class="num"><b>~230 ч</b></td></tr>
+<tr><td><b>R&amp;W</b></td><td class="num">580–620</td><td class="num">725</td><td class="num">~50 ч</td><td class="num">~70 ч</td></tr>
+<tr><td>Полные тесты, 5 × 2,5 ч + разбор</td><td class="num"></td><td class="num"></td><td class="num">~20 ч</td><td class="num">~20 ч</td></tr>
+<tr><td><b>Итого</b></td><td class="num"></td><td class="num"></td><td class="num">~220 ч</td><td class="num big">~320 ч ← базовый при 70/30</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Бюджет</th><th class="num">В неделю</th><th class="num">До декабря, 13 недель</th><th class="num">До марта, 26 недель</th></tr></thead>
+<tbody>
+<tr><td>Только выходные: сб 6 ч + вс 5 ч</td><td class="num">11 ч</td><td class="num">~140 ч</td><td class="num">~285 ч</td></tr>
+<tr><td>Выходные + микро-слоты в будни, 30 мин × 5</td><td class="num">~13,5 ч</td><td class="num">~175 ч</td><td class="num">~350 ч</td></tr>
+<tr><td class="pri"><b>Выходные + 3 вечера в будни по 1–2 ч + микро 30 мин × 5</b> — твой реальный бюджет</td><td class="num big">~18 ч</td><td class="num"><b>~235 ч</b></td><td class="num big">~470 ч</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note good">
+<span class="lbl">Вывод по датам</span>
+<p><b>Декабрь 2026 — пробная сдача, но уже серьёзная.</b> При 18 ч в неделю к декабрю набирается ~235 ч — это почти весь тяжёлый сценарий по математике. Реалистично <b>1250–1350</b>; при удачном раскладе декабрь может дать балл, с которым уже можно подаваться, а март — улучшать. Результат берут лучший из попыток.</p>
+<p><b>Март 2027 — основная.</b> При 70/30 нужно ~320 ч. Твой бюджет — выходные + три вечера + микро — даёт <b>~470 ч</b>: запас 45%. Это меняет статус цели: <b>1450 — не «достижимо», а ожидаемо</b> при выполнении плана, а запас уходит на второй проход по темам «выучить» и на 5–6 полных тестов вместо 4. Условие одно: три вечера в будни — реальные, а не «когда получится». Май 2027 для Болоньи уже поздно: результат приходит через ~2 недели, а окно закрывается 4 мая.</p>
+</div>
+
+<hr>
+
+<h2 id="where">3. Где сдавать</h2>
+<h3>Это может сломать календарь</h3>
+
+<div class="note hot">
+<span class="lbl">Проверь до регистрации</span>
+<p><a href="https://satsuite.collegeboard.org/sat">College Board</a> <b>не проводит SAT в России и Беларуси с 2022 года</b> — это подтверждает и русскоязычный разбор <a href="https://global-generations.us/blog/sat-dlya-russkoyazychnykh">«SAT для русскоязычных: как сдать из России в 2026»</a>; старые страницы агрегаторов с «5 центрами» — мусор. Куда ездят из России: <b>Ереван / Дилижан</b> — без визы, билет ~30 тыс ₽; <b>Тбилиси</b>; <b>Алматы, Астана</b>; Сербия, Турция, ОАЭ. Поездка целиком — <b>50–80 тыс ₽</b>. И главное: «<b>места заканчиваются за 2–4 месяца до даты</b>» — регистрироваться в момент открытия слотов, не за пять недель.</p>
+<p>Оплата $111 — только не-российской картой; как и с университетом, карта может быть чужой.</p>
+<p>Твой план: Fall 2026 на Кипре, весна 2027 в России. Значит:</p>
+<p>Решение: <b>обе сдачи на Кипре</b> — 5 декабря и 6 марта. Значит план по Кипру меняется: отчисление из UNIC и отъезд — <b>после 6 марта</b>, а кипрская виза до 29 мая это позволяет. Запасной вариант, если что-то сорвётся, — Ереван или Тбилиси. Ниже — обратный отсчёт по регистрации.</p>
+</div>
+
+<h4>Регистрация и сдача на Кипре — обратный отсчёт</h4>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Сдача</th><th class="num">Дата</th><th class="num">Регистрация до</th><th class="num">Смена даты/центра до</th><th>Поздняя регистрация</th></tr></thead>
+<tbody>
+<tr><td><b>Пробная</b></td><td class="num"><b>5 декабря 2026</b>, суббота</td><td class="num">20 ноября</td><td class="num">24 ноября</td><td>есть, +$38</td></tr>
+<tr><td><b>Основная</b></td><td class="num"><b>6 марта 2027</b>, суббота</td><td class="num">19 февраля</td><td class="num">23 февраля</td><td>есть, +$38</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note hot">
+<span class="lbl">Дедлайн <a href="https://satsuite.collegeboard.org/sat">College Board</a> — не твой дедлайн</span>
+<p>Официальный срок — за две недели. Но <b>места в центре заканчиваются за 2–4 месяца</b>: Кипр маленький, центров мало, в марте сдают все выпускники частных школ. Регистрироваться на март надо <b>в ноябре, вместе с декабрём</b>, а не в феврале. Если мартовских слотов ещё нет — проверять аккаунт раз в неделю и брать в день открытия.</p>
+</div>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Когда</th><th>Что сделать</th><th>Где</th></tr></thead>
+<tbody>
+<tr><td class="pri"><b>Сейчас</b></td><td>Аккаунт <a href="https://satsuite.collegeboard.org/sat">College Board</a>: имя и дата рождения <b>точно как в загранпаспорте</b>, латиницей как в паспорте; загрузить фото по их требованиям. Это же имя пойдёт в admission ticket — расхождение = не пустят</td><td><a href="https://satsuite.collegeboard.org/sat/registration">satsuite.collegeboard.org/sat/registration</a></td></tr>
+<tr><td class="pri"><b>Сейчас</b></td><td>Посмотреть центры и свободные даты на Кипре: поиск по адресу «Larnaca» → покажет Никосию и остальные с расстоянием и наличием мест</td><td><a href="https://satsuite.collegeboard.org/sat/test-center-search">satsuite.collegeboard.org/sat/test-center-search</a></td></tr>
+<tr><td><b>Октябрь</b></td><td>Зарегистрироваться на <b>5 декабря</b>. Оплата $111 — только не-российской картой, можно чужой</td><td>My SAT в аккаунте</td></tr>
+<tr><td><b>Ноябрь</b></td><td>Как только откроются слоты на <b>6 марта</b> — регистрироваться сразу, не ждать результата декабря</td><td>My SAT</td></tr>
+<tr><td>За месяц</td><td>Проверить, что ноутбук держит заряд 3 часа; если нет — купить пауэрбанк. Установить <a href="https://bluebook.collegeboard.org/students/download-bluebook">Bluebook</a>, войти под аккаунтом</td><td><a href="https://bluebook.collegeboard.org/students/download-bluebook">bluebook.collegeboard.org</a></td></tr>
+<tr><td><b>За 5 дней</b></td><td>В <a href="https://bluebook.collegeboard.org/students/download-bluebook">Bluebook</a> пройти <b>Exam Setup</b> — открывается за 5 дней до экзамена; после него появляется <b>admission ticket</b> → распечатать</td><td><a href="https://bluebook.collegeboard.org/students/download-bluebook">Bluebook</a> на ноутбуке</td></tr>
+<tr><td>За день</td><td>Зарядить ноутбук на 100%, положить: ноутбук, зарядку, admission ticket, <b>загранпаспорт</b> — физический, не фото, карандаш. Телефон и калькулятор не нужны: <a href="https://www.desmos.com/calculator">Desmos</a> встроен, внешние калькуляторы запрещены</td><td>—</td></tr>
+<tr><td><b>День экзамена</b></td><td>Приехать за <b>30 минут до времени в admission ticket</b> (обычно 7:45); опоздавших не пускают. Телефон выключен и убран; никаких заметок в здании</td><td>центр из admission ticket</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Центр на Кипре</th><th>Город</th><th>Статус</th><th>Контакт</th></tr></thead>
+<tbody>
+<tr><td><b>American International School in Cyprus (AISC)</b></td><td>Никосия — ~45 минут от Ларнаки</td><td class="pri">подтверждённый официальный центр</td><td><a href="https://www.aisc.ac.cy/community/services/sat-assessment-centre/">aisc.ac.cy → SAT Assessment Centre</a> · +357 22 316345</td></tr>
+<tr><td>Другие школы юга — American Academy Larnaca, Heritage Limassol, Grammar School Nicosia</td><td>Ларнака / Лимассол / Никосия</td><td>в открытых источниках <b>не подтверждены</b> как центры — смотреть только в поиске <a href="https://satsuite.collegeboard.org/sat">College Board</a></td><td>test-center-search</td></tr>
+<tr><td>Cyprus West University</td><td>Северный Кипр</td><td>официальный центр, но <b>не вариант</b>: въезд через север создаёт проблемы с Республикой Кипр</td><td>—</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="after">
+Практический смысл: скорее всего сдаёшь в <b>Никосии, AISC</b>. Из Ларнаки — выехать в 6:30, чтобы быть у дверей к 7:45. Лучше переночевать в Никосии накануне: экзамен 2 ч 14 мин плюс проверки, а дорога утром — лишний риск.
+</div>
+
+<hr>
+
+<h2 id="method">4. Метод</h2>
+<h3>Понять по-русски, назвать по-английски, решать только по-английски</h3>
+
+<p class="lead">Твоя идея верная: концепцию быстрее взять на русском. Но с одной жёсткой поправкой — <b>практика с первого дня только по-английски</b>. Экзамен проверяет не знание дискриминанта, а умение прочитать условие про discriminant за 40 секунд и не запнуться. Русские видео — для понимания; всё, что решается руками, — на английском.</p>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Шаг</th><th>Что</th><th>Время</th><th>Инструмент</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><b>Понять</b> — видео на русском по теме, с паузами, с тетрадью</td><td>20–40 мин</td><td><a href="https://www.youtube.com/@trushinbv">Трушин</a> / <a href="https://www.youtube.com/@WildMathing">Wild Mathing</a> / <a href="https://3.shkolkovo.online/">Школково</a></td></tr>
+<tr><td>2</td><td><b>Назвать</b> — карточки терминов этой темы в колоде</td><td>10 мин</td><td><a href="https://ankiweb.net/">Anki</a>, колода 107 карт</td></tr>
+<tr><td>3</td><td><b>Увидеть по-английски</b> — тот же материал в формате SAT</td><td>15–20 мин</td><td><a href="https://www.khanacademy.org/digital-sat">Khan Academy Digital SAT</a> — видео + пример</td></tr>
+<tr><td>4</td><td><b>Решать</b> — 15–25 задач нарастающей сложности</td><td>45–60 мин</td><td><a href="https://www.khanacademy.org/digital-sat">Khan</a> practice → <a href="https://satsuite.collegeboard.org/practice/student-question-bank">Question Bank</a> <a href="https://satsuite.collegeboard.org/sat">College Board</a> → <a href="https://collegeprep.uworld.com/sat/">UWorld</a></td></tr>
+<tr><td>5</td><td><b>Разобрать ошибки</b> — каждая в журнал: тема, почему, правило</td><td>15 мин</td><td>таблица в заметках</td></tr>
+<tr><td>6</td><td><b>Повторить</b> через 3 дня и через 2 недели — 10 задач</td><td>15 мин</td><td>из журнала ошибок</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="after">
+Один цикл — <b>2–2,5 часа</b> на тему из категории «вспомнить», два-три цикла на тему «выучить». Суббота вмещает два цикла, воскресенье — практику и повторение. Правило: <b>ни одной темы без 20 решённых задач по-английски</b>, иначе она не считается закрытой.
+</div>
+
+<hr>
+
+<h2 id="week">5. Неделя-шаблон</h2>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Когда</th><th>Что</th><th class="num">Часы</th></tr></thead>
+<tbody>
+<tr><td><b>Суббота, блок 1</b> — утро</td><td>Тема A: цикл целиком, шаги 1–5</td><td class="num">2,5</td></tr>
+<tr><td><b>Суббота, блок 2</b> — после перерыва</td><td>Тема B: цикл целиком</td><td class="num">2,5</td></tr>
+<tr><td><b>Суббота, хвост</b></td><td>R&amp;W: одно правило + 20 вопросов</td><td class="num">1</td></tr>
+<tr><td><b>Воскресенье, блок 1</b></td><td>Практика по темам недели, смешанно, на время</td><td class="num">2</td></tr>
+<tr><td><b>Воскресенье, блок 2</b></td><td>R&amp;W: чтение + словарь + 15 вопросов</td><td class="num">1</td></tr>
+<tr><td><b>Воскресенье, блок 3</b></td><td>Повторение из журнала ошибок + <a href="https://ankiweb.net/">Anki</a> + план на следующую неделю</td><td class="num">1–2</td></tr>
+<tr><td><b>Вторник, вечер</b></td><td>Math: продолжение темы A — практика 25 задач + разбор</td><td class="num">1–2</td></tr>
+<tr><td><b>Среда, вечер</b></td><td>R&amp;W: одно правило + 25 вопросов + 15 минут чтения</td><td class="num">1–1,5</td></tr>
+<tr><td><b>Четверг, вечер</b></td><td>Math: тема B — практика + повтор из журнала ошибок за неделю</td><td class="num">1–2</td></tr>
+<tr><td><b>Перекуры, каждый день</b></td><td>3–5 задач в <a href="https://www.khanacademy.org/digital-sat">Khan</a> / <a href="https://collegeprep.uworld.com/sat/">UWorld</a> на телефоне; утром 10 карточек</td><td class="num">0,5 × 5 = 2,5</td></tr>
+<tr><td><b>Итого</b></td><td></td><td class="num big">~18</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note hot">
+<span class="lbl">План под нестабильную неделю — потому что так и будет</span>
+<p>Ты сам сказал: иногда выходные пропадут, иногда будни дадут больше, иногда — ничего. Поэтому план считает <b>не дни, а часы за две недели</b>. Три правила:</p>
+<p><b>1. Цель — 36 часов за две недели</b>, как они распределены — неважно. Сорвал субботу — вторник и четверг по 2 часа, следующее воскресенье полное. Сделал больше в будни — суббота короче. Считаешь в конце каждого воскресенья одной строкой в заметках.</p>
+<p><b>2. Пол — 10 часов в неделю, ниже не бывает.</b> Даже в худшую неделю: два вечера по 1,5 ч + перекуры + один блок в выходной. Это не про прогресс, это про то, чтобы не откатиться: без практики темы «выучить» выветриваются за 10 дней.</p>
+<p><b>3. Запас уже заложен.</b> 470 часов при 18 ч/нед против нужных 320 — это 45% сверху. Даже если выполнишь план на <b>75%</b> — 350 часов — март по-прежнему закрывается. Провалится план только при систематических неделях ниже пола, а не при отдельных сорванных выходных.</p>
+</div>
+
+<div class="note">
+<span class="lbl">Раз в две недели вместо блока 1 в воскресенье</span>
+<p><b>Полная секция на время</b> — 2 модуля Math по 35 минут в Bluebook. Раз в месяц — полный тест 2 ч 14 мин. Без этого балл на экзамене окажется ниже, чем в практике, потому что скорость и адаптивность отдельно тренируются.</p>
+</div>
+
+<hr>
+
+<h2 id="calendar">6. Календарь по темам — Math</h2>
+<h3>Часы — под тяжёлый сценарий 70/30. При 18 ч в неделю фазы 1–4 закрываются к концу января, февраль — второй проход и тесты</h3>
+
+<h4>Фаза 0 · недели 1–2 · сортировка и основы · ~14 ч</h4>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Тема</th><th class="num">Часы</th><th>Русский источник</th><th>Английский</th><th>Закрыта, когда</th></tr></thead>
+<tbody>
+<tr><td><b>Прогон-сортировка</b>: по одному видео на каждую тему плана, метка «вспомнить/выучить»</td><td class="num">4</td><td><a href="https://www.youtube.com/@trushinbv">Трушин</a>, плейлисты «Алгебра 8–9»</td><td><a href="https://www.khanacademy.org/digital-sat">Khan</a>: обзор юнитов</td><td>таблица тем с метками готова</td></tr>
+<tr><td>Арифметика: отрицательные, дроби, проценты, степени, корни, порядок действий</td><td class="num">4</td><td><a href="https://www.youtube.com/@WildMathing">Wild Mathing</a>, «основы»</td><td><a href="https://www.khanacademy.org/digital-sat">Khan</a>: Pre-algebra</td><td>20 задач без ошибок</td></tr>
+<tr><td>Терминология: колода 107 карт, первые 60</td><td class="num">3</td><td>—</td><td><a href="https://ankiweb.net/">Anki</a></td><td>60 карт «легко» два дня подряд</td></tr>
+<tr><td><b><a href="https://bluebook.collegeboard.org/students/download-bluebook">Bluebook</a> Test 1</b> — настоящая точка отсчёта, можно без таймера</td><td class="num">3</td><td>—</td><td><a href="https://bluebook.collegeboard.org/students/download-bluebook">Bluebook</a>, ноутбук</td><td>балл записан</td></tr>
+</tbody>
+</table>
+</div>
+
+<h4>Фаза 1 · недели 3–7 · Algebra, 35% экзамена · ~40 ч</h4>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Тема</th><th class="num">Часы</th><th>Нужно до неё</th><th>Русский</th><th>Английский</th><th>Закрыта, когда</th></tr></thead>
+<tbody>
+<tr><td>Линейные уравнения с одной переменной</td><td class="num">4</td><td>арифметика</td><td><a href="https://www.youtube.com/@trushinbv">Трушин</a>, 7 класс</td><td><a href="https://www.khanacademy.org/digital-sat">Khan</a>: Linear equations in 1 variable</td><td><a href="https://www.khanacademy.org/digital-sat">Khan</a> unit test ≥ 80%</td></tr>
+<tr><td>Линейные неравенства — <i>B5 была ошибка</i></td><td class="num">4</td><td>уравнения</td><td><a href="https://www.youtube.com/@trushinbv">Трушин</a>, 8 класс</td><td><a href="https://www.khanacademy.org/digital-sat">Khan</a>: Linear inequalities</td><td>≥ 80%, знак при делении на минус</td></tr>
+<tr><td><b>Линейные функции</b>: slope, intercepts, график, по двум точкам — <i>B2, B3</i></td><td class="num">8</td><td>уравнения</td><td><a href="https://www.youtube.com/@WildMathing">Wild Mathing</a> «линейная функция»</td><td><a href="https://www.khanacademy.org/digital-sat">Khan</a>: Linear functions; <a href="https://www.scalarlearning.com/youtube/sat-math">Scalar Learning</a></td><td>≥ 80% + 10 задач на график</td></tr>
+<tr><td><b>Системы</b> + особые случаи: нет решений / бесконечно — <i>B4, B6</i></td><td class="num">7</td><td>функции</td><td><a href="https://www.youtube.com/@trushinbv">Трушин</a> «системы»</td><td><a href="https://www.khanacademy.org/digital-sat">Khan</a>: Systems of 2 linear equations</td><td>≥ 80%, понимаешь k для ∞ решений</td></tr>
+<tr><td>Текстовые задачи → уравнение — <i>B8 верно, развить</i></td><td class="num">8</td><td>всё выше</td><td><a href="https://3.shkolkovo.online/">Школково</a>, задачи</td><td><a href="https://www.khanacademy.org/digital-sat">Khan</a>: Linear equations word problems</td><td>15 задач по-английски без перевода</td></tr>
+<tr><td>Модуль, абсолютное значение</td><td class="num">3</td><td>неравенства</td><td><a href="https://www.youtube.com/@trushinbv">Трушин</a></td><td><a href="https://www.khanacademy.org/digital-sat">Khan</a>: Absolute value</td><td>10 задач</td></tr>
+<tr><td>Сборка фазы: смешанный сет 40 задач на время</td><td class="num">6</td><td>—</td><td>—</td><td><a href="https://satsuite.collegeboard.org/practice/student-question-bank">Question Bank</a>: Algebra, medium+hard</td><td>≥ 75% за 45 мин</td></tr>
+</tbody>
+</table>
+</div>
+
+<h4>Фаза 2 · недели 7–13 · Advanced Math, 35% экзамена · ~65 ч — самый пустой блок, ему больше всего</h4>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Тема</th><th class="num">Часы</th><th>Нужно до неё</th><th>Русский</th><th>Английский</th><th>Закрыта, когда</th></tr></thead>
+<tbody>
+<tr><td>Степени и корни: все правила — <i>B12, B16</i></td><td class="num">5</td><td>арифметика</td><td><a href="https://www.youtube.com/@trushinbv">Трушин</a> «степени»</td><td><a href="https://www.khanacademy.org/digital-sat">Khan</a>: Exponents &amp; radicals</td><td>≥ 80%</td></tr>
+<tr><td>Многочлены: раскрыть, разложить, ФСУ — <i>B10 ошибка, B14</i></td><td class="num">7</td><td>степени</td><td><a href="https://www.youtube.com/@WildMathing">Wild Mathing</a> «формулы сокращённого умножения»</td><td><a href="https://www.khanacademy.org/digital-sat">Khan</a>: Polynomials, factoring</td><td>≥ 80%, (x+4)² без ошибки</td></tr>
+<tr><td><b>Квадратные уравнения</b>: дискриминант, Виета, вершина, график — <i>B9, B11, B13</i></td><td class="num">14</td><td>многочлены</td><td><a href="https://www.youtube.com/@trushinbv">Трушин</a> «квадратные уравнения» полностью</td><td><a href="https://www.khanacademy.org/digital-sat">Khan</a>: Quadratic equations/functions; <a href="https://www.scalarlearning.com/youtube/sat-math">Scalar Learning</a></td><td>≥ 80% + вершина и корни без калькулятора</td></tr>
+<tr><td>Функции: запись f(x), область, преобразования графиков — <i>B7 узнал</i></td><td class="num">9</td><td>квадратные</td><td><a href="https://www.youtube.com/@WildMathing">Wild Mathing</a> «функции»</td><td><a href="https://www.khanacademy.org/digital-sat">Khan</a>: Function notation, transformations</td><td>≥ 80%</td></tr>
+<tr><td><b>Экспоненциальный рост и убыль</b> — <i>B15 ошибка</i></td><td class="num">8</td><td>степени</td><td><a href="https://3.shkolkovo.online/">Школково</a> «показательная функция»</td><td><a href="https://www.khanacademy.org/digital-sat">Khan</a>: Exponential growth &amp; decay</td><td>10 задач на проценты «за n лет»</td></tr>
+<tr><td>Рациональные выражения, упрощение — <i>B14</i></td><td class="num">8</td><td>многочлены</td><td><a href="https://www.youtube.com/@trushinbv">Трушин</a> «дроби с переменными»</td><td><a href="https://www.khanacademy.org/digital-sat">Khan</a>: Rational expressions</td><td>≥ 80%</td></tr>
+<tr><td>Эквивалентные выражения, выразить переменную</td><td class="num">8</td><td>всё выше</td><td>—</td><td><a href="https://www.khanacademy.org/digital-sat">Khan</a>: Equivalent expressions, isolating quantities</td><td>≥ 80%</td></tr>
+<tr><td>Сборка фазы: 40 задач на время + <b><a href="https://bluebook.collegeboard.org/students/download-bluebook">Bluebook</a> Test 2</b></td><td class="num">6</td><td>—</td><td>—</td><td><a href="https://satsuite.collegeboard.org/practice/student-question-bank">Question Bank</a> + <a href="https://bluebook.collegeboard.org/students/download-bluebook">Bluebook</a></td><td>Math ≥ 550</td></tr>
+</tbody>
+</table>
+</div>
+
+<h4>Фаза 3 · недели 14–16 · Problem Solving &amp; Data, 15% · ~20 ч</h4>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Тема</th><th class="num">Часы</th><th>Русский</th><th>Английский</th><th>Закрыта, когда</th></tr></thead>
+<tbody>
+<tr><td>Отношения, пропорции, единицы измерения — <i>B19</i></td><td class="num">4</td><td><a href="https://3.shkolkovo.online/">Школково</a></td><td><a href="https://www.khanacademy.org/digital-sat">Khan</a>: Ratios, rates, units</td><td>≥ 80%</td></tr>
+<tr><td>Проценты и изменение в процентах — <i>B17 верно</i></td><td class="num">3</td><td>—</td><td><a href="https://www.khanacademy.org/digital-sat">Khan</a>: Percentages</td><td>≥ 85%</td></tr>
+<tr><td>Среднее, медиана, мода, размах; СКО как идея — <i>B18</i></td><td class="num">4</td><td><a href="https://www.youtube.com/@trushinbv">Трушин</a> «статистика»</td><td><a href="https://www.khanacademy.org/digital-sat">Khan</a>: One-variable data</td><td>≥ 80%</td></tr>
+<tr><td>Таблицы, графики, scatterplot, линия тренда</td><td class="num">4</td><td>—</td><td><a href="https://www.khanacademy.org/digital-sat">Khan</a>: Two-variable data</td><td>≥ 80%</td></tr>
+<tr><td>Вероятность — <i>B20</i></td><td class="num">3</td><td><a href="https://www.youtube.com/@trushinbv">Трушин</a> «вероятность»</td><td><a href="https://www.khanacademy.org/digital-sat">Khan</a>: Probability</td><td>≥ 80%</td></tr>
+<tr><td>Выборка, погрешность, дизайн эксперимента</td><td class="num">2</td><td>—</td><td><a href="https://www.khanacademy.org/digital-sat">Khan</a>: Inference, evaluating claims</td><td>10 задач</td></tr>
+</tbody>
+</table>
+</div>
+
+<h4>Фаза 4 · недели 17–19 · Geometry &amp; Trig, 15% · ~22 ч</h4>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Тема</th><th class="num">Часы</th><th>Русский</th><th>Английский</th><th>Закрыта, когда</th></tr></thead>
+<tbody>
+<tr><td>Углы, параллельные прямые</td><td class="num">3</td><td><a href="https://www.youtube.com/@trushinbv">Трушин</a>, геометрия 7</td><td><a href="https://www.khanacademy.org/digital-sat">Khan</a>: Lines, angles</td><td>≥ 80%</td></tr>
+<tr><td><b>Треугольники</b>: Пифагор, подобие, особые прямоугольные — <i>B22</i></td><td class="num">6</td><td><a href="https://www.youtube.com/@trushinbv">Трушин</a>, геометрия 8</td><td><a href="https://www.khanacademy.org/digital-sat">Khan</a>: Right triangles; <a href="https://www.scalarlearning.com/youtube/sat-math">Scalar Learning</a></td><td>≥ 80%; 3-4-5 и 5-12-13 узнаёшь сразу</td></tr>
+<tr><td>Площади, объёмы — <b>формулы на справочном листе</b></td><td class="num">3</td><td>—</td><td><a href="https://www.khanacademy.org/digital-sat">Khan</a>: Area &amp; volume</td><td>≥ 85%</td></tr>
+<tr><td>Окружности: дуги, секторы, уравнение окружности — <i>B23</i></td><td class="num">4</td><td><a href="https://www.youtube.com/@WildMathing">Wild Mathing</a> «окружность»</td><td><a href="https://www.khanacademy.org/digital-sat">Khan</a>: Circles</td><td>≥ 80%</td></tr>
+<tr><td>Тригонометрия: SOH-CAH-TOA, радианы, основы — <i>B24</i></td><td class="num">4</td><td><a href="https://www.youtube.com/@trushinbv">Трушин</a> «тригонометрия, начало»</td><td><a href="https://www.khanacademy.org/digital-sat">Khan</a>: Right triangle trig</td><td>≥ 80%</td></tr>
+</tbody>
+</table>
+</div>
+
+<h4>Фаза 5 · недели 20–26 · второй проход «выучить», hard-сеты, скорость, тесты · ~60 ч + тесты</h4>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Что</th><th class="num">Часы</th><th>Инструмент</th><th>Цель</th></tr></thead>
+<tbody>
+<tr><td>Второй проход по всем темам «выучить»: по 2 ч на тему, только medium+hard</td><td class="num">30</td><td><a href="https://collegeprep.uworld.com/sat/">UWorld</a> по темам, <a href="https://satsuite.collegeboard.org/practice/student-question-bank">Question Bank</a></td><td>≥ 80% на medium, ≥ 65% на hard по каждой</td></tr>
+<tr><td>Смешанные сеты только hard, по 20 задач, на время</td><td class="num">14</td><td><a href="https://satsuite.collegeboard.org/practice/student-question-bank">Question Bank</a>, <a href="https://collegeprep.uworld.com/sat/">UWorld</a></td><td>≥ 70% на hard</td></tr>
+<tr><td>Приёмы <a href="https://www.desmos.com/calculator">Desmos</a>: график вместо алгебры, пересечения, таблицы</td><td class="num">4</td><td><a href="https://www.scalarlearning.com/youtube/sat-math">Scalar Learning</a> «<a href="https://www.desmos.com/calculator">Desmos</a> tricks»</td><td>решать 3–4 задачи модуля через график</td></tr>
+<tr><td><b><a href="https://bluebook.collegeboard.org/students/download-bluebook">Bluebook</a> Tests 3, 4, 5, 6</b> с полным разбором каждого</td><td class="num">16</td><td><a href="https://bluebook.collegeboard.org/students/download-bluebook">Bluebook</a></td><td>рост по 30–50 очков между тестами</td></tr>
+<tr><td>Журнал ошибок: последний прогон всех тем «выучить»</td><td class="num">4</td><td>журнал + <a href="https://ankiweb.net/">Anki</a></td><td>ни одной темы с &lt; 75%</td></tr>
+</tbody>
+</table>
+</div>
+
+<h4>Где брать задачи — карта по темам</h4>
+
+<p class="lead">«Закрыта при ≥ 80%» означает конкретную вещь: <b>unit test</b> в <a href="https://www.khanacademy.org/digital-sat">Khan Academy</a> — тест в конце каждого юнита, новые задачи каждый раз. А «новые задачи без конца» — это <b><a href="https://satsuite.collegeboard.org/practice/student-question-bank">Student Question Bank</a></b> <a href="https://satsuite.collegeboard.org/sat">College Board</a>: тысячи <b>настоящих</b> вопросов SAT с фильтром по навыку и сложности. Ниже — точные названия навыков в банке, чтобы не искать.</p>
+
+<div class="note">
+<span class="lbl">Как пользоваться <a href="https://satsuite.collegeboard.org/practice/student-question-bank">Question Bank</a> — 5 шагов</span>
+<p>1. <a href="https://satsuite.collegeboard.org/practice/student-question-bank">satsuite.collegeboard.org/practice/student-question-bank</a> → «Access the <a href="https://satsuite.collegeboard.org/practice/student-question-bank">Question Bank</a>». 2. Assessment: <b>SAT</b>. 3. Test section: <b>Math</b> или <b>Reading and Writing</b>. 4. Domain → Skill — названия из таблицы ниже. 5. Difficulty: сначала <b>Easy + Medium</b>, после 80% — <b>Hard</b>. Кнопка «Export» отдаёт PDF с ответами и разборами — можно решать на телефоне в перекур.</p>
+</div>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Тема плана</th><th><a href="https://satsuite.collegeboard.org/practice/student-question-bank">Question Bank</a>: Domain → Skill</th><th><a href="https://www.khanacademy.org/digital-sat">Khan Academy</a>: юнит</th><th><a href="https://collegeprep.uworld.com/sat/">UWorld</a></th></tr></thead>
+<tbody>
+<tr><td>Линейные уравнения</td><td>Algebra → Linear equations in one variable</td><td>Algebra → Linear equations in one variable</td><td>Algebra → Linear equations</td></tr>
+<tr><td>Линейные неравенства</td><td>Algebra → Linear inequalities in one or two variables</td><td>Algebra → Linear inequalities</td><td>Algebra → Inequalities</td></tr>
+<tr><td>Линейные функции, графики</td><td>Algebra → Linear functions; Linear equations in two variables</td><td>Algebra → Linear functions; Linear equations in two variables</td><td>Algebra → Linear functions</td></tr>
+<tr><td>Системы</td><td>Algebra → Systems of two linear equations in two variables</td><td>Algebra → Systems of two linear equations</td><td>Algebra → Systems</td></tr>
+<tr><td>Текстовые задачи</td><td>те же навыки, слово «word problems» в названии подтем</td><td>Algebra → все юниты, задачи-тексты</td><td>Algebra → Word problems</td></tr>
+<tr><td>Степени, корни, многочлены, рациональные</td><td>Advanced Math → Equivalent expressions</td><td>Advanced Math → Equivalent expressions</td><td>Advanced → Exponents, Polynomials</td></tr>
+<tr><td>Квадратные, экспоненты, уравнения</td><td>Advanced Math → Nonlinear equations in one variable and systems of equations in two variables</td><td>Advanced Math → Nonlinear equations; Systems</td><td>Advanced → Quadratics, Exponentials</td></tr>
+<tr><td>Функции, преобразования, графики</td><td>Advanced Math → Nonlinear functions</td><td>Advanced Math → Nonlinear functions</td><td>Advanced → Functions</td></tr>
+<tr><td>Отношения, проценты, единицы</td><td>Problem-Solving and Data Analysis → Ratios, rates, proportional relationships, and units; Percentages</td><td>PSDA → Ratios; Percentages</td><td>PSDA → Ratios, Percents</td></tr>
+<tr><td>Статистика, графики, вероятность</td><td>PSDA → One-variable data; Two-variable data; Probability; Inference; Evaluating statistical claims</td><td>PSDA → соответствующие юниты</td><td>PSDA → Statistics, Probability</td></tr>
+<tr><td>Геометрия</td><td>Geometry and Trigonometry → Area and volume; Lines, angles, and triangles; Circles</td><td>Geometry &amp; Trig → те же</td><td>Geometry → те же</td></tr>
+<tr><td>Тригонометрия</td><td>Geometry and Trigonometry → Right triangles and trigonometry</td><td>Geometry &amp; Trig → Right triangles &amp; trig</td><td>Geometry → Trigonometry</td></tr>
+<tr><td>R&amp;W: грамматика</td><td>Standard English Conventions → Boundaries; Form, structure, and sense</td><td>R&amp;W → Standard English Conventions</td><td>R&amp;W → Conventions</td></tr>
+<tr><td>R&amp;W: переходы, слово в контексте, главная мысль</td><td>Expression of Ideas → Transitions; Craft and Structure → Words in context; Information and Ideas → Central ideas, Inferences, Command of evidence</td><td>R&amp;W → те же юниты</td><td>R&amp;W → те же</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="after">
+Порядок на каждую тему: <b><a href="https://www.khanacademy.org/digital-sat">Khan</a> practice</b> → <b><a href="https://www.khanacademy.org/digital-sat">Khan</a> unit test</b> ≥ 80% → <b><a href="https://satsuite.collegeboard.org/practice/student-question-bank">Question Bank</a></b> 20 задач Medium → 10 Hard → <b><a href="https://collegeprep.uworld.com/sat/">UWorld</a></b> для разбора ошибок. Полные тесты — только <b><a href="https://bluebook.collegeboard.org/students/download-bluebook">Bluebook</a></b>: 6 официальных, других «полных тестов SAT» с реальными задачами не существует, всё остальное — имитации.
+</div>
+
+<hr>
+
+<h2 id="rw">7. Reading &amp; Writing</h2>
+<h3>Параллельно, ~2,5 ч в неделю, ~65 ч всего</h3>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Недели</th><th>Тема</th><th class="num">Часы</th><th>Источник</th><th>Закрыта, когда</th></tr></thead>
+<tbody>
+<tr><td>1–8</td><td><b>Standard English Conventions</b>: запятые, точка с запятой, двоеточие, тире; согласование подлежащего; местоимения — <i>its/it's, C11</i>; модификаторы; времена</td><td class="num">20</td><td><a href="https://thecriticalreader.com/">Erica Meltzer</a>, бесплатные правила на thecriticalreader.com; <a href="https://www.khanacademy.org/digital-sat">Khan</a>: Standard English conventions</td><td><a href="https://www.khanacademy.org/digital-sat">Khan</a> unit ≥ 85%; ошибок на пунктуацию ноль подряд в 30 вопросах</td></tr>
+<tr><td>9–11</td><td><b>Transitions</b>: however / therefore / for example — логика между предложениями</td><td class="num">8</td><td><a href="https://www.khanacademy.org/digital-sat">Khan</a>: Transitions; <a href="https://www.youtube.com/supertutortv">SupertutorTV</a></td><td>≥ 85%</td></tr>
+<tr><td>1–26</td><td><b>Слово в контексте</b> — <i>C7</i>: 10 слов в день из SAT-списков + чтение</td><td class="num">12</td><td><a href="https://ankiweb.net/">Anki</a>: колода слов; чтение <a href="https://www.economist.com/">The Economist</a> / NYT 10 мин перед сном</td><td>≥ 80% на vocabulary-in-context</td></tr>
+<tr><td>12–20</td><td><b>Craft &amp; Structure, Information &amp; Ideas</b>: главная мысль, функция предложения, вывод, данные в тексте, сравнение двух текстов</td><td class="num">15</td><td><a href="https://www.khanacademy.org/digital-sat">Khan</a>: все юниты R&amp;W; <a href="https://thecriticalreader.com/">Meltzer</a> «Critical Reader» если купишь</td><td>≥ 80%</td></tr>
+<tr><td>21–26</td><td>Скорость: полные модули по 32 минуты; поэзия и научные тексты отдельно</td><td class="num">10</td><td><a href="https://bluebook.collegeboard.org/students/download-bluebook">Bluebook</a></td><td>R&amp;W ≥ 700 на Test 4</td></tr>
+</tbody>
+</table>
+</div>
+
+<hr>
+
+<h2 id="tools">8. Инструменты: ссылки и цены</h2>
+<h3>Всё проверено 5 сентября 2026. Цены — как на сайтах; курс доллара к евро ≈ 0,92</h3>
+
+<div class="note">
+<span class="lbl">Кто такой <a href="https://www.youtube.com/@trushinbv">Трушин</a></span>
+<p><b><a href="https://www.youtube.com/@trushinbv">Борис Трушин</a></b> — преподаватель математики, 26 лет стажа, Физтех-лицей и Фоксфорд. У него два канала: личный <a href="https://www.youtube.com/@trushinbv">@trushinbv</a> — вся школьная математика по темам, разборы «как это работает», и <a href="https://www.youtube.com/@trushin_math">@trushin_math</a> — ОГЭ/ЕГЭ с Фоксфордом. Объясняет с нуля и до сути, не «запомни формулу». Для твоего типа «узнаю, но не помню шаги» — лучший русскоязычный источник.</p>
+</div>
+
+<h4>Бесплатное — база, без этого ничего не работает</h4>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Инструмент</th><th>Что это</th><th>Ссылка</th><th class="num">Цена</th></tr></thead>
+<tbody>
+<tr><td><b><a href="https://www.khanacademy.org/digital-sat">Khan Academy Digital SAT</a></b></td><td>Официальный партнёр <a href="https://satsuite.collegeboard.org/sat">College Board</a>: видео, практика по юнитам, встроенная диагностика. Шаги 3–4 цикла</td><td><a href="https://www.khanacademy.org/digital-sat">khanacademy.org/digital-sat</a></td><td class="num">€0</td></tr>
+<tr><td><b><a href="https://bluebook.collegeboard.org/students/download-bluebook">Bluebook</a></b></td><td>Приложение <a href="https://satsuite.collegeboard.org/sat">College Board</a>: 6 полных официальных тестов в точном формате. Только ноутбук/планшет</td><td><a href="https://bluebook.collegeboard.org/students/download-bluebook">bluebook.collegeboard.org</a></td><td class="num">€0</td></tr>
+<tr><td><b><a href="https://satsuite.collegeboard.org/practice/student-question-bank">Student Question Bank</a></b></td><td>Официальные задачи <a href="https://satsuite.collegeboard.org/sat">College Board</a> с фильтром по теме и сложности — для сетов medium/hard</td><td><a href="https://satsuite.collegeboard.org/practice/student-question-bank">satsuite.collegeboard.org → student-question-bank</a></td><td class="num">€0</td></tr>
+<tr><td><b><a href="https://ankiweb.net/">Anki</a></b></td><td>Карточки с интервальным повторением. Наша колода 107 терминов</td><td><a href="https://apps.ankiweb.net/">apps.ankiweb.net</a> — Mac/PC · <a href="https://ankiweb.net/">ankiweb.net</a> — в браузере телефона · AnkiDroid — Android</td><td class="num">€0; только AnkiMobile для iPhone — $24,99 один раз, можно обойтись AnkiWeb</td></tr>
+<tr><td><b><a href="https://www.youtube.com/@trushinbv">Борис Трушин</a></b></td><td>Русский, школьная математика по темам — шаг 1 цикла</td><td><a href="https://www.youtube.com/@trushinbv">youtube.com/@trushinbv</a></td><td class="num">€0</td></tr>
+<tr><td><b><a href="https://www.youtube.com/@WildMathing">Wild Mathing</a></b></td><td>Русский, наглядно и коротко: функции, формулы сокращённого умножения, окружность</td><td><a href="https://www.youtube.com/@WildMathing">youtube.com/@WildMathing</a></td><td class="num">€0</td></tr>
+<tr><td><b><a href="https://www.scalarlearning.com/youtube/sat-math">Scalar Learning</a></b></td><td>Английский, Digital SAT Math — сотни разборов по темам и приёмы Desmos. Автор — 800 по математике трижды</td><td><a href="https://www.youtube.com/c/ScalarLearning">youtube.com/c/ScalarLearning</a></td><td class="num">€0</td></tr>
+<tr><td><b><a href="https://www.youtube.com/@haydenrhodea761">Hayden Rhodea SAT</a></b></td><td>Английский, 400+ видео с разборами задач Math и R&amp;W</td><td><a href="https://www.youtube.com/@haydenrhodea761">youtube.com/@haydenrhodea761</a></td><td class="num">€0</td></tr>
+<tr><td><b><a href="https://www.youtube.com/supertutortv">SupertutorTV</a></b></td><td>Английский, Reading &amp; Writing: стратегии, разборы</td><td><a href="https://www.youtube.com/supertutortv">youtube.com/supertutortv</a></td><td class="num">€0</td></tr>
+<tr><td><b>The Critical Reader — блог</b></td><td>Правила грамматики SAT от Эрики <a href="https://thecriticalreader.com/">Мельцер</a> бесплатно, без книги</td><td><a href="https://thecriticalreader.com/">thecriticalreader.com</a></td><td class="num">€0</td></tr>
+<tr><td>r/SAT</td><td>Сообщество: вопросы, чужие ошибки, реальные баллы</td><td><a href="https://www.reddit.com/r/SAT/">reddit.com/r/SAT</a></td><td class="num">€0</td></tr>
+</tbody>
+</table>
+</div>
+
+<h4>Платное — только то, что окупается</h4>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Инструмент</th><th>Что это</th><th>Ссылка</th><th class="num">Цена</th><th>Вердикт</th></tr></thead>
+<tbody>
+<tr><td class="pri"><b><a href="https://collegeprep.uworld.com/sat/">UWorld</a> SAT QBank</b></td><td>1 700+ задач уровня SAT с визуальным разбором каждого ответа, приложение на телефон, статистика по темам. 7 дней бесплатно без карты</td><td><a href="https://collegeprep.uworld.com/sat/">collegeprep.uworld.com/sat</a></td><td class="num">30 дн — $99 · 90 дн — $149 · <b>180 дн — $199</b> · 360 дн — $249</td><td class="pri"><b>Брать 180 дней с фазы 1</b> — это ~€30/мес и покрывает до марта. Не брать «Prep Course» за $299–449, видео есть бесплатно</td></tr>
+<tr><td>College Panda SAT Math, 3-е изд. — <i>по желанию</i></td><td>Книга по математике: теория + задачи. Ты предпочитаешь цифру — <a href="https://collegeprep.uworld.com/sat/">UWorld</a> и <a href="https://satsuite.collegeboard.org/practice/student-question-bank">Question Bank</a> это покрывают</td><td><a href="https://www.amazon.com/dp/1733192727">amazon.com/dp/1733192727</a></td><td class="num">$23,99</td><td>не обязательно</td></tr>
+<tr><td><a href="https://thecriticalreader.com/">Meltzer</a>, Ultimate Guide to SAT Grammar, 6-е изд. — <i>по желанию</i></td><td>Лучшая книга по Conventions; её же правила бесплатно на <a href="https://thecriticalreader.com/">thecriticalreader.com</a></td><td><a href="https://www.amazon.com/dp/1733589597">amazon.com/dp/1733589597</a></td><td class="num">~$30–35</td><td>не обязательно — блог + <a href="https://www.khanacademy.org/digital-sat">Khan</a> + <a href="https://collegeprep.uworld.com/sat/">UWorld</a></td></tr>
+<tr><td><b>Репетитор точечно</b></td><td>Русскоязычный по математике, час в две недели, только по темам «выучить», где застрял</td><td><a href="https://preply.com/">preply.com</a> · <a href="https://www.italki.com/">italki.com</a></td><td class="num">от $4–5, в среднем ~$15–20/ч</td><td>с фазы 2, если конкретная тема не идёт после двух циклов</td></tr>
+<tr><td><a href="https://3.shkolkovo.online/">Школково</a></td><td>Русская ЕГЭ-платформа; бесплатные видео на YouTube есть, курсы дорогие</td><td><a href="https://3.shkolkovo.online/">3.shkolkovo.online</a></td><td class="num">курсы ~6 856 ₽/мес</td><td><b>не брать</b> — не про SAT; видео на YouTube можно смотреть бесплатно</td></tr>
+<tr><td>Курсы: 1600.io, PrepScholar, Magoosh, <a href="https://collegeprep.uworld.com/sat/">UWorld</a> Prep Course</td><td>Длинные видеокурсы</td><td>—</td><td class="num">$40–450</td><td>не нужно при этом плане</td></tr>
+</tbody>
+</table>
+</div>
+
+<h4>Сам экзамен</h4>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Статья</th><th class="num">Цена</th><th>Где</th></tr></thead>
+<tbody>
+<tr><td>Регистрация SAT за пределами США: $68 базовый + $43 международный</td><td class="num"><b>$111</b> за попытку</td><td><a href="https://satsuite.collegeboard.org/sat/registration">satsuite.collegeboard.org/sat/registration</a></td></tr>
+<tr><td>Поздняя регистрация / смена даты или центра</td><td class="num">+$38 / +$34</td><td>там же</td></tr>
+<tr><td>Две попытки: декабрь + март</td><td class="num">$222</td><td>плюс дорога в марте, если сдаёшь не на Кипре</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note good">
+<span class="lbl">Итого по деньгам на весь путь</span>
+<p>Цифровой набор: <a href="https://collegeprep.uworld.com/sat/">UWorld</a> 180 дней <b>$199</b> + репетитор ~6 часов с ноября по март <b>~$100</b> + два экзамена <b>$222</b> = <b>~$520 за семь месяцев</b> — ~€70/мес вместе с экзаменами; без репетитора и с одной попыткой — ~€40/мес. Книги не нужны. Всё остальное в плане бесплатное. Плюс поездка на мартовскую сдачу, если не Кипр: 50–80 тыс ₽.</p>
+</div>
+
+<h4>Приёмы и концепции экзамена — что смотреть</h4>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Что</th><th>Где</th><th>Язык</th><th>Зачем</th></tr></thead>
+<tbody>
+<tr><td><b>Как устроен Digital SAT</b>: два адаптивных модуля, второй зависит от первого, нет штрафа за угадывание, <a href="https://www.desmos.com/calculator">Desmos</a> встроен, 44 + 54 вопроса</td><td><a href="https://www.youtube.com/watch?v=k-dkyd1yf2E">«SAT Digital Explained» — всё о тесте, ресурсы, даты</a></td><td>RU</td><td>понять правила игры за 20 минут</td></tr>
+<tr><td><b>Desmos-приёмы</b>: решать уравнения графиком, пересечения, таблицы, системы без алгебры</td><td><a href="https://www.scalarlearning.com/youtube/sat-math">Scalar Learning → SAT Math</a> — плейлист, ищи «<a href="https://www.desmos.com/calculator">Desmos</a>»</td><td>EN</td><td>экономит по 30–60 секунд на задаче — это балл</td></tr>
+<tr><td><b>Подстановка чисел и перебор ответов</b> вместо алгебры</td><td><a href="https://www.youtube.com/@haydenrhodea761">Hayden Rhodea SAT</a> — разборы с приёмами</td><td>EN</td><td>для «выучить»-тем, пока не закрыты</td></tr>
+<tr><td><b>Стратегии R&amp;W</b>: читать вопрос до текста, не переводить в голове, исключать варианты</td><td><a href="https://supertutortv.com/free-resources/">SupertutorTV — free resources</a> · <a href="https://www.youtube.com/watch?v=WzhOPARliQA">10 best strategies</a></td><td>EN</td><td>твоя главная ошибка по R&amp;W у русскоязычных — перевод в голове</td></tr>
+<tr><td><b>Тайминг и порядок</b>: флаг сложных, возврат в конце, 1,5 мин на задачу Math, 70 сек на вопрос R&amp;W</td><td><a href="https://bluebook.collegeboard.org/students/download-bluebook">Bluebook</a>: режим практики с таймером</td><td>—</td><td>отрабатывается только на полных модулях</td></tr>
+<tr><td><b>Ошибки русскоязычных</b>: перевод, пропуск слов-ограничителей (only, except, least), знак минус в неравенствах</td><td><a href="https://global-generations.us/blog/sat-dlya-russkoyazychnykh">разбор Global Generation</a></td><td>RU</td><td>список типовых ловушек</td></tr>
+<tr><td>Русскоязычная платформа с разборами на русском — если английские разборы <a href="https://collegeprep.uworld.com/sat/">UWorld</a> идут тяжело</td><td><a href="https://sat-portal.ru/">sat-portal.ru</a> — 3000+ вопросов, симуляция <a href="https://bluebook.collegeboard.org/students/download-bluebook">Bluebook</a>; цену уточнить на сайте</td><td>RU</td><td>опция, не база: настоящие вопросы — только у <a href="https://satsuite.collegeboard.org/sat">College Board</a></td></tr>
+</tbody>
+</table>
+</div>
+
+<hr>
+
+<h2 id="habits">9. Вместо Instagram</h2>
+<h3>Микро-режим в будни — это те самые +3 часа, которые делают март из «1400» в «1450»</h3>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Слот</th><th>Вместо чего</th><th>Что делаешь</th><th class="num">Минут</th><th>Приложение</th></tr></thead>
+<tbody>
+<tr><td>Утро, кофе</td><td>лента</td><td>10 карточек терминов + 10 слов</td><td class="num">7</td><td><a href="https://ankiweb.net/">Anki</a> (AnkiWeb в браузере бесплатно)</td></tr>
+<tr><td>Каждый перекур</td><td>рилсы</td><td>3–5 задач по теме недели</td><td class="num">5 × 3</td><td><a href="https://www.khanacademy.org/digital-sat">Khan Academy</a> app / <a href="https://collegeprep.uworld.com/sat/">UWorld</a> app</td></tr>
+<tr><td>Дорога, очередь</td><td>телефон</td><td>1 короткий текст R&amp;W + 4 вопроса</td><td class="num">8</td><td><a href="https://www.khanacademy.org/digital-sat">Khan</a> app</td></tr>
+<tr><td>Перед сном</td><td>Instagram</td><td>10 минут чтения по-английски — статья, не лента</td><td class="num">10</td><td>любой браузер; <a href="https://www.economist.com/">The Economist</a>, <a href="https://aeon.co/">Aeon</a>, <a href="https://nautil.us/">Nautilus</a></td></tr>
+<tr><td><b>Итого в день</b></td><td></td><td></td><td class="num big">~40</td><td></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note hot">
+<span class="lbl">Три правила, без которых это не работает</span>
+<p><b>1. Экран.</b> <a href="https://www.khanacademy.org/digital-sat">Khan</a> и <a href="https://ankiweb.net/">Anki</a> — на первый экран телефона, Instagram — в папку на третий. Не «сила воли», а расстояние до иконки.</p>
+<p><b>2. Ошибки — в журнал в тот же день.</b> Микро-слоты дают задачи; без журнала они дают ноль. Одна строка: номер, тема, почему ошибся.</p>
+<p><b>3. Ноль пропущенных выходных подряд.</b> Одна пропущенная суббота — нормально. Две подряд — план сдвигается на месяц, и март превращается в май, которого нет.</p>
+</div>
+
+<hr>
+
+<h2 id="milestones">10. Контрольные точки</h2>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Когда</th><th>Что должно быть</th><th class="num">Ориентир балла</th></tr></thead>
+<tbody>
+<tr><td><b>конец сентября</b></td><td>сортировка тем сделана, часы пересчитаны; <a href="https://bluebook.collegeboard.org/students/download-bluebook">Bluebook</a> Test 1 сдан</td><td class="num">точка отсчёта</td></tr>
+<tr><td>конец октября</td><td>Algebra закрыта, Advanced начата; все юниты <a href="https://www.khanacademy.org/digital-sat">Khan</a> ≥ 80%</td><td class="num">Math 520+</td></tr>
+<tr><td>конец ноября</td><td>Advanced почти закрыта; <a href="https://bluebook.collegeboard.org/students/download-bluebook">Bluebook</a> Test 2</td><td class="num">Math 580–620 · R&amp;W 660</td></tr>
+<tr><td class="pri"><b>начало декабря — сдача №1 на Кипре</b></td><td>пробная, в реальных условиях</td><td class="num"><b>1250–1350</b></td></tr>
+<tr><td>конец января</td><td>Данные и Геометрия закрыты; <a href="https://bluebook.collegeboard.org/students/download-bluebook">Bluebook</a> Test 3</td><td class="num">Math 660–700</td></tr>
+<tr><td>конец февраля</td><td>второй проход по темам «выучить», только hard; <a href="https://bluebook.collegeboard.org/students/download-bluebook">Bluebook</a> Test 4 и 5</td><td class="num">1400–1450</td></tr>
+<tr><td>первая неделя марта</td><td><a href="https://bluebook.collegeboard.org/students/download-bluebook">Bluebook</a> Test 6, затем только повторение и сон</td><td class="num">1430+</td></tr>
+<tr><td class="pri"><b>середина марта — сдача №2</b></td><td>Ереван / Тбилиси / Кипр — решить в октябре</td><td class="num"><b>1450+</b></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note good">
+<span class="lbl">Эта суббота</span>
+<p>1. Скачать <b><a href="https://bluebook.collegeboard.org/students/download-bluebook">Bluebook</a></b> на ноутбук, завести аккаунт College Board. 2. Открыть <a href="https://www.khanacademy.org/digital-sat">Khan Academy Digital SAT</a>, пройти их встроенную диагностику — 30 минут. 3. Первый прогон-сортировка: по 5 минут на каждую тему из фаз 1–4 — узнаёшь или нет, пометить в таблице. 4. Арифметика: один час, <a href="https://www.youtube.com/@WildMathing">Wild Mathing</a> + 20 задач. 5. <a href="https://ankiweb.net/">Anki</a>: первые 30 карточек.</p>
+<p>Воскресенье: <a href="https://bluebook.collegeboard.org/students/download-bluebook">Bluebook</a> Test 1 целиком, без таймера, с перерывами. Балл и список тем с метками — пришли мне, пересчитаем часы под реальность.</p>
+</div>
+
+<footer>
+<p>Структура экзамена: <a href="https://satsuite.collegeboard.org/sat">College Board</a>, Digital SAT 2024–2026 — Math 44 задачи в 2 адаптивных модулях по 35 мин: Algebra 35%, Advanced Math 35%, PSDA 15%, Geometry &amp; Trig 15%; R&amp;W 54 вопроса в 2 модулях по 32 мин. Правило часов — из практики подготовки (<a href="https://satsuite.collegeboard.org/sat">College Board</a> / <a href="https://www.khanacademy.org/digital-sat">Khan Academy</a>: 20 ч практики ≈ +115 очков в среднем; PrepScholar: 0–30 очков ~10 ч, 130–200 ~80 ч, 200–330 ~150 ч на секцию). Цены инструментов ориентировочные на сентябрь 2026 — проверить при покупке. Наличие центров SAT — только на collegeboard.org.</p>
+<p>Часть плана: <a href="https://alex-sat-plan.netlify.app">SAT-план, первая версия</a> · диагностика — sat/SAT-ДИАГНОСТИКА.html · <a href="https://alex-italy-hub.netlify.app">указатель</a></p>
+</footer>
+
+</div>
+<script>(function(){function l(){document.querySelectorAll('table').forEach(function(t){
+var h=[].map.call(t.querySelectorAll('thead th'),function(x){return (x.textContent||'').replace(/\s+/g,' ').trim()});
+if(!h.length)return;[].forEach.call(t.querySelectorAll('tbody tr'),function(r){[].forEach.call(r.cells,function(c,i){
+if(h[i]&&!c.hasAttribute('data-l'))c.setAttribute('data-l',h[i])})})})}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',l);else l();})();</script>
+</body>
+</html>

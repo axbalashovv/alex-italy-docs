@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Вопросы на консультацию</title>
+<style>
+:root{--bg:#fbfaf8;--ink:#1a1a1a;--muted:#6b6864;--rule:#dedad4;--accent:#8a5a2b;--max:820px}
+@media (prefers-color-scheme:dark){:root{--bg:#141312;--ink:#e8e4de;--muted:#918b83;--rule:#2f2c29;--accent:#c99a63}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 Georgia,"Times New Roman",serif;padding:0 24px 100px}
+.wrap{max-width:var(--max);margin:0 auto}
+header{padding:70px 0 0}
+h1{font-size:30px;line-height:1.22;font-weight:400;margin:0 0 14px}
+.sub{color:var(--muted);font-size:15px;line-height:1.55;margin:0 0 8px}
+hr{border:0;border-top:1px solid var(--rule);margin:38px 0}
+h2{font-size:12.5px;font-weight:400;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);margin:48px 0 6px;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+h3{font-size:23px;font-weight:400;line-height:1.32;margin:0 0 18px}
+h4{font-size:17px;font-weight:700;margin:24px 0 9px}
+p{margin:0 0 15px}
+ul,ol{margin:0 0 15px;padding-left:22px}
+li{margin:0 0 7px}
+a{color:var(--accent)}
+nav.toc{margin:34px 0 0}
+nav.toc ol{list-style:none;margin:0;padding:0;counter-reset:s}
+nav.toc>ol>li{counter-increment:s;border-top:1px solid var(--rule);padding:10px 0}
+nav.toc>ol>li:last-child{border-bottom:1px solid var(--rule)}
+nav.toc a{color:var(--ink);text-decoration:none;display:flex;gap:14px;align-items:baseline}
+nav.toc a:hover{color:var(--accent)}
+nav.toc a::before{content:counter(s);color:var(--muted);font-size:13px;min-width:18px;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+nav.toc .t{flex:1}
+nav.toc .n{color:var(--muted);font-size:13px;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+.note{border-left:2px solid var(--accent);padding:2px 0 2px 18px;margin:0 0 20px}
+.note p:last-child{margin-bottom:0}
+.tablewrap{overflow-x:auto;margin:0 0 20px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:14.5px;line-height:1.48}
+th{text-align:left;font-weight:400;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--ink);padding:0 13px 7px 0;vertical-align:bottom;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+td{border-bottom:1px solid var(--rule);padding:10px 13px 10px 0;vertical-align:top}
+td:last-child,th:last-child{padding-right:0}
+.num{white-space:nowrap;font-variant-numeric:tabular-nums}
+.uni{font-weight:700}
+footer{margin-top:58px;padding-top:20px;border-top:1px solid var(--rule);color:var(--muted);font-size:14px;line-height:1.6}
+@media (max-width:820px){body{font-size:16px;padding:0 16px 74px}header{padding-top:42px}h1{font-size:24px}h3{font-size:19px}table{min-width:560px;font-size:14px}}
+</style><style>
+.gloss{margin:0 0 22px}
+.gloss dt{font-weight:700;margin:16px 0 3px;font-size:16px}
+.gloss dd{margin:0 0 0 0;color:var(--muted);font-size:15.5px;line-height:1.5}
+.lead{font-size:17px;margin:0 0 16px}
+.after{border-left:2px solid var(--accent);padding:2px 0 2px 18px;margin:16px 0 26px;font-size:15.5px}
+.after b{color:var(--ink)}
+.big{font-size:20px;font-weight:700}
+table.simple{min-width:0}
+table.simple td{padding:12px 16px 12px 0}
+.step{color:var(--muted);font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;
+ font-family:-apple-system,BlinkMacSystemFont,sans-serif;margin:0 0 6px}
+</style>
+<style id="sem">
+.lbl{display:block;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,sans-serif;
+  font-size:11px;letter-spacing:.09em;text-transform:uppercase;font-weight:600;
+  color:var(--muted);margin:0 0 8px;line-height:1.35}
+.note .lbl + p{margin-top:0}
+.note.hot{border-left-color:#9c3328}
+.note.hot .lbl{color:#9c3328}
+.note.good{border-left-color:#3f6b4a}
+.note.good .lbl{color:#3f6b4a}
+td.pri{color:var(--accent)}
+th{white-space:nowrap}
+@media (max-width:700px){
+  .lbl{margin-bottom:6px}
+  th{white-space:normal}
+  .tablewrap td.pri::before,.scroll td.pri::before{color:var(--muted)}
+}
+</style>
+<style id="mob">
+@media (max-width:700px){
+  .tablewrap,.scroll{overflow-x:visible !important}
+  .tablewrap table,.scroll table{min-width:0 !important;display:block;font-size:15px}
+  .tablewrap thead,.scroll thead{display:none}
+  .tablewrap tbody,.tablewrap tr,.tablewrap td,
+  .scroll tbody,.scroll tr,.scroll td{display:block;width:100%}
+  .tablewrap tr,.scroll tr{border-bottom:1px solid var(--ink,var(--fg));padding:15px 0 13px}
+  .tablewrap tr:last-child,.scroll tr:last-child{border-bottom:0}
+  .tablewrap td,.scroll td{border:0 !important;padding:5px 0 !important;line-height:1.5}
+  .tablewrap td:empty,.scroll td:empty{display:none}
+  .tablewrap td::before,.scroll td::before{
+    content:attr(data-l);display:block;font-size:11px;letter-spacing:.07em;text-transform:uppercase;
+    color:var(--muted,var(--mut));margin-bottom:2px;
+    font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+  .tablewrap td:first-child::before,.scroll td:first-child::before{display:none}
+  .tablewrap td:first-child,.scroll td:first-child{
+    font-weight:700;font-size:17px;line-height:1.32;margin-bottom:7px}
+  .num{white-space:normal !important}
+  nav.toc a{flex-wrap:wrap}
+  nav.toc .n{margin-left:32px;width:100%;text-align:left;margin-top:2px}
+  nav .d{margin-left:34px;width:100%;text-align:left;margin-top:2px}
+  .nu{font-size:15px}
+  dl.gloss dd{font-size:16px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Вопросы на консультацию</h1>
+  <p class="sub">4 сентября 2026. Global Dialog, <b>+7 (495) 984-33-73</b> — официальный представитель Турина и Болоньи в России. Четыре темы по приоритету: стипендия, SAT, виза, цены. Всё, что уже проверено по регламентам, отделено от того, что знают только они.</p>
+  <nav class="toc">
+    <ol>
+      <li><a href="#schol"><span class="t">Стипендия — и поправка к твоей формуле</span><span class="n">цена ошибки €4 300</span></a></li>
+      <li><a href="#sat"><span class="t">Балл SAT</span><span class="n">данных нет нигде</span></a></li>
+      <li><a href="#visa"><span class="t">Виза — самое узкое место</span><span class="n">90 дней против июля</span></a></li>
+      <li><a href="#price"><span class="t">Цены</span><span class="n">что подтвердить</span></a></li>
+      <li><a href="#dont"><span class="t">Что не спрашивать и красные флаги</span><span class="n">экономия времени</span></a></li>
+    </ol>
+  </nav>
+</header>
+
+<hr>
+
+<div class="note good">
+<span class="lbl">Обновление 4 сентября — один вопрос уже снят</span>
+<p>Приёмная служба Болоньи ответила письменно: <b>год Никосии закрывает требование о 12 годах</b>, при условии что год полный и все 60 ECTS набраны. Нужен <b>academic certificate за первый курс</b>, не полный транскрипт — значит провальные семестры 2 и 3 в приёмную папку не попадают.</p>
+<p>Твой первый год условию соответствует: 60 из 60, все предметы сданы, ни одного WA.</p>
+<p>Поэтому на звонке этот вопрос <b>задавать только про Турин</b> — у него свои правила признания, и его ответа пока нет. По Болонье вопрос закрыт, время не тратить.</p>
+</div>
+
+<div class="note hot">
+<span class="lbl">Обязательное действие, которого не было: формальный отказ от учёбы в UNIC</span>
+<p>Срок стипендии считается от <b>года первого зачисления — «anche all'estero»</b>. Если не оформить отказ от учёбы в Никосии, ER.GO посчитает первым годом 2023, и права на льготы к 2027/28 не останется. Оговорка в самом бандо: «<b>fatta salva un'eventuale rinuncia agli studi</b>» — после отказа и приёма на первый курс отсчёт идёт с нового зачисления.</p>
+<p>Второе: <b>не подавать на признание кредитов</b> — оно отматывает год назад. Третье: предыдущую карьеру в заявке <b>указать честно</b>. Полный разбор: <a href="https://alex-italy-second-degree.netlify.app">Второй бакалавриат: что правда</a>.</p>
+</div>
+
+<h2 id="schol">1. Стипендия</h2>
+<h3>Твоя формула почти верна — но одно звено перепутано</h3>
+
+<p class="lead">Ты видел: «мама зарабатывает меньше €27 000 в год и недвижимости меньше чем на €57 000 → стипендия €8 000». <b>Три числа из трёх настоящие.</b> Все взяты из туринского бандо. Но связаны они между собой не так.</p>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Число</th><th>Что это на самом деле</th><th>Верно?</th></tr></thead>
+<tbody>
+<tr><td><b>€27 000</b></td><td>€26 306,25 — порог <b>ISEE</b>, выше которого стипендии нет вообще</td><td class="pri">Верно как порог отсечения</td></tr>
+<tr><td><b>€57 000</b></td><td>€57 187,53 — порог <b>ISPE</b>, вторая независимая проверка</td><td class="pri">Верно</td></tr>
+<tr><td><b>€8 000</b></td><td>€8 096,78 — максимальная сумма для категории fuori sede</td><td class="pri">Верно как максимум</td></tr>
+<tr><td class="pri"><b>Связь между ними</b></td><td>€8 096,78 даётся <b>не на пороге €26 306</b>, а на пороге <b>€13 153</b> — вдвое ниже</td><td><b>Вот здесь ошибка</b></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note hot">
+<span class="lbl">Что это меняет в деньгах</span>
+<p>Полос четыре, а не одна. На верхней границе €26 306 стипендия <b>€3 800</b>, а не €8 096,78. Разница <b>€4 297 в год</b>, то есть почти €13 000 за три года бакалавриата.</p>
+<p>Чтобы получить полные €8 096,78, ISEE должен быть <b>≤ €13 153,12</b>.</p>
+</div>
+
+<div class="note hot">
+<span class="lbl">Поправка: отчётный год для подачи на 2027/28 — 2026, не 2025</span>
+<p>Бандо на 2026/27 требует доходы за <b>2025</b> и имущество на <b>31.12.2025</b> — то есть год, предшествующий подаче. Ты подаёшься на <b>2027/28</b>, значит бандо, которое выйдет в июне 2027, потребует <b>доходы за 2026 и имущество на 31.12.2026</b>.</p>
+<p>Практически: декларация УСН <b>за 2026 год</b> (сдаётся до 25 апреля 2027), выписки со счетов на <b>31 декабря 2026</b>, ЕГРН — свежая на момент подачи. Декларация за 2025 годится только как репетиция и для оценки полосы. И главное — <b>оборот мамы в 2026 году и есть та цифра, которая определит стипендию</b>.</p>
+</div>
+
+<h4>И второе: ISEE — это не доход</h4>
+
+<p>ISEE считается по формуле <b>(доход + 20% имущества) ÷ шкала эквивалентности</b>. Для семьи из двух человек шкала <b>1,57</b>. То есть доход делится на 1,57 — и порог по доходу оказывается <b>выше</b>, чем звучит.</p>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Доход мамы за год</th><th class="num">ISEE</th><th class="num">Турин, fuori sede</th><th class="num">Болонья, fuori sede</th></tr></thead>
+<tbody>
+<tr><td>до <b>€20 650</b> · ~1,9 млн ₽</td><td class="num">до 13 153</td><td class="num big">€8 096,78</td><td class="num">€7 171,11</td></tr>
+<tr><td>€20 650 — 26 167</td><td class="num">13,2 — 16,7 тыс</td><td class="num">€7 021,11</td><td class="num">€7 171,11</td></tr>
+<tr><td>€26 167 — 27 534</td><td class="num">16,7 — 17,5 тыс</td><td class="num">€7 021,11</td><td class="num">€4 661,22</td></tr>
+<tr><td>€27 534 — 32 685</td><td class="num">17,5 — 20,8 тыс</td><td class="num">€5 586,89</td><td class="num">€3 872,40</td></tr>
+<tr><td>€32 685 — 37 093</td><td class="num">20,8 — 23,6 тыс</td><td class="num">€5 586,89</td><td class="num">€3 585,56</td></tr>
+<tr><td>€37 093 — 39 250</td><td class="num">23,6 — 25,0 тыс</td><td class="num">€3 800,00</td><td class="num">€3 585,56</td></tr>
+<tr><td>€39 250 — 41 301</td><td class="num">25,0 — 26,3 тыс</td><td class="num">€3 800,00</td><td class="num">€0</td></tr>
+<tr><td><b>больше €41 301</b> · ~3,8 млн ₽</td><td class="num">больше 26,3 тыс</td><td class="num">€0</td><td class="num">€0</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="after">
+Курс взят примерно <b>90 ₽ за евро</b>. Точный пересчёт делается по <b>среднему курсу Банка Италии за 2025 год</b> — эту цифру они должны знать. Расчёт в таблице без имущества: если есть квартира или накопления, ISEE вырастет и полоса сместится вниз.
+</div>
+
+<h4>Что реально остаётся на жизнь</h4>
+
+<p>Стипендия — не вся картина. Из неё платится учёба, и здесь Турин теряет €2 200 надбавки, а Болонья только €157.</p>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Доход мамы</th><th class="num">Турин: на жизнь</th><th class="num">Болонья: на жизнь</th><th>Кто лучше</th></tr></thead>
+<tbody>
+<tr><td>до €26 167</td><td class="num">€5 896,78</td><td class="num big">€7 014,07</td><td class="pri">Болонья, +€1 117</td></tr>
+<tr><td>€27 534 — 28 783</td><td class="num">€3 386,89</td><td class="num">€4 504,18</td><td class="pri">Болонья, +€1 117</td></tr>
+<tr><td>€28 783 — 32 685</td><td class="num">€3 386,89</td><td class="num">€3 715,36</td><td class="pri">Болонья, +€328</td></tr>
+<tr><td>€32 685 — 37 093</td><td class="num">€3 386,89</td><td class="num">€3 428,52</td><td>примерно поровну</td></tr>
+<tr><td>€37 093 — 39 250</td><td class="num">€1 600,00</td><td class="num">€3 428,52</td><td class="pri">Болонья, +€1 829</td></tr>
+<tr><td><b>€39 250 — 41 301</b></td><td class="num"><b>€1 600,00</b></td><td class="num">−€1 157</td><td><b>Турин, +€2 757</b></td></tr>
+<tr><td>больше €41 301</td><td class="num">−€3 156</td><td class="num">−€1 157</td><td class="pri">Болонья, +€1 999</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note good">
+<span class="lbl">Вывод, который стоит проверить на звонке</span>
+<p><b>Болонья выгоднее почти во всём диапазоне.</b> Единственное окно, где Турин лучше — доход мамы между <b>€39 250 и €41 301</b>: болонский порог уже пройден, туринский ещё нет.</p>
+<p>Значит первое, что надо выяснить у мамы — <b>её точная цифра дохода за 2025 год по декларации</b>. От неё зависит и сумма, и выбор университета.</p>
+</div>
+
+<h4>Что спрашивать по стипендии</h4>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Вопрос</th><th>Зачем</th></tr></thead>
+<tbody>
+<tr><td class="pri"><b>«Правда ли, что €8 096 даётся только при ISEE ≤ €13 153, а на пороге €26 306 это уже €3 800?»</b></td><td>Проверка их компетентности и моей таблицы одновременно</td></tr>
+<tr><td class="pri"><b>«Какой процент ваших студентов из России реально получал стипендию, и в какую полосу они попадали?»</b></td><td>Главный вопрос. Статистика есть только у них</td></tr>
+<tr><td><b>«Мама — ИП на УСН «Доходы» 6%, в декларации только оборот, расходов нет. Принимают ли декларацию УСН как справку о доходе — и считаете ли вы оборот доходом, или примете прибыль (оборот − расходы), подтверждённую бухгалтером и выписками? И какой курс рубля применяете, если Банк Италии его не публикует с 2022 года?»</b></td><td>В списке EDISU для России назван только «Certificate of Income of the Natural Person» — это форма для НДФЛ, не для ИП. Разница между оборотом и доходом — полоса-две ISEE, до €4 300 в год</td></tr>
+<tr><td><b>«Что входит в ISPE — только недвижимость или счета тоже? Как оценивают квартиру в России?»</b></td><td>Бандо требует выписку ЕГРН с площадью в кв. метрах, а не кадастровую стоимость</td></tr>
+<tr><td><b>«Сколько было отказов и по каким причинам?»</b></td><td>Отказы бывают технические, а не по доходу</td></tr>
+<tr><td>«Есть ли разница между Турином и Болоньей по тому, кому реально дают?»</td><td>У Болоньи отдельный рейтинг для не-ЕС, у Турина общий</td></tr>
+</tbody>
+</table>
+</div>
+
+<hr>
+
+<h2 id="sat">2. Балл SAT</h2>
+<h3>Данных нет ни у кого — поэтому это хороший вопрос им</h3>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Что известно точно</th><th>Источник</th></tr></thead>
+<tbody>
+<tr><td>Болонья, CLaBE: экзамен — <b>SAT General Test</b>, максимум <b>1600</b></td><td>страница программы UNIBO</td></tr>
+<tr><td><b>32 места</b> для граждан не-ЕС из-за рубежа, только первый набор</td><td>UNIBO</td></tr>
+<tr><td>SAT засчитывается и как подтверждение английского <b>B2</b> — отдельный IELTS не нужен</td><td>UNIBO</td></tr>
+<tr><td>SAT действителен, если сдан <b>начиная с 1 февраля</b> за три года до подачи</td><td>call for applications</td></tr>
+<tr><td class="pri"><b>Минимальный проходной балл нигде не опубликован</b></td><td>проверено, в открытых источниках нет</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note good">
+<span class="lbl">Снято 4 сентября: собеседования нет</span>
+<p>Проверил оригинал Call for Applications CLaBE 2025/26 локально: «interview» — 0 вхождений, «dossier» — 0. Раздел 4 дословно: «The rankings are based on the SAT scores received by the College Board». Досье и собеседование относились к спецпрограммам для беженцев. Вопрос закрыт, на звонке не задавать.</p>
+</div>
+
+<div class="note hot">
+<span class="lbl">Было непонятно — теперь для истории</span>
+<p>В call for applications за 2025/26 написано, что отбор идёт «based on evaluation of candidates' <b>dossier</b> (including a curriculum vitae and a <b>presentation letter</b> written by the candidate) <b>and an interview</b>».</p>
+<p>Если помимо SAT есть <b>досье и собеседование</b>, это полностью меняет подготовку — надо писать мотивационное письмо и готовиться к разговору, а не только к тесту.</p>
+<p>Но на странице «how to enrol» сказано, что вступительный экзамен — это SAT, и всё. <b>Одно из двух неверно или относится к разным трекам.</b> Это надо разрешить.</p>
+</div>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Вопрос</th><th>Что считать хорошим ответом</th></tr></thead>
+<tbody>
+<tr><td class="pri"><b>«Какой балл SAT реально проходил на 32 места для не-ЕС в Болонье за последние два-три года?»</b></td><td>Диапазон или хотя бы порядок. «Чем выше тем лучше» — не ответ</td></tr>
+<tr><td class="pri"><b>«Есть ли собеседование и оценка досье помимо SAT? Что весит больше?»</b></td><td>Однозначное да или нет</td></tr>
+<tr><td><b>«Какой балл нужен для Турина на Business &amp; Management и что такое OFA на практике?»</b></td><td>OFA — это дополнительные обязательства при слабой математике, не отказ</td></tr>
+<tr><td><b>«Можно ли сдавать SAT несколько раз и засчитают ли лучший результат?»</b></td><td>От этого зависит, целиться на декабрь 2026 или на март 2027</td></tr>
+<tr><td>«Как результат передаётся в университет — напрямую от College Board или я загружаю сам?»</td><td>Влияет на сроки</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="after">
+<b>Планировать надо на декабрь 2026.</b> Подача в Болонью закрывается 4 мая, результат нужен до неё. Декабрь оставляет два запасных захода, март — один.
+</div>
+
+<hr>
+
+<h2 id="visa">3. Виза</h2>
+<h3>Самое узкое место всего плана</h3>
+
+<p class="lead">Здесь не вопрос «как оформить». Здесь вопрос «помещается ли вообще по времени» — и ответ из регламентов получается тревожный.</p>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Этап</th><th>Когда</th><th>Проблема</th></tr></thead>
+<tbody>
+<tr><td>Результат конкурса</td><td>июль</td><td>Раньше визу подать нельзя — нужно зачисление</td></tr>
+<tr><td>Предзапись на Universitaly</td><td>до 15 июля</td><td>Валидирует университет, время не контролируешь</td></tr>
+<tr><td>Подача в VFS Москва</td><td>июль — август</td><td>Лично, с биометрией, плюс срок ожидания записи</td></tr>
+<tr><td class="pri"><b>Обработка визы</b></td><td class="pri"><b>до 90 дней</b></td><td class="pri"><b>Июль + 90 дней = октябрь. Учёба начинается в сентябре</b></td></tr>
+<tr><td>Подтверждение средств</td><td>при подаче</td><td><b>€10 179,85</b>, поднято на 46% в июне 2026</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note hot">
+<span class="lbl">Арифметика не сходится</span>
+<p>Заявленные 90 дней — это <b>максимум</b>, обычно быстрее. Но если у конкретного человека уйдёт хотя бы два месяца, начало учёбы он пропускает.</p>
+<p>Это единственный пункт плана, где <b>никакая подготовка с моей стороны не помогает</b> — всё решает фактическая скорость консульства. Поэтому реальная практика Global Dialog здесь ценнее любого регламента.</p>
+</div>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Вопрос</th><th>Зачем</th></tr></thead>
+<tbody>
+<tr><td class="pri"><b>«По вашей практике — реально успеть получить учебную визу к началу сентября, если результат конкурса в июле? Сколько реально шла виза у ваших студентов в 2025 и 2026?»</b></td><td>Главный вопрос всего звонка после стипендии</td></tr>
+<tr><td class="pri"><b>«Какой сейчас срок ожидания записи на подачу в VFS в Москве?»</b></td><td>Это отдельные недели сверх обработки</td></tr>
+<tr><td><b>«Что чаще всего становится причиной отказа или запроса дополнительных документов?»</b></td><td>Единственный способ узнать заранее</td></tr>
+<tr><td><b>«Подтверждение средств €10 179,85 — на чьё имя должен быть счёт, годится ли выписка российского банка?»</b></td><td>Если нужен европейский счёт, это отдельная задача на месяцы</td></tr>
+<tr><td class="pri"><b>«Что делать, если виза не успевает к сентябрю? Можно ли начать учёбу позже без потери места?»</b></td><td>План Б, которого у меня нет</td></tr>
+<tr><td>«Моя кипрская виза кончается 29 мая 2027, подаваться буду из России. Это создаёт проблему?»</td><td>Отдельная дыра в плане</td></tr>
+</tbody>
+</table>
+</div>
+
+<hr>
+
+<h2 id="price">4. Цены</h2>
+<h3>Что посчитано и что надо подтвердить</h3>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Статья</th><th class="num">Турин</th><th class="num">Болонья</th></tr></thead>
+<tbody>
+<tr><td>Первый взнос: региональный налог + гербовый сбор</td><td class="num">€156</td><td class="num">€157,04</td></tr>
+<tr><td>Основная плата</td><td class="num">€800 по ВВП России</td><td class="num">€1 000 – 1 200 flat tax</td></tr>
+<tr><td>Надбавка за программу</td><td class="num">€2 200</td><td class="num">нет</td></tr>
+<tr><td><b>Итого без стипендии</b></td><td class="num big">€3 156</td><td class="num big">€1 157 – 1 357</td></tr>
+<tr><td><b>Итого со стипендией</b></td><td class="num big">€2 200</td><td class="num big">€157,04</td></tr>
+<tr><td>Что нужно, чтобы получить льготную ставку</td><td>объявить страну проживания в MyUniTo до 20 ноября</td><td>самодекларация через портал ER.GO, 6 мая — 30 октября</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Вопрос</th><th>Зачем</th></tr></thead>
+<tbody>
+<tr><td class="pri"><b>«У вас на сайте по Болонье на 2026/27 указано от 280 675 ₽ в год. По правилам UNIBO для стран вне ОЭСР это €1 000–1 200 плюс €157. Откуда разница — ваша цифра без flat tax?»</b></td><td>Расхождение примерно двукратное. Ответ покажет, разбираются ли они</td></tr>
+<tr><td class="pri"><b>«Надбавку €2 200 в Турине можно не платить, пока ждёшь рейтинг EDISU, как основную плату? Или €1 100 всё равно надо внести к 30 ноября?»</b></td><td>Единственное, на что регламент не отвечает</td></tr>
+<tr><td><b>«Точная сумма flat tax именно для CLaBE — €1 000 или €1 200?»</b></td><td>±€200 в бюджете</td></tr>
+<tr><td><b>«Подтвердите €3 156 для Турина на Business &amp; Management для гражданина России»</b></td><td>Их сайт даёт от 341 301 ₽ — сходится, но пусть скажут вслух</td></tr>
+<tr><td>«Сколько реально стоит жильё в Турине и Болонье?»</td><td>У них на сайте по Болонье от 1 212 516 ₽ — это €12 000, завышено втрое</td></tr>
+</tbody>
+</table>
+</div>
+
+<hr>
+
+<h2 id="dont">Что не спрашивать и красные флаги</h2>
+
+<div class="after">
+<b>Не трать время на это</b> — уже посчитано по первоисточникам: даты подачи на EDISU и ER.GO · как платить деньги университету · график взносов · сроки рейтингов · какие документы нужны для стипендии. Если начнут рассказывать сами — вежливо переводи на свои вопросы.
+</div>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Если скажут</th><th>Правда</th></tr></thead>
+<tbody>
+<tr><td class="pri">«При доходе до €27 000 стипендия €8 000»</td><td><b>Нет.</b> €8 096,78 требует ISEE ≤ €13 153. На €26 306 это €3 800</td></tr>
+<tr><td>«Для Business &amp; Management нужен <b>TOLC</b>»</td><td><b>Неверно, нужен SAT.</b> Эта ошибка есть у них на сайте</td></tr>
+<tr><td>«Без агентства стипендию не получить»</td><td>ER.GO пишет прямо: «Non è richiesto <b>in alcun caso</b> l'intervento di agenzie/intermediari»</td></tr>
+<tr><td>«Обучение в Турине €500 в год»</td><td>Полоса 2025/26. В 2026/27 Россия перешла в €800 плюс надбавка €2 200</td></tr>
+<tr><td>«ISEE Parificato сделаем»</td><td>Из туринского регламента 2026/27 он <b>удалён</b>. Плата считается по ВВП страны</td></tr>
+<tr><td>«Жильё в Болонье от 1 212 516 ₽ в год»</td><td>Это €1 000 в месяц. Комната стоит <b>€350–450</b>, общежитие ER.GO €272–352</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note good">
+<span class="lbl">Что записать дословно</span>
+<p><b>Четыре ответа, ради которых звонок:</b> процент их студентов из России со стипендией и в какой полосе · реальный проходной балл SAT · сколько реально шла виза · есть ли собеседование в Болонье.</p>
+<p>Всё остальное — бонус. Эти четыре нельзя получить ниоткуда, кроме как от того, кто вёл живые случаи.</p>
+</div>
+
+<footer>
+<p>Источники: EDISU Piemonte, Notice of competition 2026/27, ст. 5(1.1)–(1.3), ст. 6 · UniTo, Regolamento tasse 2026/2027, ст. 4.2, 5, 6.1.2 · ER.GO, Bando DSU 2026/27, Sezione I ст. 7, Sezione II ст. 2 · unibo.it, tassa fissa agevolata · corsi.unibo.it/1cycle/CLaBE · globaldialog.ru.</p>
+<p>Расчёты по доходу — для семьи из двух человек, шкала эквивалентности 1,57, без учёта имущества. Курс ориентировочно 90 ₽ за евро.</p>
+<p>Часть плана: <a href="https://alex-italy-hub.netlify.app">указатель</a> · <a href="https://alex-turin-full.netlify.app">Турин: полная сводка</a> · <a href="https://alex-bologna-full.netlify.app">Болонья: полная сводка</a> · <a href="https://alex-italy-emails.netlify.app">письма</a></p>
+</footer>
+
+</div>
+<script>(function(){function l(){document.querySelectorAll('table').forEach(function(t){
+var h=[].map.call(t.querySelectorAll('thead th'),function(x){return (x.textContent||'').replace(/\s+/g,' ').trim()});
+if(!h.length)return;[].forEach.call(t.querySelectorAll('tbody tr'),function(r){[].forEach.call(r.cells,function(c,i){
+if(h[i]&&!c.hasAttribute('data-l'))c.setAttribute('data-l',h[i])})})})}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',l);else l();})();</script>
+</body>
+</html>

@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Стипендия: документы и критерии</title>
+<style>
+:root{--bg:#fbfaf8;--ink:#1a1a1a;--muted:#6b6864;--rule:#dedad4;--accent:#8a5a2b;--max:820px}
+@media (prefers-color-scheme:dark){:root{--bg:#141312;--ink:#e8e4de;--muted:#918b83;--rule:#2f2c29;--accent:#c99a63}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 Georgia,"Times New Roman",serif;padding:0 24px 100px}
+.wrap{max-width:var(--max);margin:0 auto}
+header{padding:70px 0 0}
+h1{font-size:30px;line-height:1.22;font-weight:400;margin:0 0 14px}
+.sub{color:var(--muted);font-size:15px;line-height:1.55;margin:0 0 8px}
+hr{border:0;border-top:1px solid var(--rule);margin:38px 0}
+h2{font-size:12.5px;font-weight:400;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);margin:48px 0 6px;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+h3{font-size:23px;font-weight:400;line-height:1.32;margin:0 0 18px}
+h4{font-size:17px;font-weight:700;margin:24px 0 9px}
+p{margin:0 0 15px}
+ul,ol{margin:0 0 15px;padding-left:22px}
+li{margin:0 0 7px}
+a{color:var(--accent)}
+nav.toc{margin:34px 0 0}
+nav.toc ol{list-style:none;margin:0;padding:0;counter-reset:s}
+nav.toc>ol>li{counter-increment:s;border-top:1px solid var(--rule);padding:10px 0}
+nav.toc>ol>li:last-child{border-bottom:1px solid var(--rule)}
+nav.toc a{color:var(--ink);text-decoration:none;display:flex;gap:14px;align-items:baseline}
+nav.toc a:hover{color:var(--accent)}
+nav.toc a::before{content:counter(s);color:var(--muted);font-size:13px;min-width:18px;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+nav.toc .t{flex:1}
+nav.toc .n{color:var(--muted);font-size:13px;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+.note{border-left:2px solid var(--accent);padding:2px 0 2px 18px;margin:0 0 20px}
+.note p:last-child{margin-bottom:0}
+.tablewrap{overflow-x:auto;margin:0 0 20px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:14.5px;line-height:1.48}
+th{text-align:left;font-weight:400;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--ink);padding:0 13px 7px 0;vertical-align:bottom;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+td{border-bottom:1px solid var(--rule);padding:10px 13px 10px 0;vertical-align:top}
+td:last-child,th:last-child{padding-right:0}
+.num{white-space:nowrap;font-variant-numeric:tabular-nums}
+.uni{font-weight:700}
+footer{margin-top:58px;padding-top:20px;border-top:1px solid var(--rule);color:var(--muted);font-size:14px;line-height:1.6}
+@media (max-width:820px){body{font-size:16px;padding:0 16px 74px}header{padding-top:42px}h1{font-size:24px}h3{font-size:19px}table{min-width:560px;font-size:14px}}
+</style><style>
+.gloss{margin:0 0 22px}
+.gloss dt{font-weight:700;margin:16px 0 3px;font-size:16px}
+.gloss dd{margin:0 0 0 0;color:var(--muted);font-size:15.5px;line-height:1.5}
+.lead{font-size:17px;margin:0 0 16px}
+.after{border-left:2px solid var(--accent);padding:2px 0 2px 18px;margin:16px 0 26px;font-size:15.5px}
+.after b{color:var(--ink)}
+.big{font-size:20px;font-weight:700}
+table.simple{min-width:0}
+table.simple td{padding:12px 16px 12px 0}
+.step{color:var(--muted);font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;
+ font-family:-apple-system,BlinkMacSystemFont,sans-serif;margin:0 0 6px}
+</style>
+<style id="sem">
+.lbl{display:block;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,sans-serif;
+  font-size:11px;letter-spacing:.09em;text-transform:uppercase;font-weight:600;
+  color:var(--muted);margin:0 0 8px;line-height:1.35}
+.note .lbl + p{margin-top:0}
+.note.hot{border-left-color:#9c3328}
+.note.hot .lbl{color:#9c3328}
+.note.good{border-left-color:#3f6b4a}
+.note.good .lbl{color:#3f6b4a}
+td.pri{color:var(--accent)}
+th{white-space:nowrap}
+@media (max-width:700px){
+  .lbl{margin-bottom:6px}
+  th{white-space:normal}
+  .tablewrap td.pri::before,.scroll td.pri::before{color:var(--muted)}
+}
+</style>
+<style id="mob">
+@media (max-width:700px){
+  .tablewrap,.scroll{overflow-x:visible !important}
+  .tablewrap table,.scroll table{min-width:0 !important;display:block;font-size:15px}
+  .tablewrap thead,.scroll thead{display:none}
+  .tablewrap tbody,.tablewrap tr,.tablewrap td,
+  .scroll tbody,.scroll tr,.scroll td{display:block;width:100%}
+  .tablewrap tr,.scroll tr{border-bottom:1px solid var(--ink,var(--fg));padding:15px 0 13px}
+  .tablewrap tr:last-child,.scroll tr:last-child{border-bottom:0}
+  .tablewrap td,.scroll td{border:0 !important;padding:5px 0 !important;line-height:1.5}
+  .tablewrap td:empty,.scroll td:empty{display:none}
+  .tablewrap td::before,.scroll td::before{
+    content:attr(data-l);display:block;font-size:11px;letter-spacing:.07em;text-transform:uppercase;
+    color:var(--muted,var(--mut));margin-bottom:2px;
+    font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+  .tablewrap td:first-child::before,.scroll td:first-child::before{display:none}
+  .tablewrap td:first-child,.scroll td:first-child{
+    font-weight:700;font-size:17px;line-height:1.32;margin-bottom:7px}
+  .num{white-space:normal !important}
+  nav.toc a{flex-wrap:wrap}
+  nav.toc .n{margin-left:32px;width:100%;text-align:left;margin-top:2px}
+  nav .d{margin-left:34px;width:100%;text-align:left;margin-top:2px}
+  .nu{font-size:15px}
+  dl.gloss dd{font-size:16px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Стипендия: документы и критерии</h1>
+  <p class="sub">4 сентября 2026. Одна стипендия DSU, два агентства: EDISU Piemonte (Турин) и ER.GO (Болонья). Всё из бандо 2026/27 и регламентов вузов; на 2027/28 пороги индексируются, даты выйдут в июне 2027. Отчётный год для твоей подачи — <b>2026</b>.</p>
+  <nav class="toc">
+    <ol>
+      <li><a href="#crit"><span class="t">Критерии допуска</span><span class="n">все сразу</span></a></li>
+      <li><a href="#calc"><span class="t">Как считают: ISEE, имущество, ипотека</span><span class="n">формула</span></a></li>
+      <li><a href="#amount"><span class="t">Сколько дают и последний порог</span><span class="n">по полосам</span></a></li>
+      <li><a href="#fees"><span class="t">Плата за учёбу с стипендией и без</span><span class="n">оба вуза</span></a></li>
+      <li><a href="#above"><span class="t">Если доход мамы выше порога</span><span class="n">что остаётся</span></a></li>
+      <li><a href="#docs"><span class="t">Документы: апостиль да / нет</span><span class="n">таблица</span></a></li>
+      <li><a href="#decl"><span class="t">Как легализовать декларацию мамы</span><span class="n">цепочка</span></a></li>
+      <li><a href="#when"><span class="t">Сроки, куда подавать, когда платят</span><span class="n">календарь</span></a></li>
+      <li><a href="#ban"><span class="t">Что нельзя и что проверяют</span><span class="n">санкции</span></a></li>
+      <li><a href="#open"><span class="t">Открытые вопросы</span><span class="n">в тикет</span></a></li>
+    </ol>
+  </nav>
+</header>
+
+<hr>
+
+<h2 id="crit">1. Критерии допуска</h2>
+<h3>Все должны выполняться одновременно</h3>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Критерий</th><th>Турин, EDISU</th><th>Болонья, ER.GO</th><th>Твой статус</th></tr></thead>
+<tbody>
+<tr><td><b>ISEE семьи</b></td><td>≤ €26 306,25</td><td>≤ €25 000</td><td>зависит от оборота мамы за 2026</td></tr>
+<tr><td><b>ISPE, имущество</b></td><td>≤ €57 187,53</td><td>≤ €50 000</td><td class="pri">при 75 м² — с запасом вдвое</td></tr>
+<tr><td>Отчётный год</td><td colspan="2">для подачи на 2027/28: доходы за <b>2026</b>, имущество и счета на <b>31.12.2026</b></td><td>декларация за 2026 сдаётся до 25.04.2027</td></tr>
+<tr><td>Состав семьи</td><td colspan="2">ты + мама. Родители в разводе — свидетельство копией. Шкала для двоих <b>1,57</b></td><td class="pri">ок</td></tr>
+<tr><td>Нет диплома того же уровня</td><td colspan="2">исключены только те, кто <b>уже имеет</b> диплом бакалавра</td><td class="pri">ок — диплома нет</td></tr>
+<tr><td><b>Год первого зачисления = 2027</b></td><td>считают по признанным кредитам: 0–24 = первый курс</td><td>считают «anche all'estero», сбрасывает <b>отчисление</b></td><td class="pri"><b>отчислиться из UNIC + не признавать кредиты</b></td></tr>
+<tr><td>Не получал итальянских стипендий раньше</td><td colspan="2">штраф только за прошлые итальянские льготы</td><td class="pri">ок</td></tr>
+<tr><td>Зачислен в срок</td><td>до 31 октября</td><td>до 17 октября для 1-го транша</td><td>после визы</td></tr>
+<tr><td>Не «независимый студент»</td><td colspan="2">независимый = 2 года отдельного жилья <b>и</b> свой доход ≥ €9 000/год два года подряд. Иначе — в семье мамы</td><td>в семье мамы</td></tr>
+</tbody>
+</table>
+</div>
+
+<hr>
+
+<h2 id="calc">2. Как считают</h2>
+<h3>ISEE — не доход, а формула</h3>
+
+<div class="note">
+<span class="lbl">Формула</span>
+<p><b>ISEE = (доход + 20% × имущество) ÷ 1,57</b> — для семьи из двух человек.<br><b>ISPE = имущество ÷ 1,57</b> — отдельная проверка, независимая от дохода.</p>
+</div>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Компонент</th><th>Что берут</th><th>Правило</th></tr></thead>
+<tbody>
+<tr><td><b>Доход мамы</b></td><td>брутто за 2026, в рублях</td><td>для ИП на УСН «Доходы» — <b>строка 113, оборот</b>. Считают ли оборот доходом — открытый вопрос №1</td></tr>
+<tr><td><b>Твой доход</b></td><td>0 → справка ФНС об отсутствии доходов</td><td>ты старше 18 — документ обязателен даже при нуле</td></tr>
+<tr><td><b>Недвижимость</b></td><td>площадь × <b>€500 за м²</b></td><td>только здания; земля не считается; считается <b>доля</b> собственности, не вся квартира</td></tr>
+<tr><td><b>Ипотека</b></td><td>остаток долга на 31.12.2026</td><td class="pri"><b>вычитается из стоимости квартиры</b>, до нуля. Подтверждено обоими бандо</td></tr>
+<tr><td><b>Счета</b></td><td>остатки на 31.12.2026, все члены семьи</td><td>прибавляются к имуществу</td></tr>
+<tr><td>Алименты</td><td>если мама получает</td><td>это её доход</td></tr>
+<tr><td>Курс рубля</td><td>Банк Италии</td><td class="pri">RUB не публикуется с марта 2022 — какой применят, открытый вопрос №2</td></tr>
+</tbody>
+</table>
+</div>
+
+<h4>Потолок дохода мамы, при котором стипендия ещё есть</h4>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Имущество семьи</th><th class="num">Турин, доход ≤</th><th class="num">Болонья, доход ≤</th><th>При курсе 90 ₽/€</th></tr></thead>
+<tbody>
+<tr><td>0 — квартира полностью перекрыта ипотекой</td><td class="num">€41 301</td><td class="num">€39 250</td><td>3,72 / 3,53 млн ₽</td></tr>
+<tr><td><b>75 м² = €37 500</b>, без ипотеки</td><td class="num">€33 801</td><td class="num">€31 750</td><td><b>3,04 / 2,86 млн ₽</b></td></tr>
+<tr><td>75 м², остаток ипотеки 2 млн ₽</td><td class="num">€38 245</td><td class="num">€36 194</td><td>3,44 / 3,26 млн ₽</td></tr>
+<tr><td>75 м², остаток ипотеки ≥ 3,4 млн ₽</td><td class="num">€41 301</td><td class="num">€39 250</td><td>3,72 / 3,53 млн ₽</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="after">
+Каждые €10 000 имущества снижают потолок дохода на €2 000. Каждые 100 тыс ₽ на счетах на 31 декабря — примерно на €220.
+</div>
+
+<hr>
+
+<h2 id="amount">3. Сколько дают</h2>
+<h3>Категория fuori sede — снимаешь жильё в городе учёбы</h3>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Турин: ISEE</th><th class="num">Сумма</th><th>Болонья: ISEE</th><th class="num">Сумма</th></tr></thead>
+<tbody>
+<tr><td>до €13 153</td><td class="num big">€8 096,78</td><td>до €16 667</td><td class="num big">€7 171,11</td></tr>
+<tr><td>€13 153 — 17 538</td><td class="num">€7 021,11</td><td>€16 667 — 18 333</td><td class="num">€4 661,22</td></tr>
+<tr><td>€17 538 — 23 626</td><td class="num">€5 586,89</td><td>€18 333 — 20 818</td><td class="num">€3 872,40</td></tr>
+<tr><td><b>€23 626 — 26 306 — последняя полоса</b></td><td class="num"><b>€3 800,00</b></td><td><b>€20 818 — 25 000 — последняя полоса</b></td><td class="num"><b>€3 585,56</b></td></tr>
+<tr><td>выше €26 306</td><td class="num">€0</td><td>выше €25 000</td><td class="num">€0</td></tr>
+</tbody>
+</table>
+</div>
+
+<h4>Куда попадаешь при 75 м² и обороте мамы</h4>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Строка 113 за 2026</th><th class="num">ISEE при 90 ₽/€</th><th class="num">Турин</th><th class="num">Болонья</th><th>С ипотекой ≥ 3,4 млн ₽ (квартира = 0)</th></tr></thead>
+<tbody>
+<tr><td><b>3,0 млн ₽</b></td><td class="num">26 008</td><td class="num">€3 800 — последняя полоса</td><td class="num"><b>€0</b> — над порогом 25 000</td><td>ISEE 21 231 → Турин €5 587 · Болонья €3 586</td></tr>
+<tr><td><b>5,0 млн ₽</b></td><td class="num">40 163</td><td class="num">€0</td><td class="num">€0</td><td>ISEE 35 386 → €0 · €0</td></tr>
+<tr><td><b>7,5 млн ₽</b></td><td class="num">57 856</td><td class="num">€0</td><td class="num">€0</td><td>ISEE 53 079 → €0 · €0</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="after">
+При курсе 100 ₽/€ картина мягче только для 3 млн: ISEE 23 885 → Турин €3 800, Болонья €3 586. От 5 млн стипендии DSU нет ни при каком курсе и ни при какой ипотеке — но см. раздел 4а: у Болоньи есть грант с потолком ISEE <b>35 000</b>, и туда 5 млн с ипотекой ещё попадает.
+</div>
+
+<div class="note good">
+<span class="lbl">Последний порог — что он даёт на самом деле</span>
+<p>Статус idoneo даже на минимальной сумме снимает плату за учёбу. Турин: <b>€3 800</b> + не платишь COU €800 + возврат €140 → около <b>€4 740</b> выгоды. Болонья: <b>€3 585,56</b> + не платишь flat tax €1 000–1 200 + возврат €140 → около <b>€4 800</b>.</p>
+<p>Общежитие: в Турине бесплатно, из стипендии вычитают €245,45/мес; в Болонье €272–352/мес, вычитается из траншей.</p>
+</div>
+
+<hr>
+
+<h2 id="fees">4. Плата за учёбу</h2>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Статья</th><th class="num">Турин без стипендии</th><th class="num">Турин со стипендией</th><th class="num">Болонья без стипендии</th><th class="num">Болонья со стипендией</th></tr></thead>
+<tbody>
+<tr><td>Региональный налог + гербовый сбор</td><td class="num">€156</td><td class="num">€156, возврат</td><td class="num">€157,04</td><td class="num">€157,04</td></tr>
+<tr><td>Основная плата</td><td class="num">€800 по ВВП РФ</td><td class="num">€0</td><td class="num">€1 000–1 200 flat tax</td><td class="num">€0</td></tr>
+<tr><td>Надбавка программы</td><td class="num">€2 200</td><td class="num"><b>€2 200</b> — не снимается</td><td class="num">нет</td><td class="num">нет</td></tr>
+<tr><td><b>Итого в год</b></td><td class="num big">€3 156</td><td class="num big">€2 200</td><td class="num big">€1 157–1 357</td><td class="num big">€157</td></tr>
+<tr><td>Сроки взносов</td><td colspan="2">при зачислении · 30 ноя · 31 мар · 31 мая; надбавка 2 × €1 100 с 2-м и 3-м взносом</td><td colspan="2">24 сен · 18 дек · 15 мар</td></tr>
+<tr><td>Пока ждёшь рейтинг</td><td colspan="2">первокурсник платит только €156; COU отложен до результата; надбавка — открытый вопрос</td><td colspan="2">flat tax запрашивается через портал ER.GO до 30 октября</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="after">
+Остаётся на жизнь при максимальной стипендии и своём жилье: Турин 8 096,78 − 2 200 = <b>€5 896,78</b>; Болонья 7 171,11 − 157 = <b>€7 014,07</b>. При 75 м² и обороте ~2,3 млн: Турин 5 587 − 2 200 = €3 387; Болонья 3 586 − 157 = €3 429.
+</div>
+
+<hr>
+
+<h2 id="above">4а. Если доход мамы выше порога DSU</h2>
+<h3>Что реально существует — проверено по бандо и правилам вузов</h3>
+
+<p class="lead">«Сам себя обеспечиваю» как категория стипендии не существует: семья определяется законом, и статус независимого студента требует двух лет собственного дохода ≥ €9 000. Но есть четыре вещи, которые <b>не зависят от ISEE вообще или зависят мягче</b>, и две, которые отпадают — чтобы не тратить на них время.</p>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Инструмент</th><th>Что даёт</th><th>Условие</th><th>Твой случай</th></tr></thead>
+<tbody>
+<tr><td class="pri"><b>Unibo «International Talents – SAT»</b></td><td><b>€4 500 + полное освобождение от платы</b> — платишь только €157,04. На один год, продление по отдельному конкурсу</td><td>Рейтинг <b>только по SAT</b>, минимум 950. Окно ISEE <b>€16 000 – 35 000</b> — или эквивалент по иностранным документам. Моложе 30. Не совмещается с ER.GO. Официальный SAT в вуз до дедлайна ~<b>31 мая</b></td><td class="pri">15 грантов, из них <b>2 — квота «Восточная Европа»</b>, Россия там. Работает ровно в зоне, где DSU уже нет: ISEE 25–35 тыс. Подавать <b>параллельно</b> с ER.GO, взять то, что дадут</td></tr>
+<tr><td><b>Flat tax Болоньи</b></td><td>плата €1 157–1 357 вместо до €3 218</td><td>гражданство страны вне ОЭСР + самодекларация, <b>без проверки дохода</b></td><td>есть при любом доходе мамы — это пол</td></tr>
+<tr><td><b>Работа по студенческому ВНЖ</b></td><td>до <b>20 часов в неделю, 1 040 в год</b></td><td>любой работодатель; при €9–10/ч — до ~€9 000–10 000 в год брутто</td><td>реально с первого семестра; два года такого дохода = статус независимого с третьего курса</td></tr>
+<tr><td><b>Collaborazioni studentesche</b> — оплачиваемая работа в самом вузе</td><td>Болонья: 150 ч × <b>€8,50</b> ≈ €1 275; Турин: до 200 ч × ~€9 ≈ €1 800. Без налога</td><td>конкурс внутри вуза, часто с учётом ISEE и кредитов; обычно со второго семестра</td><td>небольшие, но лёгкие деньги</td></tr>
+<tr><td><b>Смена объекта УСН на «Д−Р»</b></td><td>налоговая сама подпишет прибыль вместо оборота</td><td>уведомление до <b>31.12.2026</b></td><td>возвращает DSU со <b>второго курса</b> (2028/29)</td></tr>
+<tr><td><b>Остаток ипотеки</b></td><td>вычитается из стоимости квартиры до нуля</td><td>справка банка на 31.12.2026</td><td>при ≥ 3,4 млн ₽ квартира исчезает из расчёта</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Отпадает</th><th>Почему</th></tr></thead>
+<tbody>
+<tr><td>SSST «Ferdinando Rossi», Турин — бесплатное жильё + освобождение от надбавки €2 200</td><td>«non abbiano compiuto 21 anni» на дату подачи — тебе 22; и «non risultino già iscritti al Sistema Universitario» — UNIC</td></tr>
+<tr><td>Collegio Superiore, Болонья</td><td>«L'iscrizione deve essere la prima in assoluto» + письменный и устный экзамен на итальянском</td></tr>
+<tr><td>«Talents 4 UniTo», €20 000</td><td>только магистратура</td></tr>
+<tr><td>MAECI, Invest Your Talent</td><td>только магистратура и докторантура</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note good">
+<span class="lbl">Как это складывается при обороте 5 млн и ипотеке</span>
+<p>DSU: €0 в обоих вузах. Но ISEE ~35 000 — верхняя граница окна «International Talents». При сильном SAT: €4 500 + плата €157 в Болонье. Плюс работа 20 ч/нед. Это <b>не хуже минимальной DSU</b>, а плата ниже, чем в Турине со стипендией.</p>
+<p>При обороте 7,5 млн — ISEE ~53 000: ни DSU, ни Unibo-грант. Остаются flat tax €1 157, работа и второй курс через «Д−Р». Турин в этом сценарии — €3 156 без вариантов.</p>
+</div>
+
+<div class="note hot">
+<span class="lbl">Одно правило про совмещение</span>
+<p>Unibo-грант и ER.GO <b>взаимоисключающие</b> — бандо: «may not be combined with… study grants awarded by ER.GO». Подавать можно на оба, брать один. При ISEE до 25 000 выгоднее ER.GO (до €7 171 против €4 500); при 25–35 тысяч ER.GO нет, и Unibo-грант — единственный.</p>
+</div>
+
+<hr>
+
+<h2 id="docs">5. Документы</h2>
+<h3>Что, чьё, откуда, апостиль</h3>
+
+<p class="lead">Общее правило: документ <b>выдаёт орган</b>, самодекларации не принимаются, всё легализуется — <b>кроме поимённо перечисленных исключений</b>. Список исключений в EDISU закрытый, он в таблице. Суммы только в рублях. Всё за 2026 год / на 31.12.2026.</p>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>#</th><th>Документ</th><th>Чей</th><th>Где брать</th><th>Апостиль</th><th>Перевод</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><b>Справка о составе семьи / регистрации</b> — все, кто прописан с мамой</td><td>семья</td><td>МФЦ, паспортный стол, администрация</td><td class="pri"><b>ДА</b></td><td>IT · для Турина EN ок</td></tr>
+<tr><td>2</td><td><b>Свидетельство о разводе</b></td><td>мама</td><td>ЗАГС</td><td><b>НЕТ</b> — копия, прямое исключение EDISU</td><td>EN ок для Турина; Болонья — уточнить</td></tr>
+<tr><td>3</td><td><b>Твоё свидетельство о рождении</b> — связка с семьёй мамы, раз ты не прописан с ней</td><td>ты</td><td>ЗАГС</td><td class="pri"><b>ДА</b></td><td>IT / EN</td></tr>
+<tr><td>4</td><td><b>Твой кипрский ВНЖ / подтверждение проживания</b> — «иное место жительства ради учёбы»</td><td>ты</td><td>Кипр</td><td><b>НЕТ</b> — копия</td><td>EN ок</td></tr>
+<tr><td>5</td><td><b>Декларация УСН за 2026 с отметкой ФНС</b></td><td>мама</td><td>СБИС + ИФНС, см. раздел 6</td><td class="pri"><b>ДА</b></td><td>IT · для Турина EN ок</td></tr>
+<tr><td>6</td><td><b>Справка ФНС о доходах физлица</b> — покажет только НДФЛ; подаётся <b>вместе</b> с п. 5, не вместо</td><td>мама</td><td>ЛК ФНС / ИФНС</td><td class="pri"><b>ДА</b></td><td>IT / EN</td></tr>
+<tr><td>7</td><td><b>Справка ФНС об отсутствии доходов за 2026</b></td><td>ты</td><td>ИФНС по заявлению</td><td class="pri"><b>ДА</b></td><td>IT / EN</td></tr>
+<tr><td>8</td><td><b>Выписка ЕГРН с площадью в м²</b> или справка об отсутствии недвижимости по РФ</td><td>мама и ты, каждому</td><td>Росреестр, МФЦ, Госуслуги</td><td class="pri"><b>ДА</b></td><td>IT / EN</td></tr>
+<tr><td>9</td><td><b>Остаток ипотеки на 31.12.2026</b> — договор + справка банка</td><td>мама</td><td>банк</td><td class="pri"><b>ДА</b> — EDISU: «translated and legalised»</td><td>IT / EN</td></tr>
+<tr><td>10</td><td><b>Выписки со счетов на 31.12.2026</b> — остаток или средний за год</td><td>мама и ты</td><td>банки</td><td><b>НЕТ</b> — копия, исключение EDISU</td><td>EN ок для Турина; Болонья — уточнить</td></tr>
+<tr><td>11</td><td>Справка об отсутствии счетов — если счетов нет</td><td>кому применимо</td><td>нотариус</td><td>нотариальная самодекларация — EDISU</td><td>Болонья: под вопросом</td></tr>
+<tr><td>12</td><td><b>Документ об отчислении из UNIC</b></td><td>ты</td><td>секретариат UNIC</td><td>по запросу; апостиль ставит Кипр</td><td>EN</td></tr>
+<tr><td>13</td><td>Справка о зачислении в итальянский вуз</td><td>ты</td><td>вуз</td><td>не нужен — итальянский документ</td><td>—</td></tr>
+<tr><td>14</td><td>IBAN зоны SEPA на твоё имя</td><td>ты</td><td>любой банк SEPA</td><td>—</td><td>Турин: ввести до 7 ноября</td></tr>
+<tr><td>15</td><td>Договор аренды в Италии ≥ 10 мес, зарегистрирован, твоё имя</td><td>ты</td><td>арендодатель</td><td>не нужен</td><td>Турин: декларация 21 окт — 4 ноя; Болонья: до 3 ноя, договор до 14 янв</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note hot">
+<span class="lbl">Ключ к колонке «апостиль»</span>
+<p>Освобождены от легализации по тексту EDISU только: свидетельство о смерти родителя, <b>свидетельство о разводе</b>, справка об отчуждении второго родителя, <b>подтверждение раздельного проживания</b>, <b>выписки со счетов</b>. Всё остальное — легализуется. Про доходы бандо говорит отдельно: даже справка о зачислении вместо справки о безработице «must be translated into Italian and legalised».</p>
+<p>Апостиль ставится на каждый документ отдельно: Минюст региона, 2 500 ₽, до 5 рабочих дней на нотариальную копию, до 30 — на оригинал органа.</p>
+</div>
+
+<hr>
+
+<h2 id="decl">6. Как легализовать декларацию мамы</h2>
+<h3>Электронную декларацию нельзя апостилировать как распечатку</h3>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Шаг</th><th>Что</th><th>Кто</th><th>Срок</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Из СБИС выгрузить <b>квитанцию о приёме</b> и <b>извещение о вводе</b>; распечатать декларацию</td><td>мама</td><td>день</td></tr>
+<tr><td>2</td><td>В ИФНС попросить <b>отметку о приёме на бумажной копии</b> — п. 219 регламента, приказ Минфина 02.07.2012 № 99н: «по просьбе заявителя… распечатывается и проставляется отметка о приёме»</td><td>ИФНС</td><td>на месте / дни</td></tr>
+<tr><td>3а</td><td>Нотариальная копия → апостиль Минюста на нотариуса</td><td>нотариус + Минюст</td><td>~5 рабочих дней</td></tr>
+<tr><td>3б</td><td>либо апостиль Минюста <b>прямо на документ ФНС</b> — один нотариус меньше, но дольше</td><td>Минюст</td><td>до 30 рабочих дней</td></tr>
+<tr><td>4</td><td>Перевод <b>после</b> апостиля: итальянский для Болоньи, английский допустим для Турина; подпись переводчика заверяет нотариус</td><td>переводчик + нотариус</td><td>дни</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="after">
+Запасной путь, если ИФНС не поставит отметку: нотариус по ст. 103.9 удостоверяет равнозначность бумаги электронному документу — но только по <b>файлам с электронными подписями</b> из СБИС, не по PDF. Голую распечатку не примет никто. Ту же цепочку прогнать на декларации за 2025 сейчас — как репетицию.
+</div>
+
+<hr>
+
+<h2 id="when">7. Сроки, куда, когда платят</h2>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th></th><th>Турин, EDISU</th><th>Болонья, ER.GO</th></tr></thead>
+<tbody>
+<tr><td><b>Заявка</b></td><td>22 июля — 4 сентября, 12:00, Temporary Access Code</td><td>23 июня — 24 августа, 16:00, логин университета</td></tr>
+<tr><td><b>Документы</b></td><td><b>бумажные оригиналы почтой</b>, Via Madama Cristina 83, 10126 Torino — <b>прибытие</b> до 4 сен (со жильём) / 25 сен (только стипендия); дослать до 12 ноя в итоговый рейтинг</td><td><b>сканы</b> в Dossier Utente → Documentazione redditi esteri до 24 авг; <b>оригиналы хранить весь год</b></td></tr>
+<tr><td>Рейтинг</td><td>предварительный ~октябрь, итоговый 9 ноября / 16 декабря</td><td>предварительный 20 октября, итоговый 17 ноября</td></tr>
+<tr><td>Жильё</td><td>принять онлайн 25–29 сентября; отказ до 16 сентября</td><td>рейтинг 10 сентября, итог 24 сентября; вызов письмом до 30 сентября</td></tr>
+<tr><td><b>Выплаты, первый курс</b></td><td>20% середина ноября · 30% конец декабря · 50% с июня при 20 CFU к 31 мая</td><td>20% до 10 ноября · 30% до 31 декабря · 10% с марта при кредитах к 28 февраля · 40% с июня при кредитах к 10 августа</td></tr>
+<tr><td>Своих денег до первой выплаты</td><td colspan="2">сентябрь — середина ноября: <b>€2 500–3 500</b>; если попал в «без выплаты» или идентификация затянулась — <b>€6 000–8 000</b></td></tr>
+</tbody>
+</table>
+</div>
+
+<hr>
+
+<h2 id="ban">8. Что нельзя и что проверяют</h2>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Нельзя</th><th>Почему</th></tr></thead>
+<tbody>
+<tr><td>Самодекларации о доходах и имуществе</td><td>ER.GO: «non vengono accettate <b>in nessun caso</b>»</td></tr>
+<tr><td>Декларация с заниженным оборотом</td><td>в России — камеральная проверка по кассе, счетам и контрагентам; в Италии — «dichiarazioni mendaci»</td></tr>
+<tr><td>Объявить себя независимым без двух условий</td><td>ложные сведения</td></tr>
+<tr><td>Скрыть предыдущую карьеру в UNIC</td><td>обязательна к декларации; сброс года прописан — скрывать нечего</td></tr>
+<tr><td>Признание кредитов UNIC</td><td>не запрещено, но отматывает год первого зачисления назад</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note hot">
+<span class="lbl">Проверки и санкции</span>
+<p>Guardia di Finanza проверяет по существу <b>минимум 20%</b> идонеев, случайная выборка. ER.GO вправе запросить <b>бумажные оригиналы</b> в течение года — непредоставление, включая форс-мажор, равно отзыву. Санкции за ложные сведения: отзыв всех льгот, возврат, <b>штраф в троекратном размере</b> (D.Lgs 68/12, ст. 10(3)), исключение из льгот <b>на весь срок обучения</b> (ER.GO), сообщение в органы.</p>
+</div>
+
+<hr>
+
+<h2 id="open">9. Открытые вопросы — в тикет EDISU и ER.GO</h2>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>#</th><th>Вопрос</th><th>Цена</th></tr></thead>
+<tbody>
+<tr><td>1</td><td class="pri"><b>Мама — ИП на УСН «Доходы» 6%, в декларации только оборот. Считаете ли оборот доходом, или примете прибыль по аудиторскому заключению + выписки + КУДиР — как для Аргентины и Гондураса в вашем же списке?</b></td><td>наличие стипендии</td></tr>
+<tr><td>2</td><td class="pri"><b>Какой курс рубля применяете, если Банк Италии не публикует RUB с марта 2022?</b></td><td>полоса</td></tr>
+<tr><td>3</td><td>Принимается ли декларация УСН с отметкой ФНС вместо «справки о доходах физлица»?</td><td>допуск</td></tr>
+<tr><td>4</td><td>ER.GO: развод и выписки со счетов — копии или легализованные оригиналы?</td><td>объём легализации</td></tr>
+<tr><td>5</td><td>Турин: отсрочена ли надбавка €1 100 до публикации рейтинга, как COU?</td><td>€1 100 в ноябре</td></tr>
+<tr><td>6</td><td>Какой документ UNIC об отчислении принимает ER.GO как rinuncia, и на какую дату?</td><td>год первого зачисления</td></tr>
+</tbody>
+</table>
+</div>
+
+<footer>
+<p>Источники: EDISU Piemonte, Notice of competition 2026/27 — ст. 2, 3, 5(1.3), 6(1.5), 6(1.6), 7(3), 9(2), Annex E, Annex F (общие правила и блок «Russia») · ER.GO, Bando DSU 2026/27, Sezione I — ст. 1.1, 1.2, 2.2, 2.3.1, 7(2), ст. 2 (controlli), Sezione II — ст. 2, 13 · UniTo, Regolamento tasse 2026/27 — ст. 3.2, 4.2, 5, 6.1.2 · unibo.it — tassa fissa agevolata · Приказ Минфина 02.07.2012 № 99н, п. 219 · Основы законодательства о нотариате, ст. 103.9 · НК РФ ст. 346.14, 346.16.</p>
+<p>Часть плана: <a href="https://alex-italy-hub.netlify.app">указатель</a> · <a href="https://alex-turin-full.netlify.app">Турин</a> · <a href="https://alex-bologna-full.netlify.app">Болонья</a> · <a href="https://alex-italy-questions.netlify.app">вопросы</a> · <a href="https://alex-italy-change-of-field.netlify.app">смена направления</a></p>
+</footer>
+
+</div>
+<script>(function(){function l(){document.querySelectorAll('table').forEach(function(t){
+var h=[].map.call(t.querySelectorAll('thead th'),function(x){return (x.textContent||'').replace(/\s+/g,' ').trim()});
+if(!h.length)return;[].forEach.call(t.querySelectorAll('tbody tr'),function(r){[].forEach.call(r.cells,function(c,i){
+if(h[i]&&!c.hasAttribute('data-l'))c.setAttribute('data-l',h[i])})})})}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',l);else l();})();</script>
+</body>
+</html>

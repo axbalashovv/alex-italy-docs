@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Письма в университеты</title>
+<style>
+:root{--bg:#fbfaf8;--ink:#1a1a1a;--muted:#6b6864;--rule:#dedad4;--accent:#8a5a2b;--max:820px}
+@media (prefers-color-scheme:dark){:root{--bg:#141312;--ink:#e8e4de;--muted:#918b83;--rule:#2f2c29;--accent:#c99a63}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 Georgia,"Times New Roman",serif;padding:0 24px 100px}
+.wrap{max-width:var(--max);margin:0 auto}
+header{padding:70px 0 0}
+h1{font-size:30px;line-height:1.22;font-weight:400;margin:0 0 14px}
+.sub{color:var(--muted);font-size:15px;line-height:1.55;margin:0 0 8px}
+hr{border:0;border-top:1px solid var(--rule);margin:38px 0}
+h2{font-size:12.5px;font-weight:400;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);margin:48px 0 6px;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+h3{font-size:23px;font-weight:400;line-height:1.32;margin:0 0 18px}
+h4{font-size:17px;font-weight:700;margin:24px 0 9px}
+p{margin:0 0 15px}
+ul,ol{margin:0 0 15px;padding-left:22px}
+li{margin:0 0 7px}
+a{color:var(--accent)}
+nav.toc{margin:34px 0 0}
+nav.toc ol{list-style:none;margin:0;padding:0;counter-reset:s}
+nav.toc>ol>li{counter-increment:s;border-top:1px solid var(--rule);padding:10px 0}
+nav.toc>ol>li:last-child{border-bottom:1px solid var(--rule)}
+nav.toc a{color:var(--ink);text-decoration:none;display:flex;gap:14px;align-items:baseline}
+nav.toc a:hover{color:var(--accent)}
+nav.toc a::before{content:counter(s);color:var(--muted);font-size:13px;min-width:18px;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+nav.toc .t{flex:1}
+nav.toc .n{color:var(--muted);font-size:13px;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+.note{border-left:2px solid var(--accent);padding:2px 0 2px 18px;margin:0 0 20px}
+.note p:last-child{margin-bottom:0}
+.tablewrap{overflow-x:auto;margin:0 0 20px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:14.5px;line-height:1.48}
+th{text-align:left;font-weight:400;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--ink);padding:0 13px 7px 0;vertical-align:bottom;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+td{border-bottom:1px solid var(--rule);padding:10px 13px 10px 0;vertical-align:top}
+td:last-child,th:last-child{padding-right:0}
+.num{white-space:nowrap;font-variant-numeric:tabular-nums}
+.uni{font-weight:700}
+footer{margin-top:58px;padding-top:20px;border-top:1px solid var(--rule);color:var(--muted);font-size:14px;line-height:1.6}
+@media (max-width:820px){body{font-size:16px;padding:0 16px 74px}header{padding-top:42px}h1{font-size:24px}h3{font-size:19px}table{min-width:560px;font-size:14px}}
+</style><style>
+.gloss{margin:0 0 22px}
+.gloss dt{font-weight:700;margin:16px 0 3px;font-size:16px}
+.gloss dd{margin:0 0 0 0;color:var(--muted);font-size:15.5px;line-height:1.5}
+.lead{font-size:17px;margin:0 0 16px}
+.after{border-left:2px solid var(--accent);padding:2px 0 2px 18px;margin:16px 0 26px;font-size:15.5px}
+.after b{color:var(--ink)}
+.big{font-size:20px;font-weight:700}
+table.simple{min-width:0}
+table.simple td{padding:12px 16px 12px 0}
+.step{color:var(--muted);font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;
+ font-family:-apple-system,BlinkMacSystemFont,sans-serif;margin:0 0 6px}
+</style>
+<style>
+.mail{border-top:1px solid var(--rule);padding:24px 0}
+.mail:last-of-type{border-bottom:1px solid var(--rule)}
+.mno{color:var(--accent);font-size:12px;letter-spacing:.09em;text-transform:uppercase;
+ font-family:-apple-system,BlinkMacSystemFont,sans-serif;margin:0 0 4px}
+.mail h3{margin:0 0 10px;font-size:20px}
+.addr{font-size:14.5px;line-height:1.7;margin:0 0 12px;
+ font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+pre{white-space:pre-wrap;word-wrap:break-word;background:transparent;
+ border-left:2px solid var(--rule);padding:12px 0 12px 16px;margin:0;
+ font:14.5px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--ink)}
+button.cp{font:13px -apple-system,BlinkMacSystemFont,sans-serif;cursor:pointer;
+ background:transparent;color:var(--accent);border:1px solid var(--rule);
+ border-radius:3px;padding:6px 13px;margin:0 0 12px}
+button.cp:hover{border-color:var(--accent)}
+button.cp.ok{color:var(--ink);border-color:var(--ink)}
+</style>
+
+
+<style id="sem">
+.lbl{display:block;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,sans-serif;
+  font-size:11px;letter-spacing:.09em;text-transform:uppercase;font-weight:600;
+  color:var(--muted);margin:0 0 8px;line-height:1.35}
+.note .lbl + p{margin-top:0}
+.note.hot{border-left-color:#9c3328}
+.note.hot .lbl{color:#9c3328}
+.note.good{border-left-color:#3f6b4a}
+.note.good .lbl{color:#3f6b4a}
+td.pri{color:var(--accent)}
+th{white-space:nowrap}
+@media (max-width:700px){
+  .lbl{margin-bottom:6px}
+  th{white-space:normal}
+  .tablewrap td.pri::before,.scroll td.pri::before{color:var(--muted)}
+}
+</style>
+<style id="mob">
+@media (max-width:700px){
+  .tablewrap{overflow-x:visible !important}
+  .tablewrap table{min-width:0 !important;display:block;font-size:15px}
+  .tablewrap thead{display:none}
+  .tablewrap tbody,.tablewrap tr,.tablewrap td{display:block;width:100%}
+  .tablewrap tr{border-bottom:1px solid var(--ink);padding:15px 0 13px}
+  .tablewrap tr:last-child{border-bottom:0}
+  .tablewrap td{border:0 !important;padding:5px 0 !important;line-height:1.5}
+  .tablewrap td:empty{display:none}
+  .tablewrap td::before{content:attr(data-l);display:block;font-size:11px;letter-spacing:.07em;
+    text-transform:uppercase;color:var(--muted);margin-bottom:2px;
+    font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+  .tablewrap td:first-child::before{display:none}
+  .tablewrap td:first-child{font-weight:700;font-size:17px;margin-bottom:7px}
+  pre{font-size:13.5px;padding-left:12px}
+  .addr{font-size:14px}
+  button.cp{width:100%;padding:11px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Письма в университеты</h1>
+  <p class="sub">По два вопроса, каждое в свой отдел. Длинное письмо на шесть вопросов Турин отработал выборочно, Болонья не ответила вовсе.</p>
+</header>
+
+<hr>
+
+<h2 id="kto">Кто чем занимается</h2>
+<h3>Восемь адресов, и у каждого своя зона</h3>
+
+<p class="lead">Половина потерянных ответов — от того, что вопрос ушёл не в тот отдел. Вот карта.</p>
+
+<h4>Турин</h4>
+
+<div class="tablewrap">
+<table class="simple">
+<thead><tr><th>Отдел</th><th>Адрес</th><th>За что отвечает</th></tr></thead>
+<tbody>
+<tr><td>Вступительные требования</td><td><a href="mailto:requisiti.sme@unito.it">requisiti.sme@unito.it</a></td><td>Признание квалификации, требование о 12 годах, что засчитывается</td></tr>
+<tr><td>Команда программы</td><td><a href="mailto:internationaldegrees.management@unito.it">internationaldegrees.management@unito.it</a></td><td>Business &amp; Management: отбор, SAT, надбавка, OFA. Здесь отвечал Luigi</td></tr>
+<tr><td>Международный отдел</td><td><a href="mailto:internationalstudents@unito.it">internationalstudents@unito.it</a></td><td><b>Процедура</b>: виза, CIMEA, Dichiarazione di Valore, Universitaly, Apply@UniTo</td></tr>
+<tr><td>Стипендия</td><td>EDISU, тикет-система</td><td>Пороги, документы, ISPE, суммы</td></tr>
+</tbody>
+</table>
+</div>
+
+<h4>Болонья</h4>
+
+<div class="tablewrap">
+<table class="simple">
+<thead><tr><th>Отдел</th><th>Адрес</th><th>За что отвечает</th></tr></thead>
+<tbody>
+<tr><td>Приём с иностранной квалификацией</td><td><a href="mailto:segstudintbo@unibo.it">segstudintbo@unibo.it</a></td><td>Признание диплома, подача документов, зачисление</td></tr>
+<tr><td>International Desk</td><td><a href="mailto:internationaldesk@unibo.it">internationaldesk@unibo.it</a></td><td>Процесс поступления в целом, иммиграция, стипендии, Flat Tax</td></tr>
+<tr><td>Плата</td><td>только через форму</td><td>Размер взноса, освобождения, сроки. Почтового адреса нет</td></tr>
+<tr><td>Стипендии вуза</td><td><a href="mailto:uborstudio@unibo.it">uborstudio@unibo.it</a></td><td>Гранты, награды, скидки</td></tr>
+<tr><td>Стипендия региона</td><td><a href="mailto:ergoid@er-go.it">ergoid@er-go.it</a></td><td>ER.GO. Отдельный канал для иностранцев без итальянской цифровой подписи</td></tr>
+</tbody>
+</table>
+</div>
+
+<h4>Остальные вузы</h4>
+
+<div class="tablewrap">
+<table class="simple">
+<thead><tr><th>Вуз</th><th>Адрес</th></tr></thead>
+<tbody>
+<tr><td>Триест</td><td><a href="mailto:international.students@amm.units.it">international.students@amm.units.it</a> · просят указывать программу в теме</td></tr>
+<tr><td>Ка' Фоскари</td><td><a href="mailto:prospective.students@unive.it">prospective.students@unive.it</a></td></tr>
+<tr><td>Падуя</td><td><a href="mailto:international.admission@unipd.it">international.admission@unipd.it</a></td></tr>
+<tr><td>Statale Milano</td><td><a href="mailto:international.students@unimi.it">international.students@unimi.it</a></td></tr>
+</tbody>
+</table>
+</div>
+
+<hr>
+
+<h2 id="live">Живые консультации</h2>
+<h3>Ответ на вопрос про сопроводителя</h3>
+
+<p class="lead">Персонального куратора, закреплённого за абитуриентом, ни в Турине, ни в Болонье нет. Но есть живые каналы, и в Болонье они заметно лучше.</p>
+
+<div class="note hot">
+<span class="lbl">Поправка от 29 августа</span>
+<p>Ранее я рекомендовал видеоконсультации Болоньи как главный канал. <b>Это неверно.</b> Виртуальные окна требуют входа через институциональные логины университета, <b>SPID</b> или <b>CIE</b> — итальянские цифровые удостоверения, которые выдают только по итальянскому налоговому коду и документу. У поступающего из-за границы их нет, а альтернативного входа на странице не предусмотрено.</p>
+<p>То есть <b>записаться по ссылке ты не сможешь</b>, пока не станешь студентом.</p>
+</div>
+
+<h4>Болонья — что реально доступно</h4>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Канал</th><th>Доступен?</th><th>Детали</th></tr></thead>
+<tbody>
+<tr>
+<td><b>Телефон службы для международных студентов</b></td>
+<td><b>да</b></td>
+<td><b>+39 051 208 4050</b><br>пн 9:00–11:00 и 14:00–15:00 · ср 9:00–11:00 · чт 14:00–15:00 · пт 9:00–11:00<br><small>по итальянскому времени, это на час раньше кипрского</small></td>
+</tr>
+<tr>
+<td>Почта</td>
+<td>формально да</td>
+<td><a href="mailto:segstudintbo@unibo.it">segstudintbo@unibo.it</a> и <a href="mailto:internationaldesk@unibo.it">internationaldesk@unibo.it</a>. На первое письмо ответа не было</td>
+</tr>
+<tr>
+<td>Виртуальные окна</td>
+<td><b>нет</b></td>
+<td>Нужен SPID, CIE или логин студента университета. <a href="https://sportelli.unibo.it/international-desk-bologna">Страница</a> — пригодится после зачисления</td>
+</tr>
+<tr>
+<td>Очный приём</td>
+<td>нет</td>
+<td>Via Marsala 49/A, Болонья. Только для сдачи оригиналов</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h4>Люди программы — канал, который мы не пробовали</h4>
+
+<p>Общие отделы Болоньи не ответили ни на один из шести вопросов. Но в Турине ответил <b>не общий отдел, а сотрудник самой программы</b>. У CLaBE такие люди тоже есть.</p>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Кто</th><th>Контакт</th><th>Чем занимается</th></tr></thead>
+<tbody>
+<tr>
+<td><b>Учебный офис CLaBE</b><br><small>координатор — Angela Adamo</small></td>
+<td><a href="mailto:didatticasociale.clabe@unibo.it">didatticasociale.clabe@unibo.it</a><br>+39 051 209 8142</td>
+<td>Организация программы, экзамены, расписание — и прямым текстом <b>«general information on admissions»</b></td>
+</tr>
+<tr>
+<td><b>Тьюторская служба CLaBE</b><br><small>тьютор — Camilla Ciavatta</small></td>
+<td><a href="mailto:didatticascaravilli.tutorclabe@unibo.it">didatticascaravilli.tutorclabe@unibo.it</a></td>
+<td>Дословно: «guidance from choosing a degree programme to your course timetable, from preparing your study plan to taking exams». <b>Это и есть сопроводитель</b></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="after">
+<b>Это лучший непробованный ход по Болонье.</b> Закономерность видна: в Турине общий отдел молчал, а Luigi из команды программы ответил за день, подробно и с цифрами. У людей программы меньше поток и есть заинтересованность в абитуриентах на свой курс.<br><br>
+Начинать с учебного офиса. Если не ответит — писать в тьюторскую службу: у неё в описании стоит сопровождение начиная с выбора программы, то есть поступающие в её зоне явно.
+</div>
+
+<div class="after">
+<b>Плюс телефон.</b> Это единственный живой канал, доступный из-за границы без итальянских документов. Звонить в приёмные часы, вопросы держать перед глазами.<br><br>
+Виртуальные окна ставим в закладки на будущее: после зачисления логин появится, и тогда это станет основным способом решать вопросы с платой и стипендией.
+</div>
+
+<h4>Турин — только телефон и очная запись</h4>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Куда</th><th>Как</th><th>Часы</th><th>Ссылка</th></tr></thead>
+<tbody>
+<tr>
+<td><b>International Students Office</b></td>
+<td>Телефон <b>+39 011 670 4452</b>, почта <a href="mailto:internationalstudents@unito.it">internationalstudents@unito.it</a>. Можно записаться заранее</td>
+<td>пн и чт 14:00–16:00<br>вт 10:00–12:00</td>
+<td><a href="https://www.unito.it/servizi/segreterie-studenti-e-uffici-aperti-al-pubblico/sportello-studenti-internazionali">Страница отдела</a></td>
+</tr>
+<tr>
+<td><b>Apply@UniTo</b></td>
+<td>Форма обратной связи по процедуре подачи</td>
+<td>—</td>
+<td><a href="https://apply.unito.it/en_GB/contents/content/3-contact-us">Написать</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="note hot">
+<p><b>Поправка.</b> Ранее я упомянул службу Passi@UniTo как консультации для иностранцев. Это неверно: <b>Passi@UniTo — психологическая служба</b> поддержки адаптации для уже зачисленных студентов, а не консультации по поступлению. К твоей задаче она отношения не имеет.</p>
+<p>Видеоконсультаций уровня болонских у Турина нет — там только телефон и очный приём.</p>
+</div>
+
+<h4>Стипендиальные агентства</h4>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Кто</th><th>Как связаться</th><th>Ссылка</th></tr></thead>
+<tbody>
+<tr>
+<td><b>ER.GO</b><br><small>стипендия Болоньи</small></td>
+<td>Почта <a href="mailto:ergoid@er-go.it">ergoid@er-go.it</a> — отдельный канал для иностранцев без итальянской цифровой подписи. Телефоны <b>051 199 07580</b> и <b>051 018 5268</b>: пн и ср 14:00–16:00, вт и чт 10:00–12:30</td>
+<td><a href="https://www.er-go.it/contatti">Контакты</a> · <a href="https://dossier.er-go.it">Личный кабинет</a></td>
+</tr>
+<tr>
+<td><b>EDISU</b><br><small>стипендия Турина</small></td>
+<td>Почтового адреса нет — <b>только тикет</b>. В тикете можно попросить перезвонить. Офисы в Турине, Новаре и Верчелли только по записи. Телефон <b>+39 011 653 1111</b></td>
+<td><a href="https://www.edisu.piemonte.it/en/discover-edisu/our-offices/locations-and-contacts">Контакты и офисы</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="after">
+<b>Что делать в первую очередь.</b> Позвонить в Болонью по <b>+39 051 208 4050</b> в приёмные часы и задать два вопроса голосом: засчитывается ли год Никосии и попадает ли Россия в список стран вне ОЭСР для Flat Tax. Письма туда уже отправлялись и остались без ответа.<br><br>
+Турину — писать. Там почта работает, а живого канала для поступающих издалека нет ни у кого из двух.
+</div>
+
+<hr>
+
+<h2 id="reality">Кто отвечает</h2>
+<h3>Что мы знаем по факту, а не по расписанию</h3>
+
+<div class="tablewrap">
+<table class="simple">
+<thead><tr><th>Вуз</th><th>Почта</th><th>Видеоконсультации</th></tr></thead>
+<tbody>
+<tr><td><b>Турин</b></td><td><b>Ответил за день.</b> Подробно, с цифрами, и корректно перенаправил не свои вопросы</td><td>Нет вообще</td></tr>
+<tr><td><b>Болонья</b></td><td><b>Не ответила</b></td><td><b>Недоступны без итальянского SPID или CIE.</b> Остаётся телефон</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="after">
+<b>Похоже, это не случайность.</b> У Турина работает почта и нет живых приёмов. У Болоньи есть расписание виртуальных приёмов и не работает почта. Офис, который держит приёмные часы, переписку обычно не приоритезирует.<br><br>
+<b>Отсюда практический вывод:</b> в Турин — писать, в Болонью — <b>звонить</b>. Виртуальные окна там требуют итальянского цифрового удостоверения, которого у тебя нет, а на письма они не ответили.
+</div>
+
+<hr>
+
+<h2 id="what">Что можно выяснить</h2>
+<h3>И что нельзя узнать вообще ни у кого</h3>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Вопрос</th><th>Турин</th><th>Болонья</th></tr></thead>
+<tbody>
+<tr>
+<td><b>Засчитывается ли год Никосии</b></td>
+<td>Письмом в requisiti.sme</td>
+<td><b>Звонком</b> +39 051 208 4050, пн ср пт 9–11</td>
+</tr>
+<tr>
+<td>Какой документ нужен: справка или полный транскрипт</td>
+<td>Тем же письмом</td>
+<td>Тем же звонком</td>
+</tr>
+<tr>
+<td><b>Сколько платит россиянин</b></td>
+<td><b>Уже известно из регламента:</b> €800 + €2 200. Письмо только для подтверждения</td>
+<td><b>Надо спрашивать.</b> Flat Tax €1 000 выведен из списка стран, прямой строки нет</td>
+</tr>
+<tr>
+<td>Есть ли надбавка за программу</td>
+<td>Есть, €2 200, опубликована</td>
+<td>По данным разбора нет, <b>требует подтверждения</b></td>
+</tr>
+<tr>
+<td>Правило «математика ниже порога не отсеивает»</td>
+<td>Спросить, ниже 400</td>
+<td><b>Опубликовано</b>, ниже 500 даёт OFA</td>
+</tr>
+<tr>
+<td>Минимальный балл SAT</td>
+<td>Минимума нет, опубликовано</td>
+<td>Минимума нет, опубликовано</td>
+</tr>
+<tr>
+<td>Оценка иностранной недвижимости для порога имущества</td>
+<td><b>Методики в регламенте нет.</b> Только спрашивать EDISU</td>
+<td><b>€500 за кв. м, опубликовано</b></td>
+</tr>
+<tr>
+<td>Пороги стипендии</td>
+<td>Опубликованы: €26 306 и €57 188</td>
+<td>Опубликованы: €25 000 и €50 000</td>
+</tr>
+<tr>
+<td>Суммы стипендии</td>
+<td>Опубликованы полностью</td>
+<td>Опубликованы полностью</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h4>Чего не узнать ни у кого</h4>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Что</th><th>Почему</th><th>Что делать</th></tr></thead>
+<tbody>
+<tr>
+<td><b>Проходной балл прошлых лет</b></td>
+<td>Определяется тем, кто подался. Вузы обычно не раскрывают</td>
+<td>Спросить всё равно — отказ тоже ответ. Планировать на 1100–1250</td>
+</tr>
+<tr>
+<td><b>Правила приёма и платы на 2027/28</b></td>
+<td>Физически не существуют. Турин сам назвал срок публикации: декабрь–январь</td>
+<td>Проверять сайты в декабре. Закладывать запас 20% на рост</td>
+</tr>
+<tr>
+<td><b>Хватит ли денег фонда на стипендию</b></td>
+<td>Зависит от числа поданных заявок в тот год</td>
+<td>Планировать на статус idoneo — освобождение от платы без выплаты</td>
+</tr>
+<tr>
+<td><b>Как оценят именно вашу недвижимость</b></td>
+<td>Решается при рассмотрении документов</td>
+<td>У Болоньи хотя бы есть формула. У Турина — вопрос в EDISU</td>
+</tr>
+<tr>
+<td><b>Засчитают ли конкретно твой транскрипт</b></td>
+<td>Оценка индивидуальная, до подачи документов ответ будет только предварительным</td>
+<td>Получить письменный ответ по общему правилу — это максимум, что доступно заранее</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="after">
+<b>Что из этого следует.</b> По Турину почти всё уже известно из регламентов — письма нужны для подтверждения двух-трёх цифр. По Болонье наоборот: правила приёма опубликованы лучше, а вот <b>деньги выведены косвенно</b> и требуют живого подтверждения.<br><br>
+Поэтому в Болонью звонить: там два вопроса сразу — год Никосии и Flat Tax, и оба неподтверждённые.
+</div>
+
+<hr>
+
+<h2>Правило</h2>
+<h3>Одно письмо — один отдел — два вопроса</h3>
+
+<p>Причина провала прошлого раза была двойная: объём и то, что вопросы адресованы разным отделам, а письмо ушло в один. Турин ответил ровно на то, что в компетенции программы, а про признание квалификации промолчал — это не их отдел.</p>
+
+<p><b>Сейчас отправляются два письма — по одному на университет.</b> На те же адреса, что и в прошлый раз, но с двумя вопросами вместо шести.</p>
+<p>В прошлый раз в Болонью ушло длинное письмо на шесть вопросов сразу на три адреса. Ответа не было ни одного. Причин две: объём и распылённость — когда получателей несколько, каждый считает, что ответит другой.</p>
+<p><b>Теперь так:</b> один университет — один адрес — два вопроса — ждём ответ. Следующее письмо только после ответа или после недели молчания.</p>
+
+<p class="lead">Адреса были правильные. Ошибка была в другом: <b>шесть вопросов в одном письме</b>, отправленных сразу на несколько адресов. Те же адреса с двумя вопросами — это другой эксперимент, и его никто не ставил.</p>
+
+<p>Поэтому список адресов не переписываем. Идём по нему <b>по одному, сверху вниз</b>, с одним и тем же коротким письмом.</p>
+
+<h4>Болонья — цепочка</h4>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Шаг</th><th>Адрес</th><th>Кто это</th><th>Когда</th></tr></thead>
+<tbody>
+<tr><td class="num"><b>1</b></td><td><b>segstudintbo@unibo.it</b></td><td>Приём с иностранной квалификацией. Тот же адрес, что и в первый раз, но теперь два вопроса вместо шести</td><td class="pri"><b>сейчас</b></td></tr>
+<tr><td class="num">2</td><td>internationaldesk@unibo.it</td><td>International Desk, поступление в целом</td><td>через неделю молчания</td></tr>
+<tr><td class="num">3</td><td>didatticasociale.clabe@unibo.it</td><td>Учебный офис самой программы CLaBE</td><td>ещё через неделю</td></tr>
+<tr><td class="num">4</td><td>didatticascaravilli.tutorclabe@unibo.it</td><td>Тьюторская служба программы</td><td>ещё через неделю</td></tr>
+<tr><td class="num">5</td><td>+39 051 208 4050</td><td>Телефон службы для международных студентов</td><td>параллельно в любой момент</td></tr>
+</tbody>
+</table>
+</div>
+
+<h4>Турин — цепочка</h4>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Шаг</th><th>Адрес</th><th>Кто это</th><th>Когда</th></tr></thead>
+<tbody>
+<tr><td class="num"><b>1</b></td><td><b>requisiti.sme@unito.it</b></td><td>Вступительные требования. Тот же адрес, два вопроса вместо шести</td><td class="pri"><b>сейчас</b></td></tr>
+<tr><td class="num">2</td><td>internationalstudents@unito.it</td><td>Международный отдел. Luigi сам туда перенаправил — сослаться на это в первой строке</td><td>через неделю молчания</td></tr>
+<tr><td class="num">3</td><td>internationaldegrees.management@unito.it</td><td>Команда программы. <b>Этот уже отвечал</b> — но по вопросам программы, не квалификации</td><td>для вопросов про балл, OFA и надбавку</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note good">
+<span class="lbl">Правило</span>
+<p><b>Одно письмо — один адрес — два вопроса — неделя ожидания.</b> Не ответили — тот же текст следующему в цепочке. Не переписывать, не добавлять вопросов, не слать двоим сразу.</p>
+<p>Так мы заодно выясним, в чём была причина молчания: в объёме письма или в самом адресате. Сейчас этого никто не знает.</p>
+</div>
+
+<div class="note good">
+<span class="lbl">Почему именно эти два адреса</span>
+<p><b>Болонья — учебный офис самой программы CLaBE.</b> Общие отделы университета уже проигнорировали шесть вопросов. А в Турине ответил <b>не общий отдел, а человек программы</b> — Luigi, за день, подробно и с цифрами. Повторяем тот же ход.</p>
+<p><b>Турин — internationalstudents.</b> Luigi сам туда перенаправил дословной фразой. Это не холодное письмо, а приход по внутренней рекомендации, и в первой же строке это сказано.</p>
+</div>
+
+<div class="note hot">
+<span class="lbl">Один адресат на письмо</span>
+<p>Ни в одном письме нет копии. Когда получателей двое, каждый считает, что ответит другой — так теряются ответы. Один адрес, один ответственный.</p>
+
+</div>
+
+<div class="after">
+<b>Про состав семьи.</b> Во всех письмах, где это уместно, стоит «my household consists of myself and my mother» — не «my family». Это не формальность: размер семьи определяет коэффициент в расчёте ISEE. Два человека дают делитель <b>1,57</b>, три — 2,04. Лучше назвать состав прямо, чем оставить им догадываться.
+</div>
+
+<div class="after">
+<b>Первый вопрос одинаковый в шести письмах из семи</b> — про признание года Никосии. Это намеренно: он гейтит всё остальное, и ответы можно будет сравнить между вузами. Если четверо скажут «да», а один «нет» — это уже информация о том, кто как трактует норму.
+</div>
+
+<div class="note hot">
+<span class="lbl">Противоречие в письме Турина, которое надо снять</span>
+<p>Luigi перечислил <b>три шага</b> подачи: сдать SAT → зарегистрироваться на Call for admission в MyUniTO → дождаться рейтинга и зачислиться. <b>Apply@UniTo среди них нет.</b></p>
+<p>Но в том же письме он пишет про «specific admission procedure, which has to be done <b>before anything else</b>, in order to get a visa» и отдельно называет Apply@UniTo в списке тем для internationalstudents@unito.it.</p>
+<p>По нашим данным Apply@UniTo идёт <b>19 февраля — 15 апреля</b>, то есть за четыре месяца до июньского конкурса, и второй попытки в году не даёт. Если это так, то пропуск февраля закрывает год целиком — а из письма Luigi этого не следует вообще.</p>
+<p><b>Это самый дорогой невыясненный вопрос по Турину</b>, и он вынесен в письмо 2а.</p>
+</div>
+
+<hr>
+
+<h2 id="q">Что ещё не выяснено</h2>
+<h3>Полный список открытых вопросов</h3>
+
+<p class="lead">Сюда сведено всё, что осталось без ответа после разборов. Часть уже разложена по письмам, часть ждёт очереди.</p>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Вопрос</th><th>Кому</th><th>Цена ошибки</th><th>Где</th></tr></thead>
+<tbody>
+<tr><td><b>Засчитывается ли год Никосии за недостающий год школы</b></td><td>оба вуза</td><td>Отваливаются оба варианта сразу</td><td>письма 1 и 2</td></tr>
+<tr><td>Нужен полный транскрипт или хватит справки о первом годе</td><td>оба вуза</td><td>Видимость провальных семестров</td><td>письма 1 и 2</td></tr>
+<tr><td>Россия в списке стран вне ОЭСР для Flat Tax</td><td>Болонья</td><td>€1 157 против €2 197</td><td>письмо 3</td></tr>
+<tr><td>Есть ли надбавка за программу у CLaBE</td><td>Болонья</td><td>До €2 040 в год</td><td>письмо 3</td></tr>
+<tr><td>Как оценивается российская недвижимость для ISPE</td><td>оба агентства</td><td>Может выбить из стипендии целиком</td><td>письма 4 и 5</td></tr>
+<tr><td>Дедлайн консульских документов совпадает с дедлайном заявки</td><td>ER.GO</td><td>Стипендия за год</td><td>письмо 4</td></tr>
+<tr><td>Можно ли подать до получения визы и когда её загружать</td><td>EDISU</td><td>Исключение с формулировкой «No visa»</td><td>письмо 5</td></tr>
+<tr><td>Проходной балл SAT для квоты не-ЕС</td><td>Турин</td><td>Планирование подготовки</td><td>письмо 6</td></tr>
+<tr><td>Правило «математика ниже 400 не отсеивает» для не-ЕС</td><td>Турин</td><td>Стратегия по математике</td><td>письмо 6</td></tr>
+<tr><td>Подтвердить надбавку €2 200 для России</td><td>Турин</td><td>Основа всего бюджета</td><td>письмо 7</td></tr>
+<tr><td>Отменён ISEE Parificato только на 2026/27 или дальше</td><td>Турин</td><td>€2 600 в год</td><td>письмо 7</td></tr>
+<tr><td><b>Нужен ли Apply@UniTo в дополнение к конкурсу на MyUniTO</b></td><td>Турин, internationalstudents</td><td><b>Пропуск февральского окна закрывает год</b></td><td>письмо 2а</td></tr>
+<tr><td><b>Каким документом доказывается год Никосии</b> — CIMEA, DoV, справка вуза или всё вместе</td><td>Турин, internationalstudents</td><td>CIMEA идёт 60 рабочих дней — запускать надо заранее</td><td>письмо 2а</td></tr>
+<tr><td>Сколько кредитов Турин готов признать при этом транскрипте</td><td>Турин, программа</td><td>Полоса 25–79 даёт второй курс и откат года стипендии</td><td>дописать в письмо 7</td></tr>
+<tr><td>Даты приёма на 2027/28</td><td>оба вуза</td><td>Пропуск окна</td><td>проверять сайты в декабре–январе</td></tr>
+<tr><td>Есть ли решение суда о разводе помимо свидетельства</td><td><b>маме</b></td><td>Семья из трёх человек вместо двух — полоса ниже или ноль</td><td>не письмо, спросить напрямую</td></tr>
+<tr><td>Оформлена ли на маму недвижимость и есть ли ипотека</td><td><b>маме</b></td><td>Порог ISPE, до €2 500 в год разницы</td><td>не письмо</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="after">
+<b>Два последних вопроса — не письма, а разговор с мамой.</b> И они же самые срочные: архивы российских судов отвечают неделями, а развод был в 2008–2009 году. Запрос может подать только она.
+</div>
+
+<hr>
+
+<h2>Письма</h2>
+<h3>Кнопка копирует целиком, вместе с адресом и темой</h3>
+
+<div class="mail" id="m0">
+<p class="mno">Письмо 0 · <b>отправить первым</b></p>
+<h3>Болонья — учебный офис программы CLaBE</h3>
+<div class="addr"><b>To:</b> <a href="mailto:didatticasociale.clabe@unibo.it">didatticasociale.clabe@unibo.it</a><br><b>Что за адрес:</b> почтовый ящик учебной части программы CLaBE — <i>didattica sociale</i> это учебный офис социально-экономического направления. Не личный адрес. В зоне ответственности прямо указано «general information on admissions»<br><b>Телефон:</b> +39 051 209 8142<br><b>Subject:</b> Business and Economics (CLaBE) 2027/28 — two questions from a prospective applicant</div>
+<button class="cp" data-t="m0b">Скопировать письмо</button>
+<pre id="m0b">To: didatticasociale.clabe@unibo.it
+Subject: Business and Economics (CLaBE) 2027/28 — two questions
+
+Dear Sir or Madam,
+
+I am from Russia and I would like to apply to Business and Economics (CLaBE) for 2027/28.
+
+My situation: I finished school in Russia. School in Russia is 11 years, not 12. After that I completed one full year at the University of Nicosia in Cyprus — 60 ECTS, all courses passed, taught in English.
+
+I have two questions:
+
+1. Is this one university year enough to meet your 12-year school requirement?
+
+2. Does CLaBE have an extra programme fee on top of the standard university fee?
+
+If there is a person or an office at the University who can guide me through the application process, I would be grateful if you could tell me who to contact.
+
+Thank you very much.
+
+Best regards,
+Aleksandr Balashov
+alexandrbalashov07@gmail.com</pre>
+</div>
+
+<div class="mail" id="m1">
+<p class="mno">Письмо 1 · первым</p>
+<h3>Болонья — признание года</h3>
+<div class="addr"><b>To:</b> <a href="mailto:segstudintbo@unibo.it">segstudintbo@unibo.it</a><br><b>Subject:</b> Admission requirements 2027/28 — Russian diploma and one completed university year</div>
+<button class="cp" data-t="m1b">Скопировать письмо</button>
+<pre id="m1b">To: segstudintbo@unibo.it
+Subject: Business and Economics (CLaBE) 2027/28 — two questions
+
+Dear Sir or Madam,
+
+I am from Russia and I would like to apply to Business and Economics (CLaBE) for 2027/28.
+
+My situation: I finished school in Russia. School in Russia is 11 years, not 12. After that I completed one full year at the University of Nicosia in Cyprus — 60 ECTS, all courses passed, taught in English.
+
+I have two questions:
+
+1. Is this one university year enough to meet your 12-year school requirement?
+
+2. Which document do you need for that year: a certificate for the first year only, or my full transcript?
+
+If there is a person or an office at the University who can guide me through the application process, I would be grateful if you could tell me who to contact.
+
+Thank you very much.
+
+Best regards,
+Aleksandr Balashov
+alexandrbalashov07@gmail.com</pre>
+</div>
+<div class="mail" id="m2">
+<p class="mno">Письмо 2 · первым</p>
+<h3>Турин — признание года</h3>
+<div class="addr"><b>To:</b> <a href="mailto:requisiti.sme@unito.it">requisiti.sme@unito.it</a><br><b>Subject:</b> Admission requirements 2027/28 — Russian diploma and one completed university year</div>
+<button class="cp" data-t="m2b">Скопировать письмо</button>
+<pre id="m2b">To: requisiti.sme@unito.it
+Subject: Business &amp; Management 2027/28 — two questions
+
+Dear Sir or Madam,
+
+I am from Russia and I would like to apply to Business &amp; Management for 2027/28.
+
+My situation: I finished school in Russia. School in Russia is 11 years, not 12. After that I completed one full year at the University of Nicosia in Cyprus — 60 ECTS, all courses passed, taught in English.
+
+I have two questions:
+
+1. Is this one university year enough to meet your 12-year school requirement?
+
+2. Which document do you need for that year: a certificate for the first year only, or my full transcript?
+
+If there is a person or an office at the University who can guide me through the application process, I would be grateful if you could tell me who to contact.
+
+Thank you very much.
+
+Best regards,
+Aleksandr Balashov
+alexandrbalashov07@gmail.com</pre>
+</div>
+<div class="mail" id="mi">
+<p class="mno">Письмо 2а · <b>отправить сразу</b> · прямое перенаправление от Luigi</p>
+<h3>Турин — международная процедура</h3>
+<div class="addr"><b>To:</b> <a href="mailto:internationalstudents@unito.it">internationalstudents@unito.it</a><br><b>Почему сюда:</b> Luigi дословно написал «For any further information about the International Students procedure (Visa, CIMEA, DOV, Universitaly, Apply@Unito etc.) Please contact internationalstudents@unito.it»<br><b>Не дублирует письмо 2:</b> там спрашиваем <b>правило</b> — засчитывается ли год. Здесь <b>чем это доказывается</b> — каким документом. Это разные вопросы и разные отделы<br><b>Subject:</b> International student admission procedure for 2027/28 — qualification and sequence</div>
+<button class="cp" data-t="mib">Скопировать письмо</button>
+<pre id="mib">To: internationalstudents@unito.it
+Subject: International student procedure 2027/28 — two questions
+
+Dear Sir or Madam,
+
+The Business &amp; Management programme office asked me to write to you about the procedure for international students. I am from Russia and I would like to apply for 2027/28. I will be living in Russia when I apply.
+
+My situation: I finished school in Russia. School in Russia is 11 years, not 12. After that I completed one full year at the University of Nicosia in Cyprus — 60 ECTS, all courses passed, taught in English.
+
+I have two questions:
+
+1. Is a transcript from the University of Nicosia enough to prove my qualification? Or do I also need a CIMEA statement or a Dichiarazione di Valore? If I need them, when do I send them?
+
+2. Do I need to do Apply@UniTo as well as the Call for admission on MyUniTO? Are the dates for these two different?
+
+If there is a person or an office at the University who can guide me through the application process, I would be grateful if you could tell me who to contact.
+
+Thank you very much.
+
+Best regards,
+Aleksandr Balashov
+alexandrbalashov07@gmail.com</pre>
+</div>
+
+<div class="mail" id="m3">
+<p class="mno">Письмо 3 · сейчас</p>
+<h3>Болонья — Flat Tax</h3>
+<div class="addr"><b>To:</b> <a href="mailto:internationaldesk@unibo.it">internationaldesk@unibo.it</a><br><b>Subject:</b> Flat tuition rate for non-OECD citizens — Business and Economics (CLaBE)</div>
+<button class="cp" data-t="m3b">Скопировать письмо</button>
+<pre id="m3b">To: internationaldesk@unibo.it
+Subject: Tuition for a student from Russia — two questions
+
+Dear Sir or Madam,
+
+I am from Russia and I would like to apply to Business and Economics (CLaBE) for 2027/28. My household is me and my mother. She lives and works in Russia. Neither of us has income or property in Italy.
+
+I have two questions:
+
+1. Is Russia on your list of non-OECD countries for the flat tuition rate?
+
+2. Does CLaBE have an extra programme fee on top of the standard university fee?
+
+If there is a person or an office at the University who can guide me through the application process, I would be grateful if you could tell me who to contact.
+
+Thank you very much.
+
+Best regards,
+Aleksandr Balashov
+alexandrbalashov07@gmail.com</pre>
+</div>
+<div class="mail" id="m4">
+<p class="mno">Письмо 4 · сейчас</p>
+<h3>ER.GO — стипендия Болоньи</h3>
+<div class="addr"><b>To:</b> <a href="mailto:ergoid@er-go.it">ergoid@er-go.it</a><br><b>Subject:</b> Scholarship 2027/28 — documents required from a non-EU applicant with family income in Russia</div>
+<button class="cp" data-t="m4b">Скопировать письмо</button>
+<pre id="m4b">To: ergoid@er-go.it
+Subject: Scholarship 2027/28 — two questions about documents
+
+Dear Sir or Madam,
+
+I am from Russia and I plan to apply for a scholarship for 2027/28 at the University of Bologna. My household is me and my mother. She lives and works in Russia. Neither of us has income or property in Italy.
+
+I have two questions:
+
+1. Do all documents about income and property need an apostille and an Italian translation by the same deadline as the application itself? Or is there a later deadline for these documents?
+
+2. How do you calculate the value of property that is outside Italy? And what document do I send if a family member owns no property?
+
+Thank you very much.
+
+Best regards,
+Aleksandr Balashov
+alexandrbalashov07@gmail.com</pre>
+</div>
+
+<div class="mail" id="m5">
+<p class="mno">Письмо 5 · сейчас · через тикет-систему на edisu.piemonte.it</p>
+<h3>EDISU — стипендия Турина</h3>
+<div class="addr"><b>Как отправить:</b> форма обращения на сайте EDISU, раздел помощи. Почтового адреса у них нет — только тикет.<br><b>Телефон:</b> +39 011 653 1111. В тикете можно попросить перезвонить.</div>
+<button class="cp" data-t="m5b">Скопировать текст обращения</button>
+<pre id="m5b">Subject: Scholarship 2027/28 — two questions about documents
+
+Dear Sir or Madam,
+
+I am from Russia and I plan to apply for a scholarship for 2027/28 at the University of Turin. My household is me and my mother. She lives and works in Russia. Neither of us has income or property in Italy.
+
+I have two questions:
+
+1. My mother is registered in Russia as self-employed. Annex F lists the "Certificate of Income of the Natural Person" from the Federal Tax Service. For a self-employed person, the Federal Tax Service issues a different certificate — the one for professional income tax. Is that certificate accepted?
+
+2. Can I apply before I receive my student visa? If yes, by which date do I need to upload the visa?
+
+Thank you very much.
+
+Best regards,
+Aleksandr Balashov
+alexandrbalashov07@gmail.com</pre>
+</div>
+
+
+<div class="mail" id="m6">
+<p class="mno">Письмо 6 · после №2</p>
+<h3>Турин — отбор</h3>
+<div class="addr"><b>To:</b> <a href="mailto:internationaldegrees.management@unito.it">internationaldegrees.management@unito.it</a><br><b>Subject:</b> Re: Business &amp; Management 2027/28 — two questions on the selection</div>
+<button class="cp" data-t="m6b">Скопировать письмо</button>
+<pre id="m6b">Subject: Business &amp; Management 2027/28 — two more questions
+
+Dear Luigi,
+
+Thank you for your reply. I have two more questions about the selection.
+
+1. Is there a minimum SAT score for the non-EU places? Or can you tell me the score of the last student who was admitted from that group?
+
+2. If my SAT Math score is below 400, do I still get a place and simply have to take an extra course (OFA)? Does this also apply to non-EU students?
+
+Thank you very much.
+
+Best regards,
+Aleksandr Balashov</pre>
+</div>
+<div class="mail" id="m7">
+<p class="mno">Письмо 7 · после №6</p>
+<h3>Турин — деньги</h3>
+<div class="addr"><b>To:</b> <a href="mailto:internationaldegrees.management@unito.it">internationaldegrees.management@unito.it</a><br><b>Subject:</b> Tuition band for a student resident in the Russian Federation</div>
+<button class="cp" data-t="m7b">Скопировать письмо</button>
+<pre id="m7b">To: internationaldegrees.management@unito.it
+Subject: Tuition for a student living in Russia — two questions
+
+Dear Sir or Madam,
+
+I am from Russia and I would like to apply to Business &amp; Management for 2027/28. I will be living in Russia when I enrol.
+
+I have two questions:
+
+1. Annex A of the Tuition Regulations lists the Russian Federation at €40,768.27. Does this mean I pay €800 for the standard fee (COU) and €2,200 for the additional contribution each year?
+
+2. The ISEE Parificato was removed from the tuition reduction rules for 2026/27. Is this only for that year, or also for 2027/28?
+
+Thank you very much.
+
+Best regards,
+Aleksandr Balashov
+alexandrbalashov07@gmail.com</pre>
+</div>
+
+<details>
+<summary>Письма в остальные вузы — на потом</summary>
+<div class="body">
+<p>Триест, Ка' Фоскари, Падуя и Statale Milano. Готовы к отправке, но пока в стороне: сначала надо получить ответ по Болонье и Турину.</p>
+<div class="mail" id="p4">
+<p class="mno">На потом</p>
+<h3>Триест — плата и SAT</h3>
+<div class="addr"><b>To:</b> <a href="mailto:international.students@amm.units.it">international.students@amm.units.it</a><br><b>Subject:</b> Business Administration and Management — fees and entrance test for a non-EU applicant</div>
+<button class="cp" data-t="p4b">Скопировать письмо</button>
+<pre id="p4b">To: international.students@amm.units.it
+Subject: Business Administration and Management — fees and entrance test for a non-EU applicant
+
+Dear International Students Office,
+
+I am a Russian citizen planning to apply to Business Administration and Management for the 2027/28 intake. I would reside abroad at the time of application.
+
+Two questions:
+
+1. What is the annual tuition for a student whose residence is abroad, and is an ISEE required in that case?
+
+2. Is the SAT accepted in place of the entrance test, and if so, what is the minimum score?
+
+Thank you.
+
+Kind regards,
+Aleksandr Balashov
+alexandrbalashov07@gmail.com</pre>
+</div>
+<div class="mail" id="p5">
+<p class="mno">На потом</p>
+<h3>Ка' Фоскари — признание года и SAT</h3>
+<div class="addr"><b>To:</b> <a href="mailto:prospective.students@unive.it">prospective.students@unive.it</a><br><b>Subject:</b> Business Administration and Management 2027/28 — admission requirements for a Russian applicant</div>
+<button class="cp" data-t="p5b">Скопировать письмо</button>
+<pre id="p5b">To: prospective.students@unive.it
+Subject: Business Administration and Management 2027/28 — admission requirements for a Russian applicant
+
+Dear Prospective Students Office,
+
+I am a Russian citizen planning to apply to Business Administration and Management for the 2027/28 intake. I hold a Russian secondary school diploma (eleven years of schooling) and have completed one full academic year at the University of Nicosia in Cyprus — 60 ECTS, all courses passed.
+
+Two questions:
+
+1. Is one completed academic year at an accredited European university sufficient to satisfy the twelve-year schooling requirement?
+
+2. Is the SAT accepted in place of the entrance test, and if so, what is the minimum score required?
+
+Thank you.
+
+Kind regards,
+Aleksandr Balashov
+alexandrbalashov07@gmail.com</pre>
+</div>
+<div class="mail" id="p6">
+<p class="mno">На потом</p>
+<h3>Падуя — признание года и SAT</h3>
+<div class="addr"><b>To:</b> <a href="mailto:international.admission@unipd.it">international.admission@unipd.it</a><br><b>Subject:</b> Economics, Governance and Decision-Making 2027/28 — admission requirements for a Russian applicant</div>
+<button class="cp" data-t="p6b">Скопировать письмо</button>
+<pre id="p6b">To: international.admission@unipd.it
+Subject: Economics, Governance and Decision-Making 2027/28 — admission requirements for a Russian applicant
+
+Dear Admissions Office,
+
+I am a Russian citizen planning to apply to Economics, Governance and Decision-Making for the 2027/28 intake. I hold a Russian secondary school diploma (eleven years of schooling) and have completed one full academic year at the University of Nicosia in Cyprus — 60 ECTS, all courses passed.
+
+Two questions:
+
+1. Is one completed academic year at an accredited European university sufficient to satisfy the twelve-year schooling requirement?
+
+2. Is the SAT accepted for admission to this programme, or is the CEnT-S test mandatory for all candidates?
+
+Thank you.
+
+Kind regards,
+Aleksandr Balashov
+alexandrbalashov07@gmail.com</pre>
+</div>
+<div class="mail" id="p7">
+<p class="mno">На потом</p>
+<h3>Statale Milano — признание года и плата</h3>
+<div class="addr"><b>To:</b> <a href="mailto:international.students@unimi.it">international.students@unimi.it</a><br><b>Subject:</b> English-taught economics bachelor 2027/28 — requirements and fees for a non-EU applicant</div>
+<button class="cp" data-t="p7b">Скопировать письмо</button>
+<pre id="p7b">To: international.students@unimi.it
+Subject: English-taught economics bachelor 2027/28 — requirements and fees for a non-EU applicant
+
+Dear International Students Office,
+
+I am a Russian citizen planning to apply to one of your English-taught bachelor programmes in economics for the 2027/28 intake. I hold a Russian secondary school diploma (eleven years of schooling) and have completed one full academic year at the University of Nicosia in Cyprus — 60 ECTS, all courses passed. My household consists of myself and my mother. She lives and earns in Russia, and neither of us has any income or assets in Italy.
+
+Two questions:
+
+1. Is one completed academic year at an accredited European university sufficient to satisfy the twelve-year schooling requirement?
+
+2. What is the annual tuition for a non-EU student residing abroad whose family income and assets are entirely outside Italy?
+
+Thank you.
+
+Kind regards,
+Aleksandr Balashov
+alexandrbalashov07@gmail.com</pre>
+</div>
+</div>
+</details>
+
+
+<hr>
+
+<h2>Если не отвечают</h2>
+
+<ul>
+<li>Ждать <b>семь рабочих дней</b>, потом короткое напоминание в том же треде: одно предложение, «could you kindly confirm the two points below»</li>
+<li><b>Болонья</b> — телефонные часы: International Desk по вторникам 14:30–16:00, Student Administration вторник 14:00–16:00, среда и четверг 9:30–12:30</li>
+<li><b>Триест</b> — +39 040 558 7801, 558 2569, 558 6196</li>
+<li><b>Турин</b> — если программа молчит, дублировать на internationalstudents@unito.it, это другой отдел со своими сроками</li>
+</ul>
+
+<footer>
+<p>Часть плана по Италии: <a href="https://alex-italy-hub.netlify.app">указатель документов</a> · <a href="https://alex-italy-turin-bologna.netlify.app">что делать по шагам</a></p>
+<p>Адреса взяты с официальных страниц контактов университетов, август 2026.</p>
+</footer>
+
+</div>
+<script>
+document.querySelectorAll('button.cp').forEach(function(b){
+  b.addEventListener('click',function(){
+    var el=document.getElementById(b.dataset.t);
+    var t=el.innerText;
+    function done(){var o=b.textContent;b.textContent='Скопировано';b.classList.add('ok');
+      setTimeout(function(){b.textContent=o;b.classList.remove('ok')},1600);}
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(t).then(done,function(){fallback(t,done)});
+    } else fallback(t,done);
+    function fallback(text,cb){
+      var ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';
+      ta.style.opacity='0';document.body.appendChild(ta);ta.select();
+      try{document.execCommand('copy');cb()}catch(e){}
+      document.body.removeChild(ta);
+    }
+  });
+});
+</script>
+
+<script>
+(function(){function label(){document.querySelectorAll('table').forEach(function(t){
+var hs=[].map.call(t.querySelectorAll('thead th'),function(h){return (h.textContent||'').replace(/\s+/g,' ').trim();});
+if(!hs.length)return;[].forEach.call(t.querySelectorAll('tbody tr'),function(r){
+[].forEach.call(r.cells,function(c,i){if(hs[i]&&!c.hasAttribute('data-l'))c.setAttribute('data-l',hs[i]);});});});}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',label);else label();})();
+</script>
+</body>
+</html>

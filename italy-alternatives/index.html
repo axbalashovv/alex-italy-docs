@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Куда ещё подаваться — 2027</title>
+<style>
+:root{
+  --bg:#fbfaf8; --fg:#1a1a1a; --mut:#6b6660; --line:#ddd8d0;
+  --acc:#8a5a2b; --warn:#a33; --ok:#2f6b3f;
+  --max:820px;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--bg); color:var(--fg);
+  font:16px/1.62 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--max); margin:0 auto; padding:56px 24px 120px}
+h1{font-size:31px; line-height:1.2; margin:0 0 6px; font-weight:600; letter-spacing:-.01em}
+.sub{color:var(--mut); font-size:14px; margin:0 0 6px}
+.meta{color:var(--mut); font-size:13px; margin:0 0 44px; padding-bottom:22px; border-bottom:1px solid var(--line)}
+h2{font-size:21px; margin:56px 0 14px; font-weight:600; letter-spacing:-.01em; scroll-margin-top:20px}
+h2 .n{color:var(--mut); font-weight:400; margin-right:10px; font-variant-numeric:tabular-nums}
+h3{font-size:16px; margin:30px 0 8px; font-weight:600}
+p{margin:0 0 13px}
+ul{margin:0 0 13px; padding-left:20px}
+li{margin:0 0 5px}
+strong{font-weight:600}
+a{color:var(--acc)}
+small{font-size:13px; color:var(--mut)}
+
+/* оглавление */
+nav ol{list-style:none; margin:0; padding:0; counter-reset:s}
+nav ol li{counter-increment:s; margin:0; border-bottom:1px solid var(--line)}
+nav ol li:first-child{border-top:1px solid var(--line)}
+nav a{display:flex; gap:14px; padding:9px 2px; text-decoration:none; color:var(--fg); align-items:baseline}
+nav a:hover{background:rgba(138,90,43,.05)}
+nav a::before{content:counter(s); color:var(--mut); font-size:13px; min-width:20px; font-variant-numeric:tabular-nums}
+nav .d{color:var(--mut); font-size:13px; margin-left:auto; text-align:right}
+
+/* врезка тонкой линией */
+.note{border-left:2px solid var(--line); padding:2px 0 2px 16px; margin:18px 0; color:var(--fg)}
+.note.hot{border-left-color:var(--warn)}
+.note.good{border-left-color:var(--ok)}
+.note p:last-child{margin-bottom:0}
+.lbl{display:block; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--mut); margin-bottom:5px}
+
+/* таблицы */
+.scroll{overflow-x:auto; margin:18px 0; -webkit-overflow-scrolling:touch}
+table{border-collapse:collapse; width:100%; min-width:560px; font-size:14.5px; font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+th{text-align:left; font-weight:600; font-size:12px; letter-spacing:.05em; text-transform:uppercase; color:var(--mut);
+   padding:0 14px 8px 0; border-bottom:1px solid var(--fg); vertical-align:bottom}
+td{padding:11px 14px 11px 0; border-bottom:1px solid var(--line); vertical-align:top; line-height:1.45}
+td:last-child,th:last-child{padding-right:0}
+.num{font-variant-numeric:tabular-nums; white-space:nowrap}
+
+/* календарь */
+.cal{font-family:system-ui,-apple-system,"Segoe UI",sans-serif; font-size:14.5px; margin:18px 0}
+.cal .row{display:flex; gap:18px; padding:11px 0; border-bottom:1px solid var(--line); align-items:baseline}
+.cal .when{flex:0 0 150px; font-variant-numeric:tabular-nums; color:var(--mut); font-size:13.5px}
+.cal .what{flex:1}
+.cal .row.key .what{font-weight:600}
+.cal .row.key .when{color:var(--acc)}
+
+details{margin:16px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
+summary{cursor:pointer; padding:11px 0; font-size:14px; color:var(--acc); list-style:none;
+        font-family:system-ui,-apple-system,sans-serif}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"+ "; font-weight:600}
+details[open] summary::before{content:"– "}
+details .body{padding:0 0 16px}
+
+.src{margin-top:64px; padding-top:22px; border-top:1px solid var(--line); font-size:13px; color:var(--mut)}
+.src a{color:var(--mut)}
+.src li{margin-bottom:4px}
+
+@media (max-width:760px){
+  .wrap{padding:36px 18px 80px}
+  h1{font-size:26px}
+  h2{font-size:19px}
+  .cal .row{flex-direction:column; gap:2px}
+  .cal .when{flex:none}
+  table{min-width:0}
+  .scroll table,.scroll tbody,.scroll tr,.scroll td{display:block; width:100%}
+  .scroll thead{display:none}
+  .scroll tr{border-bottom:1px solid var(--fg); padding:12px 0; margin-bottom:4px}
+  .scroll td{border:0; padding:3px 0}
+  .scroll td::before{content:attr(data-l); display:block; font-size:11px; letter-spacing:.06em;
+                     text-transform:uppercase; color:var(--mut)}
+}
+@media print{ body{background:#fff} nav,details{break-inside:avoid} }
+</style>
+<style>
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 10px;
+  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:13px}
+.filters span.cap{color:var(--mut);align-self:center;margin-right:4px;font-size:12px;
+  letter-spacing:.06em;text-transform:uppercase}
+.filters button{font:inherit;cursor:pointer;background:transparent;color:var(--fg);
+  border:1px solid var(--line);border-radius:2px;padding:6px 11px}
+.filters button:hover{border-color:var(--mut)}
+.filters button.on{border-color:var(--acc);color:var(--acc)}
+.filters button.on::after{content:" ↑";font-size:11px}
+.filters button.on[data-dir="desc"]::after{content:" ↓"}
+.opt{border-left:2px solid var(--line);padding:2px 0 2px 16px;margin:22px 0}
+.opt h3{margin:0 0 6px}
+.opt p{margin:0 0 8px}
+.opt .tag{font-family:system-ui,-apple-system,sans-serif;font-size:12px;color:var(--mut);
+  letter-spacing:.04em;text-transform:uppercase;display:block;margin-bottom:4px}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+
+<h1>Куда ещё подаваться</h1>
+<p class="sub">Англоязычный бакалавриат по бизнесу: все варианты под конкретный профиль, с ценой и сложностью входа</p>
+<p class="meta">27 августа 2026 &middot; чтение 14 минут &middot; Италия разобрана отдельно в «Италия 2027»</p>
+
+<nav>
+<ol>
+<li><a href="#b1">Что учтено в подборе<span class="d">профиль и ограничения</span></a></li>
+<li><a href="#b2">Все варианты<span class="d">таблица с сортировкой</span></a></li>
+<li><a href="#b3">Разбор: как туда попасть<span class="d">по каждому</span></a></li>
+<li><a href="#b4">Что отпадает и почему<span class="d">и это не мнение</span></a></li>
+<li><a href="#b5">Что делать параллельно с Италией<span class="d">порядок действий</span></a></li>
+<li><a href="#b6">Контакты и вопросы<span class="d">куда писать и что спросить</span></a></li>
+</ol>
+</nav>
+
+<h2 id="b1"><span class="n">1</span>Что учтено в подборе</h2>
+
+<p>Подбор сделан под конкретные вводные, а не по общим рейтингам. Вот они.</p>
+
+<div class="note good">
+<span class="lbl">Главное, что снимает половину тревоги</span>
+<p>Подача идёт <strong>как первокурсник</strong>: школьный аттестат плюс один закрытый год университета как мост через требование о 12 годах школы. Это не перевод и не зачёт кредитов.</p>
+<p>Значит <strong>CPA 1,84 в отборе не участвует</strong>. Его нигде не спрашивают. Более того, документ-мост показывает только <em>первый</em> год в Никосии — а это два самых сильных твоих семестра, GPA 2,28 и 2,40, десять курсов, все сданы. Провальные годы в этот сертификат не попадают.</p>
+</div>
+
+<ul>
+<li><strong>Российский паспорт, других нет.</strong> Отсюда фильтр по доступности визы, а не только по цене</li>
+<li><strong>Аттестат за 11 лет</strong> плюс год Университета Никосии, 60 ECTS. Мост нужен везде, где требуют 12 лет школы; в Венгрии не нужен вовсе</li>
+<li><strong>Смена направления с графического дизайна на бизнес</strong> роли не играет: первый курс идёт с нуля, прошлая специальность не мешает</li>
+<li><strong>SAT будет сдан.</strong> Значит варианты с SAT остаются в игре, и это расширяет список, а не сужает</li>
+<li><strong>Только английский язык обучения</strong></li>
+<li><strong>Планка по деньгам</strong> задана Италией: €700&ndash;1 400 за учёбу в год</li>
+</ul>
+
+<h2 id="b2"><span class="n">2</span>Все варианты</h2>
+
+<p>Столбец «вход» ранжирует сложность поступления по наблюдаемым признакам: есть ли квота для не-ЕС и насколько она мала, требуется ли вступительный экзамен, нужен ли языковой сертификат, признаётся ли аттестат за 11 лет. Единица — самый простой вход.</p>
+
+<div class="filters">
+  <span class="cap">Сортировать</span>
+  <button data-sort="money">по цене учёбы</button>
+  <button data-sort="ease">по лёгкости входа</button>
+  <button data-sort="visa">по доступу для россиянина</button>
+  <button data-sort="country">по стране</button>
+</div>
+
+<div class="scroll">
+<table id="opts">
+<thead><tr><th>Программа</th><th>Учёба в год</th><th>Вход</th><th>Испытание</th><th>Ключевое</th></tr></thead>
+<tbody>
+
+<tr data-money="1480" data-ease="1" data-visa="1" data-country="Турция">
+<td data-l="Программа"><strong>METU, Анкара</strong><br><small>Business Administration &middot; Турция</small></td>
+<td data-l="Учёба" class="num">$1 600<br><small>~&euro;1 480</small></td>
+<td data-l="Вход" class="num">1</td>
+<td data-l="Испытание">Отдельного экзамена нет. Разбор досье по признанному результату: SAT, A-Level, IB или школьный аттестат</td>
+<td data-l="Ключевое"><strong>IELTS и TOEFL для подачи не требуются.</strong> Все 87 бакалавриатов идут на английском. Подача 1 июня &ndash; 12 июля</td>
+</tr>
+
+<tr data-money="2500" data-ease="2" data-visa="1" data-country="Венгрия">
+<td data-l="Программа"><strong>Дебрецен</strong><br><small>Business Administration and Management &middot; Венгрия</small></td>
+<td data-l="Учёба" class="num">&euro;2 500</td>
+<td data-l="Вход" class="num">2</td>
+<td data-l="Испытание">Стандартные требования вуза, конкурсной квоты для не-ЕС нет</td>
+<td data-l="Ключевое">Аттестат за 11 лет принимается <strong>без моста</strong> &mdash; венгерская школа сама одиннадцатилетняя. Четыре года, английский. Работа 30 часов в неделю</td>
+</tr>
+
+<tr data-money="6600" data-ease="3" data-visa="1" data-country="Венгрия">
+<td data-l="Программа"><strong>Corvinus, Будапешт</strong><br><small>BSc Business and Management &middot; Венгрия</small></td>
+<td data-l="Учёба" class="num">&euro;6 600<br><small>&euro;3 300 за семестр</small></td>
+<td data-l="Вход" class="num">3</td>
+<td data-l="Испытание">Вступительный экзамен плюс собеседование. Для платного набора экзамены проводятся <strong>ежемесячно</strong></td>
+<td data-l="Ключевое">Лучшая бизнес-школа Венгрии. B2 английского проверяют на собеседовании, отдельный сертификат не обязателен. Семь семестров</td>
+</tr>
+
+<tr data-money="1600" data-ease="4" data-visa="3" data-country="Испания">
+<td data-l="Программа"><strong>Валенсия, 5 госвузов</strong><br><small>Испания</small></td>
+<td data-l="Учёба" class="num">&euro;750 &ndash; 2 500</td>
+<td data-l="Вход" class="num">4</td>
+<td data-l="Испытание">Вступительного экзамена нет. Доступ через <strong>UNEDasiss</strong> &mdash; обязательная процедура признания аттестата для не-ЕС</td>
+<td data-l="Ключевое">Не-ЕС платят <strong>тот же регулируемый тариф, что и европейцы</strong>. Одна общая подача на пять университетов. Нужен IELTS от 6.0 или TOEFL от 80</td>
+</tr>
+
+<tr data-money="1600" data-ease="4" data-visa="3" data-country="Испания">
+<td data-l="Программа"><strong>Андалусия, 10 госвузов</strong><br><small>Испания</small></td>
+<td data-l="Учёба" class="num">&euro;750 &ndash; 2 500</td>
+<td data-l="Вход" class="num">4</td>
+<td data-l="Испытание">То же: UNEDasiss, без вступительного экзамена</td>
+<td data-l="Ключевое">Одна заявка сразу на <strong>все десять</strong> государственных университетов региона с ранжированием программ. Тариф европейский</td>
+</tr>
+
+<tr data-money="700" data-ease="5" data-visa="2" data-country="Италия">
+<td data-l="Программа"><strong>Ка' Фоскари, Венеция</strong><br><small>Business Administration and Management &middot; Италия</small></td>
+<td data-l="Учёба" class="num">~&euro;700</td>
+<td data-l="Вход" class="num">5</td>
+<td data-l="Испытание">TOLC-E, с 2026/27 заменён на CEnT-S. <strong>SAT не нужен</strong></td>
+<td data-l="Ключевое">Тест стоит &euro;35 и сдаётся из дома. Два отбора в год. B2 английского обязателен</td>
+</tr>
+
+<tr data-money="4000" data-ease="6" data-visa="3" data-country="Греция">
+<td data-l="Программа"><strong>AUEB, Афины</strong><br><small>International Business and Technology &middot; Греция</small></td>
+<td data-l="Учёба" class="num">&euro;1 500 &ndash; 7 000</td>
+<td data-l="Вход" class="num">6</td>
+<td data-l="Испытание">SAT принимается как вступительный результат. Плюс признание аттестата через <strong>DOATAP</strong></td>
+<td data-l="Ключевое">Практически единственный англоязычный бизнес-бакалавриат в греческом госвузе: четыре года, 240 ECTS. Программы на греческом бесплатны, англоязычные платные</td>
+</tr>
+
+<tr data-money="1000" data-ease="7" data-visa="2" data-country="Италия">
+<td data-l="Программа"><strong>Турин</strong><br><small>Business &amp; Management &middot; Италия</small></td>
+<td data-l="Учёба" class="num">&euro;700 &ndash; 1 400</td>
+<td data-l="Вход" class="num">7</td>
+<td data-l="Испытание">SAT обязателен, ранжирование строго по баллу. <strong>Математика ниже 400 не отсеивает</strong>, а добавляет обязательный курс</td>
+<td data-l="Ключевое">40 мест для не-ЕС. Два круга: июнь и июль&ndash;сентябрь на оставшиеся места</td>
+</tr>
+
+<tr data-money="5000" data-ease="8" data-visa="3" data-country="Португалия">
+<td data-l="Программа"><strong>ISCTE, Минью, Авейру</strong><br><small>Португалия</small></td>
+<td data-l="Учёба" class="num">&euro;3 000 &ndash; 7 000<br><small>ISCTE до &euro;9 800</small></td>
+<td data-l="Вход" class="num">8</td>
+<td data-l="Испытание">Требования вуза, TOEFL 80&ndash;94</td>
+<td data-l="Ключевое">Англоязычных <em>бакалавриатов</em> мало, основной массив англоязычных программ на уровне магистратуры. Вид на жительство продлевается до пяти лет, работа 20 часов</td>
+</tr>
+
+<tr data-money="400" data-ease="9" data-visa="2" data-country="Италия">
+<td data-l="Программа"><strong>Болонья, CLaBE</strong><br><small>Business and Economics &middot; Италия</small></td>
+<td data-l="Учёба" class="num">по ISEE<br><small>при низком ISEE возможно полное освобождение</small></td>
+<td data-l="Вход" class="num">9</td>
+<td data-l="Испытание">SAT обязателен. Ранжирование чисто по баллу, минимума нет, при равенстве проходит младший</td>
+<td data-l="Ключевое">32 места для не-ЕС и <strong>только первый отбор</strong>. Самый жёсткий вход в списке и самая низкая возможная цена</td>
+</tr>
+
+</tbody>
+</table>
+</div>
+
+<div class="note">
+<span class="lbl">Что видно при переключении сортировок</span>
+<p>Цена и лёгкость входа идут <strong>в противоположные стороны</strong>. Болонья потенциально самая дешёвая и при этом самая труднодоступная. METU и Дебрецен дороже итальянских, но берут без конкурсной квоты и без экзамена.</p>
+</div>
+
+<h2 id="b3"><span class="n">3</span>Разбор: как туда попасть</h2>
+
+<div class="opt">
+<span class="tag">Турция &middot; вход 1</span>
+<h3>METU, Анкара</h3>
+<p>Средний Восточный технический университет, все программы бакалавриата на английском, Business Administration в составе факультета экономических и административных наук. Учёба $1 600 в год.</p>
+<p>Отдельного вступительного экзамена для иностранцев <strong>нет</strong>: приёмная комиссия смотрит досье, опираясь на признанный результат вроде SAT или школьного аттестата. Сертификат IELTS или TOEFL для подачи <strong>не требуется</strong> &mdash; английский там язык обучения по умолчанию.</p>
+<p>Подача на 2026/27 шла с 1 июня по 12 июля, на 2027/28 ожидается тот же коридор.</p>
+<p>Виза: россияне въезжают в Турцию без визы на 60 дней, но <strong>для учёбы нужна студенческая виза из турецкого консульства</strong> &mdash; она и становится основанием для студенческого вида на жительство. Туристический безвизовый въезд учёбу не покрывает.</p>
+</div>
+
+<div class="opt">
+<span class="tag">Венгрия &middot; вход 2</span>
+<h3>Дебрецен</h3>
+<p>Business Administration and Management, четыре года, английский, &euro;2 500 в год. Венгерская школа сама одиннадцатилетняя, поэтому <strong>мост через год университета здесь не нужен вообще</strong> &mdash; твоего аттестата достаточно.</p>
+<p>Венгрия остаётся самым доступным для россиянина государством ЕС по визе. Работа во время учёбы 30 часов в неделю &mdash; лучшее условие из всего списка.</p>
+</div>
+
+<div class="opt">
+<span class="tag">Венгрия &middot; вход 3</span>
+<h3>Corvinus, Будапешт</h3>
+<p>BSc Business and Management, семь семестров, &euro;3 300 за семестр. Сильнейшая бизнес-школа страны, и цена соответствует.</p>
+<p>Вход через вступительный экзамен и собеседование, но для платного набора <strong>экзамены проводятся каждый месяц</strong> &mdash; то есть попытка не одна в году, а много. Уровень английского B2 проверяют прямо на собеседовании, отдельный сертификат сдавать не нужно.</p>
+</div>
+
+<div class="opt">
+<span class="tag">Испания &middot; вход 4</span>
+<h3>Валенсия и Андалусия</h3>
+<p>Ключевая особенность: в Валенсийском сообществе, Андалусии и Кастилии-и-Леоне не-граждане ЕС платят <strong>тот же регулируемый тариф, что и европейцы</strong> &mdash; &euro;750&ndash;2 500 в год. В Мадриде и Каталонии тот же диплом стоит &euro;6 000&ndash;9 000.</p>
+<p>Вступительного экзамена нет. Доступ идёт через <strong>UNEDasiss</strong> &mdash; обязательную процедуру признания иностранного аттестата, которую проходят все не-ЕС. Это бюрократия, а не конкурс.</p>
+<p>Подача устроена удобно: Андалусия принимает одну заявку сразу на десять государственных университетов с ранжированием программ, Валенсийское сообщество &mdash; общую Preinscripci&oacute;n на пять. Нужен IELTS от 6.0 или TOEFL от 80.</p>
+</div>
+
+<div class="opt">
+<span class="tag">Греция &middot; вход 6</span>
+<h3>AUEB, Афины</h3>
+<p>Афинский университет экономики и бизнеса, программа International Business and Technology: четыре года, 240 ECTS, полностью на английском. Это фактически единственный англоязычный бизнес-бакалавриат в греческом государственном секторе &mdash; из более чем тысячи программ страны подавляющее большинство идёт на греческом.</p>
+<p>Греческие программы бесплатны, англоязычные платные. SAT принимается как вступительный результат. Дополнительно нужна процедура <strong>DOATAP</strong> &mdash; признание аттестата эквивалентным греческому.</p>
+</div>
+
+<div class="opt">
+<span class="tag">Португалия &middot; вход 8</span>
+<h3>ISCTE, Минью, Авейру</h3>
+<p>Государственного потолка цен для не-ЕС в Португалии нет, тариф ставит сам вуз: &euro;3 000&ndash;7 000, а по отдельным программам ISCTE доходит до &euro;9 800. Бизнес там дороже среднего.</p>
+<p>Англоязычных бакалавриатов немного, основной массив англоязычных программ &mdash; магистратура. Плюсы на будущее: вид на жительство продлевается суммарно до пяти лет, работа 20 часов в неделю.</p>
+</div>
+
+<h2 id="b4"><span class="n">4</span>Что отпадает и почему</h2>
+
+<div class="scroll">
+<table>
+<thead><tr><th>Вариант</th><th>Причина</th></tr></thead>
+<tbody>
+<tr><td data-l="Вариант"><strong>Чехия</strong></td><td data-l="Причина">Учебные визы россиянам не выдаются с октября 2022, ограничение бессрочное. Поступить можно, приехать нельзя</td></tr>
+<tr><td data-l="Вариант"><strong>Польша</strong></td><td data-l="Причина">Академически лучший в регионе по цене, но самый враждебный доступ: тяжёлая проверка, частые отказы, обработка около года</td></tr>
+<tr><td data-l="Вариант"><strong>Германия</strong></td><td data-l="Причина">Англоязычных бизнес-бакалавриатов в бесплатном госсекторе практически нет, аттестат за 11 лет требует года Studienkolleg на немецком. Английский путь &mdash; частные вузы около &euro;7 000 плюс замороженный счёт &euro;11 904 вперёд</td></tr>
+<tr><td data-l="Вариант"><strong>Нидерланды, Ирландия</strong></td><td data-l="Причина">Англоязычные программы есть, но тариф для не-ЕС &euro;8 000&ndash;25 000 в год</td></tr>
+<tr><td data-l="Вариант"><strong>Мальта</strong></td><td data-l="Причина">Англоязычная страна целиком, что снимает языковой вопрос навсегда, но &euro;6 500&ndash;12 000 за учёбу плюс &euro;700&ndash;1 100 в месяц на жизнь</td></tr>
+<tr><td data-l="Вариант"><strong>Британия</strong></td><td data-l="Причина">Queen Mary &pound;25 500 в год, Оксфорд от &pound;37 380, Кембридж от &pound;29 052 плюс колледжский сбор. Стипендий полного покрытия для иностранных бакалавров практически нет</td></tr>
+<tr><td data-l="Вариант"><strong>США</strong></td><td data-l="Причина">Либо $30 000+ в год, либо почти ноль в вузах, покрывающих 100% подтверждённой нужды. Второе &mdash; восемь университетов Лиги плюща и около 70 других, то есть самые отборные в мире. Лотерейный билет, не план</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2 id="b5"><span class="n">5</span>Что делать параллельно с Италией</h2>
+
+<p>Итальянские окна подачи идут с февраля по сентябрь и друг друга не перекрывают. В те же месяцы укладываются и остальные варианты, поэтому подавать можно веером, а не по очереди.</p>
+
+<div class="cal">
+<div class="row key"><div class="when">сентябрь 2026</div><div class="what">Одно письмо в международные отделы: достаточно ли одного закрытого года Университета Никосии для требования о 12 годах. Адресаты &mdash; Болонья, Турин, Ка' Фоскари, AUEB, испанские вузы через UNEDasiss</div></div>
+<div class="row"><div class="when">осень 2026</div><div class="what">SAT: 3 октября, 7 ноября, 5 декабря. Один результат работает на Италию, METU и AUEB одновременно</div></div>
+<div class="row"><div class="when">осень 2026</div><div class="what">IELTS от 6.0 либо TOEFL от 80 &mdash; нужны для Испании и Греции, для METU и Corvinus не требуются</div></div>
+<div class="row key"><div class="when">зима 2026&ndash;27</div><div class="what">UNEDasiss для Испании и DOATAP для Греции. Обе процедуры длинные, запускаются заранее</div></div>
+<div class="row"><div class="when">февраль &ndash; май 2027</div><div class="what">Болонья. Параллельно испанские заявки: Андалусия одной формой на десять вузов, Валенсия одной на пять</div></div>
+<div class="row"><div class="when">весна 2027</div><div class="what">Дебрецен и Corvinus. У Corvinus экзамены ежемесячно, попытку можно повторить</div></div>
+<div class="row key"><div class="when">1 июня &ndash; 12 июля 2027</div><div class="what">METU. Окно узкое, пропуск означает год ожидания</div></div>
+<div class="row"><div class="when">июнь 2027</div><div class="what">Турин, первый круг</div></div>
+<div class="row"><div class="when">июль &ndash; сентябрь 2027</div><div class="what">Турин, второй круг. Ка' Фоскари, летний отбор</div></div>
+</div>
+
+<div class="note good">
+<span class="lbl">Один SAT работает на три страны</span>
+<p>Результат SAT принимают и в Италии, и в METU, и в AUEB. Готовиться к одному тесту, а подавать в три страны &mdash; это то, что делает веерную подачу дешёвой по усилиям.</p>
+</div>
+
+<div class="note hot">
+<span class="lbl">Единственное общее место отказа</span>
+<p>Требование о 12 годах школы действует в Италии, Испании, Греции и Португалии. Если год Университета Никосии не признают достаточным, отваливаются все они разом.</p>
+<p>Не затронуты только два варианта: <strong>Венгрия</strong>, где школа сама одиннадцатилетняя и мост не нужен, и <strong>METU</strong>, где разбор идёт по досье. Это и есть настоящая страховка списка &mdash; не «запасные страны вообще», а именно те две, которые не зависят от одного и того же документа.</p>
+</div>
+
+<h2 id="b6"><span class="n">6</span>Контакты и вопросы</h2>
+
+<p>Всё, что ниже, выясняется письмом уже сейчас, не дожидаясь SAT и не дожидаясь февраля. Адреса взяты с официальных страниц контактов, ссылка на страницу стоит рядом на случай, если адрес сменят.</p>
+
+<div class="scroll">
+<table>
+<thead><tr><th>Куда</th><th>Адрес</th><th>Официальная страница</th></tr></thead>
+<tbody>
+<tr>
+<td data-l="Куда"><strong>Болонья</strong><br><small>CLaBE</small></td>
+<td data-l="Адрес"><a href="mailto:internationaldesk@unibo.it">internationaldesk@unibo.it</a></td>
+<td data-l="Страница"><a href="https://corsi.unibo.it/1cycle/CLaBE/how-to-enrol">Условия приёма CLaBE</a></td>
+</tr>
+<tr>
+<td data-l="Куда"><strong>Турин</strong><br><small>Business &amp; Management</small></td>
+<td data-l="Адрес"><a href="mailto:internationaldegrees.management@unito.it">internationaldegrees.management@unito.it</a><br><small>общий международный отдел:</small><br><a href="mailto:internationalstudents@unito.it">internationalstudents@unito.it</a></td>
+<td data-l="Страница"><a href="https://www.business-management.unito.it/do/home.pl/View?doc=admission_requirements.html">Требования к поступлению</a></td>
+</tr>
+<tr>
+<td data-l="Куда"><strong>Ка' Фоскари</strong><br><small>Венеция</small></td>
+<td data-l="Адрес"><a href="mailto:prospective.students@unive.it">prospective.students@unive.it</a><br><small>Welcome Unit, письма для визы:</small><br><a href="mailto:incoming.mobility@unive.it">incoming.mobility@unive.it</a></td>
+<td data-l="Страница"><a href="https://www.unive.it/pag/12512/">Поступление с иностранной квалификацией</a></td>
+</tr>
+<tr>
+<td data-l="Куда"><strong>METU</strong><br><small>Анкара</small></td>
+<td data-l="Адрес"><a href="mailto:study@metu.edu.tr">study@metu.edu.tr</a><br><small>для поступающих</small><br><a href="mailto:iso@metu.edu.tr">iso@metu.edu.tr</a></td>
+<td data-l="Страница"><a href="https://iso.metu.edu.tr/en/application-requirements">Требования к подаче</a> &middot; <a href="https://iso.metu.edu.tr/en/contact">Контакты</a></td>
+</tr>
+<tr>
+<td data-l="Куда"><strong>Дебрецен</strong><br><small>Венгрия</small></td>
+<td data-l="Адрес"><a href="mailto:info@edu.unideb.hu">info@edu.unideb.hu</a></td>
+<td data-l="Страница"><a href="https://edu.unideb.hu/p/contacts">Контакты</a> &middot; <a href="https://edu.unideb.hu/p/bachelor-programs">Бакалавриат</a></td>
+</tr>
+<tr>
+<td data-l="Куда"><strong>Corvinus</strong><br><small>Будапешт</small></td>
+<td data-l="Адрес"><a href="mailto:felvi.corvinus@uni-corvinus.hu">felvi.corvinus@uni-corvinus.hu</a></td>
+<td data-l="Страница"><a href="https://www.uni-corvinus.hu/post/landing-page/application/contact/?lang=en">Контакты приёмной комиссии</a></td>
+</tr>
+<tr>
+<td data-l="Куда"><strong>AUEB</strong><br><small>Афины</small></td>
+<td data-l="Адрес"><a href="mailto:vikipap@aueb.gr">vikipap@aueb.gr</a><br><a href="mailto:elka@aueb.gr">elka@aueb.gr</a></td>
+<td data-l="Страница"><a href="https://www.aueb.gr/en/contactsaueb">Контакты</a></td>
+</tr>
+<tr>
+<td data-l="Куда"><strong>Испания</strong><br><small>вход для всех госвузов</small></td>
+<td data-l="Адрес"><a href="mailto:unedasiss@adm.uned.es">unedasiss@adm.uned.es</a></td>
+<td data-l="Страница"><a href="https://unedasiss.uned.es/home&amp;idioma=en">UNEDasiss</a> &middot; <a href="https://www.upv.es/admision/internacional/en/grades-international-access/">Валенсия, международный доступ</a></td>
+</tr>
+<tr>
+<td data-l="Куда"><strong>ISCTE</strong><br><small>Лиссабон</small></td>
+<td data-l="Адрес"><a href="mailto:international.ibs@iscte-iul.pt">international.ibs@iscte-iul.pt</a><br><small>общий приём:</small><br><a href="mailto:admissions@iscte-iul.pt">admissions@iscte-iul.pt</a></td>
+<td data-l="Страница"><a href="https://www.iscte-iul.pt/conteudos/international/international-students/undergraduate/1051/where-can-i-get-more-information">Международным студентам</a></td>
+</tr>
+<tr>
+<td data-l="Куда"><strong>CIMEA</strong><br><small>признание аттестата для Италии</small></td>
+<td data-l="Адрес">через платформу Diplome</td>
+<td data-l="Страница"><a href="https://cimea-diplome.it/page-comparability-service">Служба сопоставимости</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h3>Вопросы, одинаковые для всех</h3>
+
+<p>Первые два &mdash; главные. Остальное уточняется по ходу, эти два решают, есть ли вообще смысл в остальном.</p>
+
+<ol>
+<li><strong>Достаточно ли одного завершённого академического года</strong> (60 ECTS, все экзамены учебного плана сданы) в аккредитованном университете Кипра, чтобы российский аттестат за 11 лет удовлетворял требованию о двенадцати годах школьного образования?</li>
+<li><strong>Какая формулировка нужна в сертификате университета?</strong> Подходит ли текст «все экзамены, предусмотренные учебным планом первого академического года, сданы», со списком курсов и оценок</li>
+<li>Точные даты подачи на 2027/28 и когда они публикуются</li>
+<li>Сколько мест выделено для граждан вне ЕС и каким был проходной балл в прошлом наборе</li>
+<li>Нужен ли отдельный сертификат английского, если сдан SAT</li>
+<li>Точная плата за год для гражданина России и каким документом подтверждается доход семьи</li>
+<li>Есть ли освобождение или скидка для первокурсников с низким доходом, и до какого числа подаются документы о доходе</li>
+<li>Принимаются ли документы на английском без перевода на местный язык</li>
+</ol>
+
+<h3>Вопросы по конкретным адресатам</h3>
+
+<div class="scroll">
+<table>
+<thead><tr><th>Кому</th><th>Что спросить дополнительно</th></tr></thead>
+<tbody>
+<tr><td data-l="Кому"><strong>Ка' Фоскари</strong></td><td data-l="Что">Какой вступительный тест действует на 2027/28 после замены TOLC-E на CEnT-S, и какие секции нового теста засчитываются для бизнес-программы</td></tr>
+<tr><td data-l="Кому"><strong>Турин</strong></td><td data-l="Что">Действует ли для не-ЕС то же правило, что балл SAT по математике ниже 400 добавляет обязательный курс, но не лишает места. Когда публикуются правила приёма на 2027/28</td></tr>
+<tr><td data-l="Кому"><strong>Болонья</strong></td><td data-l="Что">Подтвердить, что для не-ЕС открыт только первый отбор, и назвать его даты в 2027</td></tr>
+<tr><td data-l="Кому"><strong>METU</strong></td><td data-l="Что">Какой результат SAT рассматривается и есть ли нижняя граница. Нужен ли документ о зачислении до обращения за студенческой визой в турецкое консульство</td></tr>
+<tr><td data-l="Кому"><strong>Дебрецен, Corvinus</strong></td><td data-l="Что">Подтвердить письменно, что российский аттестат за 11 лет принимается без компенсации университетским годом</td></tr>
+<tr><td data-l="Кому"><strong>UNEDasiss</strong></td><td data-l="Что">Какие именно аккредитации нужны для англоязычных бизнес-программ в Валенсии и Андалусии, и засчитывается ли SAT в рамках процедуры</td></tr>
+<tr><td data-l="Кому"><strong>AUEB</strong></td><td data-l="Что">На какой стадии требуется признание DOATAP и принимается ли SAT как единственный вступительный результат</td></tr>
+<tr><td data-l="Кому"><strong>CIMEA</strong></td><td data-l="Что">Какая услуга платформы покрывает связку «аттестат за 11 лет плюс год университета» и сколько стоит с ускорением</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note">
+<span class="lbl">Как писать</span>
+<p>Одно письмо, английский, шесть строк: кто ты, гражданство, аттестат за 11 лет, один закрытый год в аккредитованном университете Кипра на 60 ECTS, планируешь SAT, спрашиваешь пункты 1 и 2. Остальные вопросы задаются вторым письмом, когда первый ответ получен.</p>
+<p>Длинное письмо со всеми восемью пунктами сразу международные отделы отвечают дольше и частями.</p>
+</div>
+
+<div class="src">
+<strong>Источники</strong>
+<ul>
+<li>METU: требования и отсутствие экзамена &mdash; <a href="https://iso.metu.edu.tr/en/application-requirements">International Students Office METU</a>, <a href="https://www.globaladmissions.com/guides/middle-east-technical-university-admissions">сроки и стоимость</a></li>
+<li>Corvinus: программа и вступительные &mdash; <a href="https://corvinus-university.dreamapply.com/courses/course/11-bsc-business-and-management">BSc Business and Management</a>, <a href="https://www.uni-corvinus.hu/post/landing-page/application/admissions-requirements/?lang=en">требования</a></li>
+<li>Дебрецен &mdash; <a href="https://edu.unideb.hu/p/bachelor-programs">программы бакалавриата</a></li>
+<li>Испания: региональные тарифы и UNEDasiss &mdash; <a href="https://www.study.eu/article/spain-tuition-fees-cost-of-living">study.eu</a>, <a href="https://www.upv.es/admision/internacional/en/grades-international-access/">UPV, международный доступ</a></li>
+<li>Греция: AUEB и требования к поступлению &mdash; <a href="https://www.topuniversities.com/universities/athens-university-economics-business">AUEB</a>, <a href="https://www.studyineurope.eu/study-in-greece/admission-requirements/">требования по Греции</a></li>
+<li>Португалия &mdash; <a href="https://www.study.eu/guide/bachelors-in-portugal">study.eu</a>, <a href="https://college-council.com/en/blog/english-taught-degrees-in-portugal">англоязычные программы</a></li>
+<li>Турция, въезд и студенческий вид на жительство для россиян &mdash; <a href="https://istaproperty.com/blog/everything-russian-citizens-need-to-know-about-getting-a-turkey-visa">визовые правила</a>, <a href="https://www.study-abroad.org/blog/trk-student-visa-guide/">студенческая виза</a></li>
+<li>Италия: подробный разбор в отдельном документе «Италия 2027»</li>
+<li>Британия &mdash; <a href="https://www.qmul.ac.uk/undergraduate/feesandfunding/tuitionfees/">Queen Mary</a>, <a href="https://www.ox.ac.uk/admissions/undergraduate/fees-and-funding/course-fees">Oxford</a>; США &mdash; <a href="https://www.williamlebeau.com/blog/60-universities-full-scholarships-international-students-part-1">вузы с полным покрытием нужды</a></li>
+</ul>
+</div>
+
+</div>
+
+<script>
+(function(){
+  var table = document.getElementById('opts');
+  if(!table || !table.tBodies.length) return;
+  var body = table.tBodies[0];
+  var btns = Array.prototype.slice.call(document.querySelectorAll('.filters button'));
+  var dirs = {};
+  btns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var key = btn.getAttribute('data-sort');
+      var dir = dirs[key] === 'asc' ? 'desc' : 'asc';
+      dirs = {}; dirs[key] = dir;
+      btns.forEach(function(o){ o.classList.remove('on'); o.removeAttribute('data-dir'); });
+      btn.classList.add('on'); btn.setAttribute('data-dir', dir);
+      var rows = Array.prototype.slice.call(body.rows);
+      rows.sort(function(r1, r2){
+        var a = r1.getAttribute('data-' + key), b = r2.getAttribute('data-' + key);
+        var na = parseFloat(a), nb = parseFloat(b), cmp;
+        if(!isNaN(na) && !isNaN(nb)) cmp = na - nb;
+        else cmp = String(a).localeCompare(String(b), 'ru');
+        if(cmp === 0){
+          cmp = parseFloat(r1.getAttribute('data-ease')) - parseFloat(r2.getAttribute('data-ease'));
+        }
+        return dir === 'asc' ? cmp : -cmp;
+      });
+      rows.forEach(function(r){ body.appendChild(r); });
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Смена направления: риски и шансы</title>
+<style>
+:root{--bg:#fbfaf8;--ink:#1a1a1a;--muted:#6b6864;--rule:#dedad4;--accent:#8a5a2b;--max:820px}
+@media (prefers-color-scheme:dark){:root{--bg:#141312;--ink:#e8e4de;--muted:#918b83;--rule:#2f2c29;--accent:#c99a63}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 Georgia,"Times New Roman",serif;padding:0 24px 100px}
+.wrap{max-width:var(--max);margin:0 auto}
+header{padding:70px 0 0}
+h1{font-size:30px;line-height:1.22;font-weight:400;margin:0 0 14px}
+.sub{color:var(--muted);font-size:15px;line-height:1.55;margin:0 0 8px}
+hr{border:0;border-top:1px solid var(--rule);margin:38px 0}
+h2{font-size:12.5px;font-weight:400;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);margin:48px 0 6px;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+h3{font-size:23px;font-weight:400;line-height:1.32;margin:0 0 18px}
+h4{font-size:17px;font-weight:700;margin:24px 0 9px}
+p{margin:0 0 15px}
+ul,ol{margin:0 0 15px;padding-left:22px}
+li{margin:0 0 7px}
+a{color:var(--accent)}
+nav.toc{margin:34px 0 0}
+nav.toc ol{list-style:none;margin:0;padding:0;counter-reset:s}
+nav.toc>ol>li{counter-increment:s;border-top:1px solid var(--rule);padding:10px 0}
+nav.toc>ol>li:last-child{border-bottom:1px solid var(--rule)}
+nav.toc a{color:var(--ink);text-decoration:none;display:flex;gap:14px;align-items:baseline}
+nav.toc a:hover{color:var(--accent)}
+nav.toc a::before{content:counter(s);color:var(--muted);font-size:13px;min-width:18px;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+nav.toc .t{flex:1}
+nav.toc .n{color:var(--muted);font-size:13px;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+.note{border-left:2px solid var(--accent);padding:2px 0 2px 18px;margin:0 0 20px}
+.note p:last-child{margin-bottom:0}
+.tablewrap{overflow-x:auto;margin:0 0 20px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:14.5px;line-height:1.48}
+th{text-align:left;font-weight:400;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--ink);padding:0 13px 7px 0;vertical-align:bottom;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+td{border-bottom:1px solid var(--rule);padding:10px 13px 10px 0;vertical-align:top}
+td:last-child,th:last-child{padding-right:0}
+.num{white-space:nowrap;font-variant-numeric:tabular-nums}
+.uni{font-weight:700}
+footer{margin-top:58px;padding-top:20px;border-top:1px solid var(--rule);color:var(--muted);font-size:14px;line-height:1.6}
+@media (max-width:820px){body{font-size:16px;padding:0 16px 74px}header{padding-top:42px}h1{font-size:24px}h3{font-size:19px}table{min-width:560px;font-size:14px}}
+</style><style>
+.gloss{margin:0 0 22px}
+.gloss dt{font-weight:700;margin:16px 0 3px;font-size:16px}
+.gloss dd{margin:0 0 0 0;color:var(--muted);font-size:15.5px;line-height:1.5}
+.lead{font-size:17px;margin:0 0 16px}
+.after{border-left:2px solid var(--accent);padding:2px 0 2px 18px;margin:16px 0 26px;font-size:15.5px}
+.after b{color:var(--ink)}
+.big{font-size:20px;font-weight:700}
+table.simple{min-width:0}
+table.simple td{padding:12px 16px 12px 0}
+.step{color:var(--muted);font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;
+ font-family:-apple-system,BlinkMacSystemFont,sans-serif;margin:0 0 6px}
+</style>
+<style id="sem">
+.lbl{display:block;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,sans-serif;
+  font-size:11px;letter-spacing:.09em;text-transform:uppercase;font-weight:600;
+  color:var(--muted);margin:0 0 8px;line-height:1.35}
+.note .lbl + p{margin-top:0}
+.note.hot{border-left-color:#9c3328}
+.note.hot .lbl{color:#9c3328}
+.note.good{border-left-color:#3f6b4a}
+.note.good .lbl{color:#3f6b4a}
+td.pri{color:var(--accent)}
+th{white-space:nowrap}
+@media (max-width:700px){
+  .lbl{margin-bottom:6px}
+  th{white-space:normal}
+  .tablewrap td.pri::before,.scroll td.pri::before{color:var(--muted)}
+}
+</style>
+<style id="mob">
+@media (max-width:700px){
+  .tablewrap,.scroll{overflow-x:visible !important}
+  .tablewrap table,.scroll table{min-width:0 !important;display:block;font-size:15px}
+  .tablewrap thead,.scroll thead{display:none}
+  .tablewrap tbody,.tablewrap tr,.tablewrap td,
+  .scroll tbody,.scroll tr,.scroll td{display:block;width:100%}
+  .tablewrap tr,.scroll tr{border-bottom:1px solid var(--ink,var(--fg));padding:15px 0 13px}
+  .tablewrap tr:last-child,.scroll tr:last-child{border-bottom:0}
+  .tablewrap td,.scroll td{border:0 !important;padding:5px 0 !important;line-height:1.5}
+  .tablewrap td:empty,.scroll td:empty{display:none}
+  .tablewrap td::before,.scroll td::before{
+    content:attr(data-l);display:block;font-size:11px;letter-spacing:.07em;text-transform:uppercase;
+    color:var(--muted,var(--mut));margin-bottom:2px;
+    font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+  .tablewrap td:first-child::before,.scroll td:first-child::before{display:none}
+  .tablewrap td:first-child,.scroll td:first-child{
+    font-weight:700;font-size:17px;line-height:1.32;margin-bottom:7px}
+  .num{white-space:normal !important}
+  nav.toc a{flex-wrap:wrap}
+  nav.toc .n{margin-left:32px;width:100%;text-align:left;margin-top:2px}
+  nav .d{margin-left:34px;width:100%;text-align:left;margin-top:2px}
+  .nu{font-size:15px}
+  dl.gloss dd{font-size:16px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Смена направления: риски и шансы</h1>
+  <p class="sub">4 сентября 2026. Графический дизайн в частном вузе на Кипре, четыре года, €10 000 в год по прайсу, бакалавриат почти закрыт, но не закрыт — и поступление на Business в Болонью или Турин. Где это влияет напрямую, где косвенно, где никак. С вероятностями и с мотивационным письмом.</p>
+  <nav class="toc">
+    <ol>
+      <li><a href="#map"><span class="t">Карта влияния: пять ворот</span><span class="n">прямо · косвенно · никак</span></a></li>
+      <li><a href="#adm"><span class="t">Приём в университет</span><span class="n">путь невидим</span></a></li>
+      <li><a href="#schol"><span class="t">Стипендия</span><span class="n">одно правило и деньги</span></a></li>
+      <li><a href="#visa"><span class="t">Виза и мотивационное письмо</span><span class="n">единственный человек</span></a></li>
+      <li><a href="#prob"><span class="t">Вероятности</span><span class="n">честный расчёт</span></a></li>
+      <li><a href="#prep"><span class="t">Быть готовым ко всему</span><span class="n">список</span></a></li>
+    </ol>
+  </nav>
+</header>
+
+<hr>
+
+<h2 id="map">Карта влияния</h2>
+<h3>Одна и та же биография — пять разных ворот</h3>
+
+<p class="lead">Дмитрий говорил о «пути» как об одном факторе. На деле путь проходит через пять независимых проверок, и в каждой он значит разное. Вот вся карта, до деталей ниже.</p>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Ворота</th><th>Кто решает</th><th>Что видит</th><th>Влияние твоей ситуации</th></tr></thead>
+<tbody>
+<tr><td><b>Требование 12 лет</b></td><td>Секретариат вуза, по правилу</td><td>Аттестат 11 классов + сертификат за первый курс</td><td class="pri"><b>Помогает.</b> Год Никосии и есть мост. Болонья подтвердила письменно, Турин — тем же текстом на сайте</td></tr>
+<tr><td><b>Приём на программу</b></td><td>Комиссия из трёх преподавателей, по формуле</td><td>Балл SAT, анонимный рейтинг</td><td class="pri"><b>Никак.</b> Ни возраста, ни истории, ни собеседования</td></tr>
+<tr><td><b>Право на стипендию</b></td><td>EDISU / ER.GO, по бандо</td><td>Задекларированная карьера, доход, имущество</td><td><b>Прямо — одно правило.</b> Год первого зачисления. Сбрасывается отчислением</td></tr>
+<tr><td><b>Сумма и место в рейтинге</b></td><td>Формула по ISEE</td><td>Только ISEE</td><td><b>Косвенно — деньги.</b> Не путь, а сходимость доходов мамы с выписками</td></tr>
+<tr><td><b>Виза</b></td><td>Консул в Москве, с усмотрением</td><td>Всё, включая мотивационное письмо</td><td class="pri"><b>Косвенно — человек.</b> Единственное место, где путь читают</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note good">
+<span class="lbl">Что это значит</span>
+<p>Из пяти ворот твоя история <b>помогает</b> в одних, <b>не существует</b> в двух, требует <b>одного административного действия</b> в четвёртых и <b>одного письма</b> в пятых. Ни в одних она не является основанием для отказа — это проверено по текстам, а не по ощущению.</p>
+</div>
+
+<hr>
+
+<h2 id="adm">Приём в университет</h2>
+<h3>Здесь твоего пути не существует — дословно</h3>
+
+<p>Это была главная неопределённость: есть ли в Болонье досье и собеседование. Была сводка, где они упоминались. Проверил по оригиналу Call for Applications CLaBE 2025/26, 21 страница, локально извлечённый текст.</p>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Искал</th><th class="num">Вхождений</th><th>Вывод</th></tr></thead>
+<tbody>
+<tr><td>«interview»</td><td class="num">0</td><td>Собеседования нет</td></tr>
+<tr><td>«dossier», «portfolio»</td><td class="num">0</td><td>Досье нет</td></tr>
+<tr><td>«minimum score», «at least …»</td><td class="num">0</td><td>Минимального балла нет</td></tr>
+<tr><td>«age limit», «previously enrolled»</td><td class="num">0</td><td>Ни возраста, ни прошлой учёбы</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note good">
+<span class="lbl">Раздел 4 Call, дословно</span>
+<p>«The ranking is drawn up by an admission board, made of at least three professors… <b>The rankings are based on the SAT scores received by the College Board</b>… If several SAT scores are received for the same candidate, <b>the one with the highest total score</b> shall be considered.»</p>
+<p>Раздел 5.1: «rankings on a scale of 160, calculated as the SAT score divided by 10… In case two candidates receive the same score, priority will be given to the youngest candidate.» И: «the ranking list is <b>anonymized</b>».</p>
+</div>
+
+<div class="after">
+«Досье и собеседование», которые всплывали раньше, относятся к <b>спецпрограммам</b> — 13 мест для беженцев и иранских студенток. К обычному треку это не относится. Турин: Луиджи описал три шага — Apply@UniTo, SAT, июньский конкурс — без интервью.
+</div>
+
+<div class="note hot">
+<span class="lbl">Единственное, что здесь реально влияет</span>
+<p><b>Балл SAT.</b> Берут лучший из нескольких попыток — значит сдавать можно дважды: декабрь 2026 и март 2027. Дмитрий назвал 1450. Проверить негде — проходные не публикуются. Это надо выбить из него при продолжении разговора: <b>«откуда цифра — ваша статистика или оценка»</b>.</p>
+<p>32 места для не-ЕС из-за рубежа, только первый набор. Кто конкуренты — неизвестно. Это самая большая неопределённость всего плана, и она не про биографию, а про подготовку.</p>
+</div>
+
+<hr>
+
+<h2 id="schol">Стипендия</h2>
+<h3>Одно правило, одна арифметика, ни одного суждения</h3>
+
+<h4>Где влияет напрямую: год первого зачисления</h4>
+
+<p>Разобрано в <a href="https://alex-italy-second-degree.netlify.app">отдельном документе</a>. Коротко: срок стипендии — три года плюс семестр от первого зачисления, ER.GO считает его «anche all'estero». Без отчисления из UNIC первый год — 2023, и права к 2027/28 нет. С отчислением и приёмом на первый курс без признания кредитов — первый год 2027, полный срок. <b>Это единственное место, где твоя учёба на Кипре действует на стипендию напрямую, и оно закрывается одним документом.</b></p>
+
+<h4>Где влияет косвенно: сходимость денег</h4>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Что проверяют</th><th>Как</th><th>Где тут Кипр</th></tr></thead>
+<tbody>
+<tr><td>Доход мамы за 2025</td><td>Справка ФНС против декларации в заявке</td><td>Никак — год 2025, а не «как платили за вуз»</td></tr>
+<tr><td>Имущество на 31.12.2025</td><td>ЕГРН с площадью, выписки со счетов</td><td>Накопления, из которых платили — <b>в ISPE</b>, декларировать</td></tr>
+<tr><td>Проверка по существу</td><td>Guardia di Finanza, <b>минимум 20%</b> идонеев, случайная выборка</td><td class="pri"><b>Вот здесь.</b> Если переводы тебе больше дохода и другого источника в документах нет</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note">
+<span class="lbl">Арифметика без иллюзий</span>
+<p>Реальные траты: ~€6 000 за учёбу со скидкой 35%, не €10 000 по прайсу, плюс жизнь в Ларнаке ~€10–12k. Итого <b>~€16–18k в год</b>. При доходе €26 000 после российского налога остаётся ~€24k. Возможно, но туго. Проверка смотрит не на «могла ли», а на <b>откуда шли переводы</b>: из её дохода и накоплений — сходится; от отца или родственников — законно, но след должен вести к ним; ни то ни другое — единственный плохой вариант.</p>
+<p>Отсюда задача маме на осень: выписки за 2025, где переводы тебе объясняются доходом, накоплениями и подарками третьих лиц. Не «объяснить путь» — <b>показать след денег</b>.</p>
+</div>
+
+<div class="note hot">
+<span class="lbl">Поправка: отчётный год для подачи на 2027/28 — 2026, не 2025</span>
+<p>Бандо на 2026/27 требует доходы за <b>2025</b> и имущество на <b>31.12.2025</b> — то есть год, предшествующий подаче. Ты подаёшься на <b>2027/28</b>, значит бандо, которое выйдет в июне 2027, потребует <b>доходы за 2026 и имущество на 31.12.2026</b>.</p>
+<p>Практически: декларация УСН <b>за 2026 год</b> (сдаётся до 25 апреля 2027), выписки со счетов на <b>31 декабря 2026</b>, ЕГРН — свежая на момент подачи. Декларация за 2025 годится только как репетиция и для оценки полосы. И главное — <b>оборот мамы в 2026 году и есть та цифра, которая определит стипендию</b>.</p>
+</div>
+
+<h4>Где не влияет вовсе</h4>
+
+<div class="after">
+Рейтинг: «ordered in ascending order on the basis of the ISEE». Исход: только eligible / excluded по перечисленным основаниям. «No individual communication will be sent» — решений по личности нет. Единственный возрастной фактор в обоих бандо — <b>при равенстве ISEE приоритет младшему</b>. Не допуск, а порядок строк при одинаковой сумме.
+</div>
+
+<hr>
+
+<h2 id="visa">Виза и мотивационное письмо</h2>
+<h3>Единственные ворота, где путь читает человек</h3>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Факт</th><th>Источник</th></tr></thead>
+<tbody>
+<tr><td><b>Мотивационное письмо обязательно.</b> «Cover letter in free form <b>in Italian</b>»</td><td>чек-лист визы D для Москвы</td></tr>
+<tr><td>Документы на английском переводить не надо; остальные — аккредитованный переводчик консульства, либо нотариус + апостиль</td><td>там же</td></tr>
+<tr><td>Два полных комплекта, консульский сбор €50, срок до 90 дней</td><td>там же</td></tr>
+<tr><td>Подтверждение средств <b>€10 179,85</b></td><td>MUR, июнь 2026</td></tr>
+<tr><td>Правовой тест «coerenza» — только для <b>неуниверситетских</b> курсов (п. II.A декрета 850/2011). Университеты — п. I, без теста</td><td>Decreto interministeriale 850/2011</td></tr>
+<tr><td>Отказы Италии в Москве: <b>4,3% в 2024</b>, по россиянам в целом 6,4% в 2025. Студенческие по всем странам — 12–15%</td><td>консульская статистика, отраслевые сводки</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note hot">
+<span class="lbl">Что консул может спросить, и что ему нужно услышать</span>
+<p>Нормы, обязывающей его отказать за смену направления, нет. Но усмотрение есть, и вопрос «почему после четырёх лет дизайна — экономика, и почему сейчас» — законный. Письмо существует, чтобы этот вопрос был <b>отвечен до того, как задан</b>.</p>
+</div>
+
+<h4>Мотивационное письмо — каркас</h4>
+
+<p>Четыре абзаца, факты, без «мечты». На итальянском — через аккредитованного переводчика или написать на итальянском сразу.</p>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Абзац</th><th>Что в нём</th><th>Чего в нём нет</th></tr></thead>
+<tbody>
+<tr><td><b>1. Кто и куда</b></td><td>Гражданин России, 22 года, три с половиной года Graphic Design в University of Nicosia, зачислен на Business and Economics в Болонье (или B&amp;M в Турине), первый курс, старт сентябрь 2027</td><td>Оправданий</td></tr>
+<tr><td><b>2. Почему смена — как решение, а не как бегство</b></td><td>Дизайн дал работу с клиентами и брендами; вопросы, которые стали интересны — цена, рынок, модель, рост — это не дизайн, это экономика. Решение принято после реального опыта, а не вместо него. Год Никосии закрыл требование 12 лет — путь использован, не выброшен</td><td>Слова «разочаровался», «ошибка», «не получилось»</td></tr>
+<tr><td><b>3. Почему именно эта программа</b></td><td>Англоязычная, публичный вуз, конкретные курсы, стоимость через flat tax, три года, дальше магистратура или работа в ЕС</td><td>Общих слов про «Италию»</td></tr>
+<tr><td><b>4. Деньги и план</b></td><td>Кто финансирует, подтверждение €10 179,85, заявка на стипендию DSU подана, жильё найдено. После диплома — ясная следующая ступень</td><td>Обещаний «остаться навсегда» или «вернуться в Россию»</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note good">
+<span class="lbl">Одна фраза, которая делает всё письмо</span>
+<p>Незаконченный бакалавриат — это не дыра, а <b>ровно тот год, которого требует итальянский закон</b> для аттестата за 11 классов. Сказать это прямо: «первый год университетской учёбы был необходимым условием допуска, и он выполнен». Это переворачивает «бросил» в «использовал по назначению».</p>
+</div>
+
+<hr>
+
+<h2 id="prob">Вероятности</h2>
+<h3>Честный расчёт — и что в нём от тебя</h3>
+
+<p class="lead">Точной статистики по твоему профилю не существует. Ниже — оценки по документированным базовым частотам и механике ворот. Они <b>условные</b>: предполагают три действия из документа про второй бакалавриат и правильно собранные бумаги. Их цель — показать, <b>где</b> сидит неопределённость, а не выдать «шанс».</p>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Ворота</th><th class="num">Болонья</th><th class="num">Турин</th><th>На чём основано</th></tr></thead>
+<tbody>
+<tr><td>12 лет закрыты</td><td class="num">~97%</td><td class="num">~95%</td><td>Письменное подтверждение / текст сайта; остаток — форма и легализация документа</td></tr>
+<tr><td class="pri"><b>Приём по SAT</b></td><td class="num">см. ниже</td><td class="num">см. ниже</td><td class="pri"><b>Главная неопределённость.</b> Проходные не публикуются</td></tr>
+<tr><td>Idoneo при верных документах и ISEE в полосе</td><td class="num">~85%</td><td class="num">~88%</td><td>Основная причина исключений в бандо — дефекты документов и сроки. В Болонье минус за приостановку при входе без SPID</td></tr>
+<tr><td>Выплата при idoneo</td><td class="num">~97%</td><td class="num">~95%</td><td>97,7% по стране 2023/24; Пьемонт сначала ~83%, затем добавили €11,5 млн</td></tr>
+<tr><td>Виза при зачислении, средствах и письме</td><td class="num">~90%</td><td class="num">~90%</td><td>4,3% отказов Москва 2024; 12–15% студенческих по миру — с запасом на усмотрение</td></tr>
+<tr><td>Проблема на проверке GdF</td><td class="num">≤ 5%</td><td class="num">≤ 5%</td><td>20% выборка × доля несходимости; при чистом следе денег → ~0</td></tr>
+</tbody>
+</table>
+</div>
+
+<h4>Итог по трём сценариям SAT — Болонья</h4>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>SAT</th><th class="num">Приём</th><th class="num">Зачислен + виза</th><th class="num">Зачислен + виза + стипендия</th></tr></thead>
+<tbody>
+<tr><td><b>1450 и выше</b></td><td class="num">~80%</td><td class="num big">~70%</td><td class="num big">~58%</td></tr>
+<tr><td>1300 – 1450</td><td class="num">~50%</td><td class="num">~44%</td><td class="num">~36%</td></tr>
+<tr><td>ниже 1300</td><td class="num">~25%</td><td class="num">~22%</td><td class="num">~18%</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note hot">
+<span class="lbl">Читать это правильно</span>
+<p>Разница между строками таблицы — <b>целиком SAT</b>. Всё остальное почти одинаково. То есть из всех рисков, которые назвал Дмитрий, единственный, который двигает итог в разы, — это <b>балл</b>, и он никак не связан с Никосией, возрастом или ценой учёбы.</p>
+<p>Второй по весу — <b>ISEE мамы</b>: он не в таблице, потому что это не вероятность, а факт, который надо узнать. Третий — <b>сроки визы</b>, тоже не вероятность, а логистика.</p>
+<p>Всё, что связано с «путём», сидит в двух строках: ~5% на визе сверх базы и ≤5% на GdF. <b>Суммарно порядка десяти пунктов</b>, и оба закрываются подготовкой: письмом и выписками.</p>
+</div>
+
+<div class="note">
+<span class="lbl">Почему Дмитрий всё-таки прав, что «случаи бывают»</span>
+<p>Бывают. Но по механике они выглядят так: не подал отчисление и попал под год первого зачисления; попросил признать кредиты и уехал на второй курс; перевод за бумаги пришёл после срока; доходы в декларации не сошлись с выписками; письмо консулу написано так, что вопрос остался. <b>Каждый из этих случаев — процедурный</b>, и каждый в этом документе назван. Ни один не звучит как «отказали, потому что учился дизайну».</p>
+</div>
+
+<hr>
+
+<h2 id="prep">Быть готовым ко всему</h2>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Риск</th><th>Подготовка</th><th>Когда</th></tr></thead>
+<tbody>
+<tr><td class="pri"><b>SAT ниже цели</b></td><td>Две попытки: декабрь 2026 и март 2027; берут лучший. Выбить у Global Dialog происхождение цифры 1450</td><td>сейчас</td></tr>
+<tr><td class="pri"><b>ISEE мамы над порогом</b></td><td>Узнать точный доход 2025 по декларации до подачи. При €39–41k — Турин, иначе Болонья</td><td>осень 2026</td></tr>
+<tr><td class="pri"><b>Год первого зачисления</b></td><td>Сертификат за первый курс + апостиль на Кипре → формальное отчисление с документом → отъезд. В этом порядке</td><td>декабрь 2026 — январь 2027</td></tr>
+<tr><td><b>Признание кредитов</b></td><td>Не подавать. Ни в одном вузе</td><td>никогда</td></tr>
+<tr><td><b>След денег</b></td><td>Выписки мамы за 2025: переводы тебе = доход + накопления + подарки третьих лиц. Накопления задекларировать в ISPE</td><td>до лета 2027</td></tr>
+<tr><td><b>Отец платил за UNIC</b></td><td>Итальянский ISEE при разводе может притянуть доход второго родителя. Открытый вопрос в тикет ER.GO/EDISU</td><td>осень 2026</td></tr>
+<tr><td><b>Вопрос консула</b></td><td>Письмо по каркасу выше, на итальянском, готово до записи в VFS</td><td>июнь 2027</td></tr>
+<tr><td><b>Виза не успевает</b></td><td>Спросить у Global Dialog реальные сроки 2025–26 и что делать при опоздании. План Б без ответа не построить</td><td>при продолжении звонка</td></tr>
+<tr><td><b>Вход в ER.GO без SPID</b></td><td>Выплата приостанавливается до идентификации, срок не назван. Подушка €7–9k на первый семестр</td><td>лето 2027</td></tr>
+<tr><td><b>Бумажные оригиналы</b></td><td>ER.GO вправе запросить в течение года; непредоставление = отзыв. Хранить всё</td><td>весь первый год</td></tr>
+</tbody>
+</table>
+</div>
+
+<footer>
+<p>Источники: CLaBE–CLAME Call for Applications 2025/26 (разделы 4, 5.1, квоты), извлечён локально · EDISU Piemonte, Notice 2026/27 — ст. 2, 3, 9(2), 12(1), 12(2) · ER.GO, Bando DSU 2026/27, Sezione I — ст. 1.1, 1.2, 2, 2.3.1 · Decreto interministeriale 850/2011, «Visto per studio» · чек-лист визы D для Москвы (italyvms) · unito.it, riconoscimento titoli · письмо Segreteria Studenti Internazionali UNIBO от 4.09.2026 · консульская статистика 2024–2025.</p>
+<p>Вероятности — оценки по базовым частотам и механике ворот, условные на выполнение действий; не статистика по твоему профилю.</p>
+<p>Часть плана: <a href="https://alex-italy-hub.netlify.app">указатель</a> · <a href="https://alex-italy-second-degree.netlify.app">второй бакалавриат</a> · <a href="https://alex-italy-questions.netlify.app">вопросы на консультацию</a> · <a href="https://alex-bologna-full.netlify.app">Болонья</a> · <a href="https://alex-turin-full.netlify.app">Турин</a></p>
+</footer>
+
+</div>
+<script>(function(){function l(){document.querySelectorAll('table').forEach(function(t){
+var h=[].map.call(t.querySelectorAll('thead th'),function(x){return (x.textContent||'').replace(/\s+/g,' ').trim()});
+if(!h.length)return;[].forEach.call(t.querySelectorAll('tbody tr'),function(r){[].forEach.call(r.cells,function(c,i){
+if(h[i]&&!c.hasAttribute('data-l'))c.setAttribute('data-l',h[i])})})})}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',l);else l();})();</script>
+</body>
+</html>
