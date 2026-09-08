@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>План Б: магистратура</title>
+<style>
+:root{--bg:#fbfaf8;--ink:#1a1a1a;--muted:#6b6864;--rule:#dedad4;--accent:#8a5a2b;--max:820px}
+@media (prefers-color-scheme:dark){:root{--bg:#141312;--ink:#e8e4de;--muted:#918b83;--rule:#2f2c29;--accent:#c99a63}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 Georgia,"Times New Roman",serif;padding:0 24px 100px}
+.wrap{max-width:var(--max);margin:0 auto}
+header{padding:70px 0 0}
+h1{font-size:30px;line-height:1.22;font-weight:400;margin:0 0 14px}
+.sub{color:var(--muted);font-size:15px;line-height:1.55;margin:0 0 8px}
+hr{border:0;border-top:1px solid var(--rule);margin:38px 0}
+h2{font-size:12.5px;font-weight:400;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);margin:48px 0 6px;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+h3{font-size:23px;font-weight:400;line-height:1.32;margin:0 0 18px}
+h4{font-size:17px;font-weight:700;margin:24px 0 9px}
+p{margin:0 0 15px}
+ul,ol{margin:0 0 15px;padding-left:22px}
+li{margin:0 0 7px}
+a{color:var(--accent)}
+nav.toc{margin:34px 0 0}
+nav.toc ol{list-style:none;margin:0;padding:0;counter-reset:s}
+nav.toc>ol>li{counter-increment:s;border-top:1px solid var(--rule);padding:10px 0}
+nav.toc>ol>li:last-child{border-bottom:1px solid var(--rule)}
+nav.toc a{color:var(--ink);text-decoration:none;display:flex;gap:14px;align-items:baseline}
+nav.toc a:hover{color:var(--accent)}
+nav.toc a::before{content:counter(s);color:var(--muted);font-size:13px;min-width:18px;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+nav.toc .t{flex:1}
+nav.toc .n{color:var(--muted);font-size:13px;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+.note{border-left:2px solid var(--accent);padding:2px 0 2px 18px;margin:0 0 20px}
+.note p:last-child{margin-bottom:0}
+.tablewrap{overflow-x:auto;margin:0 0 20px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:14.5px;line-height:1.48}
+th{text-align:left;font-weight:400;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--ink);padding:0 13px 7px 0;vertical-align:bottom;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+td{border-bottom:1px solid var(--rule);padding:10px 13px 10px 0;vertical-align:top}
+td:last-child,th:last-child{padding-right:0}
+.num{white-space:nowrap;font-variant-numeric:tabular-nums}
+.uni{font-weight:700}
+footer{margin-top:58px;padding-top:20px;border-top:1px solid var(--rule);color:var(--muted);font-size:14px;line-height:1.6}
+@media (max-width:820px){body{font-size:16px;padding:0 16px 74px}header{padding-top:42px}h1{font-size:24px}h3{font-size:19px}table{min-width:560px;font-size:14px}}
+</style><style>
+.gloss{margin:0 0 22px}
+.gloss dt{font-weight:700;margin:16px 0 3px;font-size:16px}
+.gloss dd{margin:0 0 0 0;color:var(--muted);font-size:15.5px;line-height:1.5}
+.lead{font-size:17px;margin:0 0 16px}
+.after{border-left:2px solid var(--accent);padding:2px 0 2px 18px;margin:16px 0 26px;font-size:15.5px}
+.after b{color:var(--ink)}
+.big{font-size:20px;font-weight:700}
+table.simple{min-width:0}
+table.simple td{padding:12px 16px 12px 0}
+.step{color:var(--muted);font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;
+ font-family:-apple-system,BlinkMacSystemFont,sans-serif;margin:0 0 6px}
+</style><style id="sem">
+.lbl{display:block;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,sans-serif;
+  font-size:11px;letter-spacing:.09em;text-transform:uppercase;font-weight:600;
+  color:var(--muted);margin:0 0 8px;line-height:1.35}
+.note .lbl + p{margin-top:0}
+.note.hot{border-left-color:#9c3328}
+.note.hot .lbl{color:#9c3328}
+.note.good{border-left-color:#3f6b4a}
+.note.good .lbl{color:#3f6b4a}
+td.pri{color:var(--accent)}
+th{white-space:nowrap}
+@media (max-width:700px){
+  .lbl{margin-bottom:6px}
+  th{white-space:normal}
+  .tablewrap td.pri::before,.scroll td.pri::before{color:var(--muted)}
+}
+</style><style id="verdict">td.v-ok{color:#3f6b4a;font-weight:700}td.v-no{color:#9c3328;font-weight:700}td.v-part{color:#8a6d1f;font-weight:700}td.v-na{color:var(--muted);font-weight:600}</style><style id="mob">
+@media (max-width:700px){
+  .tablewrap,.scroll{overflow-x:visible !important}
+  .tablewrap table,.scroll table{min-width:0 !important;display:block;font-size:15px}
+  .tablewrap thead,.scroll thead{display:none}
+  .tablewrap tbody,.tablewrap tr,.tablewrap td,
+  .scroll tbody,.scroll tr,.scroll td{display:block;width:100%}
+  .tablewrap tr,.scroll tr{border-bottom:1px solid var(--ink,var(--fg));padding:15px 0 13px}
+  .tablewrap tr:last-child,.scroll tr:last-child{border-bottom:0}
+  .tablewrap td,.scroll td{border:0 !important;padding:5px 0 !important;line-height:1.5}
+  .tablewrap td:empty,.scroll td:empty{display:none}
+  .tablewrap td::before,.scroll td::before{
+    content:attr(data-l);display:block;font-size:11px;letter-spacing:.07em;text-transform:uppercase;
+    color:var(--muted,var(--mut));margin-bottom:2px;
+    font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+  .tablewrap td:first-child::before,.scroll td:first-child::before{display:none}
+  .tablewrap td:first-child,.scroll td:first-child{
+    font-weight:700;font-size:17px;line-height:1.32;margin-bottom:7px}
+  .num{white-space:normal !important}
+  nav.toc a{flex-wrap:wrap}
+  nav.toc .n{margin-left:32px;width:100%;text-align:left;margin-top:2px}
+  nav .d{margin-left:34px;width:100%;text-align:left;margin-top:2px}
+  .nu{font-size:15px}
+  dl.gloss dd{font-size:16px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>План Б: доучиться и идти в магистратуру</h1>
+  <p class="sub">8 сентября 2026. Сценарий: закрыть UNIC по графическому дизайну с CPA около 2,0, потом магистратура по бизнесу/финансам/менеджменту — почти бесплатно, в хорошем вузе, с выходом в большую компанию. Проверено по требованиям программ в Италии, Франции, Германии, Бельгии, Британии и США. И честное сравнение с текущим планом — бакалавриат в Турине или Болонье.</p>
+  <nav class="toc"><ol>
+    <li><a href="#verdict"><span class="t">Вердикт</span><span class="n">коротко</span></a></li>
+    <li><a href="#gate"><span class="t">Три ворот, которые надо пройти</span><span class="n">диплом, профиль, GPA</span></a></li>
+    <li><a href="#countries"><span class="t">По странам</span><span class="n">цена · допуск · работа после</span></a></li>
+    <li><a href="#routes"><span class="t">Два маршрута, которые реально существуют</span><span class="n">Франция · Италия</span></a></li>
+    <li><a href="#compare"><span class="t">Против текущего плана</span><span class="n">Турин / Болонья</span></a></li>
+    <li><a href="#levers"><span class="t">Что реально двигает шансы</span><span class="n">не GPA</span></a></li>
+  </ol></nav>
+</header>
+
+<hr>
+<h2 id="verdict">1. Вердикт</h2>
+
+<div class="note hot">
+<span class="lbl">Главное, что выяснилось</span>
+<p>Проблема плана Б — <b>не низкий GPA</b>, а <b>профиль диплома</b>. Магистратуры по экономике, финансам и менеджменту в Италии, Германии, Бельгии и большинстве стран ЕС требуют <b>профильные кредиты в бакалавриате</b> — 48–60 ECTS по экономике, бизнесу, праву и статистике. В дипломе по графическому дизайну их ноль. Это закрывает двери <b>до того</b>, как кто-то посмотрит на оценки.</p>
+<p>Программы, специально созданные для непрофильных, существуют в двух видах: <b>дешёвые</b> (Франция, IAE) и <b>дорогие</b> (Британия £19–30k, США $25–65k в год, Бельгия €9,5k + подготовительный год). В условие «почти бесплатно» попадает одна — <b>французская</b>. Итальянская магистратура дешёвая, но требует два года «моста» из отдельных курсов.</p>
+</div>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Условие из твоего запроса</th><th>Результат</th></tr></thead>
+<tbody>
+<tr><td>Магистратура по бизнесу/финансам с дипломом дизайнера</td><td class="v-part">Только программы «для непрофильных» — их немного</td></tr>
+<tr><td>С CPA 2,0</td><td class="v-part">Проходит там, где отбор по досье и тесту, не по GPA. Британия и США — почти закрыты</td></tr>
+<tr><td>Почти бесплатно, до €1 000 в год</td><td class="v-no">Одна страна — Франция, и то при освобождении от сбора; иначе €3 950</td></tr>
+<tr><td>Хороший университет</td><td class="v-part">IAE — государственные школы менеджмента при университетах, уровень средний-хороший, не LSE</td></tr>
+<tr><td>Большая компания и большие деньги после</td><td class="v-na">Диплом даёт право на работу 12–24 месяца; дальше — рынок, язык и стажировка. Гарантий нет нигде</td></tr>
+</tbody>
+</table>
+</div>
+
+<hr>
+<h2 id="gate">2. Три ворот</h2>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Ворота</th><th>Что требуется</th><th>Твоя позиция</th><th>Источник</th></tr></thead>
+<tbody>
+<tr><td><b>1. Диплом вообще</b></td><td>UNIC выдаёт диплом только при <b>CPA ≥ 2,0</b>. 1,95 — диплома нет, плана Б нет</td><td class="v-part">CPA сейчас 1,84; три семестра на A/B по оставшимся курсам плюс пересдачи WA/Incomplete</td><td>регламент UNIC, твоя выписка</td></tr>
+<tr><td><b>2. Профиль</b></td><td>Италия LM-77: диплом из списка классов <b>или 48 CFU</b> по экономике/бизнесу/праву/статистике, из них <b>30 по бизнесу</b>. Ca' Foscari даже для «менеджмента культуры»: <b>60 CFU</b>, из них 20 бизнес</td><td class="v-no">0 CFU. Единственный обход — single courses, максимум <b>30 CFU в год</b> → два года</td><td><a href="https://corsi.unibo.it/magistrale/EconomiaManagement/iscriversi-al-corso">Unibo LM Economia e management</a> · <a href="https://www.unive.it/web/en/13014/admission-and-enrolment">Ca' Foscari admission</a> · <a href="https://www.unito.it/sites/default/files/istruzioni_immatricolazione_studenti_titolo_studio_estero.pdf">UniTo corsi singoli</a></td></tr>
+<tr><td><b>3. GPA</b></td><td>Британия: 2:2 ≈ GPA 2,7–3,2; <b>2,0 ≈ Third</b> — ниже порога почти всех MSc. США: минимум 2,5–3,5, ниже 3,0 — «conditional admission» с обязательным 3,0 за первый семестр. Германия: по баварской формуле 2,0/4 → худшая проходная оценка</td><td class="v-no">закрыто везде, где GPA — фильтр. Открыто там, где решают досье + тест: Франция</td><td><a href="https://www.mdx.ac.uk/courses/postgraduate/management-msc/">Middlesex MSc Management</a> · <a href="https://research.com/advice/can-you-get-into-a-finance-degree-masters-program-with-a-low-gpa">US low-GPA admissions</a></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="after">
+UNIC — <b>240 ECTS</b>, четыре года. Это важно: французские M2 для непрофильных требуют ровно 240 ECTS «первой компетенции вне менеджмента». Диплом UNIC подходит.
+</div>
+
+<hr>
+<h2 id="countries">3. По странам</h2>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Страна · программа</th><th class="num">Цена в год, не-ЕС</th><th>Берут ли дизайнера с GPA 2,0</th><th>Работа после</th><th>Вердикт</th></tr></thead>
+<tbody>
+<tr><td><b>Франция · IAE, Master MAE «двойная компетенция»</b> — iaelyon General Management Program на английском, 1 год + 6 мес стажировки</td><td class="num">национальная ставка <b>€255</b>; для не-ЕС дифференцированный сбор <b>€3 950</b>, если университет не освободит — квота 30%</td><td class="v-ok">создана для непрофильных: «n'est pas ouvert à des étudiants issus de filières gestion». 240 ECTS. Отбор: досье + тест SIM/TAGE MAGE/GMAT + английский + интервью — GPA один из факторов, не фильтр</td><td>APS 12 мес, для некоторых стран до 24</td><td class="v-ok"><b>единственный реальный дешёвый маршрут</b></td></tr>
+<tr><td><b>Италия · laurea magistrale по экономике/менеджменту</b> — Болонья, Турин, Милан, Тренто</td><td class="num">flat tax €1 157 (Болонья) или по ВВП ~€1 000; <b>DSU до €7–8k</b> — и в магистратуре тоже</td><td class="v-no">нет без 48–60 CFU. Мост — corsi singoli: max 30 CFU/год, виза через Universitaly, ~€117 за 2 CFU в Турине → <b>два года и ~€3 500</b></td><td>attesa occupazione 12 мес</td><td class="v-part">дёшево, но +2 года моста — по времени равно новому бакалавриату</td></tr>
+<tr><td><b>Германия · MSc Management</b>, публичные</td><td class="num">€0 + семестровый взнос €250–400; Баден-Вюртемберг €1 500/сем; TUM для не-ЕС €4 000/сем</td><td class="v-no">TUM MiM — только инженеры и естественники; остальные требуют бизнес-ECTS. Дизайн не входит</td><td>18 мес</td><td class="v-no">закрыто по профилю</td></tr>
+<tr><td><b>Бельгия · KU Leuven Business Administration</b></td><td class="num"><b>€9 494</b></td><td class="v-part">непрофильных берут через отдельную подготовительную программу — ещё год</td><td>12 мес</td><td class="v-no">по цене нет</td></tr>
+<tr><td><b>Британия · MSc Management conversion</b> — Manchester, Lancaster, Cardiff, York, Middlesex</td><td class="num"><b>£18 750 – 30 000</b></td><td class="v-no">программы для непрофильных есть, но порог <b>2:2</b>; GPA 2,0 ≈ Third — ниже. Middlesex «prioritises 2:2»</td><td>Graduate visa 2 года, с 2027 — 18 мес</td><td class="v-no">по цене и по GPA</td></tr>
+<tr><td><b>США · MS Finance / MBA</b></td><td class="num"><b>$25 000 – 65 000</b> + жизнь; $70–100k за два года</td><td class="v-no">минимум 2,5–3,5; ниже 3,0 — conditional admission в 20–30% программ; профиль тоже смотрят</td><td>OPT 12 мес (+24 STEM)</td><td class="v-no">по цене — вне обсуждения</td></tr>
+</tbody>
+</table>
+</div>
+
+<hr>
+<h2 id="routes">4. Два маршрута, которые реально существуют</h2>
+
+<h4>Маршрут Ф — Франция, IAE MAE</h4>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Шаг</th><th>Что</th><th>Когда</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Закрыть UNIC с CPA ≥ 2,0 — иначе ничего не будет</td><td>до лета 2028</td></tr>
+<tr><td>2</td><td>Тест: <b>Score IAE-Message</b> (сдаётся в России? — уточнить; сессии в Европе) или GMAT/TAGE MAGE; английский TOEIC/IELTS B2+</td><td>зима–весна 2028</td></tr>
+<tr><td>3</td><td>Досье: CV, мотивационное письмо, оценки. Отбор — <b>интервью</b>. Здесь работает история «дизайнер, который хочет управлять», а не GPA</td><td>весна 2028, календарь на сайте IAE</td></tr>
+<tr><td>4</td><td>Сбор: €255 + CVEC €103 при освобождении; иначе €3 950 + €103. Просить освобождение — квота 30% в каждом университете, решение индивидуальное</td><td>при зачислении</td></tr>
+<tr><td>5</td><td>Год учёбы + 6 месяцев стажировки — стажировка и есть вход в компанию</td><td>2028/29</td></tr>
+<tr><td>6</td><td>APS — 12 месяцев на поиск работы; наём → titre de séjour</td><td>2029</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note">
+<span class="lbl">Честно про уровень</span>
+<p>IAE — государственные школы менеджмента при университетах, их около 35. Хорошая репутация внутри Франции, стажировки в реальных компаниях, диплом национальный. Это не HEC и не LSE. «Большая компания» после IAE — это французские и европейские корпорации через стажировку, при рабочем французском. Английской программы одной недостаточно для рынка Франции — <b>французский B2 к концу года обязателен</b>, иначе стажировка будет единственным, что ты получишь.</p>
+</div>
+
+<h4>Маршрут И — Италия через мост</h4>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Шаг</th><th>Что</th><th>Когда</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Закрыть UNIC с CPA ≥ 2,0</td><td>лето 2028</td></tr>
+<tr><td>2</td><td>Виза на corsi singoli через Universitaly; набрать <b>30 CFU</b> по SECS-P/07–11 и статистике; ~€1 750</td><td>2028/29</td></tr>
+<tr><td>3</td><td>Ещё <b>18–30 CFU</b> — второй год; итого 48–60</td><td>2029/30</td></tr>
+<tr><td>4</td><td>Подача в LM-77 — Болонья, Турин, Милан; flat tax ~€1 157; DSU по маме</td><td>2030/31 – 2031/32</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="after">
+Итого: диплом магистра в <b>2032</b>, в 26 лет, после двух лет «ничейного» статуса на single courses без стипендии. По времени это <b>хуже</b> текущего плана: бакалавриат в Болонье даёт диплом в 2030 и открывает ту же LM-77 <b>без моста</b> — как профильный выпускник.
+</div>
+
+<hr>
+<h2 id="compare">5. Против текущего плана</h2>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th></th><th>План А — бакалавриат Болонья / Турин с 2027</th><th>План Б-Ф — UNIC + IAE Франция</th><th>План Б-И — UNIC + мост + LM Италия</th></tr></thead>
+<tbody>
+<tr><td><b>Годы до первого диплома</b></td><td>3 → <b>2030</b>, бакалавр экономики</td><td>2 + 1 → <b>2029</b>, магистр менеджмента</td><td>2 + 2 + 2 → <b>2032</b></td></tr>
+<tr><td><b>Учёба, суммарно</b></td><td>Болонья: €157–1 157/год × 3 = €0,5–3,5k. Турин: €2 200–3 156 × 3 = €6,6–9,5k</td><td>UNIC 3 семестра ~€13k (скидка 10%) + IAE €0,4–4k = <b>€13–17k</b></td><td>UNIC €13k + мост €3,5k + LM €2,3k = <b>€19k</b></td></tr>
+<tr><td><b>Стипендия на жизнь</b></td><td>DSU до €7 171 (Болонья) / €8 097 (Турин) в год × 3; Unibo-грант €4 500 при ISEE до 35k</td><td>во Франции для не-ЕС магистров — CROUS-стипендий нет; Eiffel — только для топ-профилей</td><td>на мосту — ноль; в LM — DSU</td></tr>
+<tr><td><b>Главный риск</b></td><td>SAT 1400+ к марту 2027; оборот мамы 2026 для DSU; виза к сентябрю</td><td><b>CPA ≥ 2,0</b> — три идеальных семестра там, где было 1,2–1,4; тест SIM/GMAT; освобождение от €3 950 не гарантировано</td><td>всё то же, что Б-Ф, плюс два года без статуса студента полного цикла</td></tr>
+<tr><td><b>Что на выходе</b></td><td>профильный бакалавр ЕС в 23; вход в любую LM Европы без моста; Bocconi/ESCP на магистратуру уже по оценкам за экономику, не за дизайн</td><td>магистр менеджмента в 24 с дипломом дизайнера в основании; французский рынок</td><td>магистр в 26</td></tr>
+<tr><td><b>Право на работу после</b></td><td>Италия 12 мес после бакалавра — но логичнее сразу в LM</td><td>APS 12–24 мес</td><td>12 мес</td></tr>
+<tr><td><b>Вероятность дойти до диплома</b></td><td>решается SAT и документами — <b>управляемо</b>, всё в твоих руках до марта</td><td>решается CPA 2,0 — <b>математически тяжело</b>: нужно ~3,0 за оставшиеся семестры при истории 1,2–1,4</td><td>то же, что Б-Ф, и ещё два года</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note good">
+<span class="lbl">Что из этого следует</span>
+<p><b>План А и план Б-Ф — не взаимоисключающие по подготовке, но взаимоисключающие по времени</b>: нельзя одновременно вытягивать три семестра UNIC на 3,0 и готовить SAT на 1450 по 18 часов в неделю. Это выбор, и его надо сделать до конца сентября.</p>
+<p>По цифрам план А сильнее по всем строкам, кроме одной: диплом магистра в 2029 против бакалавра в 2030. Но «магистр менеджмента с дизайном в основании и CPA 2,0» и «бакалавр экономики Болоньи с DSU» — на рынке труда это не одно и то же, и второе открывает <b>любую</b> магистратуру Европы через два года без моста.</p>
+<p>План Б-Ф имеет смысл только в одном случае: <b>если SAT к декабрю покажет, что 1400 к марту нереально.</b> Тогда — доучиваться и IAE. Это запасной аэродром, не равный вариант.</p>
+</div>
+
+<hr>
+<h2 id="levers">6. Что реально двигает шансы</h2>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Рычаг</th><th>Где работает</th><th>Что делать</th></tr></thead>
+<tbody>
+<tr><td><b>Тест вместо GPA</b> — GMAT / GRE / Score IAE-Message</td><td>Франция всегда; США и Британия — частично, через conditional admission</td><td>GMAT 600+ перекрывает GPA 2,0 в глазах любой приёмной, кроме чисто фильтрующих</td></tr>
+<tr><td><b>Опыт работы</b> 1–2 года по профилю</td><td>везде; для Chevening и Eiffel — обязателен</td><td>работа в дизайне на стороне бизнеса: продукт, маркетинг, бренд — это уже «менеджмент» в CV</td></tr>
+<tr><td><b>Профильные кредиты заранее</b></td><td>Италия, Германия, Бельгия</td><td>если остаёшься в UNIC — брать электив по экономике/статистике/праву: каждый курс — минус из моста</td></tr>
+<tr><td><b>Французский B2</b></td><td>Франция — рынок труда</td><td>год на язык параллельно; без него IAE даёт диплом, но не работу</td></tr>
+<tr><td><b>CPA ≥ 2,0</b></td><td>план Б целиком</td><td>без этого нет диплома, и всё выше не имеет значения</td></tr>
+</tbody>
+</table>
+</div>
+
+<footer>
+<p>Источники: corsi.unibo.it — requisiti LM Economia e management; unive.it — Innovation and Management for Culture and Creativity, admission; unito.it — corsi singoli; iae-france.fr — MAE General Management Program; iae.univ-lyon3.fr — Master 2 MAE; enseignementsup-recherche.gouv.fr — droits différenciés FAQ; univ-lyon3.fr — exonération 2026/27; mgt.tum.de — Master in Management admission; kuleuven.be / mimineurope.com — fees 2026/27; manchester.ac.uk, lancaster.ac.uk, mdx.ac.uk — MSc Management; research.com, bestcolleges.com — US GPA policies; unic.ac.cy — Graphic and Digital Design BA 240 ECTS; post-study permits: davidsonmorris.com (UK), edhec.edu (FR), uniprogroup (IT).</p>
+<p>Часть плана: <a href="https://axbalashovv.github.io/alex-italy-docs/">указатель</a> · <a href="https://axbalashovv.github.io/alex-italy-docs/italy-change-of-field/">смена направления</a> · <a href="https://axbalashovv.github.io/alex-italy-docs/sat-plan-1450/">SAT-план</a></p>
+</footer>
+
+</div>
+<script>(function(){function l(){document.querySelectorAll('table').forEach(function(t){
+var h=[].map.call(t.querySelectorAll('thead th'),function(x){return (x.textContent||'').replace(/\s+/g,' ').trim()});
+if(!h.length)return;[].forEach.call(t.querySelectorAll('tbody tr'),function(r){[].forEach.call(r.cells,function(c,i){
+if(h[i]&&!c.hasAttribute('data-l'))c.setAttribute('data-l',h[i])})})})}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',l);else l();})();</script>
+</body>
+</html>
