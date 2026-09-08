@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Дмитрий против первоисточников</title>
+<style>
+:root{--bg:#fbfaf8;--ink:#1a1a1a;--muted:#6b6864;--rule:#dedad4;--accent:#8a5a2b;--max:820px}
+@media (prefers-color-scheme:dark){:root{--bg:#141312;--ink:#e8e4de;--muted:#918b83;--rule:#2f2c29;--accent:#c99a63}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 Georgia,"Times New Roman",serif;padding:0 24px 100px}
+.wrap{max-width:var(--max);margin:0 auto}
+header{padding:70px 0 0}
+h1{font-size:30px;line-height:1.22;font-weight:400;margin:0 0 14px}
+.sub{color:var(--muted);font-size:15px;line-height:1.55;margin:0 0 8px}
+hr{border:0;border-top:1px solid var(--rule);margin:38px 0}
+h2{font-size:12.5px;font-weight:400;letter-spacing:.13em;text-transform:uppercase;color:var(--accent);margin:48px 0 6px;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+h3{font-size:23px;font-weight:400;line-height:1.32;margin:0 0 18px}
+h4{font-size:17px;font-weight:700;margin:24px 0 9px}
+p{margin:0 0 15px}
+ul,ol{margin:0 0 15px;padding-left:22px}
+li{margin:0 0 7px}
+a{color:var(--accent)}
+nav.toc{margin:34px 0 0}
+nav.toc ol{list-style:none;margin:0;padding:0;counter-reset:s}
+nav.toc>ol>li{counter-increment:s;border-top:1px solid var(--rule);padding:10px 0}
+nav.toc>ol>li:last-child{border-bottom:1px solid var(--rule)}
+nav.toc a{color:var(--ink);text-decoration:none;display:flex;gap:14px;align-items:baseline}
+nav.toc a:hover{color:var(--accent)}
+nav.toc a::before{content:counter(s);color:var(--muted);font-size:13px;min-width:18px;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+nav.toc .t{flex:1}
+nav.toc .n{color:var(--muted);font-size:13px;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+.note{border-left:2px solid var(--accent);padding:2px 0 2px 18px;margin:0 0 20px}
+.note p:last-child{margin-bottom:0}
+.tablewrap{overflow-x:auto;margin:0 0 20px;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:14.5px;line-height:1.48}
+th{text-align:left;font-weight:400;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--ink);padding:0 13px 7px 0;vertical-align:bottom;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+td{border-bottom:1px solid var(--rule);padding:10px 13px 10px 0;vertical-align:top}
+td:last-child,th:last-child{padding-right:0}
+.num{white-space:nowrap;font-variant-numeric:tabular-nums}
+.uni{font-weight:700}
+footer{margin-top:58px;padding-top:20px;border-top:1px solid var(--rule);color:var(--muted);font-size:14px;line-height:1.6}
+@media (max-width:820px){body{font-size:16px;padding:0 16px 74px}header{padding-top:42px}h1{font-size:24px}h3{font-size:19px}table{min-width:560px;font-size:14px}}
+</style><style>
+.gloss{margin:0 0 22px}
+.gloss dt{font-weight:700;margin:16px 0 3px;font-size:16px}
+.gloss dd{margin:0 0 0 0;color:var(--muted);font-size:15.5px;line-height:1.5}
+.lead{font-size:17px;margin:0 0 16px}
+.after{border-left:2px solid var(--accent);padding:2px 0 2px 18px;margin:16px 0 26px;font-size:15.5px}
+.after b{color:var(--ink)}
+.big{font-size:20px;font-weight:700}
+table.simple{min-width:0}
+table.simple td{padding:12px 16px 12px 0}
+.step{color:var(--muted);font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;
+ font-family:-apple-system,BlinkMacSystemFont,sans-serif;margin:0 0 6px}
+</style><style id="sem">
+.lbl{display:block;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,sans-serif;
+  font-size:11px;letter-spacing:.09em;text-transform:uppercase;font-weight:600;
+  color:var(--muted);margin:0 0 8px;line-height:1.35}
+.note .lbl + p{margin-top:0}
+.note.hot{border-left-color:#9c3328}
+.note.hot .lbl{color:#9c3328}
+.note.good{border-left-color:#3f6b4a}
+.note.good .lbl{color:#3f6b4a}
+td.pri{color:var(--accent)}
+th{white-space:nowrap}
+@media (max-width:700px){
+  .lbl{margin-bottom:6px}
+  th{white-space:normal}
+  .tablewrap td.pri::before,.scroll td.pri::before{color:var(--muted)}
+}
+</style><style id="mob">
+@media (max-width:700px){
+  .tablewrap,.scroll{overflow-x:visible !important}
+  .tablewrap table,.scroll table{min-width:0 !important;display:block;font-size:15px}
+  .tablewrap thead,.scroll thead{display:none}
+  .tablewrap tbody,.tablewrap tr,.tablewrap td,
+  .scroll tbody,.scroll tr,.scroll td{display:block;width:100%}
+  .tablewrap tr,.scroll tr{border-bottom:1px solid var(--ink,var(--fg));padding:15px 0 13px}
+  .tablewrap tr:last-child,.scroll tr:last-child{border-bottom:0}
+  .tablewrap td,.scroll td{border:0 !important;padding:5px 0 !important;line-height:1.5}
+  .tablewrap td:empty,.scroll td:empty{display:none}
+  .tablewrap td::before,.scroll td::before{
+    content:attr(data-l);display:block;font-size:11px;letter-spacing:.07em;text-transform:uppercase;
+    color:var(--muted,var(--mut));margin-bottom:2px;
+    font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+  .tablewrap td:first-child::before,.scroll td:first-child::before{display:none}
+  .tablewrap td:first-child,.scroll td:first-child{
+    font-weight:700;font-size:17px;line-height:1.32;margin-bottom:7px}
+  .num{white-space:normal !important}
+  nav.toc a{flex-wrap:wrap}
+  nav.toc .n{margin-left:32px;width:100%;text-align:left;margin-top:2px}
+  nav .d{margin-left:34px;width:100%;text-align:left;margin-top:2px}
+  .nu{font-size:15px}
+  dl.gloss dd{font-size:16px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Дмитрий против первоисточников</h1>
+  <p class="sub">8 сентября 2026. Всё, что он сказал за два разговора, — против того, что написано у самих университетов, College Board и стипендиальных агентств. Каждая строка со ссылкой на источник. Плюс: сколько идёт балл SAT, все сроки в одной таблице, порталы и документы, и что такое «официальный представитель».</p>
+  <nav class="toc"><ol>
+    <li><a href="#claims"><span class="t">Что сказал → что в источнике</span><span class="n">12 утверждений</span></a></li>
+    <li><a href="#sat"><span class="t">Сколько идёт балл SAT</span><span class="n">13 дней</span></a></li>
+    <li><a href="#timeline"><span class="t">Все сроки одной таблицей</span><span class="n">с ссылками</span></a></li>
+    <li><a href="#portals"><span class="t">Порталы, логины, документы</span><span class="n">когда что заводить</span></a></li>
+    <li><a href="#gd"><span class="t">Что такое Global Dialog</span><span class="n">и откуда у них информация</span></a></li>
+    <li><a href="#use"><span class="t">Зачем они нужны и зачем нет</span><span class="n">€1 500</span></a></li>
+  </ol></nav>
+</header>
+
+<hr>
+<h2 id="claims">1. Что сказал → что в источнике</h2>
+<h3>Зелёное — совпало, красное — нет, серое — не проверить</h3>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Дмитрий</th><th>Первоисточник</th><th>Вердикт</th><th>Ссылка</th></tr></thead>
+<tbody>
+<tr><td>«Март — поздно, это уже третий круг, мест не будет»</td><td>Болонья: не-ЕС из-за рубежа — <b>только первый набор, 10 фев — 4 мая</b>, балл должен прийти в вуз к 4 мая; один рейтинг публикуется 26 мая, очереди нет. Турин: SAT сдать <b>до ~6 июня</b>, 40 мест не-ЕС</td><td class="pri"><b>Неверно</b></td><td><a href="https://corsi.unibo.it/1cycle/CLaBE/how-to-enrol">CLaBE: how to enrol</a> · <a href="https://corsi.unibo.it/s/3394/p/en/enrolling-clabe/clabe-clame-call-for-applications-2025_26-1.pdf/@@download/file/CLABE-CLAME%20Call%20for%20Applications%202025_26%20(1).pdf">Call for Applications CLaBE 2025/26, PDF</a> · <a href="https://en.unito.it/studying-unito/enrolment-procedure/undergraduate-degrees-restricted-number-places/undergraduate">UniTo: degrees foreseeing the SAT</a></td></tr>
+<tr><td>«Первый круг открывается в декабре–январе, надо заводить кабинет»</td><td>Болонья — 10 февраля. Турин, Apply@UniTo — 19 февраля. Кабинеты можно завести раньше, подача откроется в феврале</td><td class="pri"><b>Неверно</b> по датам</td><td><a href="https://corsi.unibo.it/1cycle/CLaBE/how-to-enrol">CLaBE: how to enrol</a> · <a href="https://apply.unito.it/en_GB/courses/course/564-business-management">Apply@UniTo — Business &amp; Management</a></td></tr>
+<tr><td>«К декабрю нужно 1450, сдавать в ноябре и декабре»</td><td>Балл к декабрю не требуется ни одним вузом. Но ранние сдачи разумны: берут лучший, каждая — $111</td><td><b>Совет полезный, обоснование неверное</b></td><td><a href="https://satsuite.collegeboard.org/sat/dates-deadlines">College Board: dates &amp; deadlines</a></td></tr>
+<tr><td>«Нужен SAT около 1450»</td><td>Проходные не публикуются; в call «no minimum score», рейтинг. 1450 = 96-й перцентиль. Их оценка по своим студентам</td><td>не проверить</td><td><a href="https://corsi.unibo.it/s/3394/p/en/enrolling-clabe/clabe-clame-call-for-applications-2025_26-1.pdf/@@download/file/CLABE-CLAME%20Call%20for%20Applications%202025_26%20(1).pdf">Call for Applications CLaBE 2025/26, PDF</a></td></tr>
+<tr><td>«Могут позвать на собеседование, спросят про графдизайн»</td><td>Болонья: «rankings are based on the SAT scores», рейтинг анонимный, слово interview — 0 раз в call. Турин — SAT + документы, интервью нет</td><td class="pri"><b>Неверно</b> для приёма</td><td><a href="https://corsi.unibo.it/s/3394/p/en/enrolling-clabe/clabe-clame-call-for-applications-2025_26-1.pdf/@@download/file/CLABE-CLAME%20Call%20for%20Applications%202025_26%20(1).pdf">Call for Applications CLaBE 2025/26, PDF</a></td></tr>
+<tr><td>«Университет спросит, почему сменил направление после третьего курса»</td><td>Университет не оценивает мотивы — см. выше. Этот вопрос существует у <b>консула</b>: для визы нужно мотивационное письмо. Правового теста «согласованности» для университетских курсов нет</td><td><b>Верно про визу, неверно про вуз</b></td><td><a href="https://axbalashovv.github.io/alex-italy-docs/italy-change-of-field/#visa">разбор визы: декрет 850/2011</a></td></tr>
+<tr><td>«Не первый бакалавриат — будет тяжело со стипендией»</td><td>Исключены только те, кто <b>уже имеет диплом</b>. Реальный механизм — «год первого зачисления»: сбрасывается отчислением + приёмом на первый курс без признания кредитов</td><td class="pri"><b>Неверно</b> как правило, верно как «есть нюанс»</td><td><a href="https://www.er-go.it/cosa-fare-per/bandi-di-concorso/leggi-il-bando">ER.GO: bando 2026/27</a> · <a href="https://www.edisu.piemonte.it/">EDISU Piemonte</a></td></tr>
+<tr><td>«Дорогой частный вуз — вопросы к доходам»</td><td>ISEE считается по доходу за отчётный год (2026), не по тратам. Риск — только несходимость выписок при проверке GdF (≥ 20%)</td><td>частично</td><td><a href="https://www.er-go.it/cosa-fare-per/bandi-di-concorso/leggi-il-bando">ER.GO: bando 2026/27</a></td></tr>
+<tr><td>«Есть часовой экзамен по английскому от университета»</td><td>Для Болоньи SAT засчитывается как B2, отдельного теста нет. Что имелось в виду — не сказал</td><td>не подтверждено</td><td><a href="https://corsi.unibo.it/1cycle/CLaBE/how-to-enrol">CLaBE: how to enrol</a></td></tr>
+<tr><td>Их сайт: вступительный экзамен в Турин — <b>TOLC</b></td><td>Business &amp; Management — <b>SAT</b>. TOLC — другие программы</td><td class="pri"><b>Неверно</b></td><td><a href="https://www.business-management.unito.it/do/home.pl/View?doc=admission_requirements.html">B&amp;M: admission requirements</a> · <a href="https://www.globaldialog.ru/countries/italy/higher_education/unito/">globaldialog.ru → UniTo</a></td></tr>
+<tr><td>Их сайт: Болонья от 280 675 ₽/год</td><td>Flat tax для стран вне ОЭСР: €1 000–1 200 + €157 ≈ 115–130 тыс ₽. Их цифра ≈ стандартная ставка без flat tax</td><td class="pri"><b>Вдвое завышено</b></td><td><a href="https://www.unibo.it/en/study/enrolment-fees-and-other-procedures/degree-programmes/tuition-fees-and-exemptions/reduced-fixed-fee-for-citizens-of-particularly-poor-and-developing-countries-or-non-eu-non-oecd-countries">UNIBO: reduced fixed fee</a> · <a href="https://www.globaldialog.ru/countries/italy/higher_education/university-of-bologna/">globaldialog.ru → Bologna</a></td></tr>
+<tr><td>Их сайт: Турин от 341 301 ₽/год; стипендии 280–617 тыс ₽</td><td>€3 156 ≈ 285–315 тыс ₽ — близко. Стипендия до €8 097 ≈ 730 тыс ₽ — их верхняя цифра занижена</td><td>примерно</td><td><a href="https://www.globaldialog.ru/countries/italy/higher_education/unito/">globaldialog.ru → UniTo</a></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note good">
+<span class="lbl">Итог по двенадцати</span>
+<p>Совпало полностью — ноль. Частично — четыре. Неверно — шесть, из них три касаются <b>самого важного</b>: сроков, собеседования и правила про второй бакалавриат. Это не значит, что он врёт. Это значит, что его картина — <b>общая по Италии</b>, а не по CLaBE и B&amp;M на 2027/28, и проверять надо каждое утверждение.</p>
+</div>
+
+<hr>
+<h2 id="sat">2. Сколько идёт балл SAT</h2>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Что</th><th>Срок</th><th>Источник</th></tr></thead>
+<tbody>
+<tr><td>Публикация балла после субботней сдачи</td><td class="pri"><b>13 дней</b>, в пятницу, 8:00 по Нью-Йорку — так все осенние даты 2026. Официальная оговорка: «2–4 недели»</td><td><a href="https://satsuite.collegeboard.org/scores/score-release-dates">College Board: score release dates</a></td></tr>
+<tr><td>Отправка балла в вуз через College Board</td><td>электронно, обычно 1–10 дней; первые 4 отправки бесплатно, если заказать при регистрации</td><td><a href="https://satsuite.collegeboard.org/sat/registration">College Board: registration</a></td></tr>
+<tr><td>Значит, от сдачи до балла в вузе</td><td><b>~2–3 недели</b>. Март 6 → ~20 марта на руках → в Болонье до конца марта, дедлайн 4 мая</td><td>—</td></tr>
+</tbody>
+</table>
+</div>
+
+<hr>
+<h2 id="timeline">3. Все сроки одной таблицей</h2>
+<h3>Даты 2026/27 — на 2027/28 сдвигаются на дни, не на месяцы. Источник у каждой строки</h3>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Когда</th><th>Что</th><th>Кто</th><th>Источник</th></tr></thead>
+<tbody>
+<tr><td><b>сейчас</b></td><td>Аккаунт College Board, имя как в загранпаспорте; смотреть места на Кипре</td><td>SAT</td><td><a href="https://satsuite.collegeboard.org/sat/registration">College Board: registration</a> · <a href="https://satsuite.collegeboard.org/sat/test-center-search">поиск центров</a></td></tr>
+<tr><td>23 окт 2026</td><td>дедлайн регистрации на SAT <b>7 ноября</b> — первая проба</td><td>SAT</td><td><a href="https://satsuite.collegeboard.org/sat/dates-deadlines">College Board: dates &amp; deadlines</a></td></tr>
+<tr><td>20 ноя 2026</td><td>дедлайн регистрации на SAT <b>5 декабря</b> — серьёзная</td><td>SAT</td><td><a href="https://satsuite.collegeboard.org/sat/dates-deadlines">College Board: dates &amp; deadlines</a></td></tr>
+<tr><td>дек 2026 — янв 2027</td><td>выходят call Болоньи и правила приёма Турина на 2027/28 — сверить даты</td><td>вузы</td><td><a href="https://corsi.unibo.it/1cycle/CLaBE/how-to-enrol">CLaBE: how to enrol</a> · <a href="https://www.business-management.unito.it/do/home.pl/View?doc=admission_requirements.html">B&amp;M: admission requirements</a></td></tr>
+<tr><td>до 31 дек 2026</td><td>мама: уведомление о смене объекта УСН на «Д−Р» — для второго курса</td><td>ФНС</td><td>—</td></tr>
+<tr><td class="pri"><b>10 фев 2027</b></td><td><b>открывается первый набор CLaBE</b> — единственный для не-ЕС; заявка в Studenti Online, €20</td><td>Болонья</td><td><a href="https://corsi.unibo.it/1cycle/CLaBE/how-to-enrol">CLaBE: how to enrol</a></td></tr>
+<tr><td>19 фев 2027</td><td>дедлайн регистрации на SAT <b>6 марта</b> — итоговая; и открывается <b>Apply@UniTo</b> (до 15 апреля)</td><td>SAT · Турин</td><td><a href="https://satsuite.collegeboard.org/sat/dates-deadlines">College Board: dates &amp; deadlines</a> · <a href="https://apply.unito.it/en_GB/courses/course/564-business-management">Apply@UniTo — Business &amp; Management</a></td></tr>
+<tr><td>~20 мар 2027</td><td>балл мартовского SAT на руках → отправить в оба вуза</td><td>SAT</td><td><a href="https://satsuite.collegeboard.org/scores/score-release-dates">College Board: score release dates</a></td></tr>
+<tr><td>15 апр 2027</td><td>закрывается Apply@UniTo — оценка квалификации Турина</td><td>Турин</td><td><a href="https://apply.unito.it/en_GB/courses/course/564-business-management">Apply@UniTo — Business &amp; Management</a></td></tr>
+<tr><td>до 25 апр 2027</td><td>мама сдаёт декларацию за 2026 → отметка ИФНС → апостиль → перевод</td><td>ФНС</td><td>—</td></tr>
+<tr><td class="pri"><b>4 мая 2027, 13:00</b></td><td><b>закрывается первый набор CLaBE</b>; балл SAT должен быть получен вузом</td><td>Болонья</td><td><a href="https://corsi.unibo.it/1cycle/CLaBE/how-to-enrol">CLaBE: how to enrol</a></td></tr>
+<tr><td>26 мая 2027</td><td>рейтинг CLaBE; зачисление 29 мая — 5 июня</td><td>Болонья</td><td><a href="https://corsi.unibo.it/1cycle/CLaBE/how-to-enrol">CLaBE: how to enrol</a></td></tr>
+<tr><td>1–19 июн 2027</td><td>регистрация на конкурс B&amp;M в MyUniTO; SAT сдан до ~6 июня</td><td>Турин</td><td><a href="https://www.business-management.unito.it/do/home.pl/View?doc=admission_requirements.html">B&amp;M: admission requirements</a> · <a href="https://en.unito.it/studying-unito/enrolment-procedure/undergraduate-degrees-restricted-number-places/undergraduate">UniTo: degrees foreseeing the SAT</a></td></tr>
+<tr><td>июнь 2027</td><td>выходят бандо EDISU и ER.GO на 2027/28</td><td>стипендия</td><td><a href="https://www.edisu.piemonte.it/">EDISU Piemonte</a> · <a href="https://www.er-go.it/cosa-fare-per/bandi-di-concorso/leggi-il-bando">ER.GO: bando 2026/27</a></td></tr>
+<tr><td>23 июн — 24 авг 2027</td><td>заявка ER.GO + загрузка документов о доходах; открывается ~в те же дни, что бандо</td><td>Болонья</td><td><a href="https://www.er-go.it/cosa-fare-per/bandi-di-concorso/leggi-il-bando">ER.GO: bando 2026/27</a></td></tr>
+<tr><td class="pri"><b>до 15 июл 2027</b></td><td><b>предзапись на Universitaly</b> — обязательное условие визы</td><td>виза</td><td><a href="https://www.universitaly.it/">Universitaly</a></td></tr>
+<tr><td>июль 2027</td><td>подача на визу D в VFS Москва: обработка <b>до 90 дней</b>, мотивационное письмо на итальянском, €10 179,85 средств</td><td>виза</td><td><a href="https://visa.vfsglobal.com/rus/ru/ita">VFS Global Италия, Россия</a> · <a href="https://axbalashovv.github.io/alex-italy-docs/italy-change-of-field/#visa">разбор визы: декрет 850/2011</a></td></tr>
+<tr><td>22 июл — 4 сен 2027</td><td>заявка EDISU; оригиналы документов <b>прибыть</b> до 4 сентября (со жильём)</td><td>Турин</td><td><a href="https://www.edisu.piemonte.it/">EDISU Piemonte</a></td></tr>
+<tr><td>сентябрь 2027</td><td>приезд, зачисление, ВНЖ; первая выплата стипендии — середина ноября</td><td>—</td><td>—</td></tr>
+</tbody>
+</table>
+</div>
+
+<hr>
+<h2 id="portals">4. Порталы, логины, документы</h2>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Портал</th><th>Для чего</th><th>Когда заводить</th><th>Ссылка</th></tr></thead>
+<tbody>
+<tr><td><b>College Board</b></td><td>регистрация на SAT, отправка баллов</td><td><b>сейчас</b></td><td><a href="https://satsuite.collegeboard.org/sat/registration">College Board: registration</a></td></tr>
+<tr><td><b>Studenti Online</b></td><td>заявка в CLaBE, оплата €20, рейтинг, зачисление; те же логины — для ER.GO</td><td>аккаунт — в январе; подача — с 10 февраля</td><td><a href="https://studenti.unibo.it/">Studenti Online</a></td></tr>
+<tr><td><b>Apply@UniTo</b></td><td>оценка иностранной квалификации Турина, €60</td><td>19 фев — 15 апр</td><td><a href="https://apply.unito.it/en_GB/courses/course/564-business-management">Apply@UniTo — Business &amp; Management</a></td></tr>
+<tr><td><b>MyUniTO</b></td><td>регистрация на конкурс B&amp;M, потом плата и страна проживания</td><td>после Apply@UniTo, к 1 июня</td><td><a href="https://www.unito.it/">MyUniTO — портал UniTo</a></td></tr>
+<tr><td><b>Universitaly</b></td><td>предзапись для визы; валидирует вуз</td><td>после зачисления, до 15 июля</td><td><a href="https://www.universitaly.it/">Universitaly</a></td></tr>
+<tr><td><b>VFS Global</b></td><td>запись на подачу визы D в Москве</td><td>сразу после валидации Universitaly</td><td><a href="https://visa.vfsglobal.com/rus/ru/ita">VFS Global Италия, Россия</a></td></tr>
+<tr><td><b>Dossier Utente ER.GO</b></td><td>стипендия Болоньи, загрузка документов</td><td>23 июня — 24 августа</td><td><a href="https://dossier.er-go.it/">Dossier Utente ER.GO</a></td></tr>
+<tr><td><b>EDISU Online Helpdesk</b></td><td>стипендия Турина, Temporary Access Code</td><td>22 июля — 4 сентября</td><td><a href="https://www.edisu.piemonte.it/">EDISU Piemonte</a></td></tr>
+</tbody>
+</table>
+</div>
+
+<h4>Документы на подачу в университет</h4>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Документ</th><th>Болонья, Studenti Online</th><th>Турин, Apply@UniTo</th></tr></thead>
+<tbody>
+<tr><td>Загранпаспорт — копия</td><td>да</td><td>да</td></tr>
+<tr><td>Аттестат за 11 классов</td><td>при зачислении: оригинал + апостиль + перевод</td><td>скан при подаче; оригинал + апостиль при зачислении</td></tr>
+<tr><td>Сертификат UNIC за первый курс — все экзамены сданы</td><td class="pri"><b>да</b> — подтверждено письмом вуза; апостиль ставится <b>на Кипре</b></td><td>да — то же правило на unito.it</td></tr>
+<tr><td>Балл SAT</td><td>от College Board напрямую, до 4 мая</td><td>от College Board, до ~6 июня</td></tr>
+<tr><td>Английский</td><td>SAT = B2, отдельно не нужен</td><td>SAT; уточнить, нужен ли сертификат</td></tr>
+<tr><td>CIMEA / Dichiarazione di Valore</td><td>не требуется для подачи; при зачислении — по запросу</td><td>принимается как альтернатива апостилю</td></tr>
+<tr><td>Мотивационное письмо, CV, рекомендации</td><td class="pri"><b>нет</b> — 0 упоминаний в call</td><td>нет</td></tr>
+<tr><td>Взнос</td><td>€20, PagoPA, на все наборы</td><td>€60</td></tr>
+</tbody>
+</table>
+</div>
+
+<hr>
+<h2 id="gd">5. Что такое Global Dialog</h2>
+<h3>И откуда у них информация</h3>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Вопрос</th><th>Что удалось установить</th><th>Ссылка</th></tr></thead>
+<tbody>
+<tr><td>Что они о себе заявляют</td><td>«Global Dialog — официальный представитель Туринский университет в России!» и то же про Болонью. <b>Ни договора, ни сертификата, ни описания, что это значит</b>, на страницах нет</td><td><a href="https://www.globaldialog.ru/countries/italy/higher_education/unito/">globaldialog.ru → UniTo</a> · <a href="https://www.globaldialog.ru/countries/italy/higher_education/university-of-bologna/">globaldialog.ru → Bologna</a></td></tr>
+<tr><td>Есть ли у вузов публичные списки представителей</td><td>На unibo.it, unito.it и international.unito.it — <b>ни одного упоминания</b> агентов или представителей за рубежом. Подача — самим студентом через Studenti Online и Apply@UniTo</td><td><a href="https://corsi.unibo.it/1cycle/CLaBE/how-to-enrol">CLaBE: how to enrol</a> · <a href="https://apply.unito.it/en_GB/courses/course/564-business-management">Apply@UniTo — Business &amp; Management</a></td></tr>
+<tr><td>Как это устроено в отрасли</td><td>Агентство подписывает с вузом <b>агентский договор</b>: вуз платит комиссию за каждого зачисленного студента. Это стандартная модель и это законно. «Официальный представитель» = «есть агентский договор», не «часть университета». Они сами пишут: «работаем на основе прямых договоров с учебными заведениями, более 500 партнёров»</td><td><a href="https://www.globaldialog.ru/company/about/">globaldialog.ru → о компании</a></td></tr>
+<tr><td>Откуда у них информация о правилах</td><td>Из тех же открытых источников, что у нас: сайты вузов, бандо, плюс <b>опыт своих студентов</b>. Особого канала в приёмную комиссию публично не заявлено. Ошибки на сайте (TOLC, цена Болоньи) показывают, что страницы не сверяют с текущими правилами</td><td><a href="https://www.globaldialog.ru/countries/italy/higher_education/unito/">globaldialog.ru → UniTo</a></td></tr>
+<tr><td>Отзывы отличные — как это совмещается</td><td>Отзывы — про <b>исполнение услуги</b>: собрали документы, довели до визы. Это они, судя по всему, делают хорошо. Ошибки — в <b>консультации по конкретной программе</b>, которую они не изучали под тебя. Обе вещи могут быть правдой одновременно</td><td>—</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note hot">
+<span class="lbl">Почему «март — поздно»: честно, без обвинений</span>
+<p>Мотив узнать нельзя. Можно перечислить, что совместимо с фактами:</p>
+<p><b>1. Перенос чужих правил.</b> У них в портфеле Bocconi, IED, Marangoni, John Cabot, Cattolica — частные вузы с <b>несколькими волнами и рейтингом по мере поступления</b>: там март реально может быть третьей волной без мест. У CLaBE и B&amp;M это не так, но если не открывать call, разница не видна.</p>
+<p><b>2. Экономика сделки.</b> Комиссия от вуза — за зачисленного; пакет €1 500 — с тебя. Чем раньше ты решишь, что «времени мало», тем раньше договор. Это не обвинение — это как устроен их доход, и это стоит держать в голове при любом «нужно срочно».</p>
+<p><b>3. Настоящая осторожность.</b> Ранний балл — реальный запас на случай провала в марте. Совет правильный, обоснование — нет.</p>
+<p>Какой из трёх — неважно. Важно, что <b>ни одно его утверждение о сроках не совпало с документами</b>, а сроки — это единственное, что в этом плане нельзя исправить задним числом.</p>
+</div>
+
+<hr>
+<h2 id="use">6. Зачем они нужны и зачем нет</h2>
+
+<div class="tablewrap">
+<table class="wide">
+<thead><tr><th>Задача</th><th>Кто делает по правилам</th><th>Нужны ли они</th></tr></thead>
+<tbody>
+<tr><td>Подача в вуз: Studenti Online, Apply@UniTo, SAT</td><td>только сам студент, под своим логином</td><td class="pri"><b>нет</b> — они могут лишь стоять рядом</td></tr>
+<tr><td>Стипендия: EDISU / ER.GO</td><td>сам студент; ER.GO прямо: «non è richiesto in alcun caso l'intervento di agenzie»</td><td class="pri"><b>нет</b>, и вуз предупреждает о платных посредниках</td></tr>
+<tr><td>Легализация документов мамы: ИФНС → нотариус → Минюст → перевод</td><td>мама в России</td><td>могут помочь <b>практикой</b>: какой нотариус берёт, какой переводчик аккредитован</td></tr>
+<tr><td>Виза D: Universitaly, VFS, мотивационное письмо, пакет</td><td>сам студент; консульство — чужой человек с усмотрением</td><td class="pri"><b>здесь — да</b>: они водили людей через VFS Москва, знают, что заворачивают</td></tr>
+<tr><td>Жильё, приезд, ВНЖ</td><td>сам</td><td>частично; вузы дают welcome-сервисы бесплатно</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="note good">
+<span class="lbl">Про €1 500</span>
+<p>Это рыночная цена «под ключ» для Италии. Но из пяти задач три ты делаешь сам по определению — их не купить. Реальная ценность пакета — <b>виза и легализация</b>. Разумный ход: спросить цену <b>только на визовую часть</b>: письмо, пакет документов, сопровождение VFS. Обычно это €300–600. Остальное у тебя уже есть — в этих документах, с ссылками на первоисточники, которых у них на сайте нет.</p>
+</div>
+
+<footer>
+<p>Источники: CLaBE–CLAME Call for Applications 2025/26 · corsi.unibo.it/1cycle/CLaBE · business-management.unito.it · en.unito.it (degrees foreseeing the SAT) · satsuite.collegeboard.org (dates, scores, registration) · unibo.it (reduced fixed fee) · ER.GO Bando DSU 2026/27 · EDISU Notice 2026/27 · globaldialog.ru (unito, university-of-bologna) · письмо Segreteria Studenti Internazionali UNIBO 4.09.2026. Курс для рублей ≈ 90–100 ₽/€.</p>
+<p>Часть плана: <a href="https://axbalashovv.github.io/alex-italy-docs/">указатель</a> · <a href="https://axbalashovv.github.io/alex-italy-docs/italy-dmitry/">вопросы Дмитрию</a> · <a href="https://axbalashovv.github.io/alex-italy-docs/sat-plan-1450/">SAT-план</a></p>
+</footer>
+
+</div>
+<script>(function(){function l(){document.querySelectorAll('table').forEach(function(t){
+var h=[].map.call(t.querySelectorAll('thead th'),function(x){return (x.textContent||'').replace(/\s+/g,' ').trim()});
+if(!h.length)return;[].forEach.call(t.querySelectorAll('tbody tr'),function(r){[].forEach.call(r.cells,function(c,i){
+if(h[i]&&!c.hasAttribute('data-l'))c.setAttribute('data-l',h[i])})})})}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',l);else l();})();</script>
+</body>
+</html>
